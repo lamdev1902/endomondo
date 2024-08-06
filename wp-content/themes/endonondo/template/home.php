@@ -1,0 +1,281 @@
+<?php
+/* Template Name: Home*/
+$pageid = get_the_ID();
+get_header(); 
+the_post();
+?>
+<main id="content">	
+	<section class="home-top color-white">
+		<div class="container">
+			<div class="list-flex flex-end">
+				<div class="top-big list-flex">
+					<?php
+						$args = array(
+							'posts_per_page'	=> 1,
+							'post_type' => array('post','informational_posts','round_up','single_reviews','step_guide','exercise'),
+						);
+						 $the_query = new WP_Query( $args );
+						while ($the_query->have_posts() ) : $the_query->the_post();
+						$post_author_id = get_post_field ('post_author', $post->ID);
+						$post_display_name = get_the_author_meta( 'nickname' , $post_author_id ); 
+						$post_author_url = get_author_posts_url( $post_author_id );
+					?>
+					<div class="info">
+						<h1 class="text-uppercase"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+						<?php echo wp_trim_words(get_the_excerpt($post->ID), 28); ?>
+					</div>
+					<div class="featured image-fit hover-scale">
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+					</div>
+					<?php
+						endwhile;
+						wp_reset_query();
+					?>
+				</div>
+				<div class="news-right">
+					<h4 class="sub-title">News</h4>
+					<div class="top-list">
+						<?php
+							$args = array(
+								'posts_per_page'	=> 4,
+								'offset'           => 1,
+								'post_type' => array('post','informational_posts','round_up','single_reviews','step_guide','exercise'),
+							);
+							 $the_query = new WP_Query( $args );
+							while ($the_query->have_posts() ) : $the_query->the_post();
+							$post_author_id = get_post_field ('post_author', $post->ID);
+							$post_display_name = get_the_author_meta( 'nickname' , $post_author_id ); 
+							$post_author_url = get_author_posts_url( $post_author_id );
+						?>
+						<div class="top-it position-relative">
+							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+							<h5 class="author"><a href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></h5>
+							<a href="<?php the_permalink(); ?>" class="news-link position-absolute">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/right.svg" alt="">
+							</a>
+						</div>
+						<?php
+							endwhile;
+							wp_reset_query();
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="home-feature">
+		<div class="list-flex feature-bg">
+			<div class="feature-social">
+				<?php 
+					$social = get_field('social', 'option');
+					if($social){
+						foreach($social as $social){
+				?>
+				<a target="_blank" href="<?php echo $social['link']; ?>"><img src="<?php echo $social['icon']; ?>" /></a>
+				<?php }} ?>
+			</div>
+			<div class="feature-collections bg-white color-black">
+				<h3 class="ed-title text-uppercase">Feature Collections</h3>
+				<div class="feature-slider swiper">
+					<div class="swiper-wrapper">
+						<?php
+							$args = array(
+								'posts_per_page'	=> 6,
+								'offset'           =>5,
+								'post_type' => array('post','informational_posts','round_up','single_reviews','step_guide','exercise'),
+							);
+							 $the_query = new WP_Query( $args );
+							while ($the_query->have_posts() ) : $the_query->the_post();
+							$post_author_id = get_post_field ('post_author', $post->ID);
+							$post_display_name = get_the_author_meta( 'nickname' , $post_author_id ); 
+							$post_author_url = get_author_posts_url( $post_author_id );
+						?>
+						<div class="it swiper-slide">
+							<div class="feature-box">
+								<div class="image image-fit hover-scale">
+									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+								</div>
+								<div class="info">
+									<div class="tag">
+										<?php $category = get_the_category($post->ID);
+										 	foreach( $category as $cat ) { ?>
+										 	<span><a href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
+										<?php } ?>
+									</div>
+									<h3><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h3>
+									<h5 class="author"><a href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></h5>
+								</div>
+							</div>
+						</div>
+						<?php
+							endwhile;
+							wp_reset_query();
+						?>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+ 	<!-- <section class="home-stories">
+		<div class="container">
+			<h2 class="ed-title text-uppercase"><?php echo get_field('stories_title',$pageid); ?></h2>
+			<div class="stories-list list-flex">
+				<?php $stories_list = get_field('stories_list',$pageid);
+				if($stories_list){
+					foreach($stories_list as $stories){
+				?>
+				<div class="stories-it">
+					<img src="<?php echo $stories['image'];?>" alt="" class="featured">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-three.svg" alt="" class="icon">
+					<div class="stories-info">
+						<div class="line list-flex">
+						</div>
+						<h3><a href="<?php echo $stories['link'];?>"><?php echo $stories['title'];?></a></h3>
+						<div class="list-flex flex-middle flex-center">
+							<p><?php echo $stories['date'];?></p>
+							<a class="stories-link" href="<?php echo $stories['link'];?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-e.svg" alt=""></a>
+						</div>
+					</div>
+				</div>
+				<?php }} ?>
+			</div>
+		</div>
+	</section> --> 
+	<section class="home-lastest bg-section">
+		<div class="container">
+			<h2 class="ed-title text-uppercase">Latest news</h2>
+			<div class="lastest-list">
+				<?php
+					$args = array(
+						'posts_per_page'	=> 6,
+						'offset'           =>11,
+						'post_type' => array('post','informational_posts','round_up','single_reviews','step_guide'),
+					);
+					$the_query = new WP_Query( $args );
+					while ($the_query->have_posts() ) : $the_query->the_post();
+					$post_author_id = get_post_field ('post_author', $post->ID);
+					$post_display_name = get_the_author_meta( 'nickname' , $post_author_id ); 
+					$post_author_url = get_author_posts_url( $post_author_id );
+				?>
+				<div class="lastest-it ">
+					<div class="lastest-box list-flex">
+						<div class="featured image-fit hover-scale">
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+						</div>
+						<div class="info">
+							<div class="tag">
+								<?php $category = get_the_category($post->ID);
+								 	foreach( $category as $cat ) { ?>
+								 	<span><a href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
+								<?php } ?>
+							</div>
+							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+							<h5 class="author"><a href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></h5>
+						</div>
+					</div>
+				</div>
+				<?php
+					endwhile;
+					wp_reset_query();
+				?>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</section>
+	 <!--<section class="home-video position-relative">
+		<div class="video-featured image-fit">
+			<img src="<?php echo get_field('video_background',$pageid); ?>" alt="">
+		</div>
+		<a class="video-btn position-absolute" href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/play.svg" alt=""></a>
+		<section class="video-source position-absolute">	
+			<?php echo get_field('video_source',$pageid); ?>
+		</section>	
+	</section>-->
+	<section class="home-choise bg-white color-black">
+		<div class="container">
+			<h2 class="ed-title text-uppercase"><?php echo get_field('choises_title',$pageid); ?></h2>
+			<div class="news-list list-flex">
+				<?php
+					$args = array(
+						'posts_per_page'	=> 8,
+						'offset'           =>17,
+						'post_type' => array('post','informational_posts','round_up','single_reviews','step_guide','exercise'),
+					);
+					$the_query = new WP_Query( $args );
+					while ($the_query->have_posts() ) : $the_query->the_post();
+					$post_author_id = get_post_field ('post_author', $post->ID);
+					$post_display_name = get_the_author_meta( 'nickname' , $post_author_id ); 
+					$post_author_url = get_author_posts_url( $post_author_id );
+				?>
+				<div class="news-it">
+					<div class="news-box">
+						<div class="featured image-fit hover-scale">
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+						</div>
+						<div class="info">
+							<div class="tag">
+								<?php $category = get_the_category($post->ID);
+								 	foreach( $category as $cat ) { ?>
+								 	<span><a href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
+								<?php } ?>
+							</div>
+							<h3><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h3>
+							<h5 class="author"><a href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></h5>
+						</div>
+					</div>
+				</div>
+				<?php
+					endwhile;
+					wp_reset_query();
+				?>
+			</div>
+		</div>
+	</section>
+</main>
+<?php get_footer(); ?>
+<script>
+	jQuery(function($){
+     	if($('.feature-slider').length)
+		var swiper = new Swiper(".feature-slider", {
+			slidesPerView: 1.3,
+			spaceBetween: 16,
+			autoplay: {
+		      delay: 5000,
+	    	},
+		    pagination: {
+		      el: ".swiper-pagination",
+		      type: "progressbar",
+		    },
+		    breakpoints: {
+		      768: {
+		        slidesPerView: 1.9,
+		        spaceBetween: 16
+		      },
+		      991: {
+		        slidesPerView: 2.1,
+		        spaceBetween: 16
+		      },
+		      1500: {
+		        slidesPerView: 3.5,
+		        spaceBetween: 16
+		      }
+		    }
+		});
+
+		$('.video-btn').click(function(){
+	        $(this).parent().find('.video-source').fadeIn();
+	        $(this).parent().find('.video-source iframe')[0].src += "?autoplay=1";
+	        return false;
+	    });
+	    if ($(window).width() < 767) {
+	    	$('.stories-list').slick({
+			  dots: false,
+			  infinite: false,
+			  slidesToShow: 1.1,
+			  arrows: false,
+			});
+	    };
+	});
+</script>

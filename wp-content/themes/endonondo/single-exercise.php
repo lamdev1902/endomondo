@@ -1,0 +1,648 @@
+<?php
+
+global $wpdb;
+
+$postid = get_the_ID();
+
+$exerciseId = get_post_meta($post->ID, 'exercise_name', true);
+get_header();
+
+$post_type = $post->post_type;
+
+?>
+<main id="content">
+    <?php
+
+    $exData = $wpdb->get_results(
+        "SELECT * FROM {$wpdb->prefix}exercise WHERE id = " . $exerciseId,
+        ARRAY_A
+    );
+
+    $arrVideo = array();
+    if ($exData) {
+        $arrVideo = array(
+            $exData[0]['video_white_male'],
+            $exData[0]['video_green'],
+            $exData[0]['video_transparent'],
+        );
+
+    }
+
+    $video = '';
+    $checkPath = false;
+    $isYoutube = true;
+    foreach ($arrVideo as $vid) {
+        if ($vid) {
+            $video = $vid;
+        }
+    }
+
+    if ($video) {
+        $youtubeMatch = preg_match(
+            '/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/',
+            $video,
+            $matches
+        );
+
+        if ($youtubeMatch) {
+            $videoId = $matches[1];
+            $video = 'https://www.youtube.com/embed/' . $videoId;
+            $isYoutube = true;
+        }
+
+        $videoPath = parse_url($video, PHP_URL_PATH);
+        $extension = pathinfo($videoPath, PATHINFO_EXTENSION);
+
+        if ($extension == 'mp4') {
+            $checkPath = true;
+            $elemlemnt = "<video autoplay='autoplay' loop='loop' muted defaultMuted playsinline  oncontextmenu='return false;'  preload='auto' src='$video'>Your browser does not support the video tag.</video>";
+        }
+    }
+    if ($exData):
+        ?>
+        <section class="single-top">
+            <div class="container">
+                <div class="list-flex flex-center flex-middle">
+                    <?php
+                    if (function_exists('yoast_breadcrumb')) {
+                        yoast_breadcrumb('<div id="breadcrumbs" class="breacrump">', '</div>');
+                    }
+                    ?>
+                    <div class="social on-pc">
+                        <?php
+                        $social = get_field('social', 'option');
+                        if ($social) {
+                            foreach ($social as $social) {
+                                ?>
+                                <a target="_blank" href="<?php echo $social['link']; ?>"><img
+                                        src="<?php echo $social['icon']; ?>" /></a>
+                            <?php }
+                        } ?>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="exc-hero-section">
+            <div class="container">
+                <div class="exc-container">
+                    <?php if ($checkPath): ?>
+                        <div class="exc-video">
+                            <?= $elemlemnt ?>
+                        </div>
+                    <?php else: ?>
+                        <div id="exc-container" style="padding:56.25% 0 0 0;position:relative;">
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+            var player;
+
+            function onYouTubeIframeAPIReady() {
+                document.getElementById('exc-container').innerHTML = '<iframe id="player" marginwidth="0" marginheight="0" align="top" scrolling="No" frameborder="0" hspace="0" vspace="0" src="https://www.youtube.com/embed/<?= $videoId ?>?rel=0&amp;fs=0&amp;autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&enablejsapi=1&playlist=<?= $videoId ?>" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"></iframe>';
+                player = new YT.Player('player', {
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+            function onPlayerReady(event) {
+				var YTP = event.target;
+                YTP.playVideo();
+                // Đảm bảo controls và info bị ẩn
+                setTimeout(function() {
+                    YTP.setOption("controls", 0);
+                    YTP.setOption("modestbranding", 1);
+                    YTP.setOption("rel", 0);
+                    YTP.setOption("showinfo", 0);
+                }, 1000);
+            }
+
+            function onPlayerStateChange(event) {
+                var YTP = event.target;
+                if (event.data === 1) {
+                    var remains = YTP.getDuration() - YTP.getCurrentTime();
+                    if (this.rewindTO)
+                        clearTimeout(this.rewindTO);
+                    this.rewindTO = setTimeout(function () {
+                        YTP.seekTo(0);
+                    }, (remains - 0.1) * 1000);
+                }
+            }
+
+            onYouTubeIframeAPIReady();
+        });
+                            </script>
+                        </div>
+                    <?php endif; ?>
+                    <div class="exc-title">
+                        <h1><?= $exData[0]['name'] ?></h1>
+                    </div>
+                    <div class="social on-sp">
+                        <?php
+                        $social = get_field('social', 'option');
+                        if ($social) {
+                            foreach ($social as $social) {
+                                ?>
+                                <a target="_blank" href="<?php echo $social['link']; ?>"><img
+                                        src="<?php echo $social['icon']; ?>" /></a>
+                            <?php }
+                        } ?>
+                    </div>
+                    <div class="exc-description">
+                        <?= $exData[0]['description'] ?>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <?php
+        $contents = $wpdb->get_results(
+            "SELECT * FROM {$wpdb->prefix}exercise_content WHERE exercise_id = " . $exerciseId,
+            ARRAY_A
+        );
+        $contentPrimary = "";
+        $contentSecondary = "";
+        $contentEquipment = "";
+        ?>
+        <section class="exc-content">
+            <div class="container">
+                <div class="exc-container">
+                    <?php foreach ($contents as $content): ?>
+                        <?php if ($content['content_type'] != 4 && $content['content_type'] != 5 && $content['content_type'] != 6): ?>
+                            <?php if (!empty($content['content'])): ?>
+                                <div class="content-item bd-bot">
+                                    <h2 class="title-content"><?= $content['content_title']; ?></h2>
+                                    <?= $content['content'] ?>
+
+                                    <?php
+                                    if ($content['content_type'] == 2):
+                                        $optimals = get_field('optimal_sets_and_reps', $postid);
+                                        if ($optimals):
+                                            ?>
+                                            <div style="overflow: auto">
+                                                <table class="exc-optimal-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Training Type</th>
+                                                            <th>Sets</th>
+                                                            <th>Reps</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php foreach ($optimals as $optimal): ?>
+                                                            <tr>
+                                                                <?php foreach ($optimal as $key => $item): ?>
+                                                                    <td><?= $item ?></td>
+                                                                <?php endforeach; ?>
+                                                            </tr>
+                                                        <?php endforeach; ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        <?php endif; endif; ?>
+                                </div>
+                            <?php endif; ?>
+                        <?php else:
+                            if ($content['content_type'] == 4) {
+                                $contentPrimary = $content['content'];
+                            } elseif ($content['content_type'] == 5) {
+                                $contentSecondary = $content['content'];
+                            } elseif ($content['content_type'] == 6) {
+                                $contentEquipment = $content['content'];
+                            }
+                            ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+
+        <?php
+        $primaryIds = $wpdb->get_results(
+            "SELECT * FROM {$wpdb->prefix}exercise_primary_option WHERE exercise_id = " . $exerciseId,
+            ARRAY_A
+        );
+
+        $arrPrimaryId = array();
+        foreach ($primaryIds as $primaryId) {
+            $arrPrimaryId[] = $primaryId['muscle_id'];
+        }
+
+        $primaryDatas = [];
+        $ids = '';
+        if ($arrPrimaryId) {
+            $ids = implode(',', $arrPrimaryId);
+
+            $primaryDatas = $wpdb->get_results(
+                "SELECT * FROM {$wpdb->prefix}exercise_muscle_anatomy WHERE id IN ({$ids}) AND active = 1",
+                ARRAY_A
+            );
+
+            $muscle_ids = $arrPrimaryId;
+            $exclude_exercise_id = $exerciseId;
+            $placeholders = implode(',', array_fill(0, count($muscle_ids), '%d'));
+
+            $query = "
+                SELECT exercise_id
+                FROM {$wpdb->prefix}exercise_primary_option
+                WHERE muscle_id IN ($placeholders)
+                AND exercise_id != %d
+                GROUP BY exercise_id
+            ";
+
+            $prepared_query = $wpdb->prepare(
+                $query,
+                array_merge($muscle_ids, [$exclude_exercise_id])
+            );
+
+            $samePrimary = $wpdb->get_results($prepared_query, ARRAY_A);
+
+            foreach ($samePrimary as $key => $idPri) {
+
+                $preparePri = $wpdb->prepare(
+                    "SELECT muscle_id as muscle_id
+                    FROM {$wpdb->prefix}exercise_primary_option
+                    WHERE exercise_id = %d 
+                    ",
+                    $idPri
+                );
+
+                $resultPrimary = $wpdb->get_col($preparePri);
+
+                if (count($resultPrimary) != count($muscle_ids)) {
+                    unset($samePrimary[$key]);
+                } else {
+                    $diffPri = array_diff($resultPrimary, $muscle_ids);
+
+                    if ($diffPri) {
+                        unset($samePrimary[$key]);
+                    }
+                }
+            }
+        }
+
+
+
+        if ($primaryDatas):
+            ?>
+            <section class="exc-primary">
+                <div class="container">
+                    <div class="exc-container bd-bot">
+                        <div class="muscle-title">
+                            <h2>Primary Muscle Groups</h2>
+                        </div>
+                        <div class="muscle-list primary-muscle">
+                            <?php foreach ($primaryDatas as $primaryData): ?>
+                                <div class="mucle">
+                                    <div class="muscle-item">
+                                        <div class="muscle-img">
+                                            <img src="<?= $primaryData['image'] ?>" alt="">
+                                        </div>
+                                        <p class="muscle-name"><?= $primaryData['name'] ?></p>
+                                        <span class="muscle-description"><?= $primaryData['description'] ?></span>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <?php if (!empty($contentPrimary)): ?>
+                <div class="container">
+                    <div class="exc-container">
+                        <div class="muscle-text bd-bot">
+                            <?= $contentPrimary ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+        <?php endif; ?>
+        <?php
+        $secondaryIds = $wpdb->get_results(
+            "SELECT * FROM {$wpdb->prefix}exercise_secondary_option WHERE exercise_id = " . $exerciseId,
+            ARRAY_A
+        );
+
+        $arrSecondaryId = array();
+        foreach ($secondaryIds as $secondaryId) {
+            $arrSecondaryId[] = $secondaryId['muscle_id'];
+        }
+
+        $secondaryDatas = [];
+        $ids = '';
+        if ($arrSecondaryId) {
+            $ids = implode(',', $arrSecondaryId);
+
+            $secondaryDatas = $wpdb->get_results(
+                "SELECT * FROM {$wpdb->prefix}exercise_muscle_anatomy WHERE id IN ({$ids}) AND active = 1",
+                ARRAY_A
+            );
+        }
+        if ($secondaryDatas):
+            ?>
+            <section class="exc-secondary">
+                <div class="container">
+                    <div class="exc-container bd-bot">
+                        <div class="muscle-title">
+                            <h2>Secondary Muscle Groups</h2>
+                        </div>
+                        <div class="muscle-list secondary-muscle">
+                            <?php foreach ($secondaryDatas as $secondaryData): ?>
+                                <div class="secondary-item muscle-item">
+                                    <div class="muscle-img">
+                                        <img src="<?= $secondaryData['image'] ?>" alt="">
+                                    </div>
+                                    <p class="muscle-name"><?= $secondaryData['name'] ?></p>
+                                    <span class="muscle-description"><?= $secondaryData['description'] ?></span>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <?php if (!empty($contentSecondary)): ?>
+                <div class="container">
+                    <div class="exc-container">
+                        <div class="muscle-text bd-bot">
+                            <?= $contentSecondary ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+        <?php endif; ?>
+        <?php
+        $equipmentIds = $wpdb->get_results(
+            "SELECT * FROM {$wpdb->prefix}exercise_equipment_option WHERE exercise_id = " . $exerciseId,
+            ARRAY_A
+        );
+
+        $arrEquipmentId = array();
+        foreach ($equipmentIds as $equipmentId) {
+            $arrEquipmentId[] = $equipmentId['equipment_id'];
+        }
+
+        $equipmentDatas = [];
+
+        $ids = '';
+        $sameEquipment = [];
+
+        if ($arrEquipmentId) {
+            $ids = implode(',', $arrEquipmentId);
+
+            $equipmentDatas = $wpdb->get_results(
+                "SELECT * FROM {$wpdb->prefix}exercise_equipment WHERE id IN ({$ids}) AND active = 1",
+                ARRAY_A
+            );
+
+            $placeholderss = implode(',', array_fill(0, count($arrEquipmentId), '%d'));
+
+            $var = $wpdb->prepare(
+                "SELECT exercise_id
+                FROM {$wpdb->prefix}exercise_equipment_option
+                WHERE equipment_id IN ($placeholderss)
+                AND exercise_id != %d
+                GROUP BY exercise_id",
+                array_merge($arrEquipmentId, [$exerciseId])
+            );
+
+            $sameEquipment = $wpdb->get_results($var, ARRAY_A);
+        }
+
+
+        if ($equipmentDatas):
+            ?>
+            <section class="exc-equipment">
+                <div class="container">
+                    <div class="exc-container bd-bot">
+                        <div class="muscle-title">
+                            <h2>Equipment</h2>
+                        </div>
+                        <div class="muscle-list equipment-list">
+                            <?php foreach ($equipmentDatas as $equipmentData): ?>
+                                <div class="equipment-item muscle-item">
+                                    <div class="muscle-img">
+                                        <img src="<?= $equipmentData['image'] ?>" alt="">
+                                    </div>
+                                    <p class="muscle-name"><?= $equipmentData['name'] ?></p>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <?php if (!empty($contentEquipment)): ?>
+                <div class="container">
+                    <div class="exc-container">
+                        <div class="muscle-text bd-bot">
+                            <?= $contentEquipment ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endif ?>
+        <?php endif; ?>
+
+        <?php
+
+        $primaryIds = array_column($samePrimary, 'exercise_id');
+        $equipmentIds = array_column($sameEquipment, 'exercise_id');
+
+
+        $variations = array_intersect($primaryIds, $equipmentIds);
+
+        $i = 0;
+        $variationsDatas = array();
+
+        if ($variations) {
+            $idsVar = implode(',', $variations);
+
+            $variationsDatas = $wpdb->get_results(
+                "SELECT * FROM {$wpdb->prefix}exercise WHERE id IN ({$idsVar}) AND active = 1",
+                ARRAY_A
+            );
+        }
+
+        if ($variationsDatas):
+            ?>
+            <section class="exc-variations">
+                <div class="container">
+                    <div class="exc-container bd-bot">
+                        <div class="muscle-title">
+                            <h2>Variations</h2>
+                            <p class="">Exercises that target the same primary muscle groups and require the same equipment.</p>
+                        </div>
+                        <div class="muscle-list variations-list">
+                            <?php
+                            if ($i <= 10):
+                                foreach ($variationsDatas as $variationsData): ?>
+                                    <div class="equipment-item muscle-item">
+                                        <div class="muscle-img">
+                                            <img src="<?= $variationsData['image_male'] ? $variationsData['image_male'] : $variationsData['image_female'] ?>"
+                                                alt="">
+                                        </div>
+                                        <?php if ($variationsData['slug']): ?>
+                                            <a href="<?= home_url('/exercise/' . $variationsData['slug']); ?>">
+                                                <p class="muscle-name"><?= $variationsData['name'] ?></p>
+                                            </a>
+                                        <?php else: ?>
+                                            <p class="muscle-name"><?= $variationsData['name'] ?>
+                                            <?php endif; ?>
+                                    </div>
+                                    <?php
+                                    $i++;
+                                endforeach;
+                            endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <?php endif; ?>
+
+        <?php
+
+        $alternative = array_diff($primaryIds, $equipmentIds);
+
+        $i = 0;
+        $alternativeDatas = array();
+
+        if ($alternative) {
+            $idsVar = implode(',', $alternative);
+
+            $alternativeDatas = $wpdb->get_results(
+                "SELECT * FROM {$wpdb->prefix}exercise WHERE id IN ({$idsVar}) AND active = 1",
+                ARRAY_A
+            );
+        }
+
+        if ($alternativeDatas):
+            ?>
+            <section class="exc-alternatives">
+                <div class="container">
+                    <div class="exc-container bd-bot">
+                        <div class="muscle-title">
+                            <h2>Alternatives</h2>
+                            <p class="">Exercises that target the same primary muscle groups and require the different
+                                equipment.</p>
+                        </div>
+                        <div class="muscle-list alternatives-list">
+                            <?php
+                            if ($i <= 10):
+                                foreach ($alternativeDatas as $alternativeData): ?>
+                                    <div class="equipment-item muscle-item">
+                                        <div class="muscle-img">
+                                            <img src="<?= $alternativeData['image_male'] ? $alternativeData['image_male'] : $alternativeData['image_male'] ?>"
+                                                alt="">
+                                        </div>
+                                        <?php if ($alternativeData['slug']): ?>
+                                            <a href="<?= home_url('/exercise/' . $alternativeData['slug']); ?>">
+                                                <p class="muscle-name"><?= $alternativeData['name'] ?></p>
+                                            </a>
+                                        <?php else: ?>
+                                            <p class="muscle-name"><?= $alternativeData['name'] ?>
+                                            <?php endif; ?>
+                                    </div>
+                                    <?php
+                                    $i++;
+                                endforeach;
+                            endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <?php endif; ?>
+    <?php endif; ?>
+    <section class="exc-section-content single-main">
+        <div class="container">
+            <div class="exc-container bd-bot">
+                <?php the_content(); ?>
+                <?php
+                if (get_field('enable_source', 'option') == true && $checktime == false) {
+                    ?>
+                    <div class="sg-resources box-grey mt-64 on-pc">
+                        <h4>Resources</h4>
+                        <?php $source_content = get_field('source_content', $postid);
+                        if ($source_content)
+                            echo $source_content;
+                        else
+                            echo get_field('source_intro', 'option'); ?>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+    </section>
+    <?php
+
+
+
+    $author_id = get_post_field('post_author', $postid);
+
+    $author_name = get_the_author_meta('nickname', $author_id);
+    $author_url = get_author_posts_url($author_id);
+
+    ?>
+    <div class="single-main exc-author">
+        <aside class="single-sidebar ">
+            <div class="container">
+                <div class="exc-container bd-bot">
+                    <div class="muscle-title">
+                        <h2>ABOUT THE AUTHOR</h2>
+                    </div>
+                    <div class="sg-author">
+                        <div class="author-it">
+                            <?php
+                            $avata = get_field('avata', 'user_' . $author_id);
+                            $user_info = get_userdata($author_id);
+                            if ($avata) {
+                                ?>
+                                <img src="<?php echo $avata; ?>" alt="">
+                            <?php } else { ?>
+                                <img src="<?php echo get_field('avatar_default', 'option'); ?>" alt="">
+                            <?php } ?>
+                            <div class='ag-author-info'>
+                                <h5><a href="<?php echo $author_url; ?>"><?= $author_name; ?></a></h5>
+                                <p class="color-grey"><?= get_field('position', 'user_' . $author_id) ?></p>
+                            </div>
+                        </div>
+                        <div class="author-info">
+                            <p><?= get_field('story', 'user_' . $author_id) ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+</main>
+<?php get_footer(); ?>
+<script>
+    jQuery(function ($) {
+        $('.wp-caption-small').parent().addClass('wp-caption-small');
+    });
+
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+        document.getElementById('exc-container').innerHTML = '<iframe id="player" marginwidth="0" marginheight="0" align="top" scrolling="No" frameborder="0" hspace="0" vspace="0" src="https://www.youtube.com/embed/<?= $videoId ?>?rel=0&amp;fs=0&amp;autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&enablejsapi=1&playlist=<?= $videoId ?>" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"></iframe>';
+        player = new YT.Player('player', {
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
+    function onPlayerStateChange(event) {
+        var YTP = event.target;
+        if (event.data === 1) {
+            var remains = YTP.getDuration() - YTP.getCurrentTime();
+            if (this.rewindTO)
+                clearTimeout(this.rewindTO);
+            this.rewindTO = setTimeout(function () {
+                YTP.seekTo(0);
+            }, (remains - 0.1) * 1000);
+        }
+    }
+
+
+</script>
