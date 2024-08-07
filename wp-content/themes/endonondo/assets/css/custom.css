@@ -2,10 +2,6 @@
     filter: none !important;
 }
 
-.ft-menu {
-    text-align: center;
-}
-
 .single-main .sg-right .sg-custom iframe {
     width: 100%;
     min-height: 430px;
@@ -333,12 +329,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
         margin-left: 0;
     }
 
-    #footer .ft-top .ft-info .ft-form {
-        position: relative;
-        display: block;
-        max-width: 500px;
-    }
-
     #footer .ft-top .ft-info .ft-form .wpcf7-spinner {
         position: absolute;
         display: block;
@@ -465,10 +455,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
         margin-left: 0;
     }
 
-    .ft-menu {
-        text-align: left
-    }
-
     .popup .popup-bg .popup-box .info .box h2 {
         margin-top: 10px;
     }
@@ -514,9 +500,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
     filter: none !important;
 }
 
-.ft-menu {
-    text-align: center;
-}
 
 .single-main .sg-right .sg-custom iframe {
     width: 100%;
@@ -842,12 +825,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
         margin-left: 0;
     }
 
-    #footer .ft-top .ft-info .ft-form {
-        position: relative;
-        display: block;
-        max-width: 500px;
-    }
-
     #footer .ft-top .ft-info .ft-form .wpcf7-spinner {
         position: absolute;
         display: block;
@@ -974,9 +951,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
         margin-left: 0;
     }
 
-    .ft-menu {
-        text-align: left
-    }
 
     .popup .popup-bg .popup-box .info .box h2 {
         margin-top: 10px;
@@ -1021,10 +995,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
 
 #header .menu-main .social a img {
     filter: none !important;
-}
-
-.ft-menu {
-    text-align: center;
 }
 
 .single-main .sg-right .sg-custom iframe {
@@ -1355,11 +1325,7 @@ div[data-testid="form-row"]:nth-child(4) label:before {
         margin-left: 0;
     }
 
-    #footer .ft-top .ft-info .ft-form {
-        position: relative;
-        display: block;
-        max-width: 500px;
-    }
+
 
     #footer .ft-top .ft-info .ft-form .wpcf7-spinner {
         position: absolute;
@@ -1485,10 +1451,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
 
     .single-main .sg-right .sg-custom a:first-child {
         margin-left: 0;
-    }
-
-    .ft-menu {
-        text-align: left
     }
 
     .popup .popup-bg .popup-box .info .box h2 {
