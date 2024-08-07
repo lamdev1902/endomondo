@@ -283,8 +283,8 @@ main {
 }
 
 .container {
-    max-width: 1312px;
-    padding: 0 16px;
+    max-width: 1100px;
+    padding: 0;
     margin: 0 auto;
 }
 
@@ -353,6 +353,13 @@ main {
     line-height: 1;
 }
 
+#header .hd-search a::after {
+    content: url(../images/search.svg);
+    position: absolute;
+    right: -20px;
+    top: -13px;
+}
+
 #header .ed-btn {
     color: #fff;
     background: transparent;
@@ -360,9 +367,20 @@ main {
 }
 
 #header .ed-btn:hover {
-    background: #fff;
-    color: #101010;
-    border-color: #fff;
+    border-color: none;
+}
+
+#header .btn-search {
+    padding: 9px 24px;
+    border: none;
+    width: 100%;
+}
+
+#header .btn-search::after {
+    content: url(../images/search-btn.svg);
+    position: absolute;
+    right: 0;
+    top: 9px;
 }
 
 #header .toogle-menu span {
@@ -375,13 +393,8 @@ main {
 }
 
 #header .hd-search-form {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;
-    display: none;
-    z-index: 10;
-    padding-top: 5px;
+    background-color: var(--secondary-color-1);
+    padding: 10px 0;
 }
 
 #header .hd-search-form form {
@@ -392,26 +405,13 @@ main {
 
 #header .hd-search-form input[type="text"] {
     width: calc(100% - 106px);
-    border: 1px solid #404040;
+    border: none;
     height: 42px;
-    background: #fff;
-    padding: 10px 16px;
-    color: #9F9F9F;
+    background: var(--secondary-color-1);
+    padding: 10px 16px 10px 0;
+    color: #000000;
     font-size: 16px;
     line-height: 26px;
-}
-
-#header .hd-search-form .btn-search {
-    width: 102px;
-    border: 1px solid #404040;
-    background: #101010;
-    color: #fff;
-    margin-left: 4px;
-    cursor: pointer;
-}
-
-#header .hd-search-form .btn-search:hover {
-    opacity: 0.8;
 }
 
 #header .menu-main {
@@ -420,10 +420,12 @@ main {
     top: 100%;
     left: 0;
     right: 0;
-    padding: 40px 0 52px;
-    background: #EDF0E9;
     display: none;
-    color: #101010;
+}
+
+#header .menu-main .list-menu {
+    background-color: var(--white-color);
+    padding: 40px 0;
 }
 
 #header .menu-main .menu-box {
@@ -502,38 +504,6 @@ main {
     margin: 0 16px 0 0;
 }
 
-@media (max-width: 767px) {
-    #header {
-        position: relative;
-        padding: 9px 0;
-    }
-
-    #header .logo {
-        height: 20px;
-    }
-
-    #header .menu-main {
-        padding: 40px 0;
-    }
-
-    #header .menu-main .menu-box ul li {
-        padding: 24px 0;
-        width: 100%;
-        border-bottom: 1px solid #9F9F9F;
-    }
-
-    #header .menu-main .menu-box ul li:first-child {
-        padding-top: 0;
-    }
-
-    #header .menu-main .menu-box ul li ul li {
-        border: none;
-    }
-
-    #header .menu-main .social {
-        display: block;
-    }
-}
 
 #footer {
     background: #101010;

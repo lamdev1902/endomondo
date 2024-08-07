@@ -10,7 +10,8 @@ jQuery(function($){
 	});
 
 	$('.hd-search a').click(function(){
-		$('.hd-search-form').slideToggle();
+		$('.toogle-menu').toggleClass('exit');
+		$('.menu-main').slideToggle();
 		return false;
 	});
 

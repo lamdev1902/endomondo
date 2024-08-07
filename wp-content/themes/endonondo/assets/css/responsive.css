@@ -1,0 +1,47 @@
+@media (max-width: 767px) {
+
+    .container {
+        padding: 0 20px;
+    }
+
+    #header {
+        position: relative;
+        padding: 9px 0;
+    }
+
+    #header .logo {
+        height: 20px;
+    }
+
+    #header .menu-main .menu-box ul li {
+        padding: 24px 0;
+        width: 100%;
+    }
+
+    #header .menu-main .menu-box ul li:first-child {
+        padding-top: 0;
+    }
+
+    #header .menu-main .menu-box ul li ul li {
+        border: none;
+    }
+
+    #header .menu-main .social {
+        display: block;
+    }
+
+    /* End Header */
+}
+
+@media (max-width: 768px) {
+    
+    .container {
+        padding: 0 20px;
+    }
+
+    #header .menu-main .menu-box .menu-menu-main-container > ul > li {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 50%;
+        flex: 1 0 50%;
+    }
+}

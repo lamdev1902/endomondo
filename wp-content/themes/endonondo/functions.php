@@ -196,8 +196,9 @@ function theme_mcs_scripts() {
 	wp_enqueue_style( 'style-swiper', get_template_directory_uri() . '/assets/js/swiper/swiper-bundle.min.css' );
 	wp_enqueue_style( 'style-main', get_template_directory_uri() . '/assets/css/main.css','','7.3.6' );
 	wp_enqueue_style( 'style-custom', get_template_directory_uri() . '/assets/css/custom.css','','2.1.4' );
-	
-	
+	wp_enqueue_style( 'style-base', get_template_directory_uri() . '/assets/css/base.css','','1.0.0' );
+	wp_enqueue_style( 'style-responsive', get_template_directory_uri() . '/assets/css/responsive.css','','1.0.0' );
+
 }
 add_action( 'wp_enqueue_scripts', 'theme_mcs_scripts' );
 /* register page option ACF */
