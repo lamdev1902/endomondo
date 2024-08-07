@@ -1353,10 +1353,6 @@ main {
     background: #fff;
 }
 
-.home-top {
-    margin-bottom: 43px;
-    padding-top: 46px;
-}
 
 .home-top .top-big {
     width: 75%;
@@ -1388,14 +1384,6 @@ main {
 
 .home-top .top-big .info h1 a:hover {
     color: #83ad41;
-}
-
-.home-top .top-big .info p {
-    color: #9F9F9F;
-    font-size: 15px;
-    line-height: 26px;
-    margin-bottom: 0;
-    padding-right: 30%;
 }
 
 .home-top .top-big .featured {
@@ -1461,7 +1449,7 @@ main {
 }
 
 .home-feature .feature-bg {
-    padding-left: calc(50vw - 644.5px);
+    padding-left: calc(50vw - 547.5px);
 }
 
 .home-feature .feature-social {
@@ -1756,11 +1744,6 @@ main {
         background-size: 100% auto;
     }
 
-    .home-top {
-        padding-top: 40px;
-        margin-bottom: 40px;
-    }
-
     .home-top .top-big {
         position: relative;
         padding-bottom: 130px;
@@ -1947,7 +1930,7 @@ main {
 }
 
 .single-main .box-grey ul li,
-.single-main .box-grey ol li,
+.single-main .box-grey ol li
  {
     font-size: 16px;
     line-height: 28px;
@@ -4342,4 +4325,36 @@ figcaption {
 
 .content-tiktok .tiktok-embed {
     margin-top: 0 !important;
+}
+
+/* Home Feature On */
+
+.home-feature-on ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.soon {
+    background-image: url(../images/home/soon-bg.svg);
+    background-size: auto 100%;
+    background-position: top 0 center;
+}
+
+.soon-content {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.soon-content .soon-btn{
+    display: block;
+    width: 50%;
+    background: var(--primary-color-2);
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 8px;
+}
+
+.soon .social-soon a{
+    margin-left: 16px;
 }

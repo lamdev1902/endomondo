@@ -35,6 +35,12 @@
     #footer .ft-menu ul.menu > li {
         width: 50% !important;
     }
+
+    /* End Footer */
+
+    .soon {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {

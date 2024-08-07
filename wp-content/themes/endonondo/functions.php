@@ -1,132 +1,4 @@
 <?php 
-// function insert_section()
-// {    
-//     global $wpdb;
-
-//     $table = $wpdb->prefix . "exercise_schedule";
-
-//     $table_name = $wpdb->prefix . "exercise";
-
-//     $arr = array(
-		
-//         array(
-//             array(
-//                 'name' => 'Arm Circles',
-//                 'duration' => 60,
-//                 'reps' => 0
-//             ),
-//             array(
-//                 'name' => 'Standing Torso Twists',
-//                 'duration' => 60,
-//                 'reps' => 0
-//             ),
-//             array(
-//                 'name' => 'Side Lunges',
-//                 'duration' => 60,
-//                 'reps' => 0
-//             ),
-//             array(
-//                 'name' => 'Butt Kicks',
-//                 'duration' => 60,
-//                 'reps' => 0
-//             ),
-//             array(
-//                 'name' => 'High Knees',
-//                 'duration' => 60,
-//                 'reps' => 0
-//             )
-//         ),
-
-
-//         array(
-//             array(
-//                 'name' => 'Mountain Climbers',
-//                 'duration' => 20,
-//                 'reps' => 0
-//             ),
-//             array(
-//                 'name' => 'Bear Crawls',
-//                 'duration' => 20,
-//                 'reps' => 0
-//             ),
-//             array(
-//                 'name' => 'Jumping Lunges',
-//                 'duration' => 20,
-//                 'reps' => 0
-//             ),
-//             array(
-//                 'name' => 'Tuck Jumps',
-//                 'duration' => 20,
-//                 'reps' => 0
-//             ),
-//             array(
-//                 'name' => 'Skater Hops',
-//                 'duration' => 20,
-//                 'reps' => 0
-//             ),
-//             array(
-//                 'name' => 'Rest',
-//                 'duration' => 60,
-//                 'reps' => 0
-//             )
-//         ),
-//         array(
-//             array(
-//                 'name' => 'Standing Forward Bend',
-//                 'duration' => 60,
-//                 'reps' => 0
-//             ),
-//             array(
-//                 'name' => 'Standing One Arm Chest Stretch',
-//                 'duration' => 60,
-//                 'reps' => 0
-//             ),
-//             array(
-//                 'name' => 'Standing Quadricep Stretch',
-//                 'duration' => 60,
-//                 'reps' => 0
-//             ),
-//             array(
-//                 'name' => 'Seated Hamstring Stretch',
-//                 'duration' => 60,
-//                 'reps' => 0
-//             ),
-//             array(
-//                 'name' => "Child's Pose",
-//                 'duration' => 60,
-//                 'reps' => 0
-//             )
-//         )
-//     );
-
-//     $i = 34;
-//     $query = $wpdb->prepare("SELECT COUNT(*) FROM $table WHERE section_id = %d", $i);
-//     $exists = $wpdb->get_var($query);
-
-//     if ($exists == 0) {
-// 		foreach ($arr as $key => $items) {
-// 			foreach ($items as $item) {
-// 				$name = $item['name'];
-// 				unset($item['name']);
-
-// 				// Truy vấn để lấy exercise_id từ bảng exercise
-// 				$query = $wpdb->prepare("SELECT id FROM $table_name WHERE name = %s", $name);
-// 				$exercise = $wpdb->get_row($query);
-
-// 				if (!empty($exercise)) {
-// 					$item['section_id'] = $i;
-// 					$item['exercise_id'] = $exercise->id;
-
-// 					// Chèn mục vào bảng exercise_schedule
-// 					$wpdb->insert($table, $item);
-// 				}
-// 			}
-// 			$i++;
-// 		}
-//     }
-// }
-
-// add_action('init', 'insert_section');
 
 function custom_image_sizes_choose($sizes) {
     unset($sizes['thumbnail']);
@@ -194,10 +66,10 @@ function theme_mcs_scripts() {
 	wp_enqueue_style( 'style-slick', get_template_directory_uri() . '/assets/js/slick/slick.css' );
 	wp_enqueue_style( 'style-slick-theme', get_template_directory_uri() . '/assets/js/slick/slick-theme.css' );
 	wp_enqueue_style( 'style-swiper', get_template_directory_uri() . '/assets/js/swiper/swiper-bundle.min.css' );
-	wp_enqueue_style( 'style-main', get_template_directory_uri() . '/assets/css/main.css','','1.0.1' );
-	wp_enqueue_style( 'style-custom', get_template_directory_uri() . '/assets/css/custom.css','','1.0.1' );
-	wp_enqueue_style( 'style-base', get_template_directory_uri() . '/assets/css/base.css','','1.0.1' );
-	wp_enqueue_style( 'style-responsive', get_template_directory_uri() . '/assets/css/responsive.css','','1.0.1' );
+	wp_enqueue_style( 'style-main', get_template_directory_uri() . '/assets/css/main.css','','1.0.2' );
+	wp_enqueue_style( 'style-custom', get_template_directory_uri() . '/assets/css/custom.css','','1.0.2' );
+	wp_enqueue_style( 'style-base', get_template_directory_uri() . '/assets/css/base.css','','1.0.2' );
+	wp_enqueue_style( 'style-responsive', get_template_directory_uri() . '/assets/css/responsive.css','','1.0.2' );
 
 }
 add_action( 'wp_enqueue_scripts', 'theme_mcs_scripts' );

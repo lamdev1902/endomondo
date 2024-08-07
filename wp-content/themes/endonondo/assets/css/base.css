@@ -34,107 +34,108 @@
     --font-22: 22px;
     --font-24: 24px;
     --font-26: 26px;
+    --font-28: 28px;
     --font-32: 32px;
+    --font-36: 36px;
     --font-48: 48px;
 }
 
-@media(max-width: 1024px) {
-    h1 {
-        font-size: var(--font-32) !important;
-        font-weight: 700;
-    }
-    
-    h2 {
-        font-size: var(--font-26) !important;
-        font-weight: 700;
-    }
-    
-    h3 {
-        font-size: var(--font-24) !important;
-        font-weight: 700;
-    }
-    
-    h4 {
-        font-size: var(--font-22) !important;
-        font-weight: 500;
-    }
-    
-    p {
-        font-size: var(--font-15) !important;
-        font-weight: 400;
-        letter-spacing: 0;
-    }
 
-    .has-x-large-font-size {
-        font-size: var(--font-32) !important;
-        font-weight: 700;
-    }
-
-    .has-large-font-size {
-        font-size: var(--font-20) !important;
-        font-weight: 700;
-    }
-
-    .has-medium-font-size {
-        font-size: var(--font-17) !important;
-        font-weight: 700;
-    }
-
-    .has-small-font-size {
-        font-size: var(--font-12) !important;
-        font-weight: italic;
-    }
-}
 
 h1 {
     font-size: var(--font-48) !important;
     letter-spacing: -0.5px;
+    line-height: normal;
 }
 
 h2 {
     font-size: var(--font-36) !important;
     letter-spacing: -0.5px;
+    line-height: normal;
 }
 
 h3 {
     font-size: var(--font-28) !important;
     letter-spacing: -0.5px;
+    line-height: normal;
 }
 
 h4 {
     font-size: var(--font-24) !important;
     letter-spacing: -0.5px;
+    line-height: normal;
+}
+
+/* color */
+.pri-color-1 {
+    color: var(--primary-color-1);
+}
+
+.pri-color-2 {
+    color: var(--primary-color-2);
+}
+
+.pri-color-3 {
+    color: var(--primary-color-3);
+}
+
+.sec-color-1 {
+    color: var(--secondary-color-1);
+}
+
+.sec-color-2 {
+    color: var(--secondary-color-2);
+}
+
+.sec-color-3 {
+    color: var(--secondary-color-3);
+}
+
+.sec-color-4 {
+    color: var(--secondary-color-4);
 }
 
 /*  p element */
 
 p {
     font-size: var(--font-16) !important;
+    line-height: normal;
+    color: var(--primary-color-3);
 }
 
 .has-x-large-font-size {
     font-size: var(--font-48) !important;
-    line-height: auto;
     font-weight: 700;
+    line-height: normal;
 }
 
 .has-large-font-size {
     font-size: var(--font-22) !important;
     font-weight: 700;
+    line-height: normal;
 }
 
 .has-medium-font-size {
     font-size: var(--font-18) !important;
-    line-height: auto;
     font-weight: 700;
+    line-height: normal;
 }
 
 .has-small-font-size {
     font-size: var(--font-14);
     letter-spacing: 0px;
     font-weight: 400;
+    line-height: normal;
 }
 
+/* special text */
+
+.special-text {
+    font-size: var(--font-24);
+    color: #98A2B3;
+}
+
+/* padding - margin */
 .pd-main {
     padding: 40px 0;
 }
@@ -151,6 +152,10 @@ p {
     margin-bottom: 20px;
 }
 
+.mr-top-24 {
+    margin-top: 24px;
+}
+
 .mr-top-40 {
     margin-top: 40px;
 }
@@ -162,4 +167,61 @@ p {
  /* flex */
 .flex {
     display: flex;
+}
+
+@media(max-width: 1024px) {
+    h1 {
+        font-size: var(--font-32) !important;
+        font-weight: 700;
+        line-height: normal;
+    }
+    
+    h2 {
+        font-size: var(--font-26) !important;
+        font-weight: 700;
+        line-height: normal;
+    }
+    
+    h3 {
+        font-size: var(--font-24) !important;
+        font-weight: 700;
+        line-height: normal;
+    }
+    
+    h4 {
+        font-size: var(--font-22) !important;
+        font-weight: 500;
+        line-height: normal;
+    }
+    
+    p {
+        font-size: var(--font-15) !important;
+        font-weight: 400;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+    .has-x-large-font-size {
+        font-size: var(--font-32) !important;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .has-large-font-size {
+        font-size: var(--font-20) !important;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .has-medium-font-size {
+        font-size: var(--font-17) !important;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .has-small-font-size {
+        font-size: var(--font-12) !important;
+        font-weight: italic;
+        line-height: normal;
+    }
 }
