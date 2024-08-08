@@ -1,0 +1,87 @@
+/* Ft snippet */
+
+.ft-snippet {
+    padding: 32px 20px;
+    background-color: var(--chart-20);
+    position: relative;
+}
+
+.ft-snippet ul {
+    margin-bottom: 20px;
+}
+
+.ft-snippet::after {
+    position: absolute;
+    content: url(../images/ft-snippet-logo.svg);
+    width: 185px;
+    height: 29px;
+    bottom: 25px;
+    right: 25px;
+}
+
+/* Block Quote */
+
+.wp-block-pullquote {
+    padding: 20px 0;
+}
+blockquote {
+    padding: 40px 32px 80px;
+    background-color: var(--chart-20);
+    position: relative;
+    margin: 0;
+    border-left: 3px solid var(--primary-color-1);
+}
+
+.wp-block-pullquote blockquote p {
+    text-align: left;
+}
+
+.wp-block-pullquote blockquote cite {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'INTER';
+    font-style: normal;
+    position: absolute;
+    bottom: 20px;
+    right: 35px;
+    color: var(--primary-color-1);
+}
+
+/* Custom Table */
+
+.medicine-table table {
+    border: 1px solid var(--secondary-color-1);
+}
+
+.medicine-table table thead tr{
+    background-color: white !important;
+}
+
+.medicine-table table tbody tr:first-child td {
+    color: var(--primary-color-2) !important;
+}
+
+.medicine-table table tbody tr:first-child td:first-child {
+    text-align: left !important;
+}
+
+.medicine-table.no-title table tbody tr:first-child td:first-child {
+    text-align: center !important;
+}
+
+.medicine-table table tr:nth-child(odd) {
+    background-color: #f8f8f8;
+}
+
+.medicine-table table tr {
+    border: none !important;
+}
+
+.medicine-table .wp-block-table table tbody tr td:first-of-type {
+    padding: 16px;
+    width: 129px;
+}
+
+.medicine-table.no-title .wp-block-table table tbody tr td:first-of-type {
+    width: auto;
+}
