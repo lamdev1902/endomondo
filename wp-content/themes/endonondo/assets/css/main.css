@@ -218,8 +218,8 @@ main {
 
 .toogle-menu {
     border: 0 none;
-    height: 16px;
-    width: 20px;
+    height: 24px;
+    width: 24px;
     z-index: 999;
     cursor: pointer;
     outline: 0;
@@ -334,12 +334,14 @@ main {
 }
 
 #header .logo {
-    height: 36px;
+    height: 25px;
+    width: 200px
 }
 
 #header .logo img {
     display: block;
     height: 100%;
+    width: 100%;
 }
 
 #header .hd-search {
@@ -364,6 +366,10 @@ main {
     color: #fff;
     background: transparent;
     cursor: pointer;
+    font-weight: 500;
+    font-size: var(--font-36);
+    width: 235px;
+    height: 52px;
 }
 
 #header .ed-btn:hover {
@@ -523,11 +529,13 @@ main {
 
 
 #footer .ft-top .ft-info .ft-logo {
-    height: 36px;
+    height: 37px;
+    width: 286px;
 }
 
 #footer .ft-top .ft-info .ft-logo img {
     height: 100%;
+    width: 100%;
 }
 
 
@@ -678,8 +686,8 @@ main {
 .social a img {
     -webkit-filter: invert(99%) sepia(84%) saturate(5851%) hue-rotate(187deg) brightness(126%) contrast(100%);
     filter: invert(99%) sepia(84%) saturate(5851%) hue-rotate(187deg) brightness(126%) contrast(100%);
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 @media (max-width: 1279px) {
@@ -3243,7 +3251,7 @@ figcaption {
 
 .about-main .about-author .people-list .people-it {
     padding: 0 13px 40px;
-    width: 20%;
+    width: 25%;
 }
 
 .about-main .about-author .people-list .people-it .featured {
@@ -3406,10 +3414,6 @@ figcaption {
     padding: 20px 0 80px;
 }
 
-.blog-main .blog-top {
-    margin-bottom: 64px;
-}
-
 .blog-main .blog-top:before {
     height: 124px;
     background: #0E1102;
@@ -3517,10 +3521,6 @@ figcaption {
         padding-bottom: 20px;
     }
 
-    .blog-main .blog-top {
-        margin-bottom: 40px;
-    }
-
     .blog-main .blog-top:before {
         left: 16px;
         height: 122px;
@@ -3549,13 +3549,6 @@ figcaption {
         width: 100%;
         padding: 0;
         min-height: 140px;
-    }
-
-    .blog-main .blog-top .top-box p {
-        padding: 16px 0 0 24px;
-        font-size: 15px;
-        line-height: 26px;
-        margin-bottom: 0;
     }
 
     .blog-main .blog-select {
@@ -3596,21 +3589,7 @@ figcaption {
     line-height: 43px;
 }
 
-.contact-main .contact-box {
-    padding-top: 40px;
-}
 
-.contact-main .contact-box h2 {
-    font-size: 32px;
-    line-height: 39px;
-    margin-bottom: 16px;
-    font-weight: 600;
-}
-
-.contact-main .contact-box .contact-left {
-    width: 58%;
-    padding: 0 123px 0 calc(50vw - 646.5px);
-}
 
 .contact-main .contact-box .contact-left p {
     color: #313131;
@@ -3716,40 +3695,23 @@ figcaption {
     opacity: 0.8;
 }
 
+
 .contact-main .contact-box .contact-right {
-    width: 42%;
-    padding: 40px;
-    position: relative;
-}
-
-.contact-main .contact-box .contact-right:before {
     background: url(../images/bg-author.png) #101010 no-repeat bottom 40px right/auto 100%;
-    width: 100%;
-    height: 100%;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.5;
 }
 
-.contact-main .contact-box .contact-right .contact-right-box {
-    max-width: 524px;
-    position: relative;
+.contact-main .contact-box .contact-right {
+    background: url(../images/bg-author.png) #101010 no-repeat bottom 40px right/auto 100%;
+    padding: 40px;
 }
 
-.contact-main .contact-box .contact-right p {
-    font-size: 15px;
-    line-height: 28px;
-    margin-bottom: 16px;
-    color: #D4D5D4;
+.contact-main .contact-box {
+    gap: 40px
 }
 
-.contact-main .contact-box .contact-right p b {
-    font-weight: 500;
-    margin-bottom: 10px;
-    color: #fff;
-    display: block;
+.contact-main .contact-box h3,
+.contact-main .contact-box h4 {
+    color: var(--primary-color-3);
 }
 
 .contact-main .contact-box .contact-right p a {
@@ -3760,17 +3722,11 @@ figcaption {
     color: #87AA14;
 }
 
-.contact-main .contact-box .contact-right .ct-info {
-    margin-bottom: 40px;
-    max-width: 345px;
-}
-
 .contact-main .contact-box .contact-right .follow-list a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     margin-bottom: 16px;
-    font-size: 15px;
     line-height: 28px;
     color: #D4D5D4;
     min-width: 170px;
@@ -3780,104 +3736,13 @@ figcaption {
     align-items: center;
 }
 
-.contact-main .contact-box .contact-right .follow-list a i {
-    font-size: 24px;
-    color: #fff;
-    margin-right: 8px;
+.contact-main .contact-box .contact-right .follow-list a img{
+    padding-right: 10px;
 }
 
 .contact-main .contact-box .contact-right .follow-list a:hover,
 .contact-main .contact-box .contact-right .follow-list a:hover i {
     color: #87AA14;
-}
-
-@media (max-width: 1350px) {
-    .contact-main .contact-box .contact-left {
-        padding-left: 20px;
-        padding-right: 50px;
-        width: 50%;
-    }
-
-    .contact-main .contact-box .contact-right {
-        width: 50%;
-    }
-}
-
-@media (max-width: 767px) {
-    .contact-main {
-        padding: 40px 0;
-    }
-
-    .contact-main .ed-title {
-        font-size: 28px;
-        line-height: 33px;
-        margin-bottom: 40px;
-    }
-
-    .contact-main .contact-box {
-        padding: 0;
-    }
-
-    .contact-main .contact-box .contact-left {
-        padding: 0 16px 10px;
-        width: 100%;
-    }
-
-    .contact-main .contact-box .contact-left p {
-        font-size: 15px;
-        line-height: 26px;
-    }
-
-    .contact-main .contact-box .contact-left h5 {
-        font-size: 10px;
-        line-height: 26px;
-        margin-bottom: 16px;
-    }
-
-    .contact-main .contact-box h2 {
-        font-size: 24px;
-        line-height: 32px;
-        margin-bottom: 16px;
-    }
-
-    .contact-main .contact-box .contact-right {
-        width: 100%;
-        padding: 40px 24px;
-    }
-
-    .contact-main .contact-box .contact-right:before {
-        background: url(../images/sp-bg-contact.png) #101010 no-repeat bottom 30px right/auto 100%;
-    }
-
-    .contact-main .contact-box .contact-right p {
-        font-size: 15px;
-        line-height: 26px;
-    }
-
-    .contact-main .contact-box .contact-right p b {
-        font-size: 15px;
-        margin-bottom: 8px;
-    }
-
-    .contact-main .contact-box .contact-right .ct-info {
-        margin-bottom: 32px;
-    }
-
-    .contact-main .contact-box .contact-right .follow-list {
-        margin-bottom: -16px;
-    }
-
-    .contact-main .contact-box .contact-right .follow-list a {
-        width: 50%;
-        margin: 0 0 16px;
-        font-size: 15px;
-        line-height: 26px;
-        min-width: auto;
-    }
-
-    .contact-main .contact-box .contact-right .follow-list a i {
-        font-size: 20px;
-    }
 }
 
 .author-main {
@@ -4357,4 +4222,17 @@ figcaption {
 
 .soon .social-soon a{
     margin-left: 16px;
+}
+
+/* End Soon */
+
+.home-top.cate-page .flex {
+    gap: 30px;
+}
+.home-top.cate-page .news-right {
+    width: 40%
+}
+
+.home-top.cate-page .news-right .top-list .top-it {
+    padding: 8px 0;
 }

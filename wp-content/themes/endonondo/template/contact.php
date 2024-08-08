@@ -1,46 +1,47 @@
 <?php
 /* Template Name: Contact */
 $pageid = get_the_ID();
-get_header(); 
+get_header();
 the_post();
 ?>
 <main id="content">
 	<div class="page-top-white mb-top-black">
 		<div class="container">
 			<?php
-			if ( function_exists('yoast_breadcrumb') ) {
-				yoast_breadcrumb( '<div id="breadcrumbs" class="breacrump">','</div>' );
+			if (function_exists('yoast_breadcrumb')) {
+				yoast_breadcrumb('<div id="breadcrumbs" class="breacrump">', '</div>');
 			}
 			?>
 		</div>
 	</div>
-	<div class="contact-main">
-		<div class="container">
-			<h1 class="ed-title text-uppercase"><?php echo get_field('title',$pageid); ?></h1>
-		</div>
-		<div class="contact-box list-flex">
-			<div class="contact-left">
-				<h2><?php the_title(); ?></h2>
-				<?php the_content(); ?>
-				<h5><?php echo get_field('form_title',$pageid); ?></h5>
-				<div class="contact-form">
-					<?php echo do_shortcode(get_field('form_contact',$pageid));?>
+	<div class="container">
+		<div class="contact-main">
+			<h1 class="text-uppercase"><?php the_title(); ?></h1>
+			<div class="contact-box flex flex-two">
+				<div class="contact-left item-flex">
+					<?php the_content(); ?>
+					<h5><?php echo get_field('form_title', $pageid); ?></h5>
+					<div class="contact-form">
+						<?php echo do_shortcode(get_field('form_contact', $pageid)); ?>
+					</div>
 				</div>
-			</div>
-			<div class="contact-right bg-black color-white">
-				<div class="contact-right-box">
-					<h2><?php echo get_field('office_title',$pageid); ?></h2>
-					<address class="ct-info">
-						<?php echo get_field('office__description',$pageid); ?>
-					</address>
-					<h2><?php echo get_field('follow_title',$pageid); ?></h2>
-					<div class="follow-list list-flex">
-						<?php $follow_social = get_field('follow_social',$pageid); 
-						if($follow_social){
-							foreach ($follow_social as $follow){
-						?>
-						<a href="<?php echo $follow['link']; ?>" target="_blank"><i class="<?php echo $follow['icon']; ?>"></i><?php echo $follow['title']; ?></a>
-						<?php }} ?>
+				<div class="contact-right item-flex">
+					<div class="contact-right-box">
+						<h3><?php echo get_field('office_title', $pageid); ?></h3>
+						<address class="ct-info mr-bottom-20">
+							<?php echo get_field('office__description', $pageid); ?>
+						</address>
+						<h4 class="mr-bottom-20"><?php echo get_field('follow_title', $pageid); ?></h4>
+						<div class="follow-list list-flex">
+							<?php $follow_social = get_field('follow_social', $pageid);
+							if ($follow_social) {
+								foreach ($follow_social as $follow) {
+									?>
+									<a href="<?php echo $follow['link']; ?>" target="_blank"><img src="<?php echo $follow['icon']; ?>" /><?php echo $follow['title']; ?> </a>
+									</a>
+								<?php }
+							} ?>
+						</div>
 					</div>
 				</div>
 			</div>
