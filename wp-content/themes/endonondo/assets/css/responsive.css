@@ -73,6 +73,18 @@
         line-height: 26px;
         margin-bottom: 0;
     }
+
+    /* End Cate */
+
+    .author .pd-main {
+        padding: 20px 0;
+    }
+
+    .author .sg-other .news-list .news-it {
+        width: 100%;
+    }
+
+
 }
 
 @media (max-width: 768px) {
@@ -128,6 +140,19 @@
 
     .contact-main .contact-box {
         gap: 20px;
+    }
+
+    /* End Contact */
+
+    .author .news-list {
+
+    }
+    .author .sg-other .news-list .news-it {
+        width: calc(50% - 10px);
+    }
+
+    .author .sg-other .news-list .news-it:nth-child(odd) {
+        margin-right: 20px;
     }
 }
 

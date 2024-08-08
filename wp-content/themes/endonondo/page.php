@@ -15,7 +15,7 @@ the_post();
 	</div>
 	<div class="container">
 		<article class="page-main">
-			<h1 class="ed-title text-center text-uppercase"><?php the_title(); ?></h1>
+			<h1 class="text-center text-uppercase"><?php the_title(); ?></h1>
 			<div class="page-custom">
 				<?php the_content(); ?>
 			</div>

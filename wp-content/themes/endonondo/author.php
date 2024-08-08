@@ -23,7 +23,7 @@ $check = false;
 	</div>
 	<div class="author-main">
 		<div class="bg-author"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-author-3.png" alt=""></div>
-		<div class="author-top position-relative">
+		<div class="author-top position-relative pd-main">
 			<div class="container">
 				<div class="author-box">
 					<div class="featured image-fit">
@@ -46,7 +46,7 @@ $check = false;
 								<a target="_blank" href="<?php echo $social['link']; ?>"><img src="<?php echo $social['icon']; ?>" /></a>
 								<?php }} ?>
 							</div>
-							<h1 class="ed-title"><?php echo $author_display_name; ?></h1>
+							<h1><?php echo $author_display_name; ?></h1>
 						</div>
 						<h3><?php echo get_field('position', 'user_'.$userid) ?></h3>
 						<div class="tag">
@@ -58,13 +58,13 @@ $check = false;
 							<span><a><?php echo  $skills['skill_item']; ?></a></span>
 							<?php }} ?>
 						</div>
-						<p class="des"><?php echo get_field('story', 'user_'.$userid) ?></p>
+						<p class="pri-color-2"><?php echo get_field('story', 'user_'.$userid) ?></p>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="container">
-			<div class="author-custom">
+			<div class="author-custom pd-main">
 				<div class="author-it">
 					<h2 class="text-uppercase">Experience</h2>
 					<?php echo get_field('experience', 'user_'.$userid) ?>
@@ -74,8 +74,8 @@ $check = false;
 					<?php echo get_field('educator', 'user_'.$userid) ?>
 				</div>
 			</div>
-			<div class="author-other sg-other">
-				<h2 class="ed-title text-center text-uppercase"><?php echo get_field('other_author_page','option'); ?></h2>
+			<div class="author-other sg-other pd-main">
+				<h2 class="text-center text-uppercase"><?php echo get_field('other_author_page','option'); ?></h2>
 				<?php
 				$array_merge = array();
 				$args = array(
@@ -145,15 +145,14 @@ $check = false;
 											<span><a href="<?php echo get_term_link($cat[0]->term_id); ?>"><?php echo $cat[0]->name; ?></a></span>
 										<?php endif; ?>
 									</div>
-									<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-									<h5 class="author"><a href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></h5>
+									<p class="has-large-font-size"><a class="pri-color-2" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+									<p class="has-small-font-size"><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></p>
 									<?php
 									$yoast_meta = get_post_meta($post->ID, '_yoast_wpseo_metadesc', true);
 									if ($yoast_meta) { 
 										$current_year = date('Y');
 										$yoast_meta = str_replace('%%currentyear%%', $current_year, $yoast_meta);
 									?>
-									<div class="des-news"><?php echo $yoast_meta; ?></div>
 								<?php } ?>
 								</div>
 							</div>

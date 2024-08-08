@@ -366,8 +366,8 @@ main {
     color: #fff;
     background: transparent;
     cursor: pointer;
-    font-weight: 500;
-    font-size: var(--font-36);
+    font-weight: 700;
+    font-size: var(--font-24);
     width: 235px;
     height: 52px;
 }
@@ -820,9 +820,6 @@ main {
     text-transform: capitalize;
 }
 
-.author a {
-    color: #9F9F9F;
-}
 
 .author a:hover {
     color: #83ad41;
@@ -3766,13 +3763,11 @@ figcaption {
     width: 100%;
 }
 
-.author-main .author-top {
-    margin-bottom: 40px;
-}
 
 .author-main .author-top .author-box {
-    max-width: 848px;
+    max-width: 800px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .author-main .author-top .featured {
@@ -3827,7 +3822,7 @@ figcaption {
 }
 
 .author-main .author-custom {
-    margin: 0 auto 80px;
+    margin: 0 auto;
     max-width: 800px;
 }
 
@@ -3840,7 +3835,6 @@ figcaption {
     line-height: 32px;
     padding-bottom: 8px;
     font-weight: 600;
-    border-bottom: 1px solid #404040;
 }
 
 .author-main .author-custom .author-it ul {
@@ -3870,31 +3864,23 @@ figcaption {
 }
 
 .author-main .author-custom .author-it ul li h3 {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 26px;
-    margin-bottom: 4px;
+    font-size: var(--font-22) !important;
+    margin-bottom: 10px;
 }
 
 .author-main .author-custom .author-it ul li p {
-    margin-bottom: 4px;
+    margin-bottom: 10px;
+    color: var(--primary-color-2);
 }
 
 .author-main .author-custom .author-it ul li p:last-child {
-    color: #404040;
-    font-size: 15px;
-    line-height: 26px;
-    margin-bottom: 0;
-    opacity: 0.5;
+    color: var(--secondary-color-3);
+    font-size: var(--font-14);
 }
 
 @media (max-width: 767px) {
     .author-main .bg-author {
         display: none;
-    }
-
-    .author-main .author-top .container {
-        padding: 0;
     }
 
     .author-main .author-top .author-box {
@@ -3912,12 +3898,6 @@ figcaption {
     .author-main .author-top .author-box .featured img {
         max-width: 250px;
         margin: 0 auto;
-    }
-
-    .author-main .author-top .author-box .info {
-        width: 100%;
-        padding: 0 20px 40px;
-        text-align: center;
     }
 
     .author-main .author-top .author-box .info .ed-title {

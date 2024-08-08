@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="p:domain_verify" content="28c2a5883d9783b56cfa793df37dcd1a" />
 	<title><?php
 	global $page, $paged;
