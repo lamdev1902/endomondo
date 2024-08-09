@@ -4251,7 +4251,7 @@ figcaption {
     position: absolute;
     height: 40px;
     width: 1px;
-    z-index: 1;
+    z-index: 0;
     background: white;
     top: 50%;
     right: -1px;
@@ -4276,6 +4276,16 @@ figcaption {
     border-bottom-color: transparent;
 }
 
+.hightlight.relative-section::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 40px;
+    background: var(--secondary-color-3);
+    left: -1px;
+    z-index: 1;
+}
+
 .coupon-top .info::before {
     content: "";
     position: absolute;
@@ -4294,6 +4304,18 @@ figcaption {
     border: 1px solid black;
     border-right-color: transparent;
     border-bottom-color: transparent;
+}
+
+.coupon-top .info::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 40px;
+    background: var(--secondary-color-3);
+    z-index: 1;
+    top: 50%;
+    right: -1px;
+    transform: translate(0, -50%);
 }
 
 .coupon-item-detail.coupon {

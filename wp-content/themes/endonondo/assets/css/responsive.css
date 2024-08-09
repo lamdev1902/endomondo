@@ -149,7 +149,9 @@
     }
 
     .coupon-item-detail.all.coupon::before,
-    .coupon-item-detail.all.coupon::after {
+    .coupon-item-detail.all.coupon::after,
+    .hightlight.relative-section::after,
+    .coupon-top .info::after {
         width:0;
     }
 
