@@ -1918,6 +1918,7 @@ main {
 .single-main .sg-resources .intro {
     padding-bottom: 16px;
     border-bottom: 1px solid #404040;
+    margin-bottom: 16px;
 }
 
 .single-main .sg-resources .intro p {
@@ -2345,7 +2346,6 @@ figcaption {
 .single-main .sg-right .sg-custom h4 {
     line-height: 1.3;
     margin-bottom: 8px;
-    margin-top: 32px;
 }
 
 .single-main .sg-right .sg-custom h4.title-number {
@@ -2411,10 +2411,6 @@ figcaption {
 
 .single-main .sg-right .sg-custom ol li::marker {
     font-size: 15px;
-}
-
-.single-main .sg-right .sg-custom .wp-block-table {
-    margin: 32px 0 64px;
 }
 
 .single-main .sg-right .sg-custom .wp-block-table .wp-element-caption {
@@ -3046,10 +3042,6 @@ figcaption {
         line-height: 20px;
     }
 
-    .single-main .sg-right .sg-custom .wp-block-table {
-        margin: 24px 0 40px;
-    }
-
     .single-main .sg-right .sg-custom .wp-block-table.table-3 tr td:nth-child(2),
     .single-main .sg-right .sg-custom .wp-block-table.table-3 tr td:nth-child(3) {
         min-width: 100px;
@@ -3147,10 +3139,6 @@ figcaption {
     .sg-other .news-list .news-it {
         width: 50%;
         margin-bottom: 24px;
-    }
-
-    .sg-other .news-list .news-it .featured {
-        height: 88px;
     }
 
     .sg-other .news-list .news-it .info h3 {

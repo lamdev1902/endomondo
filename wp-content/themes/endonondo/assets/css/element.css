@@ -4,6 +4,7 @@
     padding: 32px 20px;
     background-color: var(--chart-20);
     position: relative;
+    margin: 40px;
 }
 
 .ft-snippet ul {
@@ -84,4 +85,49 @@ blockquote {
 
 .medicine-table.no-title .wp-block-table table tbody tr td:first-of-type {
     width: auto;
+}
+
+
+/* Box Color */
+
+.box-e {
+    padding: 16px;
+    background-color: #EEEEEE;
+}
+
+/* Summary */
+.summary {
+    padding: 40px 32px;
+    background: var(--chart-20);
+    margin: 40px 0;
+}
+
+.summary .has-large-font-size {
+    margin-bottom: 20px;
+}
+
+/* Table Full bg */
+
+.full-bg-table table thead tr {
+    height: 68px;
+}
+.full-bg-table table thead tr th {
+    font-size: var(--font-22) !important;
+}
+
+.full-bg-table table tbody{
+    border: none !important;
+}
+
+.full-bg-table table tr {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid white !important;
+    background-color:var(--chart-20) !important;
+}
+
+.full-bg-table table tr td {
+     text-align: left !important;
+     color: var(--primary-color-2) !important;
 }
