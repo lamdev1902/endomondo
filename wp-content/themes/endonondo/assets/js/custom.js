@@ -1,4 +1,24 @@
 jQuery(function($){
+
+	$('#at-box').click(function() {
+		$('.fact-label.at').fadeToggle();
+		$('.modalcn-bg').fadeIn();
+		return false;
+	 });
+
+	 $('#eb-box').click(function() {
+		$('.fact-label.eb').fadeToggle();
+		$('.modalcn-bg').fadeIn();
+		return false;
+	 });
+
+	 $(document).on('click', function (e) {
+		if ($(e.target).closest(".fact-check").length === 0) {
+			$('.fact-label').fadeOut();
+			$('.modalcn-bg').fadeOut();
+		}
+	});
+	 
 	$('.btn-popup').click(function(){
 		var href = $(this).attr('href');
 		$(href).fadeIn();

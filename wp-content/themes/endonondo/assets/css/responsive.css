@@ -163,6 +163,11 @@
     .coupon-item-detail .coupon-top .flex .hightlight .action {
         right: 0;
     }
+
+    /* End Coupon */
+    .fact-check .fact-label {
+        width: 343px;
+    }
 }
 
 @media (max-width: 768px) {
