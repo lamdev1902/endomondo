@@ -94,6 +94,73 @@
         bottom: 15px;
     }
 
+    /* End snippet */
+
+    .coupon-item-detail .coupon-top .flex {
+        flex-direction: column-reverse;
+    }
+
+    .coupon-item-detail .coupon-top .flex .hightlight {
+        width: 100%;
+        border-right: none;
+        padding: 0 24px;
+        row-gap: 10px;
+    }
+
+    .mail-ds {
+        display: block;
+        text-align: center;
+    }
+
+    .coupon-item-detail .coupon-top .flex .info {
+        padding: 15px 0;
+        margin: 0 15px;
+        border-bottom: 1px solid var(--secondary-color-2);
+    }
+
+    #couponModal .show-code-top {
+        padding: 24px;
+    }
+
+    #couponModal .coupon-top img {
+        height: 41px;
+        width: 185px;
+    }
+
+    #couponModal .show-code-top .coupon-top p {
+        padding-left: 0;
+    }
+
+    #couponModal .coupon-md-form {
+        display: block;
+    }
+
+    #couponModal .coupon-md-form p {
+        margin-bottom: 16px !important;
+    }
+
+    #couponModal .show-code-top .coupon-copy .coupon-code {
+        width: 100%;
+    }
+
+    #couponModal.modal a.close-modal {
+        top: 12px;
+        right: 20px;
+    }
+
+    .coupon-item-detail.all.coupon::before,
+    .coupon-item-detail.all.coupon::after {
+        width:0;
+    }
+
+    .hightlight.relative-section::before,
+    .coupon-top .info::before {
+        border: none;
+    }
+
+    .coupon-item-detail .coupon-top .flex .hightlight .action {
+        right: 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -163,6 +230,17 @@
 
     .sg-other .news-list .news-it:nth-child(odd) {
         margin-right: 20px;
+    }
+
+    /*  */
+
+    .single-sidebar {
+        display: none;
+    }
+
+    .single-main .sg-right {
+        width: 100%;
+        padding: 0;
     }
 }
 

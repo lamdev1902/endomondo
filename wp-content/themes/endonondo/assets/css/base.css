@@ -68,31 +68,31 @@ h4 {
 
 /* color */
 .pri-color-1 {
-    color: var(--primary-color-1);
+    color: var(--primary-color-1) !important;
 }
 
 .pri-color-2 {
-    color: var(--primary-color-2);
+    color: var(--primary-color-2) !important;
 }
 
 .pri-color-3 {
-    color: var(--primary-color-3);
+    color: var(--primary-color-3) !important;
 }
 
 .sec-color-1 {
-    color: var(--secondary-color-1);
+    color: var(--secondary-color-1) !important;
 }
 
 .sec-color-2 {
-    color: var(--secondary-color-2);
+    color: var(--secondary-color-2) !important;
 }
 
 .sec-color-3 {
-    color: var(--secondary-color-3);
+    color: var(--secondary-color-3) !important;
 }
 
 .sec-color-4 {
-    color: var(--secondary-color-4);
+    color: var(--secondary-color-4) !important;
 }
 
 /*  p element */
