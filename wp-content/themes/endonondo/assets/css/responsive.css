@@ -11,6 +11,7 @@
 
     #header .logo {
         height: 20px;
+        width: 114px;
     }
 
     #header .menu-main .menu-box ul li {
@@ -28,6 +29,16 @@
 
     #header .menu-main .social {
         display: block;
+    }
+
+    #header .ed-btn {
+        color: #fff;
+        background: transparent;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: var(--font-14);
+        width: 100px;
+        height: 34px;
     }
 
     /* End Header */

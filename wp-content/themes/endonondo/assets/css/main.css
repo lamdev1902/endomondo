@@ -1059,11 +1059,8 @@ main {
     margin: 10px 0;
 }
 
-.popup .popup-bg .popup-box .info .box h2 {
-    font-size: 24px;
-    line-height: 32px;
+.popup .popup-bg .popup-box .info .box h4 {
     margin-bottom: 16px;
-    font-weight: 600;
 }
 
 .popup .popup-bg .popup-box .info .box p {
@@ -1142,6 +1139,10 @@ main {
     opacity: 0.8;
 }
 
+.popup .social {
+    display: flex;
+    align-items: center;
+}
 .error-main {
     padding: 20px 0 80px;
     border-top: 1px solid #404040;
@@ -4580,6 +4581,7 @@ figcaption {
     position: relative;
     top: 2px;
     padding-left: 2px;
+    cursor: pointer;
 }
 
 #at-box img,

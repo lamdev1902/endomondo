@@ -176,10 +176,11 @@
 							<div class="box">
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-popup.png"
 									alt="">
-								<h2>For Your Health & Wellness</h2>
+								<h4>For Your Health & Wellness</h4>
 								<p>Stay update with the latest health information and news</p>
 								<div class="klaviyo-form-UPY2r8"></div>
 								<div class="social">
+									<p class="has-small-font-size">Follow us: </p>
 									<?php
 									$social = get_field('social', 'option');
 									if ($social) {
@@ -191,7 +192,7 @@
 									} ?>
 								</div>
 
-								<p class="note"><i>* <a href="#">Your privacy</a> is important to us</i></p>
+								<p class="note has-small-font-size"><i>* <a href="#">Your privacy</a> is important to us</i></p>
 							</div>
 						</div>
 					</div>

@@ -4,7 +4,7 @@
     padding: 32px 20px;
     background-color: var(--chart-20);
     position: relative;
-    margin: 40px;
+    margin: 40px 0;
 }
 
 .ft-snippet ul {
@@ -103,7 +103,7 @@ blockquote {
 }
 
 .summary .has-large-font-size {
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
 }
 
 /* Table Full bg */
