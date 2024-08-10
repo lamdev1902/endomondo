@@ -68,17 +68,6 @@ $post_type = $post->post_type;
                         yoast_breadcrumb('<div id="breadcrumbs" class="breacrump">', '</div>');
                     }
                     ?>
-                    <div class="social on-pc">
-                        <?php
-                        $social = get_field('social', 'option');
-                        if ($social) {
-                            foreach ($social as $social) {
-                                ?>
-                                <a target="_blank" href="<?php echo $social['link']; ?>"><img
-                                        src="<?php echo $social['icon']; ?>" /></a>
-                            <?php }
-                        } ?>
-                    </div>
                 </div>
             </div>
         </section>
@@ -92,52 +81,53 @@ $post_type = $post->post_type;
                     <?php else: ?>
                         <div id="exc-container" style="padding:56.25% 0 0 0;position:relative;">
                             <script>
-                                document.addEventListener('DOMContentLoaded', function() {
-            var player;
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    var player;
 
-            function onYouTubeIframeAPIReady() {
-                document.getElementById('exc-container').innerHTML = '<iframe id="player" marginwidth="0" marginheight="0" align="top" scrolling="No" frameborder="0" hspace="0" vspace="0" src="https://www.youtube.com/embed/<?= $videoId ?>?rel=0&amp;fs=0&amp;autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&enablejsapi=1&playlist=<?= $videoId ?>" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"></iframe>';
-                player = new YT.Player('player', {
-                    events: {
-                        'onReady': onPlayerReady,
-                        'onStateChange': onPlayerStateChange
-                    }
-                });
-            }
+                                    function onYouTubeIframeAPIReady() {
+                                        document.getElementById('exc-container').innerHTML = '<iframe id="player" marginwidth="0" marginheight="0" align="top" scrolling="No" frameborder="0" hspace="0" vspace="0" src="https://www.youtube.com/embed/<?= $videoId ?>?rel=0&amp;fs=0&amp;autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&enablejsapi=1&playlist=<?= $videoId ?>" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"></iframe>';
+                                        player = new YT.Player('player', {
+                                            events: {
+                                                'onReady': onPlayerReady,
+                                                'onStateChange': onPlayerStateChange
+                                            }
+                                        });
+                                    }
 
-            function onPlayerReady(event) {
-				var YTP = event.target;
-                YTP.playVideo();
-                // Đảm bảo controls và info bị ẩn
-                setTimeout(function() {
-                    YTP.setOption("controls", 0);
-                    YTP.setOption("modestbranding", 1);
-                    YTP.setOption("rel", 0);
-                    YTP.setOption("showinfo", 0);
-                }, 1000);
-            }
+                                    function onPlayerReady(event) {
+                                        var YTP = event.target;
+                                        YTP.playVideo();
+                                        // Đảm bảo controls và info bị ẩn
+                                        setTimeout(function () {
+                                            YTP.setOption("controls", 0);
+                                            YTP.setOption("modestbranding", 1);
+                                            YTP.setOption("rel", 0);
+                                            YTP.setOption("showinfo", 0);
+                                        }, 1000);
+                                    }
 
-            function onPlayerStateChange(event) {
-                var YTP = event.target;
-                if (event.data === 1) {
-                    var remains = YTP.getDuration() - YTP.getCurrentTime();
-                    if (this.rewindTO)
-                        clearTimeout(this.rewindTO);
-                    this.rewindTO = setTimeout(function () {
-                        YTP.seekTo(0);
-                    }, (remains - 0.1) * 1000);
-                }
-            }
+                                    function onPlayerStateChange(event) {
+                                        var YTP = event.target;
+                                        if (event.data === 1) {
+                                            var remains = YTP.getDuration() - YTP.getCurrentTime();
+                                            if (this.rewindTO)
+                                                clearTimeout(this.rewindTO);
+                                            this.rewindTO = setTimeout(function () {
+                                                YTP.seekTo(0);
+                                            }, (remains - 0.1) * 1000);
+                                        }
+                                    }
 
-            onYouTubeIframeAPIReady();
-        });
+                                    onYouTubeIframeAPIReady();
+                                });
                             </script>
                         </div>
                     <?php endif; ?>
                     <div class="exc-title">
                         <h1><?= $exData[0]['name'] ?></h1>
                     </div>
-                    <div class="social on-sp">
+                    <div class="social on-pc">
+                        <p class="has-small-font-size pri-color-2" style="margin-bottom: 0">Follow us: </p>
                         <?php
                         $social = get_field('social', 'option');
                         if ($social) {
@@ -183,16 +173,22 @@ $post_type = $post->post_type;
                                                 <table class="exc-optimal-table">
                                                     <thead>
                                                         <tr>
-                                                            <th>Training Type</th>
-                                                            <th>Sets</th>
-                                                            <th>Reps</th>
+                                                            <th><p class="has-large-font-size pri-color-1">Training Type</p></th>
+                                                            <th><p class="has-large-font-size pri-color-1">Sets</p></th>
+                                                            <?php if (!empty($optimals[0]['exc_training_reps'])): ?>
+                                                                <th><p class="has-large-font-size pri-color-1">Reps</p></th>
+                                                            <?php else: ?>
+                                                                <th><p class="has-large-font-size pri-color-1">Duration</p></th>
+                                                            <?php endif; ?>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <?php foreach ($optimals as $optimal): ?>
                                                             <tr>
                                                                 <?php foreach ($optimal as $key => $item): ?>
-                                                                    <td><?= $item ?></td>
+                                                                    <?php if (!empty($item)): ?>
+                                                                        <td><p class=" <?=$key == "exc_trainning_title" ? "has-large-font-size" : ""?> "><?= $item ?></p></td>
+                                                                    <?php endif; ?>
                                                                 <?php endforeach; ?>
                                                             </tr>
                                                         <?php endforeach; ?>
@@ -298,8 +294,8 @@ $post_type = $post->post_type;
                                         <div class="muscle-img">
                                             <img src="<?= $primaryData['image'] ?>" alt="">
                                         </div>
-                                        <p class="muscle-name"><?= $primaryData['name'] ?></p>
-                                        <span class="muscle-description"><?= $primaryData['description'] ?></span>
+                                        <p class="has-large-font-size"><?= $primaryData['name'] ?></p>
+                                        <p><?= $primaryData['description'] ?></p>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
@@ -352,8 +348,8 @@ $post_type = $post->post_type;
                                     <div class="muscle-img">
                                         <img src="<?= $secondaryData['image'] ?>" alt="">
                                     </div>
-                                    <p class="muscle-name"><?= $secondaryData['name'] ?></p>
-                                    <span class="muscle-description"><?= $secondaryData['description'] ?></span>
+                                    <p class="has-large-font-size"><?= $secondaryData['name'] ?></p>
+                                    <p><?= $secondaryData['description'] ?></p>
                                 </div>
                             <?php endforeach; ?>
                         </div>
@@ -423,7 +419,7 @@ $post_type = $post->post_type;
                                     <div class="muscle-img">
                                         <img src="<?= $equipmentData['image'] ?>" alt="">
                                     </div>
-                                    <p class="muscle-name"><?= $equipmentData['name'] ?></p>
+                                    <p class="has-large-font-size"><?= $equipmentData['name'] ?></p>
                                 </div>
                             <?php endforeach; ?>
                         </div>
@@ -481,10 +477,10 @@ $post_type = $post->post_type;
                                         </div>
                                         <?php if ($variationsData['slug']): ?>
                                             <a href="<?= home_url('/exercise/' . $variationsData['slug']); ?>">
-                                                <p class="muscle-name"><?= $variationsData['name'] ?></p>
+                                                <p class="has-large-font-size"><?= $variationsData['name'] ?></p>
                                             </a>
                                         <?php else: ?>
-                                            <p class="muscle-name"><?= $variationsData['name'] ?>
+                                            <p class="has-large-font-size"><?= $variationsData['name'] ?>
                                             <?php endif; ?>
                                     </div>
                                     <?php
@@ -534,10 +530,10 @@ $post_type = $post->post_type;
                                         </div>
                                         <?php if ($alternativeData['slug']): ?>
                                             <a href="<?= home_url('/exercise/' . $alternativeData['slug']); ?>">
-                                                <p class="muscle-name"><?= $alternativeData['name'] ?></p>
+                                                <p class="has-large-font-size"><?= $alternativeData['name'] ?></p>
                                             </a>
                                         <?php else: ?>
-                                            <p class="muscle-name"><?= $alternativeData['name'] ?>
+                                            <p class="has-large-font-size"><?= $alternativeData['name'] ?>
                                             <?php endif; ?>
                                     </div>
                                     <?php

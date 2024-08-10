@@ -44,26 +44,30 @@
 
 h1 {
     font-size: var(--font-48) !important;
-    letter-spacing: -0.5px;
-    line-height: normal;
+    letter-spacing: 0;
+    line-height: 54px;
+    font-weight: 600;
 }
 
 h2 {
     font-size: var(--font-36) !important;
-    letter-spacing: -0.5px;
-    line-height: normal;
+    letter-spacing: 0px;
+    line-height: 42px;
+    font-weight: 600;
 }
 
 h3 {
     font-size: var(--font-28) !important;
-    letter-spacing: -0.5px;
-    line-height: normal;
+    letter-spacing: 0px;
+    line-height: 34px;
+    font-weight: 600;
 }
 
 h4 {
     font-size: var(--font-24) !important;
-    letter-spacing: -0.5px;
-    line-height: normal;
+    letter-spacing: 0px;
+    line-height: 30px;
+    font-weight: 500;
 }
 
 /* color */
@@ -99,33 +103,38 @@ h4 {
 
 p {
     font-size: var(--font-16) !important;
-    line-height: normal;
+    line-height: 22px;
+    font-weight: 400;
     color: var(--primary-color-2);
+    letter-spacing: 0px;
 }
 
 .has-x-large-font-size {
     font-size: var(--font-48) !important;
-    font-weight: 700;
-    line-height: normal;
+    font-weight: 600;
+    line-height: 54px;
+    letter-spacing: 0px;
 }
 
 .has-large-font-size {
     font-size: var(--font-22) !important;
-    font-weight: 700;
-    line-height: normal;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0px;
 }
 
 .has-medium-font-size {
     font-size: var(--font-18) !important;
-    font-weight: 700;
-    line-height: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
 }
 
 .has-small-font-size {
     font-size: var(--font-14) !important;
     letter-spacing: 0px;
     font-weight: 400;
-    line-height: normal;
+    line-height: 20px;
 }
 
 /* special text */
@@ -172,56 +181,47 @@ p {
 @media(max-width: 1024px) {
     h1 {
         font-size: var(--font-32) !important;
-        font-weight: 700;
-        line-height: normal;
+        line-height: 38px;
     }
     
     h2 {
         font-size: var(--font-26) !important;
-        font-weight: 700;
-        line-height: normal;
+        line-height: 32px;
     }
     
     h3 {
         font-size: var(--font-24) !important;
-        font-weight: 700;
-        line-height: normal;
+        font-weight: 30px;
     }
     
     h4 {
         font-size: var(--font-22) !important;
-        font-weight: 500;
-        line-height: normal;
+        line-height: 28px;
     }
     
     p {
         font-size: var(--font-15) !important;
-        font-weight: 400;
-        letter-spacing: 0;
-        line-height: normal;
+        line-height: 21px;
     }
 
     .has-x-large-font-size {
         font-size: var(--font-32) !important;
-        font-weight: 700;
-        line-height: normal;
+        line-height: 38px;
     }
 
     .has-large-font-size {
         font-size: var(--font-20) !important;
-        font-weight: 700;
-        line-height: normal;
+        line-height: 26px;
     }
 
     .has-medium-font-size {
         font-size: var(--font-17) !important;
-        font-weight: 700;
-        line-height: normal;
+        line-height: 23px;
     }
 
     .has-small-font-size {
         font-size: var(--font-12) !important;
         font-weight: italic;
-        line-height: normal;
+        line-height: 18px;
     }
 }

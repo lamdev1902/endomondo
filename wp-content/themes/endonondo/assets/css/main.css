@@ -604,6 +604,11 @@ main {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    color: var(--primary-color-3);
+}
+
+#footer .social a:first-child {
+    margin-left: 0;
 }
 
 #footer .ft-menu ul {
