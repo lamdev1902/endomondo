@@ -692,6 +692,9 @@ main {
 #footer .social a img {
     -webkit-filter: invert(99%) sepia(84%) saturate(5851%) hue-rotate(187deg) brightness(126%) contrast(100%);
     filter: invert(99%) sepia(84%) saturate(5851%) hue-rotate(187deg) brightness(126%) contrast(100%);
+}
+
+.social a img {
     width: 24px;
     height: 24px;
 }

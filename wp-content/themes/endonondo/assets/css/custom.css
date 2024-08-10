@@ -1512,7 +1512,7 @@ section.exc-hero-section:before {
     margin-bottom: 24px;
 }
 
-.exc-hero-section .exc-title {
+.exc-hero-section .exc-title h1 {
     margin-bottom: 16px;
 }
 
@@ -1733,6 +1733,8 @@ table.exc-optimal-table {
     align-items: center;
     justify-content: center;
     margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
 }
 
 .single-main.exc-author .single-sidebar .sg-author .author-it h5 a {
