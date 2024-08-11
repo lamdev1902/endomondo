@@ -17,7 +17,7 @@ the_post();
 	<div class="container">
 		<article class="about-main">
 			<div class="container-small">
-				<h1 class="text-center text-uppercase"><?php the_title(); ?></h1>
+				<h1 class="text-center"><?php the_title(); ?></h1>
 				<div class="about-custom">
 					<?php the_content(); ?>
 				</div>
@@ -27,7 +27,7 @@ the_post();
 						foreach ($team as $team) {
 				?>
 				<div class="about-author">
-					<h2 class="text-uppercase"><?php echo $team['title']; ?></h2>
+					<h2 class="text-center"><?php echo $team['title']; ?></h2>
 					<div class="people-list list-flex">
 						<?php $team_list = $team['select_team']; 
 							if($team_list){
@@ -49,7 +49,7 @@ the_post();
 								</a>
 							</div>
 							<div class="info">
-								<h3><a href="<?php echo $post_author_url; ?>"><?php echo $team_it['display_name']; ?></a></h3>
+								<p class="has-large-font-size"><a class="pri-color-2" href="<?php echo $post_author_url; ?>"><?php echo $team_it['display_name']; ?></a></p>
 								<p><?php echo get_field('position', 'user_'.$userid); ?></p>
 								<div class="social">
 									<?php $social = get_field('social', 'user_'.$userid); 

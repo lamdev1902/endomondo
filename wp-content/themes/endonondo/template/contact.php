@@ -16,11 +16,11 @@ the_post();
 	</div>
 	<div class="container">
 		<div class="contact-main">
-			<h1 class="text-uppercase"><?php the_title(); ?></h1>
+			<h1 class=""><?php the_title(); ?></h1>
 			<div class="contact-box flex flex-two">
 				<div class="contact-left item-flex">
 					<?php the_content(); ?>
-					<h5><?php echo get_field('form_title', $pageid); ?></h5>
+					<p class="has-small-font-size"><?php echo get_field('form_title', $pageid); ?></p>
 					<div class="contact-form">
 						<?php echo do_shortcode(get_field('form_contact', $pageid)); ?>
 					</div>
