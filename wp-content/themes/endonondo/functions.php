@@ -1,5 +1,5 @@
 <?php 
-
+include(TEMPLATEPATH . '/shortcode/chart/chart-shortcode.php');
 function custom_image_sizes_choose($sizes) {
     unset($sizes['thumbnail']);
     unset($sizes['medium']);
