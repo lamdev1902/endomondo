@@ -82,10 +82,10 @@
 	        ticks: {
 	          color: '#7A7A7A',
 	          font: {
-	            size: window.innerWidth < 767 ? 7 : 14,
+	            size: window.innerWidth < 767 ? 7 : 16,
 	            family: 'DM Sans',
 	            weight: 400,
-				   size: 16,
+				   size: window.innerWidth < 767 ? 7 : 16,
 	          },
 	        },
 	        grid: {
@@ -105,7 +105,7 @@
 	            size: window.innerWidth < 767 ? 7 : 16,
 	            family: 'DM Sans',
 	            weight: 400,
-				   size: 16,
+				   size: window.innerWidth < 767 ? 7 : 14,
 	          },
 	          beginAtZero: true,
 	          labelOffset: -10,
@@ -120,7 +120,7 @@
 	    responsive: true,
 	    maintainAspectRatio: false,
 	    barPercentage: 0.8,
-	    categoryPercentage: 0.86,
+	    categoryPercentage:  0.86,
 	    layout: {
 	      padding: {
 	        top: 70,
