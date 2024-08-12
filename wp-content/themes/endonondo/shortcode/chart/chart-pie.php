@@ -29,7 +29,7 @@
 		        color: '#151515',
 		        font: {
 		          size: window.innerWidth < 991 ? 7 : 16,
-		          family: 'Arimo',
+		          family: 'Inter',
 		          weight: 400,
 		        },
 		        display: true,

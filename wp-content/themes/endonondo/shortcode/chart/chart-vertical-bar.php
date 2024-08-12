@@ -45,14 +45,14 @@
 	        display: false,
 	        labels: {
 	          boxWidth: 12,
-	          fontColor: '#7A7A7A'
+	          fontColor: '#7a7a7a'
 	        },
 	      },
 	      title: {
 	        display: true,
 	        text: "Percentage of respondents",
 	        position: 'bottom',
-	        color: '#7A7A7A',
+	        color: '#7a7a7a',
 	        font:{
 	        	size: window.innerWidth < 767 ? 7 : 16,
 	        	family: 'DM Sans',
@@ -60,12 +60,13 @@
 	        }
 	      },
 	      datalabels: {
-	        color: '#192320',
+	        color: '#FFFFFF',
 	        font: {
-	          size: 16,
+	          size: window.innerWidth < 767 ? 7 : 18,
 	          family: 'DM Sans',
-	          weight: 400
+	          weight: 600,
 	        },
+			className: 'has-medium-font-size',
 	        anchor: 'center',
 	        formatter: function (value, context) {
 	          return value + '%';
@@ -118,7 +119,7 @@
 	    },
 	    responsive: true,
 	    maintainAspectRatio: false,
-	    barPercentage: 0.7,
+	    barPercentage: 0.8,
 	    categoryPercentage: 0.86,
 	    layout: {
 	      padding: {

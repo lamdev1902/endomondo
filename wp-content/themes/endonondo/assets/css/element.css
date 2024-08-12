@@ -131,3 +131,37 @@ blockquote {
      text-align: left !important;
      color: var(--primary-color-2) !important;
 }
+
+
+/* Special box */
+
+.box-two.special-box > .wp-block-column {
+    text-align: center;
+    padding: 48px 40px;
+    background-image: url(../images/bg-special-box.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.box-two.special-box > .wp-block-column figure {
+    margin: 1em 0;
+}
+
+.box-two.special-box > .wp-block-column img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.box-two.special-box > .wp-block-column p {
+    color: var(--primary-color-3);
+}
+
+.box-two.special-box > .wp-block-column p > strong {
+    font-size: var(--font-18);
+}
+
+.box-two.special-box > .wp-block-column p.has-small-font-size a{
+    color: #81838C;
+    font-weight: 400;
+}
