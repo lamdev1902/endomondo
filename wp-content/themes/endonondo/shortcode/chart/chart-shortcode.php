@@ -22,7 +22,7 @@ function create_shortcode_chart($args, $content) {
 		if($type == 'line') INCLUDE(TEMPLATEPATH .'/shortcode/chart/chart-line.php');
 	} 
 	$rt = ob_get_clean();
-	wp_enqueue_style( 'chart-css', get_template_directory_uri() . '/shortcode/chart/chart-custom.css','','1.4.6');
+	wp_enqueue_style( 'chart-css', get_template_directory_uri() . '/shortcode/chart/chart-custom.css','','1.4.7');
 	//wp_enqueue_script( 'chart-js', get_template_directory_uri() . '/shortcode/chart/chart-custom.js','','1.1.1');
 	wp_enqueue_script( 'chart-library-js', get_template_directory_uri() . '/shortcode/chart/chartjs/chart.js','','1.0.1');
 	wp_enqueue_script( 'chart-database-library-js', get_template_directory_uri() . '/shortcode/chart/chartjs/chartjs-plugin-datalabels@2.js','','1.0.1');
