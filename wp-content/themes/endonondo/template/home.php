@@ -51,7 +51,7 @@ the_post();
 							$post_author_url = get_author_posts_url($post_author_id);
 							?>
 							<div class="top-it position-relative">
-								<p class="has-large-font-size"><a class="pri-color-3"
+								<p class="has-large-font-size text-special ellipsis pri-color-3"><a class="pri-color-3"
 										href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 								<p class="author"><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By
 										<?php echo $post_display_name; ?></a></p>
@@ -203,7 +203,7 @@ the_post();
 												href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
 									<?php } ?>
 								</div>
-								<p class="has-large-font-size"><a class="pri-color-3"
+								<p class="has-large-font-size text-special ellipsis pri-color-3"><a class="pri-color-3"
 										href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 								<p class="has-small-font-size author"><a class="sec-color-3"
 										href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></p>
@@ -255,7 +255,7 @@ the_post();
 	</section>
 	<section class="home-choise bg-white color-black pd-main">
 		<div class="container">
-			<h2 class="ed-title text-uppercase"><?php echo get_field('choises_title', $pageid); ?></h2>
+			<h2 class="text-uppercase">Recommended Posts</h2>
 			<div class="news-list list-flex">
 				<?php
 				$args = array(
@@ -283,10 +283,10 @@ the_post();
 												href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
 									<?php } ?>
 								</div>
-								<p class="has-large-font-size"><a class="pri-color-2"
+								<p class="has-large-font-size text-special"><a class="pri-color-2"
 										href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></p>
-								<h5 class="has-small-font-size author"><a class="sec-color-3"
-										href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></h5>
+								<p class="has-small-font-size author"><a class="sec-color-3"
+										href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></p>
 							</div>
 						</div>
 					</div>

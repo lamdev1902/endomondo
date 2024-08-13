@@ -213,7 +213,7 @@ $checktime == false ? $advertiser_disclosure = get_field('enable_tooltip1', $pos
 			</div>
 		</div>
 		<aside class="sg-other">
-			<h2 class="text-center"><?php echo get_field('other_single_page', 'option'); ?></h2>
+			<h2 class="text-center">Read More</h2>
 			<div class="news-list list-flex">
 				<?php
 				$args = array(
@@ -255,7 +255,7 @@ $checktime == false ? $advertiser_disclosure = get_field('enable_tooltip1', $pos
 												href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
 									<?php } ?>
 								</div>
-								<p class="has-large-font-size"><a class="pri-color-2"
+								<p class="has-large-font-size text-special"><a class="pri-color-2"
 										href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 								<p class="has-small-font-size"><a class="sec-color-3"
 										href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></p>
