@@ -265,6 +265,12 @@
         -ms-flex: 1 0 50%;
         flex: 1 0 50%;
     }
+
+    /* Product */
+
+    .single-main .sg-right .sg-custom .sg-product-it .wp-block-column figure {
+        margin-bottom: 20px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {

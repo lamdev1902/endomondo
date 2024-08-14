@@ -22,7 +22,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 
 ?>
 <main id="content">
-	<div class="container">
+	< class="container">
 		<div class="single-top">
 			<div class="list-flex flex-center flex-middle">
 				<?php
@@ -46,11 +46,11 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 							<div class="author-by" itemscope>
 								<time class="updated has-small-font-size" datetime="<?php the_modified_date('c'); ?>"
 									itemprop="dateModified"><?php
-										if (get_the_modified_date('U') !== get_the_date('U')) {
-											echo __('Updated', 'hc_theme');
-										} else {
-											echo __('Published', 'hc_theme');
-										}
+									if (get_the_modified_date('U') !== get_the_date('U')) {
+										echo __('Updated', 'hc_theme');
+									} else {
+										echo __('Published', 'hc_theme');
+									}
 									?>
 									<?php the_modified_date('F d, Y'); ?></time>
 								<span class="has-small-font-size">- Writen by: </span>
@@ -147,11 +147,11 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 							</figure>
 						</div>
 					<?php endif; ?>
-					<?php if($advertiser_disclosure):?>
+					<?php if ($advertiser_disclosure): ?>
 						<div class="box-e mr-bottom-20">
 							<?php the_field('adcontent', 'option'); ?>
 						</div>
-					<?php endif;?>
+					<?php endif; ?>
 					<div class="sg-editor">
 						<?php the_content(); ?>
 					</div>
@@ -220,7 +220,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 							</div>
 							<?php if ($user_description) { ?>
 								<div class="author-info">
-									<p><?php echo $user_description ?> <a href="<?php echo $author_url; ?>">See more</a></p>
+									<p><?php  echo wp_trim_words($user_description, 28, ''); ?><a href="<?php echo $author_url; ?>">See more</a></p>
 								</div>
 							<?php } ?>
 						</div>
@@ -246,8 +246,8 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 
 					?>
 					<div class="news-it">
-						<div class="news-box">
-							<div class="featured image-fit hover-scale">
+						<d class="news-box">
+							<div class="featured image-fit hover-scale mr-bottom-16">
 								<a href="<?php the_permalink(); ?>">
 									<?php $image_featured = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 									;
@@ -263,27 +263,29 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 									<?php } ?>
 								</a>
 							</div>
-							<div class="info">
-								<div class="tag">
-									<?php $category = get_the_category($post->ID);
-									foreach ($category as $cat) { ?>
-										<span><a
-												href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
-									<?php } ?>
+							<di class="info">
+								<?php $category = get_the_category($post->ID); ?>
+								<?php if ($category): ?>
+									<div class="tag mr-bottom-16">
+										<?php foreach ($category as $cat) { ?>
+											<span class><a
+													href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
+										<?php } ?>
+									<?php endif; ?>
 								</div>
-								<p class="has-medium-font-size text-special clamp-2"><a class="pri-color-2"
+								<p class="has-medium-font-size text-special mr-bottom-16 clamp-2"><a class="pri-color-2"
 										href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-								<p class="has-small-font-size"><a class="sec-color-3"
+								<p class="has-small-font-size "><a class="sec-color-3"
 										href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></p>
-							</div>
-						</div>
-					</div>
-					<?php
+								</div>
+								</div>
+								</div>
+								<?php
 				endwhile;
 				wp_reset_query();
 				?>
-			</div>
+							</div>
 		</aside>
-	</div>
+		</div>
 </main>
 <?php get_footer(); ?>

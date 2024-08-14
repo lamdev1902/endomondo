@@ -109,8 +109,8 @@ blockquote {
     margin-bottom: var(--mr-main)
 }
 
-.summary .has-large-font-size {
-    margin-bottom: 20px !important;
+.summary p:last-child {
+    margin-bottom: 0;
 }
 
 /* Table Full bg */
