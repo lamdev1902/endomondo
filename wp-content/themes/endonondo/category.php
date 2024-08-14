@@ -101,7 +101,7 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 															src="https://www.endomondo.com/wp-content/uploads/2024/02/Shoulder-Machine-Workout.jpg"></a>
 												</div>
 												<div class="info">
-													<p class="has-large-font-size text-special"><a class="pri-color-2"
+													<p class="has-large-font-size text-special claim-2"><a class="pri-color-2"
 															href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 													<p class="author"><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By
 															<?php echo $post_display_name; ?></a></p>

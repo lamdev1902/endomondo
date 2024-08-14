@@ -99,8 +99,8 @@ blockquote {
 
 /* Summary */
 .summary {
-    padding: 40px 32px;
-    background: var(--chart-20);
+    padding: 20px 32px;
+    background: var(--secondary-color-1);
     margin-bottom: var(--mr-main)
 }
 

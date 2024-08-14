@@ -14,10 +14,11 @@ $display_name = get_the_author_meta('nickname', $upid);
 $author_url = get_author_posts_url($upid);
 $post_type = $post->post_type;
 $user_description = get_field('story', 'user_' . $upid);
-$checktime = '';
 
-$checktime == false ? $advertiser_disclosure = get_field('enable_tooltip1', $postid) : $advertiser_disclosure = '';
+$advertiser_disclosure = get_field('enable_tooltip1', $postid);
 
+$enable_fat_checked = get_field('enable_fat_checked', $postid);
+$enable_fcgroup = get_field('enable_fcgroup', $postid);
 ?>
 <main id="content">
     <div class="container">
@@ -33,12 +34,12 @@ $checktime == false ? $advertiser_disclosure = get_field('enable_tooltip1', $pos
         <div class="single-main list-flex">
             <?php get_sidebar(); ?>
             <div class="sg-right">
-                <h1><?php the_title(); ?></h1>
+                <h1 class="mr-bottom-20"><?php the_title(); ?></h1>
                 <?php $aname = get_field('user_nshort', 'user_' . $upid);
                 if (!$aname || $aname == '')
                 $aname = get_the_author();
                 ?>
-                <div class="single-author" style="margin-bottom: 20px;">
+                <div class="single-author mr-bottom-20">
                     <div class="name-author">
                         <div class="info">
                             <div class="author-by" itemscope>
@@ -63,26 +64,42 @@ $checktime == false ? $advertiser_disclosure = get_field('enable_tooltip1', $pos
                                 <?php } ?>
                                 </span>
                             <?php } ?>
-                                <?php if($checktime == false): ?>
-                                    <?php 
-                                        $enable_fat_checked = get_field('enable_fat_checked', $postid);
-                                        $advertiser_disclosure = get_field('enable_tooltip1', $postid);
-                                        $enable_fcgroup = get_field('enable_fcgroup', $postid);
-                                        if ($enable_fcgroup):?>
-                                         <?php if ($enable_fcgroup == '1') { ?>
-                                            <span id="at-box"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/author.svg"
-                                            alt="Fact checked"></span>
-                                        <?php } elseif ($enable_fcgroup == '2') { ?>
-                                            <span id="eb-box"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/eb.svg"
-                                            alt="Fact checked"></span>
-                                            <?php }?>
-                                        <?php endif;?>
-                                <?php endif;?>
+                                <?php 
+                                    if ($enable_fcgroup):?>
+                                        <?php if ($enable_fcgroup == '1') { ?>
+                                        <span id="at-box"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/author.svg"
+                                        alt="Fact checked"></span>
+                                    <?php } elseif ($enable_fcgroup == '2') { ?>
+                                        <span id="eb-box"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/eb.svg"
+                                        alt="Fact checked"></span>
+                                        <?php }?>
+                                    <?php endif;?>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="social on-pc">
+                <?php
+				if ($enable_fcgroup) {
+					if ($enable_fcgroup == '1') { ?>
+						<div class="fact-check ">
+							<div class="fact-label at">
+								<p class="has-large-font-size"><?php echo __("Author's opinion", 'hc_theme'); ?></p>
+								<span class="fact-close"></span>
+								<?php the_field('fccontent', 'option'); ?>
+							</div>
+						</div>
+					<?php } elseif ($enable_fcgroup == '2') { ?>
+						<div class="fact-check">
+							<div class="fact-label eb">
+								<p class="has-large-font-size"><?php echo __("Evidence Based", 'hc_theme'); ?></p>
+								<span class="fact-close"></span>
+								<?php the_field('evidence_based', 'option'); ?>
+							</div>
+						</div>
+					<?php }
+				}
+				?>
+                <div class="social on-pc mr-bottom-20">
                     <p class="has-small-font-size pri-color-2" style="margin-bottom: 0">Follow us: </p>
                     <?php
                     $social = get_field('social', 'option');
@@ -95,6 +112,11 @@ $checktime == false ? $advertiser_disclosure = get_field('enable_tooltip1', $pos
                     } ?>
                 </div>
                 <article class="sg-custom">
+                    <?php if($advertiser_disclosure):?>
+						<div class="box-e mr-bottom-20">
+							<?php the_field('adcontent', 'option'); ?>
+						</div>
+					<?php endif;?>
                     <?php
                         if ($checktime == false) {
                             $enable_fat_checked = get_field('enable_fat_checked', $postid);

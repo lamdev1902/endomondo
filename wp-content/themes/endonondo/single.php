@@ -220,7 +220,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 							</div>
 							<?php if ($user_description) { ?>
 								<div class="author-info">
-									<p><?php echo $user_description ?>
+									<p><?php echo $user_description ?> <a href="<?php echo $author_url; ?>">See more</a></p>
 								</div>
 							<?php } ?>
 						</div>
@@ -271,7 +271,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 												href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
 									<?php } ?>
 								</div>
-								<p class="has-large-font-size text-special"><a class="pri-color-2"
+								<p class="has-medium-font-size text-special claim-2"><a class="pri-color-2"
 										href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 								<p class="has-small-font-size"><a class="sec-color-3"
 										href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></p>
