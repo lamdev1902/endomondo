@@ -220,7 +220,8 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 							</div>
 							<?php if ($user_description) { ?>
 								<div class="author-info">
-									<p><?php  echo wp_trim_words($user_description, 28, ''); ?><a href="<?php echo $author_url; ?>">See more</a></p>
+									<p><?php echo wp_trim_words($user_description, 28, ''); ?><a
+											href="<?php echo $author_url; ?>"> See more</a></p>
 								</div>
 							<?php } ?>
 						</div>
@@ -246,7 +247,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 
 					?>
 					<div class="news-it">
-						<d class="news-box">
+						<div class="news-box">
 							<div class="featured image-fit hover-scale mr-bottom-16">
 								<a href="<?php the_permalink(); ?>">
 									<?php $image_featured = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
@@ -263,7 +264,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 									<?php } ?>
 								</a>
 							</div>
-							<di class="info">
+							<div class="info">
 								<?php $category = get_the_category($post->ID); ?>
 								<?php if ($category): ?>
 									<div class="tag mr-bottom-16">
@@ -277,15 +278,15 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 										href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 								<p class="has-small-font-size "><a class="sec-color-3"
 										href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></p>
-								</div>
-								</div>
-								</div>
-								<?php
+							</div>
+						</div>
+					</div>
+					<?php
 				endwhile;
 				wp_reset_query();
 				?>
-							</div>
+			</div>
 		</aside>
-		</div>
+	</div>
 </main>
 <?php get_footer(); ?>

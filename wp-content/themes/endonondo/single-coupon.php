@@ -383,8 +383,9 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                     </div>
                     <?php if ($user_description) { ?>
                         <div class="author-info">
-                            <p><?php echo $user_description ?>
-                        </div>
+                                <p><?php echo wp_trim_words($user_description, 28, ''); ?><a
+                                        href="<?php echo $author_url; ?>"> See more</a></p>
+                            </div>
                     <?php } ?>
                 </div>
             </div>
@@ -430,7 +431,7 @@ if (isset($couponid) && $couponid != '') {
                             <p><b>2</b> Paste the code when you are at the checkout</p>
                         </div>
                         <div class="coupon-md-form">
-                            <p><b>3</b> Let us know if <a href="">it worked</a> or <a href="">didn’t work</a></p>
+                            <p><b>3</b> Let us know if <a href="">it worked</a> or <a href="">didn't work</a></p>
                         </div>
                         <div class="text-center coupon-btn-pink">
                             <a href="<?php echo get_field('coupon_link', $brandid); ?>">Go to offer</a>
