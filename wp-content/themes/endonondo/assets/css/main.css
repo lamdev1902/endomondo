@@ -1589,6 +1589,10 @@ main {
     padding: 24px 0 0;
 }
 
+.home-lastest .lastest-it:first-child .info p.text-special.clamp-2{
+    -webkit-line-clamp: 1;
+}
+
 .home-video .video-featured {
     max-height: 722px;
     height: 100%;
@@ -2228,7 +2232,7 @@ figcaption {
 
 .single-main .sg-right .sg-custom .sg-resources ol li::marker {
     color: var(--primary-color-2);
-    font-size: 14px;
+    font-size: var(--font-14) !important;
 }
 
 .single-main .sg-right .sg-custom ul.list-number li,
@@ -2356,8 +2360,7 @@ figcaption {
 .single-main .sg-right .sg-custom .sg-product-it {
     gap: 0;
     margin: 0;
-    padding-bottom: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .single-main .sg-right .sg-custom .sg-product-it .wp-block-column:nth-child(1) {
@@ -2435,6 +2438,7 @@ figcaption {
     background: url(../images/list-check.svg) no-repeat left top 7px/16px auto;
     margin-bottom: 16px;
     padding-left: 24px;
+    line-height: 30px;
 }
 
 .single-main .sg-right .sg-custom ul.list-remove {
@@ -2447,6 +2451,7 @@ figcaption {
     background: url(../images/list-remove.svg) no-repeat left top 7px/16px auto;
     margin-bottom: 16px;
     padding-left: 24px;
+    line-height: 30px;
 }
 
 .single-main .sg-right .sg-custom .table-review {
@@ -2886,19 +2891,6 @@ figcaption {
     .single-main .sg-right .sg-custom .sg-product-box ul li:last-child {
         margin-bottom: 0;
     }
-
-    .single-main .sg-right .sg-custom .sg-product-it {
-        margin-bottom: 16px;
-    }
-
-    .single-main .sg-right .sg-custom .sg-product-it .wp-block-column:nth-child(1) {
-        padding-bottom: 16px;
-    }
-
-    .single-main .sg-right .sg-custom .sg-product-it .wp-block-column:nth-child(2) h5 {
-        margin-bottom: 24px;
-    }
-
 
     .single-top .breacrump,
     .single-top #breadcrumbs {

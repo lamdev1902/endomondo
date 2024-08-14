@@ -97,6 +97,11 @@ blockquote {
     background-color: #EEEEEE;
 }
 
+.box-e p {
+    margin-bottom: 0;
+    font-size: var(--font-14) !important;
+}
+
 /* Summary */
 .summary {
     padding: 20px 32px;
