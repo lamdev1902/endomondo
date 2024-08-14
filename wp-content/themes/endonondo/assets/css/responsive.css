@@ -240,6 +240,51 @@
         max-height: 44px;
         overflow-y: hidden;
     }
+
+    /* End Home Latstest */
+
+    .medicine-table table {
+        width: 720px !important;
+    }
+
+    .medicine-table.scroll figure {
+        position: relative;
+    }
+
+    .medicine-table.scroll thead th:first-child, 
+    .medicine-table.scroll tbody td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 1;
+        background-color: var(--primary-color-3);
+    }
+
+    .medicine-table.scroll thead th:first-child::after,
+    .medicine-table.scroll tbody td:first-child::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        right: 0;
+        top: 0;
+        background-color: var(--secondary-color-1);
+    }
+
+    .medicine-table.scroll thead th:first-child::before,
+    .medicine-table.scroll tbody td:first-child::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        left: -1px;
+        top: 0;
+        background-color: var(--secondary-color-1);
+    }
+
+    .medicine-table.scroll tbody tr:nth-child(even) td:first-child  {
+        background-color: #f8f8f8;
+    }
+
 }
 
 @media (min-width: 481px) and  (max-width: 834px) {
@@ -270,6 +315,12 @@
 
     .single-main .sg-right .sg-custom .sg-product-it .wp-block-column figure {
         margin-bottom: 20px;
+    }
+
+    /* End Product */
+
+    .medicine-table table {
+        width: 720px !important;
     }
 }
 

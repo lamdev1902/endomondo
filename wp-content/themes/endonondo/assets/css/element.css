@@ -54,23 +54,20 @@ blockquote {
 
 .medicine-table table {
     border: 1px solid var(--secondary-color-1);
+    table-layout: fixed;
 }
 
-.medicine-table table thead tr{
+.medicine-table table thead tr {
     background-color: white !important;
 }
 
+.medicine-table table thead p {
+    margin-bottom: 0;
+}
 .medicine-table table tbody tr:first-child td {
     color: var(--primary-color-2) !important;
 }
 
-.medicine-table table tbody tr:first-child td:first-child {
-    text-align: left !important;
-}
-
-.medicine-table.no-title table tbody tr:first-child td:first-child {
-    text-align: center !important;
-}
 
 .medicine-table table tr:nth-child(odd) {
     background-color: #f8f8f8;
@@ -82,7 +79,6 @@ blockquote {
 
 .medicine-table .wp-block-table table tbody tr td:first-of-type {
     padding: 16px;
-    width: 129px;
 }
 
 .medicine-table.no-title .wp-block-table table tbody tr td:first-of-type {

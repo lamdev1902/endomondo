@@ -2224,7 +2224,7 @@ figcaption {
 
 .single-main .sg-right .sg-custom ul li::marker,
 .single-main .sg-right .sg-custom ol li::marker,
-.page-main .page-custom ul li {
+.page-main .page-custom ul li::marker {
     color: var(--primary-color-1);
     font-size: 18px;
 }
@@ -2277,9 +2277,6 @@ figcaption {
 
 .single-main .sg-right .sg-custom table thead tr th {
     padding: 16px 16px;
-    font-size: 15px;
-    line-height: 16px;
-    font-weight: 600;
     border: none;
 }
 
@@ -2290,8 +2287,6 @@ figcaption {
 
 .single-main .sg-right .sg-custom table tbody tr td {
     padding: 10px;
-    font-size: 16px;
-    line-height: 28px;
     border: none;
 }
 
