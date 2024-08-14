@@ -25,17 +25,18 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: var(--mr-main)
 }
 
 .sg-custom ul {
-    margin-bottom: 20px;
+    margin-bottom: var(--mr-main)
 }
 
 ol {
     list-style: none;
     padding: 0;
     margin: 0;
+    margin-bottom: var(--mr-main)
 }
 
 a {
@@ -1850,7 +1851,7 @@ main {
 }
 
 .single-main .schema-faq .schema-faq-section {
-    margin-bottom: 20px;
+    margin-bottom: var(--mr-main)
 }
 
 .single-main .schema-faq .schema-faq-section .schema-faq-question {
@@ -1961,17 +1962,6 @@ main {
 
 .single-main .single-sidebar .sg-author .author-it p i {
     margin-right: 4px;
-}
-
-.single-main .single-sidebar .sg-lastest {
-    margin-top: 40px;
-}
-
-.single-main .single-sidebar .sg-lastest .title {
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 600;
-    margin-bottom: 16px;
 }
 
 .single-main .single-sidebar .sg-lastest-list .sg-lastest-it {
@@ -2120,7 +2110,6 @@ figcaption {
 }
 
 .single-main .sg-right .sg-custom h2.list-start~h3 {
-    padding: 8px 8px 8px 0px;
     position: relative;
 }
 
@@ -2228,6 +2217,7 @@ figcaption {
     color: var(--primary-color-2);
     font-size: var(--font-14) !important;
     font-style: italic;
+    margin-bottom: 0;
 }
 
 .single-main .sg-right .sg-custom ul li::marker,
@@ -2248,7 +2238,7 @@ figcaption {
 
 .single-main .sg-right .sg-custom ul.list-number li::marker,
 .single-main .sg-right .sg-custom ol.list-number li::marker {
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .single-main .sg-right .sg-custom ol li {
@@ -4082,7 +4072,7 @@ figcaption {
 
 .coupon-item-detail.coupon {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: var(--mr-main)
 }
 
 .coupon-item-detail .coupon-top .flex .hightlight {
@@ -4364,6 +4354,6 @@ figcaption {
 }
 
 .fact-label p.has-large-font-size {
-    margin-bottom: 20px;
+    margin-bottom: var(--mr-main)
 }
 

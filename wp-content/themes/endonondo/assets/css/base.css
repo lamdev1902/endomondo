@@ -38,6 +38,10 @@
     --font-32: 32px;
     --font-36: 36px;
     --font-48: 48px;
+
+    /* margin */
+
+    --mr-main: 20px;
 }
 
 h1,
@@ -47,7 +51,7 @@ h4,
 h5,
 h6 {
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: var(--mr-main)
 }
 
 h1 {
@@ -136,7 +140,7 @@ p {
     font-weight: 400;
     color: var(--primary-color-2);
     letter-spacing: 0px;
-    margin-bottom: 20px;
+    margin-bottom: var(--mr-main)
 }
 
 .has-small-font-size {
@@ -171,7 +175,7 @@ p {
 }
 
 .mr-bottom-20 {
-    margin-bottom: 20px;
+    margin-bottom: var(--mr-main)
 }
 
 .mr-top-24 {

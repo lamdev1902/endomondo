@@ -158,7 +158,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 					<?php
 					if (get_field('enable_source', 'option') == true) {
 						?>
-						<div class="sg-resources mr-bottom-20 box-grey pd-main on-pc">
+						<div class="sg-resources mr-bottom-20 pd-main on-pc">
 							<h3>Resources</h3>
 							<div class="intro">
 								<?= get_field('source_intro', 'option'); ?>
@@ -169,7 +169,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 							?>
 						</div>
 					<?php } ?>
-					<div class="author-about pd-main">
+					<div class="author-about">
 						<h3>About the Author</h3>
 						<div class="author-write">
 							<div class="author-link">
