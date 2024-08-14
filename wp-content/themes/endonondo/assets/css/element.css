@@ -2,9 +2,9 @@
 
 .ft-snippet {
     padding: 32px 20px;
-    background-color: var(--chart-20);
+    background-color: var(--secondary-color-1);
     position: relative;
-    margin: 40px 0;
+    margin-bottom: 20px;
 }
 
 .ft-snippet ul {

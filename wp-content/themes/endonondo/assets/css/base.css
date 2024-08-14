@@ -40,7 +40,15 @@
     --font-48: 48px;
 }
 
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
 
 h1 {
     font-size: var(--font-32) !important;
@@ -50,7 +58,7 @@ h1 {
 }
 
 h2 {
-    font-size: var(--font-36) !important;
+    font-size: var(--font-24) !important;
     letter-spacing: 0px;
     line-height: 30px;
     font-weight: 500;
@@ -128,6 +136,7 @@ p {
     font-weight: 400;
     color: var(--primary-color-2);
     letter-spacing: 0px;
+    margin-bottom: 20px;
 }
 
 .has-small-font-size {

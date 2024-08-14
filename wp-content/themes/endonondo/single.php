@@ -35,12 +35,12 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 		<div class="single-main list-flex">
 			<?php get_sidebar(); ?>
 			<div class="sg-right">
-				<h1><?php the_title(); ?></h1>
+				<h1 class="mr-bottom-20"><?php the_title(); ?></h1>
 				<?php $aname = get_field('user_nshort', 'user_' . $upid);
 				if (!$aname || $aname == '')
 					$aname = get_the_author();
 				?>
-				<div class="single-author" style="margin-bottom: 20px;">
+				<div class="single-author mr-bottom-20">
 					<div class="name-author">
 						<div class="info">
 							<div class="author-by" itemscope>
@@ -113,7 +113,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 					<?php }
 				}
 				?>
-				<div class="social on-pc">
+				<div class="social on-pc mr-bottom-20">
 					<p class="has-small-font-size pri-color-2" style="margin-bottom: 0">Follow us: </p>
 					<?php
 					$social = get_field('social', 'option');
@@ -148,7 +148,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 						</div>
 					<?php endif; ?>
 					<?php if($advertiser_disclosure):?>
-						<div class="box-e">
+						<div class="box-e mr-bottom-20">
 							<?php the_field('adcontent', 'option'); ?>
 						</div>
 					<?php endif;?>
@@ -158,8 +158,8 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 					<?php
 					if (get_field('enable_source', 'option') == true) {
 						?>
-						<div class="sg-resources box-grey pd-main on-pc">
-							<h4>Resources</h4>
+						<div class="sg-resources mr-bottom-20 box-grey pd-main on-pc">
+							<h3>Resources</h3>
 							<div class="intro">
 								<?= get_field('source_intro', 'option'); ?>
 							</div>
@@ -181,10 +181,10 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 									<a href="<?php echo $author_url; ?>"><img
 											src="<?php echo get_field('avatar_default', 'option'); ?>" alt="">
 									<?php } ?>
-									<p class="has-large-font-size"><a style="color: var(--pri-color-2) !important;"
+									<p class="has-medium-font-size"><a style="color: var(--pri-color-2) !important;"
 											href="<?php echo $author_url; ?>"><?php the_author(); ?>
 										</a>
-										<span class="has-small-font-size sec-color-3">
+										<span>
 											<?php echo get_field('position', 'user_' . $author_id);
 											; ?></span>
 									</p>
