@@ -43,7 +43,7 @@
 						 	<span><a href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
 						<?php } ?>
 					</div>
-					<p class="has-medium-font-size mr-bottom-20 text-special claim-1"><a class="pri-color-2" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+					<p class="has-medium-font-size mr-bottom-20 text-special clamp-1"><a class="pri-color-2" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 					<p class="has-small-font-size"><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></p>
 					<?php
 					$yoast_meta = get_post_meta($post->ID, '_yoast_wpseo_metadesc', true);
@@ -51,7 +51,7 @@
 						$current_year = date('Y');
 						$yoast_meta = str_replace('%%currentyear%%', $current_year, $yoast_meta);
 					?>
-					<div class=""><p class="text-special claim-2 pri-color-2"><?php echo $yoast_meta; ?></p></div>
+					<div class=""><p class="text-special clamp-2 pri-color-2"><?php echo $yoast_meta; ?></p></div>
 					<?php } ?>
 				</div>
 			</div>
@@ -72,7 +72,7 @@
 				$post_author_url = get_author_posts_url( $post_author_id );
 			?>
 			<div class="sg-lastest-it position-relative">
-				<p class="has-medium-font-size mr-bottom-20 text-special claim-2"><a class="pri-color-2" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+				<p class="has-medium-font-size mr-bottom-20 text-special clamp-2"><a class="pri-color-2" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 				<p class="has-small-font-size mr-bottom-20"><a class="sec-color-2" href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></p>
 				<a href="<?php the_permalink(); ?>" class="news-link position-absolute"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/right-black.svg" alt=""></a>
 			</div>

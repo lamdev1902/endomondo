@@ -51,7 +51,7 @@ the_post();
 							$post_author_url = get_author_posts_url($post_author_id);
 							?>
 							<div class="top-it mr-bottom-20 position-relative">
-								<p class="has-medium-font-size mr-bottom-16 text-special claim-2 ellipsis pri-color-3"><a class="pri-color-3"
+								<p class="has-medium-font-size mr-bottom-16 text-special clamp-2 ellipsis pri-color-3"><a class="pri-color-3"
 										href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 								<p class="author"><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By
 										<?php echo $post_display_name; ?></a></p>
@@ -203,7 +203,7 @@ the_post();
 												href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
 									<?php } ?>
 								</div>
-								<p class="has-large-font-size text-special claim-2 ellipsis pri-color-3"><a class="pri-color-3"
+								<p class="has-medium-font-size text-special clamp-2 ellipsis pri-color-3"><a class="pri-color-3"
 										href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 								<p class="has-small-font-size author"><a class="sec-color-3"
 										href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></p>
@@ -283,7 +283,7 @@ the_post();
 												href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
 									<?php } ?>
 								</div>
-								<p class="has-medium-font-size text-special claim-2"><a class="pri-color-2"
+								<p class="has-medium-font-size text-special clamp-2"><a class="pri-color-2"
 										href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></p>
 								<p class="has-small-font-size author"><a class="sec-color-3"
 										href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></p>

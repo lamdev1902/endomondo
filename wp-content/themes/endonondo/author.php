@@ -145,7 +145,7 @@ $check = false;
 											<span><a href="<?php echo get_term_link($cat[0]->term_id); ?>"><?php echo $cat[0]->name; ?></a></span>
 										<?php endif; ?>
 									</div>
-									<p class="has-large-font-size text-special claim-2"><a class="pri-color-2" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+									<p class="has-large-font-size text-special clamp-2"><a class="pri-color-2" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 									<p class="has-small-font-size"><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></p>
 									<?php
 									$yoast_meta = get_post_meta($post->ID, '_yoast_wpseo_metadesc', true);
