@@ -38,6 +38,10 @@
 					)
 				);
 				?>
+
+				<div class="disclaimer">
+					<?php the_field('disclaimer', 'option'); ?>
+				</div>
 			</nav>
 		</div>
 	</div>

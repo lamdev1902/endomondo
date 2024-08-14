@@ -1679,14 +1679,6 @@ section.exc-hero-section:before {
     margin-bottom: 0;
 }
 
-.author-info p {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 22px;
-    text-align: left;
-    color: #000000;
-}
-
 .single-main.exc-author .single-sidebar .sg-author {
     border-bottom: none;
 }

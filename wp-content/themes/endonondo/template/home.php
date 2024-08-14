@@ -7,7 +7,7 @@ the_post();
 <main id="content">
 	<section class="home-top color-white pd-main">
 		<div class="container">
-			<div class="list-flex flex-end">
+			<div class="list-flex">
 				<div class="top-big list-flex">
 					<?php
 					$args = array(
@@ -22,7 +22,7 @@ the_post();
 						$post_author_url = get_author_posts_url($post_author_id);
 						?>
 						<div class="info">
-							<p class="has-x-large-font-size text-uppercase"><a class="pri-color-3"
+							<p class="has-x-large-font-size mr-bottom-20"><a class="pri-color-3"
 									href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 							<p class="sec-color-2"><?php echo wp_trim_words(get_the_excerpt($post->ID), 28); ?></p>
 						</div>
@@ -35,7 +35,7 @@ the_post();
 					?>
 				</div>
 				<div class="news-right">
-					<p class="sub-title has-large-font-size">News</p>
+					<p class="sec-color-3 has-large-font-size mr-bottom-20">News</p>
 					<div class="top-list">
 						<?php
 						$args = array(
@@ -50,8 +50,8 @@ the_post();
 							$post_display_name = get_the_author_meta('nickname', $post_author_id);
 							$post_author_url = get_author_posts_url($post_author_id);
 							?>
-							<div class="top-it position-relative">
-								<p class="has-large-font-size text-special ellipsis pri-color-3"><a class="pri-color-3"
+							<div class="top-it mr-bottom-20 position-relative">
+								<p class="has-medium-font-size mr-bottom-16 text-special ellipsis pri-color-3"><a class="pri-color-3"
 										href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 								<p class="author"><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By
 										<?php echo $post_display_name; ?></a></p>

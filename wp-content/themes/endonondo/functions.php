@@ -1,5 +1,6 @@
 <?php 
 include(TEMPLATEPATH . '/shortcode/chart/chart-shortcode.php');
+include(TEMPLATEPATH . '/shortcode/muscle/anatomy.php');
 function custom_image_sizes_choose($sizes) {
     unset($sizes['thumbnail']);
     unset($sizes['medium']);
@@ -67,11 +68,11 @@ function theme_mcs_scripts() {
 	wp_enqueue_style( 'style-slick', get_template_directory_uri() . '/assets/js/slick/slick.css' );
 	wp_enqueue_style( 'style-slick-theme', get_template_directory_uri() . '/assets/js/slick/slick-theme.css' );
 	wp_enqueue_style( 'style-swiper', get_template_directory_uri() . '/assets/js/swiper/swiper-bundle.min.css' );
-	wp_enqueue_style( 'style-main', get_template_directory_uri() . '/assets/css/main.css','','1.1.6' );
-	wp_enqueue_style( 'style-custom', get_template_directory_uri() . '/assets/css/custom.css','','1.1.2' );
-	wp_enqueue_style( 'style-base', get_template_directory_uri() . '/assets/css/base.css','','1.1.0' );
+	wp_enqueue_style( 'style-main', get_template_directory_uri() . '/assets/css/main.css','','1.1.7' );
+	wp_enqueue_style( 'style-custom', get_template_directory_uri() . '/assets/css/custom.css','','1.1.3' );
+	wp_enqueue_style( 'style-base', get_template_directory_uri() . '/assets/css/base.css','','1.1.1' );
 	wp_enqueue_style( 'style-element', get_template_directory_uri() . '/assets/css/element.css','','1.1.1' );
-	wp_enqueue_style( 'style-responsive', get_template_directory_uri() . '/assets/css/responsive.css','','1.1.0' );
+	wp_enqueue_style( 'style-responsive', get_template_directory_uri() . '/assets/css/responsive.css','','1.1.1' );
 
 }
 add_action( 'wp_enqueue_scripts', 'theme_mcs_scripts' );

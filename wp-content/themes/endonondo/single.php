@@ -13,7 +13,13 @@ $post_type = $post->post_type;
 $user_description = get_field('story', 'user_' . $author_id);
 $checktime = '';
 
-$checktime == false ? $advertiser_disclosure = get_field('enable_tooltip1', $postid) : $advertiser_disclosure = '';
+$disableFeature = get_field('disable_featured_image', $postid);
+
+$advertiser_disclosure = get_field('enable_tooltip1', $postid);
+
+$enable_fat_checked = get_field('enable_fat_checked', $postid);
+$enable_fcgroup = get_field('enable_fcgroup', $postid);
+
 ?>
 <main id="content">
 	<div class="container">
@@ -31,77 +37,80 @@ $checktime == false ? $advertiser_disclosure = get_field('enable_tooltip1', $pos
 			<div class="sg-right">
 				<h1><?php the_title(); ?></h1>
 				<?php $aname = get_field('user_nshort', 'user_' . $upid);
-                if (!$aname || $aname == '')
-                $aname = get_the_author();
-                ?>
-                <div class="single-author" style="margin-bottom: 20px;">
-                    <div class="name-author">
-                        <div class="info">
-                            <div class="author-by" itemscope>
-                                <time class="updated has-small-font-size" datetime="<?php the_modified_date('c'); ?>"
-                                itemprop="dateModified"><?php echo __('Published', 'hc_theme'); ?> <?php the_modified_date('F d, Y'); ?></time>
-                                <span class="has-small-font-size">- Writen by: </span>
-                                    <span class="has-small-font-size" itemprop="author" itemscope itemtype="https://schema.org/Person"><a class="pri-color-2" href="<?php echo $author_url; ?>"
-                                        title="<?php echo __('View all posts by', 'hc_theme'); ?> <?php the_author(); ?>" rel="author"
-                                        itemprop="url"><span class="ncustom has-small-font-size" itemprop="name"><?php echo $aname; ?></span></a></span>
-                                        <?php
-                            $medically_reviewed = get_field('select_author', $postid);
-                            if ($medically_reviewed) { ?>
-                                <span class="has-small-font-size"></spanclass> - Reviewed by</span>
-                                <span class="has-small-font-size">
-                                <?php foreach ($medically_reviewed as $m => $mr) {
-                                    $anamer = get_field('user_nshort', 'user_' . $mr['ID']);
-                                    if (!$anamer || $anamer == '')
-                                    $anamer = $mr['display_name'];
-                                    ?>
-                                    <a class="pri-color-2" style="text-decoration: underlight" href="<?php echo get_author_posts_url($mr['ID']); ?>"><?php if ($m > 0)
-                                        echo ' ,'; ?><?php echo $anamer; ?></a>
-                                <?php } ?>
-                                </span>
-                            <?php } ?>
-                                <?php if($checktime == false): ?>
-                                    <?php 
-                                        $enable_fat_checked = get_field('enable_fat_checked', $postid);
-                                        $advertiser_disclosure = get_field('enable_tooltip1', $postid);
-                                        $enable_fcgroup = get_field('enable_fcgroup', $postid);
-                                        if ($enable_fcgroup):?>
-                                         <?php if ($enable_fcgroup == '1') { ?>
-                                            <span id="at-box"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/author.svg"
-                                            alt="Fact checked"></span>
-                                        <?php } elseif ($enable_fcgroup == '2') { ?>
-                                            <span id="eb-box"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/eb.svg"
-                                            alt="Fact checked"></span>
-                                            <?php }?>
-                                        <?php endif;?>
-                                <?php endif;?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+				if (!$aname || $aname == '')
+					$aname = get_the_author();
+				?>
+				<div class="single-author" style="margin-bottom: 20px;">
+					<div class="name-author">
+						<div class="info">
+							<div class="author-by" itemscope>
+								<time class="updated has-small-font-size" datetime="<?php the_modified_date('c'); ?>"
+									itemprop="dateModified"><?php
+										if (get_the_modified_date('U') !== get_the_date('U')) {
+											echo __('Updated', 'hc_theme');
+										} else {
+											echo __('Published', 'hc_theme');
+										}
+									?>
+									<?php the_modified_date('F d, Y'); ?></time>
+								<span class="has-small-font-size">- Writen by: </span>
+								<span class="has-small-font-size" itemprop="author" itemscope
+									itemtype="https://schema.org/Person"><a class="pri-color-2"
+										href="<?php echo $author_url; ?>"
+										title="<?php echo __('View all posts by', 'hc_theme'); ?> <?php the_author(); ?>"
+										rel="author" itemprop="url"><span class="ncustom has-small-font-size"
+											itemprop="name"><?php echo $aname; ?></span></a></span>
+								<?php
+								$medically_reviewed = get_field('select_author', $postid);
+								if ($medically_reviewed) { ?>
+									<span class="has-small-font-size"></spanclass> - Reviewed by</span>
+									<span class="has-small-font-size">
+										<?php foreach ($medically_reviewed as $m => $mr) {
+											$anamer = get_field('user_nshort', 'user_' . $mr['ID']);
+											if (!$anamer || $anamer == '')
+												$anamer = $mr['display_name'];
+											?>
+											<a class="pri-color-2" style="text-decoration: underlight"
+												href="<?php echo get_author_posts_url($mr['ID']); ?>"><?php if ($m > 0)
+													   echo ' ,'; ?><?php echo $anamer; ?></a>
+										<?php } ?>
+									</span>
+								<?php } ?>
+								<?php
+								if ($enable_fcgroup): ?>
+									<?php if ($enable_fcgroup == '1') { ?>
+										<span id="at-box"><img
+												src="<?php echo get_template_directory_uri(); ?>/assets/images/author.svg"
+												alt="Fact checked"></span>
+									<?php } elseif ($enable_fcgroup == '2') { ?>
+										<span id="eb-box"><img
+												src="<?php echo get_template_directory_uri(); ?>/assets/images/eb.svg"
+												alt="Fact checked"></span>
+									<?php } ?>
+								<?php endif; ?>
+							</div>
+						</div>
+					</div>
+				</div>
 				<?php
-				if ($checktime == false) {
-					$enable_fat_checked = get_field('enable_fat_checked', $postid);
-					$advertiser_disclosure = get_field('enable_tooltip1', $postid);
-					$enable_fcgroup = get_field('enable_fcgroup', $postid);
-					if ($enable_fcgroup) {
-						if ($enable_fcgroup == '1') { ?>
-							<div class="fact-check ">
-								<div class="fact-label at">
-									<p class="has-large-font-size"><?php echo __("Author's opinion", 'hc_theme'); ?></p>
-									<span class="fact-close"></span>
-									<?php the_field('fccontent', 'option'); ?>
-								</div>
+				if ($enable_fcgroup) {
+					if ($enable_fcgroup == '1') { ?>
+						<div class="fact-check ">
+							<div class="fact-label at">
+								<p class="has-large-font-size"><?php echo __("Author's opinion", 'hc_theme'); ?></p>
+								<span class="fact-close"></span>
+								<?php the_field('fccontent', 'option'); ?>
 							</div>
-						<?php } elseif ($enable_fcgroup == '2') { ?>
-							<div class="fact-check">
-								<div class="fact-label eb">
-									<p class="has-large-font-size"><?php echo __("Evidence Based", 'hc_theme'); ?></p>
-									<span class="fact-close"></span>
-									<?php the_field('evidence_based', 'option'); ?>
-								</div>
+						</div>
+					<?php } elseif ($enable_fcgroup == '2') { ?>
+						<div class="fact-check">
+							<div class="fact-label eb">
+								<p class="has-large-font-size"><?php echo __("Evidence Based", 'hc_theme'); ?></p>
+								<span class="fact-close"></span>
+								<?php the_field('evidence_based', 'option'); ?>
 							</div>
-						<?php }
-					}
+						</div>
+					<?php }
 				}
 				?>
 				<div class="social on-pc">
@@ -117,30 +126,37 @@ $checktime == false ? $advertiser_disclosure = get_field('enable_tooltip1', $pos
 					} ?>
 				</div>
 				<article class="sg-custom">
-					<div class="single-featured">
-						<figure class="wp-block-image size-full">
-							<?php $image_featured = wp_get_attachment_url(get_post_thumbnail_id($postid));
-							;
-							if ($image_featured) {
-								?>
-								<div class="image-fit">
-									<img src="<?php echo $image_featured; ?>" alt="">
-								</div>
-							<?php } else { ?>
-								<div class="image-fit">
-									<img src="<?php echo get_field('fimg_default', 'option'); ?>" alt="">
-								</div>
-							<?php } ?>
-							<?php $post_thumbnail_id = get_post_thumbnail_id($postid);
-							$caption = wp_get_attachment_caption($post_thumbnail_id) ?>
-							<figcaption class="wp-element-caption text-center"><?php echo $caption; ?></figcaption>
-						</figure>
-					</div>
+					<?php if (!$disableFeature): ?>
+						<div class="single-featured">
+							<figure class="wp-block-image size-full">
+								<?php $image_featured = wp_get_attachment_url(get_post_thumbnail_id($postid));
+								;
+								if ($image_featured) {
+									?>
+									<div class="image-fit">
+										<img src="<?php echo $image_featured; ?>" alt="">
+									</div>
+								<?php } else { ?>
+									<div class="image-fit">
+										<img src="<?php echo get_field('fimg_default', 'option'); ?>" alt="">
+									</div>
+								<?php } ?>
+								<?php $post_thumbnail_id = get_post_thumbnail_id($postid);
+								$caption = wp_get_attachment_caption($post_thumbnail_id) ?>
+								<figcaption class="wp-element-caption text-center"><?php echo $caption; ?></figcaption>
+							</figure>
+						</div>
+					<?php endif; ?>
+					<?php if($advertiser_disclosure):?>
+						<div class="box-e">
+							<?php the_field('adcontent', 'option'); ?>
+						</div>
+					<?php endif;?>
 					<div class="sg-editor">
 						<?php the_content(); ?>
 					</div>
 					<?php
-					if (get_field('enable_source', 'option') == true && $checktime == false) {
+					if (get_field('enable_source', 'option') == true) {
 						?>
 						<div class="sg-resources box-grey pd-main on-pc">
 							<h4>Resources</h4>
