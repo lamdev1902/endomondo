@@ -22,7 +22,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 
 ?>
 <main id="content">
-	< class="container">
+	<div class="container">
 		<div class="single-top">
 			<div class="list-flex flex-center flex-middle">
 				<?php
