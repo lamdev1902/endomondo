@@ -244,14 +244,13 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 					$post_author_id = get_post_field('post_author', $post->ID);
 					$post_display_name = get_the_author_meta('nickname', $post_author_id);
 					$post_author_url = get_author_posts_url($post_author_id);
-
 					?>
 					<div class="news-it">
 						<div class="news-box">
 							<div class="featured image-fit hover-scale mr-bottom-16">
 								<a href="<?php the_permalink(); ?>">
-									<?php $image_featured = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-									;
+									<?php
+									$image_featured = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 									if ($image_featured) {
 										?>
 										<div class="image-fit">
@@ -265,19 +264,23 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 								</a>
 							</div>
 							<div class="info">
-								<?php $category = get_the_category($post->ID); ?>
-								<?php if ($category): ?>
+								<?php
+								$category = get_the_category($post->ID);
+								if ($category): ?>
 									<div class="tag mr-bottom-16">
 										<?php foreach ($category as $cat) { ?>
-											<span class><a
+											<span><a
 													href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
 										<?php } ?>
-									<?php endif; ?>
-								</div>
-								<p class="has-medium-font-size text-special mr-bottom-16 clamp-2"><a class="pri-color-2"
-										href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-								<p class="has-small-font-size "><a class="sec-color-3"
-										href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></p>
+									</div>
+								<?php endif; ?>
+								<p class="has-medium-font-size text-special mr-bottom-16 clamp-2">
+									<a class="pri-color-2" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								</p>
+								<p class="has-small-font-size">
+									<a class="sec-color-3" href="<?php echo $post_author_url; ?>">By
+										<?php echo $post_display_name; ?></a>
+								</p>
 							</div>
 						</div>
 					</div>
@@ -287,6 +290,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 				?>
 			</div>
 		</aside>
+
 	</div>
 </main>
 <?php get_footer(); ?>
