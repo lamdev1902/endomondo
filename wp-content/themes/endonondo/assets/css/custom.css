@@ -1604,6 +1604,7 @@ section.exc-hero-section:before {
 .exc-alternatives .slick-prev,
 .exc-variations .slick-prev {
     left: 1px;
+    z-index: 1;
 }
 
 .exc-primary .slick-right,
