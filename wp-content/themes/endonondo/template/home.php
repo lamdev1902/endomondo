@@ -22,7 +22,7 @@ the_post();
 						$post_author_url = get_author_posts_url($post_author_id);
 						?>
 						<div class="info">
-							<p class="has-x-large-font-size mr-bottom-20"><a class="pri-color-3"
+							<p class="has-x-large-font-size text-special clamp-2 mr-bottom-20"><a class="pri-color-3"
 									href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 							<p class="sec-color-2"><?php echo wp_trim_words(get_the_excerpt($post->ID), 28); ?></p>
 						</div>
@@ -51,8 +51,8 @@ the_post();
 							$post_author_url = get_author_posts_url($post_author_id);
 							?>
 							<div class="top-it mr-bottom-20 position-relative">
-								<p class="has-medium-font-size mr-bottom-16 text-special clamp-2 ellipsis pri-color-3"><a class="pri-color-3"
-										href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+								<p class="has-medium-font-size mr-bottom-16 text-special clamp-2 ellipsis pri-color-3"><a
+										class="pri-color-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 								<p class="author"><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By
 										<?php echo $post_display_name; ?></a></p>
 								<a href="<?php the_permalink(); ?>" class="news-link author position-absolute">
@@ -203,8 +203,8 @@ the_post();
 												href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
 									<?php } ?>
 								</div>
-								<p class="has-medium-font-size text-special clamp-2 ellipsis pri-color-3"><a class="pri-color-3"
-										href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+								<p class="has-medium-font-size text-special clamp-2 ellipsis pri-color-3"><a
+										class="pri-color-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 								<p class="has-small-font-size author"><a class="sec-color-3"
 										href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></p>
 							</div>
@@ -235,7 +235,8 @@ the_post();
 				</div>
 				<div class="soon-item">
 					<h3 class="has-x-large-font-size pri-color-2 mr-bottom-20">We are launching soon</h3>
-					<p class="mr-top-24 special-text">We've have helped <span class="has-x-large-font-size pri-color-2">1.542,335</span> people
+					<p class="mr-top-24 special-text">We've have helped <span
+							class="has-x-large-font-size pri-color-2">1.542,335</span> people
 						get in shape</p>
 					<a class="pri-color-3 soon-btn mr-top-24">GET ME THE LIFETIME DEAL</a>
 					<div class="social-soon flex mr-top-24">

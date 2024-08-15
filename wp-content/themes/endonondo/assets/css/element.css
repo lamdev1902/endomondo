@@ -1,17 +1,17 @@
 /* Ft snippet */
 
-.ft-snippet {
+.box-grey {
     padding: 32px 20px;
     background-color: var(--secondary-color-1);
     position: relative;
     margin-bottom: var(--mr-main)
 }
 
-.ft-snippet ul {
+.box-grey ul {
     margin-bottom: var(--mr-main)
 }
 
-.ft-snippet::after {
+.box-grey::after {
     position: absolute;
     content: url(../images/ft-snippet-logo.svg);
     width: 185px;
@@ -25,6 +25,7 @@
 .wp-block-pullquote {
     padding: 0;
 }
+
 blockquote {
     padding: 24px 32px 40px;
     background-color: var(--secondary-color-1);
@@ -53,23 +54,43 @@ blockquote {
 /* Custom Table */
 table {
     table-layout: fixed;
-}
-
-.medicine-table table {
     border: 1px solid var(--secondary-color-1);
 }
 
+/* Default Table */
+
+.wp-block-table thead {
+    border: none;
+}
+
+.wp-block-table thead th{
+    color: var(--primary-color-1);
+    font-weight: 400;
+}
+
+.wp-block-table td, .wp-block-table th {
+    padding: 16px;
+    border: none;
+    text-align: center;
+}
+
+.wp-block-table tr:nth-child(odd) {
+    background-color: #f8f8f8;
+}
+
+/* End Default Table */
+
 figure.wp-block-table {
     position: relative;
-    padding-top: 40px;
+    padding-top: 25px;
 }
 
 .medicine-table figure figcaption{
     position: absolute;
     top: 0;
-    font-size: var(--font-22) !important;
-    font-weight: 500;
-    line-height: 28px;
+    font-size: var(--font-14) !important;
+    font-weight: 400;
+    line-height: 20px;
     letter-spacing: 0px;
     color: var(--primary-color-2);
     margin: 0;

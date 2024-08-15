@@ -325,7 +325,18 @@ main {
     background: #101010;
 }
 
+#header .container .list-flex > div {
+    flex: 1;
+}
+
 #header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header .logo a {
+    display: block;
     height: 25px;
     width: 200px
 }
@@ -350,18 +361,24 @@ main {
 #header .hd-search a::after {
     content: url(../images/search.svg);
     position: absolute;
-    right: -20px;
-    top: -13px;
+    left: 15px;
+    top: -25px;
+}
+
+#header .btn-header {
+    text-align: right;
 }
 
 #header .ed-btn {
     color: #fff;
     background: transparent;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 400;
     font-size: var(--font-24);
-    width: 235px;
-    height: 52px;
+    width: 200px;
+    height: 48px;
+    padding: 0;
+    border: none;
 }
 
 #header .ed-btn:hover {
@@ -1779,14 +1796,12 @@ main {
     padding: 0 0 40px;
 }
 
-.single-main .box-grey,
 .single-main .sg-resources {
     background: var(--secondary-color-1);
     padding: 24px;
     margin-top: 40px;
 }
 
-.single-main .box-grey:last-child,
 .single-main .sg-resources:last-child {
     margin-bottom: 0;
 }
@@ -1803,32 +1818,16 @@ main {
     margin-bottom: 0;
 }
 
-.single-main .box-grey h4 {
-    padding-bottom: 16px;
-    border-bottom: 1px solid #404040;
-    margin-bottom: 24px !important;
-    text-transform: uppercase;
-    margin-top: 0 !important;
-}
-
 .single-main .sg-resources h4 {
     padding: 0;
     border: 0;
 }
 
-.single-main .box-grey ul,
-.single-main .box-grey ol,
 .single-main .sg-resources ul,
 .single-main .sg-resources ol {
     padding-left: 25px;
 }
 
-.single-main .box-grey ul li,
-.single-main .box-grey ol li {
-    font-size: 16px;
-    line-height: 28px;
-    list-style: disc;
-}
 
 .single-main .sg-resources ul li,
 .single-main .sg-resources ol li {
@@ -1838,15 +1837,11 @@ main {
 
 }
 
-.single-main .box-grey ul li:last-child,
-.single-main .box-grey ol li:last-child,
 .single-main .sg-resources ul li:last-child,
 .single-main .sg-resources ol li:last-child {
     margin-bottom: 0;
 }
 
-.single-main .box-grey ul.list-numbber li,
-.single-main .box-grey ol.list-numbber li,
 .single-main .sg-resources ul.list-numbber li,
 .single-main .sg-resources ol.list-numbber li {
     list-style: decimal;
@@ -1894,14 +1889,6 @@ main {
     font-style: italic;
 }
 
-
-.single-main .box-grey {
-    margin-top: 24px;
-}
-
-.single-main .box-grey:first-child {
-    margin-top: 0;
-}
 
 .single-main .sg-resources ol li {
     list-style: decimal;
@@ -2213,6 +2200,7 @@ figcaption {
     margin-bottom: 8px;
     font-size: 16px;
     list-style: disc;
+    line-height: 24px;
 }
 
 .single-main .sg-right .sg-custom .sg-resources ol li {
@@ -2220,6 +2208,7 @@ figcaption {
     font-size: var(--font-14) !important;
     font-style: italic;
     margin-bottom: 0;
+    line-height: 24px;
 }
 
 .single-main .sg-right .sg-custom ul li::marker,
@@ -2250,59 +2239,6 @@ figcaption {
 
 .single-main .sg-right .sg-custom ol li::marker {
     font-size: 15px;
-}
-
-.single-main .sg-right .sg-custom table {
-    margin: 0;
-    border-collapse: collapse;
-    width: 100%;
-    text-align: left;
-    min-width: 550px;
-}
-
-.single-main .sg-right .sg-custom table thead {
-    border: none;
-}
-
-.single-main .sg-right .sg-custom table thead tr th {
-    padding: 16px 16px;
-    border: none;
-}
-
-.single-main .sg-right .sg-custom table thead tr,
-.single-main .sg-right .sg-custom table tbody tr {
-    border: 1px solid #D4D5D4;
-    background: #fff;
-}
-
-.single-main .sg-right .sg-custom table tbody tr td {
-    padding: 16px;
-    border: none;
-}
-
-.single-main .sg-right .sg-custom table tbody {
-    border: 1px solid var(--secondary-color-1);
-}
-
-.custom table thead th:first-child,
-.custom table tbody td:first-child {
-    width: 129px;
-}
-
-.custom table thead th {
-    height: 78px;
-    border: none;
-    text-align: center;
-}
-
-.single-main .sg-right .sg-custom table tbody tr:first-child td {
-    text-align: center;
-    padding: 16px;
-    color: var(--primary-color-1);
-}
-
-.single-main .sg-right .sg-custom table tbody tr:nth-child(even) {
-    background-color: #f8f8f8;
 }
 
 .single-main .sg-right .sg-custom .mt-64 {
@@ -2719,7 +2655,6 @@ figcaption {
         padding-bottom: 20px;
     }
 
-    .single-main .box-grey ul li,
     .single-main .sg-resources ul li {
         font-size: 15px;
         margin-bottom: 8px;
@@ -4318,7 +4253,7 @@ figcaption {
 }
 
 .fact-check .fact-label.eb {
-    background: var(--chart-40);
+    background: var(--chart-20);
 }
 
 .modalcn-bg {

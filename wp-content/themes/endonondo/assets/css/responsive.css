@@ -9,7 +9,7 @@
         padding: 9px 0;
     }
 
-    #header .logo {
+    #header .logo a {
         height: 20px;
         width: 114px;
     }
@@ -121,6 +121,10 @@
     }
 
     /* End author */
+
+    .ft-snippet {
+        padding: 20px 24px;
+    }
 
     .ft-snippet ul {
         margin-bottom: 30px;
@@ -323,10 +327,23 @@
         right: 24px;
     }
 
+    /* End Home top */
+
     #header .menu-main .menu-box .menu-menu-main-container > ul > li {
         -webkit-box-flex: 1;
         -ms-flex: 1 0 50%;
         flex: 1 0 50%;
+    }
+
+    #header .ed-btn {
+        color: #fff;
+        background: transparent;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: var(--font-14);
+        width: 120px;
+        height: 34px;
+        border: 1px solid var(--secondary-color-4);
     }
 
     /* Product */
@@ -339,6 +356,12 @@
 
     table {
         width: 720px !important;
+    }
+
+    /* End Table */
+
+    #content .author-about .author-link p span {
+        font-size: 15px;
     }
 }
 

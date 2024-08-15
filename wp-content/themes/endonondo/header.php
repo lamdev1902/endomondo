@@ -29,7 +29,8 @@
 	<link rel="icon" href="<?php echo get_field('favicon_size_192', 'option'); ?>" sizes="192x192" />
 	<link rel="apple-touch-icon" href="<?php echo get_field('favicon_size_180', 'option'); ?>" />
 	<script src="https://www.youtube.com/iframe_api"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-3.5.0.min.js"></script>
+	<script type="text/javascript"
+		src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-3.5.0.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<meta name="msapplication-TileImage" content="<?php echo get_field('favicon_size_270', 'option'); ?>" />
 	<?php
@@ -112,7 +113,7 @@
 		<header id="header" class="position-relative">
 			<div class="container">
 				<div class="list-flex flex-middle flex-center">
-					<div class="hd-left list-flex flex-middle">
+					<div>
 						<div class="toogle-menu">
 							<span></span>
 						</div>
@@ -121,9 +122,12 @@
 						</div>
 					</div>
 					<div class="logo"><a href="<?php echo home_url(); ?>"><img
-								src="<?php echo get_field('logo', 'option') ?>" alt=""></a></div>
-					<button href="<?php echo get_field('subscribe_link', 'option') ?>"
-						class="ed-btn btn-popup"><?php echo get_field('subscribe_title', 'option') ?></button>
+								src="<?php echo get_field('logo', 'option') ?>" alt=""></a>
+					</div>
+					<div class="btn-header">
+						<button href="<?php echo get_field('subscribe_link', 'option') ?>"
+							class="ed-btn btn-popup"><?php echo get_field('subscribe_title', 'option') ?></button>
+					</div>
 				</div>
 			</div>
 			<nav class="menu-main">
@@ -194,7 +198,8 @@
 									} ?>
 								</div>
 
-								<p class="note has-small-font-size"><i>* <a href="#">Your privacy</a> is important to us</i></p>
+								<p class="note has-small-font-size"><i>* <a href="#">Your privacy</a> is important to
+										us</i></p>
 							</div>
 						</div>
 					</div>
