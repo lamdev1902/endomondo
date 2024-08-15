@@ -1,7 +1,7 @@
 /* Ft snippet */
 
 .box-grey {
-    padding: 32px 20px;
+    padding: 32px 20px 58px;
     background-color: var(--secondary-color-1);
     position: relative;
     margin-bottom: var(--mr-main)
