@@ -65,7 +65,8 @@ table {
 
 .wp-block-table thead th{
     color: var(--primary-color-1);
-    font-weight: 400;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .wp-block-table td, .wp-block-table th {
@@ -76,6 +77,12 @@ table {
 
 .wp-block-table tr:nth-child(odd) {
     background-color: #f8f8f8;
+}
+
+.full-bg-table.wp-block-table table th {
+    padding: 16px;
+    border: none;
+    text-align: left;
 }
 
 /* End Default Table */
@@ -103,6 +110,11 @@ table thead tr {
 
 .medicine-table table thead p {
     margin-bottom: 0;
+}
+
+.medicine-table table thead p.has-small-font-size {
+    font-weight: 400;
+    color: var(--secondary-color-4);
 }
 
 table tbody tr:first-child td {
@@ -158,14 +170,6 @@ table tbody tr:first-child td {
 
 .full-bg-table table tbody{
     border: none !important;
-}
-
-.full-bg-table table tr {
-    border-top: none !important;
-    border-left: none !important;
-    border-right: none !important;
-    border-bottom: 1px solid white !important;
-    background-color:var(--chart-20) !important;
 }
 
 .full-bg-table table tr td {
