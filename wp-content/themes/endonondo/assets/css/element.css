@@ -135,6 +135,10 @@ table tbody tr:first-child td {
     font-weight: 500;
 }
 
+.medicine-table.no-scroll .wp-block-table table tbody tr td:first-of-type {
+    font-weight: 400;
+}
+
 .medicine-table.no-title .wp-block-table table tbody tr td:first-of-type {
     font-weight: 500;
 }
@@ -144,7 +148,7 @@ table tbody tr:first-child td {
 
 .box-e {
     padding: 16px;
-    background-color: #EEEEEE;
+    background-color: var(--secondary-color-1);
 }
 
 .box-e p {
@@ -155,8 +159,9 @@ table tbody tr:first-child td {
 /* Summary */
 .summary {
     padding: 20px 32px;
-    background: var(--secondary-color-1);
-    margin-bottom: var(--mr-main)
+    background: var(--secondary-color-5);
+    margin-bottom: var(--mr-main);
+    border-left: 3px solid var(--primary-color-1);
 }
 
 .summary p:last-child {
@@ -214,4 +219,70 @@ table tbody tr:first-child td {
 
 .mucle p.muslce-ds {
     margin-bottom: 0;
+}
+
+/* Brand */
+
+.wp-block-columns.brand {
+    column-gap: 20px;
+    row-gap: 40px;
+    margin-bottom: 30px;
+}
+
+.wp-block-columns.brand .brand-col{
+    background: var(--secondary-color-1);
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.wp-block-columns.brand .brand-col figure
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 20px;
+    height: 310px;
+    background: var(--primary-color-3);
+}
+
+.wp-block-columns.brand .brand-col > .wp-block-columns {
+    margin-bottom: 0;
+}
+
+.wp-block-columns.brand .brand-col .wp-block-columns > .brand-title p {
+    text-align: center;
+}
+
+.wp-block-columns.brand .brand-col figure > img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+
+.wp-block-columns.brand .brand-col > p {
+    font-weight: 500;
+}
+
+.wp-block-columns.brand .brand-col > p {
+    font-weight: 500;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: 0;
+}
+
+.wp-block-columns.brand .brand-col > p a {
+    padding: 12px 24px;
+    color: var(--primary-color-3);
+    background-color: var(--primary-color-2);
 }

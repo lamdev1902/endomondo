@@ -204,10 +204,6 @@
         right: 0;
     }
 
-    /* End Coupon */
-    .fact-check .fact-label {
-        width: 343px;
-    }
 
     /* Home Latest */
 
@@ -259,6 +255,11 @@
         line-height: 28px;
         letter-spacing: 0px;
         color: var(--primary-color-2);
+    }
+
+
+    .single-main .sg-right .sg-custom .sg-product-it .wp-block-column:nth-child(2) {
+        text-align: center;
     }
 
 }
@@ -416,6 +417,12 @@
         width: 100%;
         padding: 0;
     }
+
+
+    .single-main .sg-right .sg-custom .sg-product-it,
+    .single-main .sg-right .sg-custom .brand {
+        flex-wrap: nowrap !important;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -474,5 +481,13 @@
     .medicine-table figure figcaption {
         font-size: var(--font-14) !important;
         line-height: 26px;
+    }
+
+    /* Brand */
+
+    .single-main .sg-right .sg-custom ul.pros-list:before,
+    .single-main .sg-right .sg-custom ul.cons-list:before {
+        font-size: var(--font-18);
+        line-height: 24px;
     }
 }

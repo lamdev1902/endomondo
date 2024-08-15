@@ -12,7 +12,8 @@
     --secondary-color-2: #D4D5D4;
     --secondary-color-3: #9F9F9F;
     --secondary-color-4: #404040;
-    
+    --secondary-color-5: #f8f8f8;
+
     /* Text Color */
     --text-color-heading: #FFFCF1;
     --text-color-body: #FFF9E2;
@@ -45,7 +46,8 @@
 }
 
 
-strong,b {
+strong,
+b {
     font-weight: 500;
 }
 
@@ -85,6 +87,11 @@ h4 {
     letter-spacing: 0px;
     line-height: 26px;
     font-weight: 500;
+}
+
+h4:has(+ ul),
+h4:has(+ ol) {
+    margin-bottom: 8px;
 }
 
 /* color */
@@ -156,6 +163,37 @@ p {
     line-height: 20px;
 }
 
+/* Point */
+
+ul,
+ol {
+    margin: 0 0 0 8px;
+    padding: 0 0 0 8px;
+    margin-bottom: var(--mr-main);
+}
+
+ul li,
+ol li {
+    font-size: var(--font-16);
+    line-height: 24px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+ul li::marker,
+ol li::marker {
+    color: var(--primary-color-1);
+    font-size: 16px;
+}
+
+ul li {
+    list-style: disc;
+}
+
+ol li {
+    list-style: auto;
+}
+
 /* special text */
 
 .special-text {
@@ -196,7 +234,7 @@ p {
     margin-bottom: 40px;
 }
 
- /* flex */
+/* flex */
 .flex {
     display: flex;
 }
@@ -207,7 +245,7 @@ p {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    white-space: normal; 
+    white-space: normal;
     word-break: break-word;
 }
 
@@ -232,17 +270,17 @@ p {
         font-size: var(--font-26) !important;
         line-height: 32px;
     }
-    
+
     h2 {
         font-size: var(--font-22) !important;
         line-height: 28px;
     }
-    
+
     h3 {
         font-size: var(--font-20) !important;
         font-weight: 26px;
     }
-    
+
     h4 {
         font-size: var(--font-18) !important;
         line-height: 24px;
@@ -273,5 +311,18 @@ p {
         font-weight: 300;
         line-height: 18px;
         font-style: italic;
+    }
+
+    /* Point */
+    ul li,
+    ol li {
+        font-size: var(--font-15);
+        line-height: 23px;
+    }
+
+    ul li::marker,
+    ol li::marker {
+        color: var(--primary-color-1);
+        font-size: var(--font-15);
     }
 }
