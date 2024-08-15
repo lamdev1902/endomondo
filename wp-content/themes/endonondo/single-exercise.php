@@ -174,12 +174,12 @@ $post_type = $post->post_type;
                                                     <table >
                                                         <thead>
                                                             <tr>
-                                                                <th><p class="has-large-font-size pri-color-1">Training Type</p></th>
-                                                                <th><p class="has-large-font-size pri-color-1">Sets</p></th>
+                                                                <th>Training Type</th>
+                                                                <th>Sets</th>
                                                                 <?php if (!empty($optimals[0]['exc_training_reps'])): ?>
-                                                                    <th><p class="has-large-font-size pri-color-1">Reps</p></th>
+                                                                    <th>Reps</th>
                                                                 <?php else: ?>
-                                                                    <th><p class="has-large-font-size pri-color-1">Duration</p></th>
+                                                                    <th>Duration</th>
                                                                 <?php endif; ?>
                                                             </tr>
                                                         </thead>
@@ -188,7 +188,7 @@ $post_type = $post->post_type;
                                                                 <tr>
                                                                     <?php foreach ($optimal as $key => $item): ?>
                                                                         <?php if (!empty($item)): ?>
-                                                                            <td><p class=" <?=$key == "exc_trainning_title" ? "has-large-font-size" : ""?> "><?= $item ?></p></td>
+                                                                            <td><?= $item ?></td>
                                                                         <?php endif; ?>
                                                                     <?php endforeach; ?>
                                                                 </tr>
