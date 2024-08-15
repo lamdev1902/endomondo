@@ -211,3 +211,7 @@ table tbody tr:first-child td {
     color: #81838C;
     font-weight: 400;
 }
+
+.mucle p.muslce-ds {
+    margin-bottom: 0;
+}
