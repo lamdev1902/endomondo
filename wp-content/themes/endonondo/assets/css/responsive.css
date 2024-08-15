@@ -246,6 +246,9 @@
     }
 
     /* End Home Latstest */
+    table.wp-block-table {
+        width: 576px !important;
+    }
 
     table figure figcaption{
         position: absolute;
@@ -281,8 +284,8 @@
         background-color: var(--secondary-color-1);
     }
 
-    table thead th:first-child::before,
-    table tbody td:first-child::before {
+    .medicine-table table thead th:first-child::before,
+    .medicine-table table tbody td:first-child::before {
         content: "";
         position: absolute;
         width: 1px;
