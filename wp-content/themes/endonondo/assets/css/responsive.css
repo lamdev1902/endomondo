@@ -247,10 +247,6 @@
 
     /* End Home Latstest */
 
-    .medicine-table table {
-        width: 720px !important;
-    }
-
     table figure figcaption{
         position: absolute;
         top: 0;
@@ -302,7 +298,7 @@
 
     .no-scroll table thead th:first-child::before,
     .no-scroll table thead th:first-child::after,
-    .no-scroll table tbody td:first-child::before
+    .no-scroll table tbody td:first-child::before,
     .no-scroll table tbody td:first-child::after {
         width: 0px;
     }
@@ -461,6 +457,10 @@
 
     /* Table */
 
+    table {
+        width: 720px !important;
+    }
+    
     .medicine-table figure figcaption{
         font-size: var(--font-14) !important;
         line-height: 26px;
