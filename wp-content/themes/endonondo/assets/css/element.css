@@ -51,20 +51,40 @@ blockquote {
 }
 
 /* Custom Table */
-
-.medicine-table table {
-    border: 1px solid var(--secondary-color-1);
+table {
     table-layout: fixed;
 }
 
-.medicine-table table thead tr {
+.medicine-table table {
+    border: 1px solid var(--secondary-color-1);
+}
+
+figure.wp-block-table {
+    position: relative;
+    padding-top: 40px;
+}
+
+.medicine-table figure figcaption{
+    position: absolute;
+    top: 0;
+    font-size: var(--font-22) !important;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: var(--primary-color-2);
+    margin: 0;
+    font-style: normal;
+}
+
+table thead tr {
     background-color: white !important;
 }
 
 .medicine-table table thead p {
     margin-bottom: 0;
 }
-.medicine-table table tbody tr:first-child td {
+
+table tbody tr:first-child td {
     color: var(--primary-color-2) !important;
 }
 
@@ -111,11 +131,8 @@ blockquote {
 
 /* Table Full bg */
 
-.full-bg-table table thead tr {
-    height: 68px;
-}
-.full-bg-table table thead tr th {
-    font-size: var(--font-22) !important;
+.full-bg-table {
+    margin-bottom: 20px;
 }
 
 .full-bg-table table tbody{

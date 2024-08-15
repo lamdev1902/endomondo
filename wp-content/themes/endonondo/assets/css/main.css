@@ -2252,12 +2252,6 @@ figcaption {
     font-size: 15px;
 }
 
-.single-main .sg-right .sg-custom .wp-block-table .wp-element-caption {
-    text-align: center;
-    font-style: italic;
-    margin-top: 10px;
-}
-
 .single-main .sg-right .sg-custom table {
     margin: 0;
     border-collapse: collapse;
@@ -2270,28 +2264,35 @@ figcaption {
     border: none;
 }
 
-.single-main .sg-right .sg-custom table thead tr {
-    border: 1px solid var(--primary-color-1);
-    background: #E6EFD9;
-}
-
 .single-main .sg-right .sg-custom table thead tr th {
     padding: 16px 16px;
     border: none;
 }
 
+.single-main .sg-right .sg-custom table thead tr,
 .single-main .sg-right .sg-custom table tbody tr {
     border: 1px solid #D4D5D4;
     background: #fff;
 }
 
 .single-main .sg-right .sg-custom table tbody tr td {
-    padding: 10px;
+    padding: 16px;
     border: none;
 }
 
 .single-main .sg-right .sg-custom table tbody {
     border: 1px solid var(--secondary-color-1);
+}
+
+.custom table thead th:first-child,
+.custom table tbody td:first-child {
+    width: 129px;
+}
+
+.custom table thead th {
+    height: 78px;
+    border: none;
+    text-align: center;
 }
 
 .single-main .sg-right .sg-custom table tbody tr:first-child td {

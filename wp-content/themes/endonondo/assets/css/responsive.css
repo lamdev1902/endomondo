@@ -247,20 +247,31 @@
         width: 720px !important;
     }
 
-    .medicine-table.scroll figure {
-        position: relative;
+    table figure figcaption{
+        position: absolute;
+        top: 0;
+        font-size: var(--font-22) !important;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0px;
+        color: var(--primary-color-2);
     }
 
-    .medicine-table.scroll thead th:first-child, 
-    .medicine-table.scroll tbody td:first-child {
+    table thead th:first-child, 
+    table tbody td:first-child {
         position: sticky;
         left: 0;
         z-index: 1;
         background-color: var(--primary-color-3);
     }
 
-    .medicine-table.scroll thead th:first-child::after,
-    .medicine-table.scroll tbody td:first-child::after {
+    .no-scroll thead th:first-child, 
+    .no-scroll table tbody td:first-child {
+        position: unset;
+    }
+
+    table thead th:first-child::after,
+    table tbody td:first-child::after {
         content: "";
         position: absolute;
         width: 1px;
@@ -270,8 +281,8 @@
         background-color: var(--secondary-color-1);
     }
 
-    .medicine-table.scroll thead th:first-child::before,
-    .medicine-table.scroll tbody td:first-child::before {
+    table thead th:first-child::before,
+    table tbody td:first-child::before {
         content: "";
         position: absolute;
         width: 1px;
@@ -281,8 +292,15 @@
         background-color: var(--secondary-color-1);
     }
 
-    .medicine-table.scroll tbody tr:nth-child(even) td:first-child  {
+    table tbody tr:nth-child(even) td:first-child  {
         background-color: #f8f8f8;
+    }
+
+    .no-scroll table thead th:first-child::before,
+    .no-scroll table thead th:first-child::after,
+    .no-scroll table tbody td:first-child::before
+    .no-scroll table tbody td:first-child::after {
+        width: 0px;
     }
 
 }
@@ -319,7 +337,7 @@
 
     /* End Product */
 
-    .medicine-table table {
+    table {
         width: 720px !important;
     }
 }
@@ -416,5 +434,12 @@
 
     #footer .ft-bottom .menu {
         justify-content: space-between;
+    }
+
+    /* Table */
+
+    .medicine-table figure figcaption{
+        font-size: var(--font-20) !important;
+        line-height: 26px;
     }
 }
