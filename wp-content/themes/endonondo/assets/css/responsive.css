@@ -1,5 +1,5 @@
 @media (max-width: 480px) {
-    
+
     .container {
         padding: 0 20px;
     }
@@ -40,10 +40,10 @@
         width: 100px;
         height: 34px;
     }
-    
+
     /* End Header */
 
-    #footer .ft-menu ul.menu > li {
+    #footer .ft-menu ul.menu>li {
         width: 50% !important;
     }
 
@@ -81,11 +81,11 @@
     /* End Soon */
 
 
-    .contact-main .contact-box.flex{
+    .contact-main .contact-box.flex {
         flex-wrap: wrap;
     }
 
-    .contact-main .contact-box.flex .item-flex{
+    .contact-main .contact-box.flex .item-flex {
         width: 100%;
     }
 
@@ -116,7 +116,7 @@
         padding: 20px 0;
     }
 
-   .sg-other .news-list .news-it {
+    .sg-other .news-list .news-it {
         width: 100%;
     }
 
@@ -129,7 +129,7 @@
     .ft-snippet ul {
         margin-bottom: 30px;
     }
-    
+
     .ft-snippet::after {
         bottom: 15px;
     }
@@ -192,7 +192,7 @@
     .coupon-item-detail.all.coupon::after,
     .hightlight.relative-section::after,
     .coupon-top .info::after {
-        width:0;
+        width: 0;
     }
 
     .hightlight.relative-section::before,
@@ -246,11 +246,12 @@
     }
 
     /* End Home Latstest */
-    .wp-block-table table {
-        width: 576px !important;
+    .wp-block-table table thead th,
+    .no-title .wp-block-table table tbody td {
+        width: 144px !important;
     }
 
-    table figure figcaption{
+    table figure figcaption {
         position: absolute;
         top: 0;
         font-size: var(--font-22) !important;
@@ -260,55 +261,9 @@
         color: var(--primary-color-2);
     }
 
-    .medicine-table table thead th:first-child, 
-    .medicine-table table tbody td:first-child {
-        position: sticky;
-        left: 0;
-        z-index: 1;
-        background-color: var(--primary-color-3);
-    }
-
-    .no-scroll table thead th:first-child, 
-    .no-scroll table tbody td:first-child {
-        position: unset;
-    }
-
-    .medicine-table table thead th:first-child::after,
-    .medicine-table table tbody td:first-child::after {
-        content: "";
-        position: absolute;
-        width: 1px;
-        height: 100%;
-        right: 0;
-        top: 0;
-        background-color: var(--secondary-color-1);
-    }
-
-    .medicine-table table thead th:first-child::before,
-    .medicine-table table tbody td:first-child::before {
-        content: "";
-        position: absolute;
-        width: 1px;
-        height: 100%;
-        left: -1px;
-        top: 0;
-        background-color: var(--secondary-color-1);
-    }
-
-    .medicine-table table tbody tr:nth-child(odd) td:first-child  {
-        background-color: #f8f8f8;
-    }
-
-    .no-scroll table thead th:first-child::before,
-    .no-scroll table thead th:first-child::after,
-    .no-scroll table tbody td:first-child::before,
-    .no-scroll table tbody td:first-child::after {
-        width: 0px;
-    }
-
 }
 
-@media (min-width: 481px) and  (max-width: 834px) {
+@media (min-width: 481px) and (max-width: 834px) {
     .container {
         padding: 0 6.8%;
     }
@@ -328,7 +283,7 @@
 
     /* End Home top */
 
-    #header .menu-main .menu-box .menu-menu-main-container > ul > li {
+    #header .menu-main .menu-box .menu-menu-main-container>ul>li {
         -webkit-box-flex: 1;
         -ms-flex: 1 0 50%;
         flex: 1 0 50%;
@@ -364,6 +319,56 @@
     }
 }
 
+@media (max-width: 834px) {
+
+    .medicine-table table thead th:first-child,
+    .medicine-table table tbody td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 1;
+        background-color: var(--primary-color-3);
+    }
+
+    .no-scroll table thead th:first-child,
+    .no-scroll table tbody td:first-child {
+        position: unset;
+    }
+
+    .medicine-table table thead th:first-child::after,
+    .medicine-table table tbody td:first-child::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        right: 0;
+        top: 0;
+        background-color: var(--secondary-color-1);
+    }
+
+    .medicine-table table thead th:first-child::before,
+    .medicine-table table tbody td:first-child::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        left: -1px;
+        top: 0;
+        background-color: var(--secondary-color-1);
+    }
+
+    .medicine-table table tbody tr:nth-child(odd) td:first-child {
+        background-color: #f8f8f8;
+    }
+
+    .no-scroll table thead th:first-child::before,
+    .no-scroll table thead th:first-child::after,
+    .no-scroll table tbody td:first-child::before,
+    .no-scroll table tbody td:first-child::after {
+        width: 0px;
+    }
+
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
 
     .home-top .top-big {
@@ -378,7 +383,7 @@
 
     /* End Hero Section */
 
-    .contact-main .contact-box.flex .item-flex{
+    .contact-main .contact-box.flex .item-flex {
         width: 50%;
     }
 
@@ -391,6 +396,7 @@
     .sg-other .news-list {
         row-gap: 20px;
     }
+
     .sg-other .news-list .news-it {
         width: calc(50% - 10px);
         padding: 0;
@@ -412,7 +418,7 @@
     }
 }
 
-@media (max-width: 1024px) { 
+@media (max-width: 1024px) {
     .contact-main .contact-box .contact-right .follow-list a {
         min-width: 50%;
         margin-right: 0;
@@ -426,7 +432,7 @@
 
     /* Footer */
 
-    #footer  .container.list-flex {
+    #footer .container.list-flex {
         flex-wrap: wrap !important;
     }
 
@@ -442,7 +448,7 @@
         width: 100%;
     }
 
-    #footer .ft-menu ul.menu > li {
+    #footer .ft-menu ul.menu>li {
         width: 25%;
     }
 
@@ -460,11 +466,12 @@
 
     /* Table */
 
-    table {
-        width: 720px !important;
+    table thead th,
+    .no-title table tbody td {
+        width: 192px !important;
     }
-    
-    .medicine-table figure figcaption{
+
+    .medicine-table figure figcaption {
         font-size: var(--font-14) !important;
         line-height: 26px;
     }
