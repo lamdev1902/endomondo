@@ -132,7 +132,7 @@ table tbody tr:first-child td {
 }
 
 .medicine-table .wp-block-table table tbody tr td:first-of-type {
-    padding: 16px;
+    font-weight: 500;
 }
 
 .medicine-table.no-title .wp-block-table table tbody tr td:first-of-type {
