@@ -110,9 +110,10 @@ table thead tr {
 
 .medicine-table table thead p {
     margin-bottom: 0;
+    font-weight: 500;
 }
 
-.medicine-table table thead p.has-small-font-size {
+.medicine-table table thead span.has-small-font-size {
     font-weight: 400;
     color: var(--secondary-color-4);
 }
