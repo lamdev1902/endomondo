@@ -170,30 +170,32 @@ $post_type = $post->post_type;
                                         if ($optimals):
                                             ?>
                                             <div style="overflow: auto">
-                                                <table class="exc-optimal-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th><p class="has-large-font-size pri-color-1">Training Type</p></th>
-                                                            <th><p class="has-large-font-size pri-color-1">Sets</p></th>
-                                                            <?php if (!empty($optimals[0]['exc_training_reps'])): ?>
-                                                                <th><p class="has-large-font-size pri-color-1">Reps</p></th>
-                                                            <?php else: ?>
-                                                                <th><p class="has-large-font-size pri-color-1">Duration</p></th>
-                                                            <?php endif; ?>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php foreach ($optimals as $optimal): ?>
+                                                <figure class="wp-block-table">
+                                                    <table >
+                                                        <thead>
                                                             <tr>
-                                                                <?php foreach ($optimal as $key => $item): ?>
-                                                                    <?php if (!empty($item)): ?>
-                                                                        <td><p class=" <?=$key == "exc_trainning_title" ? "has-large-font-size" : ""?> "><?= $item ?></p></td>
-                                                                    <?php endif; ?>
-                                                                <?php endforeach; ?>
+                                                                <th><p class="has-large-font-size pri-color-1">Training Type</p></th>
+                                                                <th><p class="has-large-font-size pri-color-1">Sets</p></th>
+                                                                <?php if (!empty($optimals[0]['exc_training_reps'])): ?>
+                                                                    <th><p class="has-large-font-size pri-color-1">Reps</p></th>
+                                                                <?php else: ?>
+                                                                    <th><p class="has-large-font-size pri-color-1">Duration</p></th>
+                                                                <?php endif; ?>
                                                             </tr>
-                                                        <?php endforeach; ?>
-                                                    </tbody>
-                                                </table>
+                                                        </thead>
+                                                        <tbody>
+                                                            <?php foreach ($optimals as $optimal): ?>
+                                                                <tr>
+                                                                    <?php foreach ($optimal as $key => $item): ?>
+                                                                        <?php if (!empty($item)): ?>
+                                                                            <td><p class=" <?=$key == "exc_trainning_title" ? "has-large-font-size" : ""?> "><?= $item ?></p></td>
+                                                                        <?php endif; ?>
+                                                                    <?php endforeach; ?>
+                                                                </tr>
+                                                            <?php endforeach; ?>
+                                                        </tbody>
+                                                    </table>
+                                                </figure>
                                             </div>
                                         <?php endif; endif; ?>
                                 </div>
