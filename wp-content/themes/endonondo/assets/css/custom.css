@@ -1505,6 +1505,10 @@ section.exc-hero-section:before {
     list-style: auto;
 }
 
+.exc-container ul {
+    list-style: disc;
+}
+
 .exc-hero-section .exc-video{
     margin-bottom: 24px;
 }
@@ -1546,8 +1550,7 @@ section.exc-hero-section:before {
 }
 
 .bd-bot {
-    padding: 40px 0;
-    border-bottom: 1px solid#D4D5D4;
+    padding: 20px 0;
 }
 
 .exc-content .title-content {

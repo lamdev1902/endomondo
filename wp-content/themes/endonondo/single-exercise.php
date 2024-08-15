@@ -163,7 +163,6 @@ $post_type = $post->post_type;
                                 <div class="content-item bd-bot">
                                     <h2 class="title-content"><?= $content['content_title']; ?></h2>
                                     <?= $content['content'] ?>
-
                                     <?php
                                     if ($content['content_type'] == 2):
                                         $optimals = get_field('optimal_sets_and_reps', $postid);

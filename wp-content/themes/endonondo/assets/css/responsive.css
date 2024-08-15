@@ -246,7 +246,7 @@
     }
 
     /* End Home Latstest */
-    table.wp-block-table {
+    .wp-block-table table {
         width: 576px !important;
     }
 
