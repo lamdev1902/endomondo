@@ -2312,7 +2312,7 @@ figcaption {
 
 .single-main .sg-right .sg-custom ul.list-check li {
     list-style: none;
-    background: url(../images/list-check.svg) no-repeat left top 7px/16px auto;
+    background: url(../images/list-check.svg) no-repeat left top 4px/16px auto;
     margin-bottom: 20px;
     padding-left: 21px;
 }
@@ -2324,10 +2324,9 @@ figcaption {
 
 .single-main .sg-right .sg-custom ul.list-remove li {
     list-style: none;
-    background: url(../images/list-remove.svg) no-repeat left top 7px/16px auto;
+    background: url(../images/list-remove.svg) no-repeat left top 4px/16px auto;
     margin-bottom: 20px;
     padding-left: 21px;
-    line-height: 24px;
 }
 
 .single-main .sg-right .sg-custom .table-review {
