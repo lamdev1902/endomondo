@@ -135,7 +135,7 @@ table tbody tr:first-child td {
 }
 
 .medicine-table.no-title .wp-block-table table tbody tr td:first-of-type {
-    width: auto;
+    font-weight: 500;
 }
 
 
