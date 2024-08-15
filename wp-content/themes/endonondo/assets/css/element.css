@@ -92,7 +92,7 @@ figure.wp-block-table {
     padding-top: 25px;
 }
 
-figure figcaption{
+figure.wp-block-table figcaption{
     position: absolute;
     top: 0;
     font-size: var(--font-14) !important;

@@ -553,15 +553,17 @@ $post_type = $post->post_type;
             <div class="exc-container bd-bot">
                 <?php the_content(); ?>
                 <?php
-                if (get_field('enable_source', 'option') == true && $checktime == false) {
+                if (get_field('enable_source', 'option') == true) {
                     ?>
-                    <div class="sg-resources box-grey mt-64 on-pc">
-                        <h4>Resources</h4>
+                    <div class="sg-resources mr-bottom-20 pd-main on-pc">
+                        <h3>Resources</h3>
+                        <div class="intro">
+                            <?= get_field('source_intro', 'option'); ?>
+                        </div>
                         <?php $source_content = get_field('source_content', $postid);
                         if ($source_content)
                             echo $source_content;
-                        else
-                            echo get_field('source_intro', 'option'); ?>
+                        ?>
                     </div>
                 <?php } ?>
             </div>
