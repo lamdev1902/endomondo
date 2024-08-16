@@ -1819,6 +1819,11 @@ main {
 
 }
 
+.single-main .sg-resources ul li::marker,
+.single-main .sg-resources ol li::marker {
+    color: var(--primary-color-2);
+}
+
 .single-main .sg-resources ul li:last-child,
 .single-main .sg-resources ol li:last-child {
     margin-bottom: 0;

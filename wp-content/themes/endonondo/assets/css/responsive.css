@@ -122,14 +122,17 @@
 
     /* End author */
 
+    .box-grey,
     .ft-snippet {
         padding: 20px 24px;
     }
 
+    .box-grey ul,
     .ft-snippet ul {
         margin-bottom: 30px;
     }
 
+    .box-grey::after,
     .ft-snippet::after {
         bottom: 15px;
     }

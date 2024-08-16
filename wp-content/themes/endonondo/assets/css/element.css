@@ -1,17 +1,20 @@
 /* Ft snippet */
 
-.box-grey {
+.box-grey,
+.ft-snippet {
     padding: 32px 20px 58px;
     background-color: var(--secondary-color-1);
     position: relative;
     margin-bottom: var(--mr-main)
 }
 
-.box-grey ul {
+.box-grey ul
+.ft-snippet ul {
     margin-bottom: var(--mr-main)
 }
 
-.box-grey::after {
+.box-grey::after,
+.ft-snippet::after {
     position: absolute;
     content: url(../images/ft-snippet-logo.svg);
     width: 185px;
