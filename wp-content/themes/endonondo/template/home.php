@@ -95,7 +95,7 @@ the_post();
 					foreach ($social as $social) {
 						?>
 						<a target="_blank" href="<?php echo $social['link']; ?>"><img
-								src="<?php echo $social['icon']; ?>" /></a>
+								alt="<?= $social['icon']['alt']; ?>" src="<?= $social['icon']['url']; ?>" /></a>
 					<?php }
 				} ?>
 			</div>

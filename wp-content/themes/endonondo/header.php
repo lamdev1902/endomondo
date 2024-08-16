@@ -150,18 +150,6 @@
 							);
 							?>
 						</nav>
-						<div class="social">
-							<h3 class="text-uppercase">Social</h3>
-							<?php
-							$social = get_field('social', 'option');
-							if ($social) {
-								foreach ($social as $social) {
-									?>
-									<a target="_blank" href="<?php echo $social['link']; ?>"><img
-											src="<?php echo $social['icon']; ?>" /></a>
-								<?php }
-							} ?>
-						</div>
 					</div>
 				</div>
 			</nav>
