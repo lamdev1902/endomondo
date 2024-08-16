@@ -94,8 +94,8 @@ the_post();
 				if ($social) {
 					foreach ($social as $social) {
 						?>
-						<a target="_blank" href="<?php echo $social['link']; ?>"><img
-								alt="<?= $social['icon']['alt']; ?>" src="<?= $social['icon']['url']; ?>" /></a>
+						<a target="_blank" href="<?php echo $social['link']; ?>"><img alt="<?= $social['icon']['alt']; ?>"
+								src="<?= $social['icon']['url']; ?>" /></a>
 					<?php }
 				} ?>
 			</div>
@@ -241,14 +241,15 @@ the_post();
 					<a class="pri-color-3 soon-btn mr-top-24">GET ME THE LIFETIME DEAL</a>
 					<div class="social-soon flex mr-top-24">
 						<p class="special-text">Follow us: </p>
-						<a target="_blank" href="https://www.facebook.com/bodybuildingmotivation2/"><img
-								src="https://www.endomondo.com/wp-content/uploads/2024/01/facebook.svg"></a>
-						<a target="_blank" href="https://www.youtube.com/@endomondodotcom"><img
-								src="https://www.endomondo.com/wp-content/uploads/2024/01/youtube.svg"></a>
-						<a target="_blank" href="https://www.instagram.com/workoutendomondo/"><img
-								src="https://www.endomondo.com/wp-content/uploads/2024/01/instagram-2-1.svg"></a>
-						<a target="_blank" href="https://www.pinterest.com/endomondo/"><img
-								src="https://www.endomondo.com/wp-content/uploads/2024/01/pinterest-1.svg"></a>
+						<?php
+						$social = get_field('social', 'option');
+						if ($social) {
+							foreach ($social as $social) {
+								?>
+								<a target="_blank" href="<?php echo $social['link']; ?>"><img
+										alt="<?= $social['icon']['alt']; ?>" src="<?= $social['icon']['url']; ?>" /></a>
+							<?php }
+						} ?>
 					</div>
 				</div>
 			</div>
@@ -299,7 +300,6 @@ the_post();
 		</div>
 	</section>
 </main>
-<?php get_footer(); ?>
 <script>
 	jQuery(function ($) {
 		if ($('.feature-slider').length)
@@ -344,3 +344,4 @@ the_post();
 		};
 	});
 </script>
+<?php get_footer(); ?>

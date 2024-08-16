@@ -342,14 +342,13 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                             <a href="<?php echo $author_url; ?>"><img src="<?php echo $avt; ?>" alt=""></a>
                         <?php } else { ?>
                             <a href="<?php echo $author_url; ?>"><img
-                                    src="<?php echo get_field('avatar_default', 'option'); ?>" alt="">
+                                    src="<?php echo get_field('avatar_default', 'option'); ?>" alt=""></a>
                             <?php } ?>
                             <p class="has-large-font-size"><a style="color: var(--pri-color-2) !important;"
                                     href="<?php echo $author_url; ?>"><?php the_author(); ?>
                                 </a>
                                 <span class="has-small-font-size sec-color-3">
-                                    <?php echo get_field('position', 'user_' . $author_id);
-                                    ; ?></span>
+                                    <?php echo get_field('position', 'user_' . $author_id);?></span>
                             </p>
                             <div class="social-author">
                                 <?php
