@@ -39,6 +39,7 @@
         font-size: var(--font-14);
         width: 100px;
         height: 34px;
+        line-height: 33px;
     }
 
     /* End Header */
@@ -311,6 +312,8 @@
         width: 120px;
         height: 34px;
         border: 1px solid var(--secondary-color-4);
+        text-align: center;
+        line-height: 31px;
     }
 
     /* Product */
@@ -334,6 +337,12 @@
 
 @media (max-width: 834px) {
 
+    /* Header */
+    .ed-btn span {
+        display: none;
+    }
+
+    /* Table */
     .medicine-table table thead th:first-child,
     .medicine-table table tbody td:first-child {
         position: sticky;

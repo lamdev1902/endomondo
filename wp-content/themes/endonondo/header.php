@@ -125,8 +125,8 @@
 								src="<?php echo get_field('logo', 'option') ?>" alt=""></a>
 					</div>
 					<div class="btn-header">
-						<button href="<?php echo get_field('subscribe_link', 'option') ?>"
-							class="ed-btn btn-popup"><?php echo get_field('subscribe_title', 'option') ?></button>
+						<a href="<?php echo get_field('subscribe_link', 'option') ?>"
+							class="ed-btn btn-popup"><?php echo get_field('subscribe_title', 'option') ?></a>
 					</div>
 				</div>
 			</div>
@@ -136,7 +136,6 @@
 						<form action="<?php echo get_home_url(); ?>/" method="get">
 							<input type="text" id="s" name="s" class="form-control" value=""
 								placeholder="Type here ...">
-							<button class="position-relative btn-search ed-btn" type="submit "></button>
 						</form>
 					</div>
 				</div>

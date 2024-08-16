@@ -347,10 +347,6 @@ main {
     top: -25px;
 }
 
-#header .btn-header {
-    text-align: right;
-}
-
 #header .ed-btn {
     color: #fff;
     background: transparent;
@@ -361,6 +357,8 @@ main {
     height: 48px;
     padding: 0;
     border: none;
+    line-height: 45px;
+    text-align: right;
 }
 
 #header .ed-btn:hover {
@@ -1204,10 +1202,6 @@ main {
         padding: 5px 15px;
     }
 
-    .ed-btn span {
-        display: none;
-    }
-
     .ed-title {
         font-size: 28px;
         line-height: 34px;
@@ -1343,14 +1337,9 @@ main {
     background: transparent;
 }
 
-.home-main #header .ed-btn {
-    color: #fff;
-}
-
-.home-main #header .ed-btn:hover {
-    background: #fff;
-    color: #101010;
-    border-color: #fff;
+.btn-header {
+    display: flex;
+    justify-content: end;
 }
 
 .home-main .toogle-menu span {

@@ -11,7 +11,7 @@
 						foreach ($social as $social) {
 							?>
 							<a target="_blank" href="<?php echo $social['link']; ?>"><img
-									src="<?php echo $social['icon']; ?>" /></a>
+								src="<?= $social['icon']['url']; ?>" alt="<?= $social['icon']['alt']; ?>" /></a>
 						<?php }
 					} ?>
 				</div>

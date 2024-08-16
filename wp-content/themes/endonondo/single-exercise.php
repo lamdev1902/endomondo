@@ -55,7 +55,7 @@ $post_type = $post->post_type;
 
         if ($extension == 'mp4') {
             $checkPath = true;
-            $elemlemnt = "<video autoplay='autoplay' loop='loop' muted defaultMuted playsinline  oncontextmenu='return false;'  preload='auto' src='$video'>Your browser does not support the video tag.</video>";
+            $elemlemnt = "<video autoplay='autoplay' loop='loop' muted playsinline  oncontextmenu='return false;'  preload='auto' src='$video'>Your browser does not support the video tag.</video>";
         }
     }
     if ($exData):
@@ -129,12 +129,12 @@ $post_type = $post->post_type;
                     <div class="social on-pc">
                         <p class="has-small-font-size pri-color-2" style="margin-bottom: 0">Follow us: </p>
                         <?php
-                        $social = get_field('social', 'option');
-                        if ($social) {
-                            foreach ($social as $social) {
+                        $socials = get_field('follow_social', 'option');
+                        if ($socials) {
+                            foreach ($socials as $social) {
                                 ?>
-                                <a target="_blank" href="<?php echo $social['link']; ?>"><img
-                                        src="<?php echo $social['icon']; ?>" /></a>
+                                <a target="_blank" href="<?php echo $social['link']; ?>"><img alt="<?= $social['icon']['alt']; ?>"
+                                        src="<?= $social['icon']['url']; ?>" /></a>
                             <?php }
                         } ?>
                     </div>
@@ -170,7 +170,7 @@ $post_type = $post->post_type;
                                             ?>
                                             <div style="overflow: auto">
                                                 <figure class="wp-block-table">
-                                                    <table >
+                                                    <table>
                                                         <thead>
                                                             <tr>
                                                                 <th>Training Type</th>
@@ -610,7 +610,6 @@ $post_type = $post->post_type;
         </aside>
     </div>
 </main>
-<?php get_footer(); ?>
 <script>
     jQuery(function ($) {
         $('.wp-caption-small').parent().addClass('wp-caption-small');
@@ -642,6 +641,5 @@ $post_type = $post->post_type;
             }, (remains - 0.1) * 1000);
         }
     }
-
-
 </script>
+<?php get_footer(); ?>

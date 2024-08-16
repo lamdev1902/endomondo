@@ -63,14 +63,14 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 								<?php
 								$medically_reviewed = get_field('select_author', $postid);
 								if ($medically_reviewed) { ?>
-									<span class="has-small-font-size"></spanclass> - Reviewed by</span>
+									<span class="has-small-font-size"> - Reviewed by</span>
 									<span class="has-small-font-size">
 										<?php foreach ($medically_reviewed as $m => $mr) {
 											$anamer = get_field('user_nshort', 'user_' . $mr['ID']);
 											if (!$anamer || $anamer == '')
 												$anamer = $mr['display_name'];
 											?>
-											<a class="pri-color-2" style="text-decoration: underlight"
+											<a class="pri-color-2" style="text-decoration: underline"
 												href="<?php echo get_author_posts_url($mr['ID']); ?>"><?php if ($m > 0)
 													   echo ' ,'; ?><?php echo $anamer; ?></a>
 										<?php } ?>
@@ -116,12 +116,12 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 				<div class="social on-pc mr-bottom-20">
 					<p class="has-small-font-size pri-color-2" style="margin-bottom: 0">Follow us: </p>
 					<?php
-					$social = get_field('social', 'option');
-					if ($social) {
-						foreach ($social as $social) {
+					$socials = get_field('follow_social', 'option');
+					if ($socials) {
+						foreach ($socials as $social) {
 							?>
 							<a target="_blank" href="<?php echo $social['link']; ?>"><img
-									src="<?php echo $social['icon']; ?>" /></a>
+									alt="<?= $social['icon']['alt']; ?>" src="<?= $social['icon']['url']; ?>" /></a>
 						<?php }
 					} ?>
 				</div>

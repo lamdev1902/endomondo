@@ -81,5 +81,5 @@
 				wp_reset_query();
 			?>
 		</div>
-	</s>
+	</section>
 </aside>
