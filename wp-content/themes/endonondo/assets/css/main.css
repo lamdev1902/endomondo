@@ -2707,15 +2707,6 @@ figcaption {
         border-width: 4px;
     }
 
-    .single-main .sg-right .sg-custom ul li {
-        font-size: 15px;
-        line-height: 26px;
-    }
-
-    .single-main .sg-right .sg-custom ul.list-number li::marker {
-        font-size: 15px;
-    }
-
     .single-main .sg-right .sg-custom table thead tr th {
         font-size: 15px;
         line-height: 26px;

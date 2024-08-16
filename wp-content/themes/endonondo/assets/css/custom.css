@@ -1502,11 +1502,7 @@ section.exc-hero-section:before {
 .exc-container ol,
 .exc-container ul {
     padding-left: 20px;
-    list-style: auto;
-}
-
-.exc-container ul {
-    list-style: disc;
+    list-style: none;
 }
 
 .exc-hero-section .exc-video {
@@ -1533,21 +1529,7 @@ section.exc-hero-section:before {
 }
 
 .exc-container li {
-    margin-bottom: 16px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 28px;
-    color: #404040;
-}
-
-.exc-container li {
     margin-bottom: 8px;
-}
-
-.exc-container ol li::marker,
-.exc-container ul li::marker {
-    color: #83AD41;
-    font-size: 16px;
 }
 
 .bd-bot {

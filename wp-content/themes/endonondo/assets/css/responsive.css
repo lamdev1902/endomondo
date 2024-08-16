@@ -265,6 +265,15 @@
         text-align: center;
     }
 
+    .single-main .sg-right .sg-custom .sg-product-it .wp-block-column:nth-child(2) .list-check,
+    .single-main .sg-right .sg-custom .sg-product-it .wp-block-column:nth-child(2) .list-remove {
+        text-align: left;
+    }
+
+    .single-main .sg-right .sg-custom ul.list-check li,
+    .single-main .sg-right .sg-custom ul.list-remove li {
+        padding-left: 23px;
+    }
 }
 
 @media (min-width: 481px) and (max-width: 834px) {
