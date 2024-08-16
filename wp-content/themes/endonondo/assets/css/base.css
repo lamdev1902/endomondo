@@ -167,8 +167,8 @@ p {
 
 ul,
 ol {
-    margin: 0 0 0 8px;
-    padding: 0 0 0 8px;
+    margin: 0;
+    padding: 0;
     margin-bottom: var(--mr-main);
 }
 
@@ -186,12 +186,19 @@ ol li::marker {
     font-size: 16px;
 }
 
-ul li {
+ul,
+ol {
+    list-style: none;
+}
+
+.single-main ul,
+.exc-container ul {
     list-style: disc;
 }
 
-ol li {
-    list-style: auto;
+.single-main ol,
+.exc-container ol {
+    list-style: decimal;
 }
 
 /* special text */
