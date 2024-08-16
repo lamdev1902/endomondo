@@ -187,12 +187,12 @@
 								<div class="social">
 									<p class="has-small-font-size">Follow us: </p>
 									<?php
-									$social = get_field('social', 'option');
-									if ($social) {
-										foreach ($social as $social) {
+									$socials = get_field('social', 'option');
+									if ($socials) {
+										foreach ($socials as $social) {
 											?>
 											<a target="_blank" href="<?php echo $social['link']; ?>"><img
-													src="<?php echo $social['icon']; ?>" /></a>
+													src="<?= $social['icon']['url']; ?>" alt="<?= $social['icon']['alt']; ?>" /></a>
 										<?php }
 									} ?>
 								</div>
