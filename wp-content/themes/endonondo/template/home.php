@@ -79,8 +79,7 @@ the_post();
 					<?php foreach ($brand_list as $hl) {
 						$logo = $hl['logo'];
 						?>
-						<li><img src="<?php echo $logo['url']; ?>"
-									alt="<?php echo $logo['alt']; ?>"></li>
+						<li><img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>"></li>
 					<?php } ?>
 				</ul>
 			</div>
@@ -196,13 +195,15 @@ the_post();
 								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 							</div>
 							<div class="info">
-								<div class="tag">
-									<?php $category = get_the_category($post->ID);
-									foreach ($category as $cat) { ?>
-										<span><a
-												href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
-									<?php } ?>
-								</div>
+								<?php $category = get_the_category($post->ID); ?>
+								<?php if ($category): ?>
+									<div class="tag">
+										<?php foreach ($category as $cat) { ?>
+											<span><a
+													href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
+										<?php } ?>
+									</div>
+								<?php endif; ?>
 								<p class="has-medium-font-size text-special clamp-2 ellipsis pri-color-3"><a
 										class="pri-color-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 								<p class="has-small-font-size author"><a class="sec-color-3"

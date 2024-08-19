@@ -359,6 +359,10 @@
         height: 378px;
     }
 
+    .home-lastest .lastest-it .featured {
+        height: 116px;
+    }
+
     .home-lastest .lastest-it {
         margin-bottom: 16px;
         float: left;
