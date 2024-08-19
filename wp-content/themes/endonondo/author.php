@@ -26,7 +26,7 @@ $check = false;
 		<div class="bg-author"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-author-3.png"
 				alt="">
 		</div>
-		<div class="author-top position-relative special-width">
+		<section class="author-top position-relative special-width">
 			<div class="container">
 				<div class="author-box">
 					<div class="featured image-fit">
@@ -91,19 +91,19 @@ $check = false;
 					<?php else: ?>
 						<div class="author-custom">
 							<div class="author-it">
-								<h2 class="text-uppercase">Experience</h2>
+								<h2>Experience</h2>
 								<?php echo get_field('experience', 'user_' . $userid) ?>
 							</div>
 							<div class="author-it">
-								<h2 class="text-uppercase">EDUCATION</h2>
+								<h2>EDUCATION</h2>
 								<?php echo get_field('educator', 'user_' . $userid) ?>
 							</div>
 						</div>
 					<?php endif; ?>
 				</div>
 			</div>
-		</div>
-		<div class="author-other sg-other">
+		</section>
+		<section class="author-other sg-other">
 			<div class="container">
 				<h2 class="text-center"><?php echo get_field('other_author_page', 'option'); ?>
 				</h2>
@@ -146,7 +146,7 @@ $check = false;
 				}
 				if (count($array_merge) > 0) {
 					?>
-					<div class="news-list list-flex">
+					<div class="news-list grid grid-feature">
 						<?php
 						foreach ($array_merge as $post) {
 							$medically_reviewed = get_field('medically_reviewed', $post->ID);
@@ -202,7 +202,7 @@ $check = false;
 				}
 				?>
 			</div>
-		</div>
+		</section>
 	</div>
 	</div>
 </main>

@@ -53,7 +53,7 @@ the_post();
 							<div class="top-it mr-bottom-20 position-relative">
 								<p class="has-medium-font-size mr-bottom-16 text-special clamp-2 ellipsis pri-color-3"><a
 										class="pri-color-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-								<p class="author"><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By
+								<p class=""><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By
 										<?php echo $post_display_name; ?></a></p>
 								<a href="<?php the_permalink(); ?>" class="news-link author position-absolute">
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/right.svg" alt="">
@@ -130,7 +130,7 @@ the_post();
 										</div>
 										<p class="has-large-font-size"><a class="pri-color-2"
 												href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></p>
-										<p class="has-small-font-size author"><a class="sec-color-3"
+										<p class="has-small-font-size"><a class="sec-color-3"
 												href="<?php echo $post_author_url; ?>">By
 												<?php echo $post_display_name; ?></a></p>
 									</div>
@@ -235,17 +235,17 @@ the_post();
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/soon-img.svg" alt="">
 				</div>
 				<div class="soon-item">
-					<h3 class="has-x-large-font-size pri-color-2 mr-bottom-20">We are launching soon</h3>
-					<p class="mr-top-24 special-text">We've have helped <span
+					<p class="has-x-large-font-size pri-color-2">We are launching soon</p>
+					<p class="special-text">We've have helped <span
 							class="has-x-large-font-size pri-color-2">1.542,335</span> people
 						get in shape</p>
-					<a class="pri-color-3 soon-btn mr-top-24">GET ME THE LIFETIME DEAL</a>
-					<div class="social-soon flex mr-top-24">
-						<p class="special-text">Follow us: </p>
+					<a class="pri-color-3 soon-btn">GET ME THE LIFETIME DEAL</a>
+					<div class="social flex">
+						<p class="has-small-font-size pri-color-2" style="margin-bottom: 0">Follow us: </p>
 						<?php
-						$social = get_field('social', 'option');
-						if ($social) {
-							foreach ($social as $social) {
+						$socials = get_field('follow_social', 'option');
+						if ($socials) {
+							foreach ($socials as $social) {
 								?>
 								<a target="_blank" href="<?php echo $social['link']; ?>"><img
 										alt="<?= $social['icon']['alt']; ?>" src="<?= $social['icon']['url']; ?>" /></a>
@@ -259,7 +259,7 @@ the_post();
 	<section class="home-choise bg-white color-black pd-main">
 		<div class="container">
 			<h2 class="">Recommended Posts</h2>
-			<div class="news-list list-flex">
+			<div class="news-list grid grid-feature">
 				<?php
 				$args = array(
 					'posts_per_page' => 8,
@@ -288,7 +288,7 @@ the_post();
 								</div>
 								<p class="has-medium-font-size text-special clamp-2"><a class="pri-color-2"
 										href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></p>
-								<p class="has-small-font-size author"><a class="sec-color-3"
+								<p class="has-small-font-size"><a class="sec-color-3"
 										href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a></p>
 							</div>
 						</div>

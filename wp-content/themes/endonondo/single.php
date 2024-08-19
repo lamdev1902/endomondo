@@ -18,6 +18,7 @@ $disableFeature = get_field('disable_featured_image', $postid);
 $advertiser_disclosure = get_field('enable_tooltip1', $postid);
 
 $enable_fat_checked = get_field('enable_fat_checked', $postid);
+
 $enable_fcgroup = get_field('enable_fcgroup', $postid);
 
 ?>
@@ -202,10 +203,10 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 		</div>
 		<aside class="sg-other">
 			<h2 class="text-center">Read More</h2>
-			<div class="news-list list-flex">
+			<div class="news-list grid grid-feature">
 				<?php
 				$args = array(
-					'posts_per_page' => 4,
+					'posts_per_page' => 3,
 					'post__not_in' => array($postid),
 					'post_type' => $post_type,
 				);
@@ -261,7 +262,6 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 				?>
 			</div>
 		</aside>
-
 	</div>
 </main>
 <?php get_footer(); ?>
