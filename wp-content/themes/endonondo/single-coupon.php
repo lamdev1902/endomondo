@@ -43,8 +43,15 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                     <div class="name-author">
                         <div class="info">
                             <div class="author-by" itemscope>
-                                <time class="updated has-small-font-size" datetime="<?php the_modified_date('c'); ?>"
-                                itemprop="dateModified"><?php echo __('Published', 'hc_theme'); ?> <?php the_modified_date('F d, Y'); ?></time>
+                            <time class="updated has-small-font-size" datetime="<?php the_modified_date('c'); ?>"
+									itemprop="dateModified"><?php
+									if (get_the_modified_date('U') !== get_the_date('U')) {
+										echo __('Updated on', 'hc_theme');
+									} else {
+										echo __('Published', 'hc_theme');
+									}
+									?>
+									<?php the_modified_date('F d, Y'); ?></time>
                                 <span class="has-small-font-size">- Writen by: </span>
                                     <span class="has-small-font-size" itemprop="author" itemscope itemtype="https://schema.org/Person"><a class="pri-color-2" href="<?php echo $author_url; ?>"
                                         title="<?php echo __('View all posts by', 'hc_theme'); ?> <?php the_author(); ?>" rel="author"
@@ -350,39 +357,10 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                                 <span class="has-small-font-size sec-color-3">
                                     <?php echo get_field('position', 'user_' . $author_id);?></span>
                             </p>
-                            <div class="social-author">
-                                <?php
-                                $user_linkedin = get_field('user_linkedin', 'user_' . $author_id);
-                                $user_website = get_field('user_website', 'user_' . $author_id);
-                                $user_fb = get_field('user_fb', 'user_' . $author_id);
-                                $user_instagram = get_field('user_instagram', 'user_' . $author_id);
-                                $user_twitter = get_field('user_twitter', 'user_' . $author_id);
-                                ?>
-                                <?php if ($user_linkedin) { ?><a class="share-linkedin"
-                                        href="<?php echo $user_linkedin; ?>" target="_blank" rel="noopener"><img
-                                            src="<?php echo get_template_directory_uri(); ?>/assets/img/so-linkein.svg"
-                                            alt=""></a><?php } ?>
-                                <?php if ($user_website) { ?><a class="share-link" href="<?php echo $user_website; ?>"
-                                        target="_blank" rel="noopener"><img
-                                            src="<?php echo get_template_directory_uri(); ?>/assets/img/so-website.svg"
-                                            alt=""></a><?php } ?>
-                                <?php if ($user_fb) { ?><a class="share-linkedin" href="<?php echo $user_fb; ?>"
-                                        target="_blank" rel="noopener"><img
-                                            src="<?php echo get_template_directory_uri(); ?>/assets/img/so-facebook.svg"
-                                            alt=""></a><?php } ?>
-                                <?php if ($user_instagram) { ?><a class="share-linkedin"
-                                        href="<?php echo $user_instagram; ?>" target="_blank" rel="noopener"><img
-                                            src="<?php echo get_template_directory_uri(); ?>/assets/img/so-instagram.svg"
-                                            alt=""></a><?php } ?>
-                                <?php if ($user_twitter) { ?><a class="share-linkedin"
-                                        href="<?php echo $user_twitter; ?>" target="_blank" rel="noopener"><img
-                                            src="<?php echo get_template_directory_uri(); ?>/assets/img/so-twitter.svg"
-                                            alt=""></a><?php } ?>
-                            </div>
                     </div>
                     <?php if ($user_description) { ?>
                         <div class="author-info">
-                                <p><?php echo wp_trim_words($user_description, 28, ''); ?><a
+                                <p><?php echo wp_trim_words($user_description, 50, ''); ?><a
                                         href="<?php echo $author_url; ?>"> See more</a></p>
                             </div>
                     <?php } ?>

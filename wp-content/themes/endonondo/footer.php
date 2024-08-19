@@ -2,7 +2,7 @@
 	<div class="ft-top">
 		<div class="container list-flex flex-two">
 			<div class="ft-info item-flex">
-				<div class="mr-bottom-20 ft-logo"><a href="<?php echo home_url(); ?>"><img
+				<div class="ft-logo"><a href="<?php echo home_url(); ?>"><img
 							src="<?php echo get_field('logo', 'option') ?>" alt=""></a></div>
 				<div class="social mr-bottom-40">
 					<?php
@@ -38,7 +38,6 @@
 					)
 				);
 				?>
-
 				<div class="disclaimer">
 					<?php the_field('disclaimer', 'option'); ?>
 				</div>

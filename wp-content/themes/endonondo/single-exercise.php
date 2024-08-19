@@ -9,6 +9,8 @@ get_header();
 
 $post_type = $post->post_type;
 
+$user_description = get_field('story', 'user_' . $upid);
+
 ?>
 <main id="content">
     <?php
@@ -601,9 +603,12 @@ $post_type = $post->post_type;
                                 <p class="color-grey"><?= get_field('position', 'user_' . $author_id) ?></p>
                             </div>
                         </div>
-                        <div class="author-info">
-                            <p><?= get_field('story', 'user_' . $author_id) ?>
-                        </div>
+                        <?php if ($user_description) { ?>
+                            <div class="author-info">
+                                <p><?php echo wp_trim_words($user_description, 50, ''); ?><a
+                                        href="<?php echo $author_url; ?>"> See more</a></p>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

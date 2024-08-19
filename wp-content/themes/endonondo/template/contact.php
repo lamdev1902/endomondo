@@ -33,11 +33,11 @@ the_post();
 						</address>
 						<h4 class="mr-bottom-20"><?php echo get_field('follow_title', $pageid); ?></h4>
 						<div class="follow-list list-flex">
-							<?php $follow_social = get_field('follow_social', $pageid);
+							<?php $follow_social = get_field('follow_social', 'option');
 							if ($follow_social) {
 								foreach ($follow_social as $follow) {
 									?>
-									<a href="<?php echo $follow['link']; ?>" target="_blank"><img src="<?php echo $follow['icon']; ?>" /><?php echo $follow['title']; ?> </a>
+									<a href="<?php echo $follow['link']; ?>" target="_blank"><img src="<?php echo $follow['icon']['url']; ?>" alt="<?php echo $follow['icon']['alt']; ?>" /><?php echo $follow['title']; ?> </a>
 									</a>
 								<?php }
 							} ?>

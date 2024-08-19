@@ -72,15 +72,15 @@ the_post();
 	$brand_list = get_field('feature_on', $pageid);
 	if ($brand_list) {
 		?>
-		<section class="home-feature-on pd-main">
+		<section class="home-feature-on">
 			<div class="container">
 				<h2 class="pri-color-3 text-center">Featured On</h2>
 				<ul>
 					<?php foreach ($brand_list as $hl) {
 						$logo = $hl['logo'];
 						?>
-						<li><a href="<?php echo $hl['link']; ?>" target="_blank"><img src="<?php echo $logo['url']; ?>"
-									alt="<?php echo $logo['alt']; ?>"></a></li>
+						<li><img src="<?php echo $logo['url']; ?>"
+									alt="<?php echo $logo['alt']; ?>"></li>
 					<?php } ?>
 				</ul>
 			</div>
@@ -179,7 +179,7 @@ the_post();
 			<div class="lastest-list">
 				<?php
 				$args = array(
-					'posts_per_page' => 6,
+					'posts_per_page' => 5,
 					'offset' => 11,
 					'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
 				);

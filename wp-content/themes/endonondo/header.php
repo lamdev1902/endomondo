@@ -170,7 +170,7 @@
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-popup.png"
 									alt="">
 								<h4>For Your Health & Wellness</h4>
-								<p>Stay update with the latest health information and news</p>
+								<p class="has-small-font-size">Stay update with the latest health information and news</p>
 								<div class="klaviyo-form-UPY2r8"></div>
 								<div class="social">
 									<p class="has-small-font-size">Follow us: </p>

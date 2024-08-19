@@ -11,31 +11,8 @@
     display: none;
 }
 
-.popup .popup-bg .popup-box .info .box img {
-    height: 20px;
-}
-
-.author-main .author-top .featured {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 40px;
-}
-
-.author-main .author-top .info {
-    width: 100%;
-    padding: 0;
-}
-
-.author-main .author-top .info .ed-title {
-    font-size: 48px;
-    line-height: 57px;
-    font-weight: 600;
-    margin: 0;
-}
-
-.author-main .author-top .info .des {
-    max-width: 1098px;
-    margin: 0 auto;
+.author-main .author-top .author-box {
+    padding-bottom: 40px;
 }
 
 .author-main .bg-author {
@@ -46,9 +23,6 @@
     filter: none !important;
 }
 
-.author-main .author-top .info .social a {
-    margin: 0 12px;
-}
 
 .tag .breacrump span {
     font-size: 14px;
@@ -451,25 +425,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
 
     .popup .popup-bg .popup-box .info .box h2 {
         margin-top: 10px;
-    }
-
-    .author-main .author-top .author-box .featured {
-        width: 248px;
-        height: 248px;
-    }
-
-    .author-main .author-top .info .ed-title {
-        font-size: 28px;
-        line-height: 36px;
-    }
-
-    .author-main .author-top .author-box .info .top {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-
-    .author-main .author-top .author-box .info .social {
-        margin: 24px 0 0;
     }
 
     .author-main .author-top {
@@ -504,28 +459,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
     display: none;
 }
 
-.author-main .author-top .featured {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 40px;
-}
-
-.author-main .author-top .info {
-    width: 100%;
-    padding: 0;
-}
-
-.author-main .author-top .info .ed-title {
-    font-size: 48px;
-    line-height: 57px;
-    font-weight: 600;
-    margin: 0;
-}
-
-.author-main .author-top .info .des {
-    max-width: 1098px;
-    margin: 0 auto;
-}
 
 .author-main .bg-author {
     top: 20%;
@@ -533,10 +466,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
 
 .author-main .social img {
     filter: none !important;
-}
-
-.author-main .author-top .info .social a {
-    margin: 0 12px;
 }
 
 .tag .breacrump span {
@@ -934,30 +863,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
 
     .single-main .sg-right .sg-custom a:first-child {
         margin-left: 0;
-    }
-
-
-    .popup .popup-bg .popup-box .info .box h2 {
-        margin-top: 10px;
-    }
-
-    .author-main .author-top .author-box .featured {
-        width: 248px;
-        height: 248px;
-    }
-
-    .author-main .author-top .info .ed-title {
-        font-size: 28px;
-        line-height: 36px;
-    }
-
-    .author-main .author-top .author-box .info .top {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-
-    .author-main .author-top .author-box .info .social {
-        margin: 24px 0 0;
     }
 
     .author-main .author-top {
@@ -991,22 +896,16 @@ div[data-testid="form-row"]:nth-child(4) label:before {
     display: none;
 }
 
-.popup .popup-bg .popup-box .info .box img {
-    height: 20px;
-    filter: none;
-    -webkit-filter: none;
-}
-
-
 .author-main .author-top .featured {
     width: 150px;
     height: 150px;
-    margin: 0 auto 40px;
+    margin: 0 auto 20px;
 }
 
 .author-main .author-top .info {
     width: 100%;
     padding: 0;
+    text-align: center;
 }
 
 .author-main .author-top .info .ed-title {
@@ -1029,9 +928,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
     filter: none !important;
 }
 
-.author-main .author-top .info .social a {
-    margin: 0 12px;
-}
 
 .tag .breacrump span {
     font-size: 14px;
@@ -1435,25 +1331,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
 
     .popup .popup-bg .popup-box .info .box h2 {
         margin-top: 10px;
-    }
-
-    .author-main .author-top .author-box .featured {
-        width: 248px;
-        height: 248px;
-    }
-
-    .author-main .author-top .info .ed-title {
-        font-size: 28px;
-        line-height: 36px;
-    }
-
-    .author-main .author-top .author-box .info .top {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-
-    .author-main .author-top .author-box .info .social {
-        margin: 24px 0 0;
     }
 
     .author-main .author-top {

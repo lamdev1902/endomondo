@@ -14,7 +14,7 @@ the_post();
 		</div>
 	</div>
 	<div class="container">
-		<article class="page-main">
+		<article class="page-main special-width">
 			<h1 class="text-center text-uppercase"><?php the_title(); ?></h1>
 			<div class="page-custom">
 				<?php the_content(); ?>

@@ -15,7 +15,7 @@ the_post();
 		</div>
 	</div>
 	<div class="container">
-		<article class="about-main">
+		<article class="about-main special-width">
 			<div class="container-small">
 				<h1 class="text-center"><?php the_title(); ?></h1>
 				<div class="about-custom">
@@ -26,9 +26,9 @@ the_post();
 					if($team){
 						foreach ($team as $team) {
 				?>
-				<div class="about-author">
+				<section class="about-author">
 					<h2 class="text-center"><?php echo $team['title']; ?></h2>
-					<div class="people-list list-flex">
+					<div class="grid grid-item">
 						<?php $team_list = $team['select_team']; 
 							if($team_list){
 								foreach ($team_list as $team_it) {
@@ -36,7 +36,7 @@ the_post();
 								$post_author_url = get_author_posts_url( $userid );
 									
 						?>
-						<div class="people-it">
+						<div class="it">
 							<div class="featured image-fit">
 								<a href="<?php echo $post_author_url; ?>">
 									<?php $avata = get_field('avata', 'user_'.$userid);
@@ -49,21 +49,21 @@ the_post();
 								</a>
 							</div>
 							<div class="info">
-								<p class="has-large-font-size"><a class="pri-color-2" href="<?php echo $post_author_url; ?>"><?php echo $team_it['display_name']; ?></a></p>
-								<p><?php echo get_field('position', 'user_'.$userid); ?></p>
-								<div class="social">
+								<p class="has-medium-font-size"><a class="pri-color-2" href="<?php echo $post_author_url; ?>"><?php echo $team_it['display_name']; ?></a></p>
+								<p class="sec-color-3"><?php echo get_field('position', 'user_'.$userid); ?></p>
+								<!-- <div class="social">
 									<?php $social = get_field('social', 'user_'.$userid); 
 										if($social){
 											foreach ($social as $social) {
 									?>
 									<a target="_blank" href="<?php echo $social['link']; ?>"><i class="<?php echo $social['icon']; ?>"></i></a>
 									<?php }} ?>
-								</div>
+								</div> -->
 							</div>
 						</div>
 						<?php }} ?>
 					</div>
-				</div>
+				</section>
 				<?php }} ?>
 			</div>
 		</article>
