@@ -172,6 +172,7 @@ $user_description = get_field('story', 'user_' . $upid);
                                             ?>
                                             <div style="overflow: auto">
                                                 <figure class="wp-block-table">
+                                                    <figcaption class="wp-element-caption">Optimal Sets & Reps of <?=$exData[0]['name']?></figcaption>
                                                     <table>
                                                         <thead>
                                                             <tr>
