@@ -327,8 +327,9 @@ ol {
 }
 
 .grid-feature {
-    grid-template-columns: repeat(3, 220px);
+    grid-template-columns: repeat(3, auto);
     row-gap: 20px;
+    column-gap: 16px ;
     justify-content: space-between;
     margin-bottom: var(--mr-main);
 }
@@ -378,8 +379,6 @@ ol {
         grid-template-columns: repeat(2, auto);
         column-gap: 24px;
     }
-
-    
 }
 
 @media (max-width: 834px) {
