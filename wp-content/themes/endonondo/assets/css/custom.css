@@ -1267,7 +1267,8 @@ div[data-testid="form-row"]:nth-child(4) label:before {
     }
 
     .single-main .sg-right .sg-custom iframe {
-        min-height: auto;
+        min-height: 220px;
+        height: 100%;
     }
 
     .single-main .sg-right .sg-custom .table-comparison tr td:first-child {
