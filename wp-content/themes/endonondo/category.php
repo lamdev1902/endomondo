@@ -24,7 +24,7 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 			<div class="container">
 				<div class="category-link-box">
 					<div class="category-link list-flex">
-						<a href="<?php echo get_page_link(186); ?>">All products</a>
+						<p class="has-small-font-size"><a href="<?php echo get_page_link(186); ?>">All products</a></p>
 						<?php
 						$args = array(
 							'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
@@ -78,70 +78,112 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 						$count = $term->count;
 						if ($count > 1) {
 							?>
-							<section class="home-top cate-page color-white pd-main">
-								<div class="container">
+							<section class="home-lastest cate-section pd-main">
+								<div class="container mr-bottom-20">
 									<h2 class="pri-color-2">Latest Post</h2>
-									<div class="flex">
-										<div class="top-big-cate item-flex">
-											<?php
-											$args = array(
-												'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide', 'exercise'),
-												'posts_per_page' => 1,
-												'cat' => $term_children_id,
-											);
-											$the_query = new WP_Query($args);
-											while ($the_query->have_posts()):
-												$the_query->the_post();
-												$post_author_id = get_post_field('post_author', $post->ID);
-												$post_display_name = get_the_author_meta('nickname', $post_author_id);
-												$post_author_url = get_author_posts_url($post_author_id);
-												?>
-												<div class="featured image-fit hover-scale mr-bottom-20">
-													<a href="<?php the_permalink(); ?>"><img
-															src="https://www.endomondo.com/wp-content/uploads/2024/02/Shoulder-Machine-Workout.jpg"></a>
-												</div>
-												<div class="info">
-													<p class="has-large-font-size text-special clamp-2"><a class="pri-color-2"
-															href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-													<p class="author"><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By
-															<?php echo $post_display_name; ?></a></p>
-												</div>
-												<?php
-											endwhile;
-											wp_reset_query();
+									<div class="lastest-list">
+										<?php
+										$args = array(
+											'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
+											'posts_per_page' => 6,
+											'cat' => $term_children_id
+										);
+										$the_query = new WP_Query($args);
+										$i = 0;
+										$notIn = array();
+										while ($the_query->have_posts()):
+											array_push($notIn, $post->ID);
+											$the_query->the_post();
+											$post_author_id = get_post_field('post_author', $post->ID);
+											$post_display_name = get_the_author_meta('nickname', $post_author_id);
+											$post_author_url = get_author_posts_url($post_author_id);
 											?>
-										</div>
-										<div class="news-right item-flex">
-											<div class="top-list">
-												<?php
-												$args = array(
-													'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide', 'exercise'),
-													'posts_per_page' => 4,
-													'cat' => $term_children_id,
-												);
-												$the_query = new WP_Query($args);
-												while ($the_query->have_posts()):
-													$the_query->the_post();
-													$post_author_id = get_post_field('post_author', $post->ID);
-													$post_display_name = get_the_author_meta('nickname', $post_author_id);
-													$post_author_url = get_author_posts_url($post_author_id);
-													?>
-													<div class="top-it position-relative">
-														<p class="has-large-font-size"><a class="pri-color-2"
-																href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-														<p class="author"><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By
-																<?php echo $post_display_name; ?></a></p>
-														<a href="<?php the_permalink(); ?>" class="news-link author position-absolute">
-															<img src="<?php echo get_template_directory_uri(); ?>/assets/images/right.svg"
-																alt="">
-														</a>
+											<div class="lastest-it">
+												<div class="lastest-box list-flex position-relative">
+													<?php if ($i == 0): ?>
+														<div class="featured mr-bottom-20 image-fit hover-scale">
+															<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+														</div>
+													<?php endif; ?>
+													<div class="info">
+														<?php $category = get_the_category($post->ID); ?>
+														<?php if ($i == 0 && !empty($category) && count($category) > 0): ?>
+															<div class="tag mr-bottom-16">
+																<?php
+																foreach ($category as $cat) { ?>
+																	<span><a
+																			href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
+																<?php } ?>
+															</div>
+														<?php endif; ?>
+														<p class="has-medium-font-size text-special clamp-2 ellipsis pri-color-2"><a
+																class="pri-color-2" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+														</p>
+														<p class="has-small-font-size author"><a class="sec-color-4"
+																href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a>
+														</p>
+														<?php if ($i != 0): ?>
+															<a href="<?php the_permalink(); ?>" class="news-link">
+																<img src="<?php echo get_template_directory_uri(); ?>/assets/images/right.svg"
+																	alt="">
+															</a>
+														<?php endif; ?>
 													</div>
-													<?php
-												endwhile;
-												wp_reset_query();
-												?>
+												</div>
 											</div>
-										</div>
+											<?php
+											$i++;
+										endwhile;
+										wp_reset_query();
+										?>
+										<div class="clear"></div>
+									</div>
+								</div>
+								<div class="container">
+									<div class="news-list grid grid-feature">
+										<?php
+										$args = array(
+											'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
+											'posts_per_page' => 6,
+											'cat' => $term_id,
+											'post__not_in' => $notIn
+										);
+										$the_query = null;
+										$the_query = new WP_Query($args);
+										while ($the_query->have_posts()):
+											$the_query->the_post();
+											$post_author_id = get_post_field('post_author', $post->ID);
+											$post_display_name = get_the_author_meta('nickname', $post_author_id);
+											$post_author_url = get_author_posts_url($post_author_id);
+											?>
+											<div class="news-it">
+												<div class="news-box">
+													<div class="featured image-fit hover-scale">
+														<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+													</div>
+													<div class="info">
+														<?php $category = get_the_category($post->ID); ?>
+														<?php if (!empty($category) && count($category) > 0): ?>
+															<div class="tag mr-bottom-16">
+																<?php
+																foreach ($category as $cat) { ?>
+																	<span><a
+																			href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
+																<?php } ?>
+															</div>
+														<?php endif; ?>
+														<p class="has-medium-font-size text-special clamp-2"><a class="pri-color-2"
+																href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></p>
+														<p class="has-small-font-size"><a class="sec-color-3"
+																href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a>
+														</p>
+													</div>
+												</div>
+											</div>
+											<?php
+										endwhile;
+										wp_reset_query();
+										?>
 									</div>
 								</div>
 							</section>
@@ -149,77 +191,119 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 					}
 				} ?>
 			<?php } else { ?>
-				<section class="home-top cate-page color-white pd-main">
-					<div class="container">
+				<section class="home-lastest cate-section pd-main">
+					<div class="container mr-bottom-20">
 						<h2 class="pri-color-2">Latest Post</h2>
-						<div class="flex">
-							<div class="top-big-cate item-flex">
-								<?php
-								$args = array(
-									'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
-									'posts_per_page' => 1,
-									'cat' => $term_id,
-								);
-								$the_query = new WP_Query($args);
-								while ($the_query->have_posts()):
-									$the_query->the_post();
-									$post_author_id = get_post_field('post_author', $post->ID);
-									$post_display_name = get_the_author_meta('nickname', $post_author_id);
-									$post_author_url = get_author_posts_url($post_author_id);
-									?>
-									<div class="featured image-fit hover-scale mr-bottom-20">
-										<a href="<?php the_permalink(); ?>"><img
-												src="https://www.endomondo.com/wp-content/uploads/2024/02/Shoulder-Machine-Workout.jpg"></a>
-									</div>
-									<div class="info">
-										<p class="has-large-font-size text-uppercase"><a class="pri-color-2"
-												href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-										<p class="author"><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By
-												<?php echo $post_display_name; ?></a></p>
-									</div>
-									<?php
-								endwhile;
-								wp_reset_query();
+						<div class="lastest-list">
+							<?php
+							$args = array(
+								'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
+								'posts_per_page' => 6,
+								'cat' => $term_id,
+							);
+							$the_query = new WP_Query($args);
+							$i = 0;
+							$notIn = array();
+							while ($the_query->have_posts()):
+								array_push($notIn, $post->ID);
+								$the_query->the_post();
+								$post_author_id = get_post_field('post_author', $post->ID);
+								$post_display_name = get_the_author_meta('nickname', $post_author_id);
+								$post_author_url = get_author_posts_url($post_author_id);
 								?>
-							</div>
-							<div class="news-right item-flex">
-								<div class="top-list">
-									<?php
-									$args = array(
-										'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
-										'posts_per_page' => 4,
-										'cat' => $term_id,
-									);
-									$the_query = new WP_Query($args);
-									while ($the_query->have_posts()):
-										$the_query->the_post();
-										$post_author_id = get_post_field('post_author', $post->ID);
-										$post_display_name = get_the_author_meta('nickname', $post_author_id);
-										$post_author_url = get_author_posts_url($post_author_id);
-										?>
-										<div class="top-it position-relative">
-											<p class="has-large-font-size"><a class="pri-color-2"
-													href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-											<p class="author"><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By
-													<?php echo $post_display_name; ?></a></p>
-											<a href="<?php the_permalink(); ?>" class="news-link author position-absolute">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/right.svg"
-													alt="">
-											</a>
+								<div class="lastest-it">
+									<div class="lastest-box list-flex position-relative">
+										<?php if ($i == 0): ?>
+											<div class="featured mr-bottom-20 image-fit hover-scale">
+												<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+											</div>
+										<?php endif; ?>
+										<div class="info">
+											<?php $category = get_the_category($post->ID); ?>
+											<?php if ($i == 0 && !empty($category) && count($category) > 0): ?>
+												<div class="tag mr-bottom-16">
+													<?php
+													foreach ($category as $cat) { ?>
+														<span><a
+																href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
+													<?php } ?>
+												</div>
+											<?php endif; ?>
+											<p class="has-medium-font-size text-special clamp-2 ellipsis pri-color-2"><a
+													class="pri-color-2" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+											</p>
+											<p class="has-small-font-size author"><a class="sec-color-4"
+													href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a>
+											</p>
+											<?php if ($i != 0): ?>
+												<a href="<?php the_permalink(); ?>" class="news-link author position-absolute">
+													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/right.svg"
+														alt="">
+												</a>
+											<?php endif; ?>
 										</div>
-										<?php
-									endwhile;
-									wp_reset_query();
-									?>
+									</div>
 								</div>
-							</div>
+								<?php
+								$i++;
+							endwhile;
+							wp_reset_query();
+							?>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="news-list grid grid-feature">
+							<?php
+							$args = array(
+								'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
+								'posts_per_page' => 6,
+								'cat' => $term_id,
+								'post__not_in' => $notIn
+							);
+							$the_query = null;
+							$the_query = new WP_Query($args);
+							while ($the_query->have_posts()):
+								$the_query->the_post();
+								$post_author_id = get_post_field('post_author', $post->ID);
+								$post_display_name = get_the_author_meta('nickname', $post_author_id);
+								$post_author_url = get_author_posts_url($post_author_id);
+								?>
+								<div class="news-it">
+									<div class="news-box">
+										<div class="featured image-fit hover-scale">
+											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+										</div>
+										<div class="info">
+											<?php $category = get_the_category($post->ID); ?>
+											<?php if (!empty($category) && count($category) > 0): ?>
+												<div class="tag mr-bottom-16">
+													<?php
+													foreach ($category as $cat) { ?>
+														<span><a
+																href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
+													<?php } ?>
+												</div>
+											<?php endif; ?>
+											<p class="has-medium-font-size text-special clamp-2"><a class="pri-color-2"
+													href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></p>
+											<p class="has-small-font-size"><a class="sec-color-3"
+													href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<?php
+							endwhile;
+							wp_reset_query();
+							?>
 						</div>
 					</div>
 				</section>
 			<?php } ?>
 		</div>
 	<?php } else { ?>
-		<div class="blog-main">
+		<!-- <div class="blog-main">
 			<div class="blog-top position-relative">
 				<div class="container">
 					<div class="top-box list-flex">
@@ -381,7 +465,7 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 					</div>
 				<?php endif; ?>
 			</div>
-		</div>
+		</div> -->
 	<?php } ?>
 </main>
 <?php get_footer(); ?>

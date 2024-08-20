@@ -53,7 +53,7 @@ the_post();
 							<div class="top-it mr-bottom-20 position-relative">
 								<p class="has-medium-font-size mr-bottom-16 text-special clamp-2 ellipsis pri-color-3"><a
 										class="pri-color-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-								<p class=""><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By
+								<p class="author"><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By
 										<?php echo $post_display_name; ?></a></p>
 								<a href="<?php the_permalink(); ?>" class="news-link author position-absolute">
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/right.svg" alt="">
@@ -121,13 +121,16 @@ the_post();
 										<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 									</div>
 									<div class="info">
-										<div class="tag">
-											<?php $category = get_the_category($post->ID);
-											foreach ($category as $cat) { ?>
-												<span><a
-														href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
-											<?php } ?>
-										</div>
+										<?php $category = get_the_category($post->ID); ?>
+										<?php if (!empty($category) && count($category) > 0): ?>
+											<div class="tag">
+												<?php
+												foreach ($category as $cat) { ?>
+													<span><a
+															href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
+												<?php } ?>
+											</div>
+										<?php endif; ?>
 										<p class="has-medium-font-size text-special clamp-2 ellipsis"><a class="pri-color-2"
 												href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></p>
 										<p class="has-small-font-size"><a class="sec-color-3"
@@ -196,9 +199,10 @@ the_post();
 							</div>
 							<div class="info">
 								<?php $category = get_the_category($post->ID); ?>
-								<?php if ($category): ?>
-									<div class="tag">
-										<?php foreach ($category as $cat) { ?>
+								<?php if (!empty($category) && count($category) > 0): ?>
+									<div class="tag mr-bottom-16">
+										<?php
+										foreach ($category as $cat) { ?>
 											<span><a
 													href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
 										<?php } ?>
@@ -279,13 +283,16 @@ the_post();
 								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 							</div>
 							<div class="info">
-								<div class="tag">
-									<?php $category = get_the_category($post->ID);
-									foreach ($category as $cat) { ?>
-										<span><a
-												href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
-									<?php } ?>
-								</div>
+								<?php $category = get_the_category($post->ID); ?>
+								<?php if (!empty($category) && count($category) > 0): ?>
+									<div class="tag mr-bottom-16">
+										<?php
+										foreach ($category as $cat) { ?>
+											<span><a
+													href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
+										<?php } ?>
+									</div>
+								<?php endif; ?>
 								<p class="has-medium-font-size text-special clamp-2"><a class="pri-color-2"
 										href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></p>
 								<p class="has-small-font-size"><a class="sec-color-3"

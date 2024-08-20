@@ -44,6 +44,8 @@
 
     --mr-main: 20px;
     
+
+    --ratio: 16 / 9;
 }
 
 
@@ -260,7 +262,7 @@ ol {
 }
 
 .mr-bottom-20 {
-    margin-bottom: var(--mr-main)
+    margin-bottom: var(--mr-main);
 }
 
 .mr-top-24 {
@@ -337,8 +339,8 @@ ol {
 
 .grid-feature .featured,
 .grid-item .featured {
-    height: 220px;
     margin-bottom: var(--mr-main);
+    aspect-ratio: var(--ratio);
 }
 
 .grid-item .info {

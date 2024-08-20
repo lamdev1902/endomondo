@@ -2,10 +2,6 @@
     filter: none !important;
 }
 
-.single-main .sg-right .sg-custom iframe {
-    width: 100%;
-    min-height: 436px;
-}
 
 .single-main .single-sidebar .sg-author .author-it p i {
     display: none;
@@ -278,11 +274,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
     letter-spacing: -2px;
 }
 
-@media(max-width: 1279px) {
-    .blog-main .blog-top .top-box .info {
-        padding-left: 20px;
-    }
-}
 
 @media(max-width: 991px) {
     .single-top .list-flex {
@@ -446,9 +437,21 @@ div[data-testid="form-row"]:nth-child(4) label:before {
 }
 
 
-.single-main .sg-right .sg-custom iframe {
+.vimeo-custom > div,
+.youtube-custom > div{
+    position: relative;
     width: 100%;
-    min-height: 436px;
+    height: 0;
+    padding: 56.25% 0 0 0;
+}
+
+.vimeo-custom > iframe,
+.youtube-custom > iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .single-main .single-sidebar .sg-author .author-it p i {
@@ -716,12 +719,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
     letter-spacing: -2px;
 }
 
-@media(max-width: 1279px) {
-    .blog-main .blog-top .top-box .info {
-        padding-left: 20px;
-    }
-}
-
 @media(max-width: 991px) {
     .single-top .list-flex {
         display: block;
@@ -801,11 +798,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
         right: 20px;
     }
 
-    .single-main .sg-right .sg-custom iframe {
-        min-height: 220px;
-        height: 100%;
-    }
-
     .single-main .sg-right .sg-custom .table-comparison tr td:first-child {
         position: sticky;
         left: 0;
@@ -882,11 +874,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
 
 #header .menu-main .social a img {
     filter: none !important;
-}
-
-.single-main .sg-right .sg-custom iframe {
-    width: 100%;
-    min-height: 436px;
 }
 
 .single-main .single-sidebar .sg-author .author-it p i {
@@ -1179,12 +1166,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
     letter-spacing: -2px;
 }
 
-@media(max-width: 1279px) {
-    .blog-main .blog-top .top-box .info {
-        padding-left: 20px;
-    }
-}
-
 @media(max-width: 991px) {
     .single-top .list-flex {
         display: block;
@@ -1264,11 +1245,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
     .home-stories .stories-info {
         left: 20px;
         right: 20px;
-    }
-
-    .single-main .sg-right .sg-custom iframe {
-        min-height: 220px;
-        height: 100%;
     }
 
     .single-main .sg-right .sg-custom .table-comparison tr td:first-child {
