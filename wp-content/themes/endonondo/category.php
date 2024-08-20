@@ -271,13 +271,16 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 										</a>
 									</div>
 									<div class="info">
-										<div class="tag">
-											<?php $category = get_the_category($post->ID);
-											foreach ($category as $cat) { ?>
-												<span><a
-														href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
-											<?php } ?>
-										</div>
+										<?php $category = get_the_category($post->ID); ?>
+										<?php if (!empty($category) && count($category) > 0): ?>
+											<div class="tag">
+												<?php
+												foreach ($category as $cat) { ?>
+													<span><a
+															href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
+												<?php } ?>
+											</div>
+										<?php endif; ?>
 										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 										<h5 class="author"><a href="<?php echo $post_author_url; ?>">By
 												<?php echo $post_display_name; ?></a></h5>
@@ -337,13 +340,16 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 										</a>
 									</div>
 									<div class="info">
-										<div class="tag">
-											<?php $category = get_the_category($post->ID);
-											foreach ($category as $cat) { ?>
-												<span><a
-														href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
-											<?php } ?>
-										</div>
+										<?php $category = get_the_category($post->ID); ?>
+										<?php if (!empty($category) && count($category) > 0): ?>
+											<div class="tag">
+												<?php
+												foreach ($category as $cat) { ?>
+													<span><a
+															href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
+												<?php } ?>
+											</div>
+										<?php endif; ?>
 										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 										<h5 class="author"><a href="<?php echo $post_author_url; ?>">By
 												<?php echo $post_display_name; ?></a></h5>

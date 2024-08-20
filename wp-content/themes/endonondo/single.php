@@ -121,8 +121,8 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 					if ($socials) {
 						foreach ($socials as $social) {
 							?>
-							<a target="_blank" href="<?php echo $social['link']; ?>"><img
-									alt="<?= $social['icon']['alt']; ?>" src="<?= $social['icon']['url']; ?>" /></a>
+							<a target="_blank" href="<?php echo $social['link']; ?>"><img alt="<?= $social['icon']['alt']; ?>"
+									src="<?= $social['icon']['url']; ?>" /></a>
 						<?php }
 					} ?>
 				</div>
@@ -236,11 +236,11 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 								</a>
 							</div>
 							<div class="info">
-								<?php
-								$category = get_the_category($post->ID);
-								if ($category): ?>
+								<?php $category = get_the_category($post->ID); ?>
+								<?php if (!empty($category) && count($category) > 0): ?>
 									<div class="tag mr-bottom-16">
-										<?php foreach ($category as $cat) { ?>
+										<?php
+										foreach ($category as $cat) { ?>
 											<span><a
 													href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
 										<?php } ?>

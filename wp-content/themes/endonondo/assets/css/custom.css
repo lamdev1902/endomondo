@@ -4,7 +4,7 @@
 
 .single-main .sg-right .sg-custom iframe {
     width: 100%;
-    min-height: 430px;
+    min-height: 436px;
 }
 
 .single-main .single-sidebar .sg-author .author-it p i {
@@ -364,7 +364,8 @@ div[data-testid="form-row"]:nth-child(4) label:before {
     }
 
     .single-main .sg-right .sg-custom iframe {
-        min-height: auto;
+        min-height: 220px;
+        height: 100%;
     }
 
     .single-main .sg-right .sg-custom .table-comparison tr td:first-child {

@@ -99,7 +99,7 @@ the_post();
 				} ?>
 			</div>
 			<div class="feature-collections bg-white color-black">
-				<h2 class="pri-color-2">Feature Collections</h2>
+				<h2 class="pri-color-2 mr-bottom-40">Feature Collections</h2>
 				<div class="feature-slider swiper">
 					<div class="swiper-wrapper">
 						<?php
@@ -128,7 +128,7 @@ the_post();
 														href="<?php echo get_term_link($cat->term_id); ?>"><?php echo $cat->name; ?></a></span>
 											<?php } ?>
 										</div>
-										<p class="has-large-font-size"><a class="pri-color-2"
+										<p class="has-medium-font-size text-special clamp-2 ellipsis"><a class="pri-color-2"
 												href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></p>
 										<p class="has-small-font-size"><a class="sec-color-3"
 												href="<?php echo $post_author_url; ?>">By

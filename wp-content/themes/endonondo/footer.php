@@ -18,13 +18,12 @@
 				<div class="ft-form">
 					<div class="title mr-bottom-20">
 						<p class="has-large-font-size">
-							Join over 225,000 Subscribers to Our Weekly Newsletter
+							<?= get_field('news_title', 'option')?>
 						</p>
 					</div>
 					<div class="description mr-bottom-20">
 						<p class="has-small-font-size">
-							Endomondo newsletter has tips, stories & resources that are all about your mental health and
-							well-being.
+							<?= get_field('news_des', 'option')?>
 						</p>
 					</div>
 					<div class="klaviyo-form-TcfuNL mr-bottom-20"></div>

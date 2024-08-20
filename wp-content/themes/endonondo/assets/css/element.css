@@ -229,13 +229,13 @@ table tbody tr:first-child td {
 .wp-block-columns.brand {
     column-gap: 20px;
     row-gap: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 42px;
 }
 
 .wp-block-columns.brand .brand-col{
     background: var(--secondary-color-1);
     position: relative;
-    padding-bottom: 42px;
+    padding-bottom: 30px;
 }
 
 .wp-block-columns.brand .brand-col figure
