@@ -27,7 +27,14 @@ the_post();
 							<p class="sec-color-2"><?php echo wp_trim_words(get_the_excerpt($post->ID), 28); ?></p>
 						</div>
 						<div class="featured image-fit hover-scale">
-							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+							<?php $image_featured = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
+							<a href="<?php the_permalink(); ?>">
+								<?php if ($image_featured): ?>
+									<?php the_post_thumbnail(); ?>
+								<?php else: ?>
+									<img src="<?php echo get_field('fimg_default', 'option'); ?>" alt="">
+								<?php endif; ?>
+							</a>
 						</div>
 						<?php
 					endwhile;
@@ -195,7 +202,14 @@ the_post();
 					<div class="lastest-it">
 						<div class="lastest-box list-flex">
 							<div class="featured image-fit hover-scale">
-								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+								<?php $image_featured = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
+								<a href="<?php the_permalink(); ?>">
+									<?php if ($image_featured): ?>
+										<img src="<?php echo $image_featured; ?>" alt="">
+									<?php else: ?>
+										<img src="<?php echo get_field('fimg_default', 'option'); ?>" alt="">
+									<?php endif; ?>
+								</a>
 							</div>
 							<div class="info">
 								<?php $category = get_the_category($post->ID); ?>
@@ -280,7 +294,14 @@ the_post();
 					<div class="news-it">
 						<div class="news-box">
 							<div class="featured image-fit hover-scale">
-								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+								<?php $image_featured = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
+								<a href="<?php the_permalink(); ?>">
+									<?php if ($image_featured): ?>
+										<img src="<?php echo $image_featured; ?>" alt="">
+									<?php else: ?>
+										<img src="<?php echo get_field('fimg_default', 'option'); ?>" alt="">
+									<?php endif; ?>
+								</a>
 							</div>
 							<div class="info">
 								<?php $category = get_the_category($post->ID); ?>
