@@ -445,8 +445,8 @@ div[data-testid="form-row"]:nth-child(4) label:before {
     padding: 56.25% 0 0 0;
 }
 
-.vimeo-custom > iframe,
-.youtube-custom > iframe{
+.vimeo-custom  iframe,
+.youtube-custom  iframe{
     position: absolute;
     top: 0;
     left: 0;
