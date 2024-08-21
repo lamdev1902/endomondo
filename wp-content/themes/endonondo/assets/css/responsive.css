@@ -72,7 +72,7 @@
 
     .soon-content {
         flex-direction: column;
-        padding: 0;
+        padding: 0 0 20px;
         text-align: center;
     }
 
@@ -270,10 +270,6 @@
     }
 
     /* End Home Latstest */
-    .wp-block-table table thead th,
-    .no-title .wp-block-table table tbody td {
-        width: 166px !important;
-    }
 
     table figure figcaption {
         position: absolute;
@@ -429,6 +425,7 @@
     .page-template-search > table {
         top: 280px !important;
     }
+    
 }
 
 @media (max-width: 834px) {
@@ -439,6 +436,16 @@
     }
 
     /* Table */
+
+    .wp-block-table td, .wp-block-table th {
+        padding: 12px 16px;
+    }
+
+    .wp-block-table table thead th,
+    .no-title .wp-block-table table tbody td {
+        width: 155px !important;
+    }
+
     .medicine-table table thead th:first-child,
     .medicine-table table tbody td:first-child {
         position: sticky;
@@ -622,11 +629,6 @@
     }
 
     /* Table */
-
-    table thead th,
-    .no-title table tbody td {
-        width: 192px !important;
-    }
 
     .medicine-table figure figcaption {
         font-size: var(--font-14) !important;

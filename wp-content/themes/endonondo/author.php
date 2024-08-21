@@ -30,7 +30,14 @@ $check = false;
 			<div class="container">
 				<div class="author-box">
 					<div class="featured image-fit">
-						<?php $avata = get_field('avata', 'user_' . $userid);
+						<?php
+						$avata = '';
+
+						if (get_field('new_avata', 'user_' . $userid)) {
+							$avata = get_field('new_avata', 'user_' . $userid);
+						} elseif (get_field('avata', 'user_' . $userid)) {
+							$avata = get_field('avata', 'user_' . $userid);
+						}
 						if ($avata) {
 							?>
 							<img src="<?php echo $avata; ?>" alt="">
@@ -42,22 +49,50 @@ $check = false;
 						<div class="top">
 							<div class="social">
 								<?php
-								$social = get_field('social', 'user_' . $userid);
+								$social = '';
+								$type = true;
+								if (get_field('new_social', 'user_' . $userid)) {
+									$social = get_field('new_social', 'user_' . $userid);
+								} elseif (get_field('social', 'user_' . $userid)) {
+									$social = get_field('social', 'user_' . $userid);
+									$type = false;
+								}
+
 								if ($social) {
-									foreach ($social as $social) {
+									if($type) {
+										foreach ($social as $social_item) {
+											$url = get_template_directory_uri().'/assets/images/usericon/'.$social_item['icon'].'.svg';
+											
 										?>
-										<a target="_blank" href="<?php echo $social['link']; ?>"><img
-												src="<?php echo $social['icon']['url']; ?>"
-												alt="<?php echo $social['icon']['alt']; ?>" /></a>
-									<?php }
+											<a target="_blank" href="<?php echo $social_item['link']; ?>"><img
+													src="<?php echo $url; ?>"
+													alt="<?php echo $social_item['icon']?>" /></a>
+										<?php }
+									}else {
+										foreach ($social as $social_item) {
+											?>
+											<a target="_blank" href="<?php echo $social_item['link']; ?>"><img
+													src="<?php echo $social_item['icon']['url']; ?>"
+													alt="<?php echo $social_item['icon']['alt']; ?>" /></a>
+										<?php }
+									}
 								} ?>
 							</div>
 							<h1><?php echo $author_display_name; ?></h1>
 						</div>
-						<h3><?php echo get_field('position', 'user_' . $userid) ?></h3>
+						<h3><?= get_field('new_position', 'user_' . $userid) ?? get_field('position', 'user_' . $userid) ?>
+						</h3>
 						<div class="tag">
 							<?php
-							$skills = get_field('skills', 'user_' . $userid);
+
+							$skills = '';
+
+							if (get_field('new_skills', 'user_' . $userid)) {
+								$skills = get_field('new_skills', 'user_' . $userid);
+							} elseif (get_field('skills', 'user_' . $userid)) {
+								$skills = get_field('skills', 'user_' . $userid);;
+							}
+
 							if ($skills) {
 								foreach ($skills as $skills) {
 									?>
@@ -65,7 +100,7 @@ $check = false;
 								<?php }
 							} ?>
 						</div>
-						<p class="pri-color-2"><?php echo get_field('story', 'user_' . $userid) ?></p>
+						<p class="pri-color-2"><?= get_field('new_story', 'user_' . $userid) ?? get_field('story', 'user_' . $userid) ?></p>
 					</div>
 				</div>
 				<div class="author-content">

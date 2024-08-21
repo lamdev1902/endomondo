@@ -329,7 +329,7 @@ ol {
 }
 
 .grid-feature {
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
     row-gap: 20px;
     column-gap: 16px ;
     justify-content: space-between;
