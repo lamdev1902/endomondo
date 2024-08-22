@@ -180,6 +180,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                     <?php $coupon_list = get_field('coupon_list', $postid);
                     if ($coupon_list) {
                         $c1 = $coupon_list[0];
+                        $couponid = $c1;
                         $ctype = wp_get_post_terms($c1, 'coupon_type');
                         $date_type = get_field('date_type', $c1);
                         $date_ex = get_field('coupon_date', $c1);
@@ -412,8 +413,8 @@ if (isset($couponid) && $couponid != '') {
                 <div class="modal-body">
                     <div class="show-code-top">
                         <div class="coupon-top">
-                            <?php $logo = get_field('logo', 'option'); ?>
-                            <img src="<?php echo $logo; ?>" alt="logo">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-coupon.svg"
+									alt="coupon-logo">
                             <p>Exp:
                                 <?php if ($date_type2 == 1)
                                     echo get_field('coupon_date', $brandid);
@@ -446,26 +447,7 @@ if (isset($couponid) && $couponid != '') {
     </div>
 <?php }
 get_footer();
-if (isset($couponid) && $couponid != '') {
-    ?>
-    <script>
-        jQuery(function ($) {
-            $('#couponModal').modal('show');
-            $('.coupon-rate').on('click', function () {
-                $(this).parents('li').find('span').html('Thank you for responding.');
-                $ctitle = '<?php echo get_the_title($brandid); ?>';
-                $ptitle = '<?php echo get_the_title($postid); ?>';
-                $crstate = 'Worked';
-                if ($(this).hasClass('coupon-dontworked')) $crstate = "Didn't worked";
-                $('#rateCouponTitle').attr('value', $ctitle).val($ctitle);
-                $('#rateCouponPost').attr('value', $ptitle).val($ptitle);
-                $('#rateCouponStatus').attr('value', $crstate).val($crstate);
-                $('#crateSubmit').click();
-                return false;
-            });
-        });
-    </script>
-<?php }
+
 $enable_schma = get_field('enable_schma', $postid);
 if ($enable_schma == true && get_field('rating_enable', $postid) == true) {
     $schema_type = get_field('schema_type', $postid);
@@ -512,8 +494,19 @@ if ($enable_schma == true && get_field('rating_enable', $postid) == true) {
 <script>
     jQuery(function ($) {
         $('.get-code').on('click', function () {
-            var id = $(this).attr('data-id');
-            if (id) window.open('<?php echo get_permalink($postid); ?>?couponid=' + id, '_blank');
+            $('#couponModal').modal('show');
+            $('.coupon-rate').on('click', function () {
+                $(this).parents('li').find('span').html('Thank you for responding.');
+                $ctitle = '<?php echo get_the_title($brandid); ?>';
+                $ptitle = '<?php echo get_the_title($postid); ?>';
+                $crstate = 'Worked';
+                if ($(this).hasClass('coupon-dontworked')) $crstate = "Didn't worked";
+                $('#rateCouponTitle').attr('value', $ctitle).val($ctitle);
+                $('#rateCouponPost').attr('value', $ptitle).val($ptitle);
+                $('#rateCouponStatus').attr('value', $crstate).val($crstate);
+                $('#crateSubmit').click();
+                return false;
+            });
         });
         $('.filter-nav a').on('click', function () {
             $('.filter-nav a').removeClass('active');

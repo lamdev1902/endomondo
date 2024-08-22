@@ -1729,7 +1729,7 @@ main {
 .single-top {
     padding: 24px 0;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .single-top .social a i {
@@ -3873,7 +3873,6 @@ figcaption {
 
 #couponModal .coupon-top {
     border-bottom: 1px solid var(--secondary-color-2);
-    padding: 16px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -3905,7 +3904,7 @@ figcaption {
     text-align: left;
     letter-spacing: 0;
     color: #414141;
-    margin: 0 0 16px;
+    margin: 0 0 24px;
     padding-left: 39px;
     position: relative;
 }
@@ -3959,7 +3958,7 @@ figcaption {
 }
 
 #couponModal .coupon-btn-pink {
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
 #couponModal .coupon-btn-pink a {
