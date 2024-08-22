@@ -96,7 +96,7 @@ $check = false;
 							if ($skills) {
 								foreach ($skills as $skills) {
 									?>
-									<span class="has-small-font-size "><?php echo $skills['skill_item']; ?></span>
+									<span><?php echo $skills['skill_item']; ?></span>
 								<?php }
 							} ?>
 						</div>

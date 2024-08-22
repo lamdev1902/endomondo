@@ -3,7 +3,6 @@ $postid = get_the_ID();
 get_header();
 $upid = $post->post_author;
 $user_info = get_userdata($upid);
-$avt = get_field('avata', 'user_' . $upid);
 $author_url = get_author_posts_url($upid);
 $medically_reviewed = get_field('select_author', $postid);
 $couponid = !empty($_GET['couponid']) ? $_GET['couponid'] : '';
@@ -13,7 +12,29 @@ $author_id = get_post_field('post_author', $postid);
 $display_name = get_the_author_meta('nickname', $upid);
 $author_url = get_author_posts_url($upid);
 $post_type = $post->post_type;
-$user_description = get_field('story', 'user_' . $upid);
+
+$avt = '';
+if (get_field('new_avata', 'user_' . $upid)) {
+    $avt = get_field('new_avata', 'user_' . $upid);
+} elseif (get_field('avata', 'user_' . $upid)) {
+    $avt = get_field('avata', 'user_' . $upid);
+}
+
+$user_description = '';
+
+if (get_field('new_story', 'user_' . $upid)) {
+    $user_description = get_field('new_story', 'user_' . $upid);
+} elseif (get_field('story', 'user_' . $upid)) {
+    $user_description = get_field('story', 'user_' . $upid);
+}
+
+$userPosition = get_field('position', 'user_' . $upid);
+
+if(get_field('new_position', 'user_' . $upid)) {
+	$userPosition = get_field('new_position', 'user_' . $upid);
+}elseif(get_field('position', 'user_' . $upid)) {
+	$userPosition = get_field('position', 'user_' . $upid);
+}
 
 $advertiser_disclosure = get_field('enable_tooltip1', $postid);
 
@@ -37,118 +58,124 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                 <h1 class="mr-bottom-20"><?php the_title(); ?></h1>
                 <?php $aname = get_field('user_nshort', 'user_' . $upid);
                 if (!$aname || $aname == '')
-                $aname = get_the_author();
+                    $aname = get_the_author();
                 ?>
                 <div class="single-author mr-bottom-20">
                     <div class="name-author">
                         <div class="info">
                             <div class="author-by" itemscope>
-                            <time class="updated has-small-font-size" datetime="<?php the_modified_date('c'); ?>"
-									itemprop="dateModified"><?php
-									if (get_the_modified_date('U') !== get_the_date('U')) {
-										echo __('Updated on', 'hc_theme');
-									} else {
-										echo __('Published', 'hc_theme');
-									}
-									?>
-									<?php the_modified_date('F d, Y'); ?></time>
-                                <span class="has-small-font-size">- Writen by: </span>
-                                    <span class="has-small-font-size" itemprop="author" itemscope itemtype="https://schema.org/Person"><a class="pri-color-2" target="_blank" href="<?php echo $author_url; ?>"
-                                        title="<?php echo __('View all posts by', 'hc_theme'); ?> <?php the_author(); ?>" rel="author"
-                                        itemprop="url"><span class="ncustom has-small-font-size" itemprop="name"><?php echo $aname; ?></span></a></span>
-                                        <?php
-                            $medically_reviewed = get_field('select_author', $postid);
-                            if ($medically_reviewed) { ?>
-                                <span class="has-small-font-size"> - Reviewed by</span>
-                                <span class="has-small-font-size">
-                                <?php foreach ($medically_reviewed as $m => $mr) {
-                                    $anamer = get_field('user_nshort', 'user_' . $mr['ID']);
-                                    if (!$anamer || $anamer == '')
-                                    $anamer = $mr['display_name'];
+                                <time class="updated has-small-font-size" datetime="<?php the_modified_date('c'); ?>"
+                                    itemprop="dateModified"><?php
+                                    if (get_the_modified_date('U') !== get_the_date('U')) {
+                                        echo __('Updated on', 'hc_theme');
+                                    } else {
+                                        echo __('Published', 'hc_theme');
+                                    }
                                     ?>
-                                    <a class="pri-color-2" style="text-decoration: underline" target="_blank" href="<?php echo get_author_posts_url($mr['ID']); ?>"><?php if ($m > 0)
-                                        echo ' ,'; ?><?php echo $anamer; ?></a>
+                                    <?php the_modified_date('F d, Y'); ?></time>
+                                <span class="has-small-font-size">- Writen by: </span>
+                                <span class="has-small-font-size" itemprop="author" itemscope
+                                    itemtype="https://schema.org/Person"><a class="pri-color-2" target="_blank"
+                                        href="<?php echo $author_url; ?>"
+                                        title="<?php echo __('View all posts by', 'hc_theme'); ?> <?php the_author(); ?>"
+                                        rel="author" itemprop="url"><span class="ncustom has-small-font-size"
+                                            itemprop="name"><?php echo $aname; ?></span></a></span>
+                                <?php
+                                $medically_reviewed = get_field('select_author', $postid);
+                                if ($medically_reviewed) { ?>
+                                    <span class="has-small-font-size"> - Reviewed by</span>
+                                    <span class="has-small-font-size">
+                                        <?php foreach ($medically_reviewed as $m => $mr) {
+                                            $anamer = get_field('user_nshort', 'user_' . $mr['ID']);
+                                            if (!$anamer || $anamer == '')
+                                                $anamer = $mr['display_name'];
+                                            ?>
+                                            <a class="pri-color-2" style="text-decoration: underline" target="_blank"
+                                                href="<?php echo get_author_posts_url($mr['ID']); ?>"><?php if ($m > 0)
+                                                       echo ' ,'; ?><?php echo $anamer; ?></a>
+                                        <?php } ?>
+                                    </span>
                                 <?php } ?>
-                                </span>
-                            <?php } ?>
-                                <?php 
-                                    if ($enable_fcgroup):?>
-                                        <?php if ($enable_fcgroup == '1') { ?>
-                                        <span id="at-box"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/author.svg"
-                                        alt="Fact checked"></span>
+                                <?php
+                                if ($enable_fcgroup): ?>
+                                    <?php if ($enable_fcgroup == '1') { ?>
+                                        <span id="at-box"><img
+                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/author.svg"
+                                                alt="Fact checked"></span>
                                     <?php } elseif ($enable_fcgroup == '2') { ?>
-                                        <span id="eb-box"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/eb.svg"
-                                        alt="Fact checked"></span>
-                                        <?php }?>
-                                    <?php endif;?>
+                                        <span id="eb-box"><img
+                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/eb.svg"
+                                                alt="Fact checked"></span>
+                                    <?php } ?>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
                 </div>
                 <?php
-				if ($enable_fcgroup) {
-					if ($enable_fcgroup == '1') { ?>
-						<div class="fact-check ">
-							<div class="fact-label at">
-								<p class="has-large-font-size"><?php echo __("Author's opinion", 'hc_theme'); ?></p>
-								<span class="fact-close"></span>
-								<?php the_field('fccontent', 'option'); ?>
-							</div>
-						</div>
-					<?php } elseif ($enable_fcgroup == '2') { ?>
-						<div class="fact-check">
-							<div class="fact-label eb">
-								<p class="has-large-font-size"><?php echo __("Evidence Based", 'hc_theme'); ?></p>
-								<span class="fact-close"></span>
-								<?php the_field('evidence_based', 'option'); ?>
-							</div>
-						</div>
-					<?php }
-				}
-				?>
+                if ($enable_fcgroup) {
+                    if ($enable_fcgroup == '1') { ?>
+                        <div class="fact-check ">
+                            <div class="fact-label at">
+                                <p class="has-large-font-size"><?php echo __("Author's opinion", 'hc_theme'); ?></p>
+                                <span class="fact-close"></span>
+                                <?php the_field('fccontent', 'option'); ?>
+                            </div>
+                        </div>
+                    <?php } elseif ($enable_fcgroup == '2') { ?>
+                        <div class="fact-check">
+                            <div class="fact-label eb">
+                                <p class="has-large-font-size"><?php echo __("Evidence Based", 'hc_theme'); ?></p>
+                                <span class="fact-close"></span>
+                                <?php the_field('evidence_based', 'option'); ?>
+                            </div>
+                        </div>
+                    <?php }
+                }
+                ?>
                 <div class="social on-pc mr-bottom-20">
                     <p class="has-small-font-size pri-color-2" style="margin-bottom: 0">Follow us: </p>
                     <?php
-					$socials = get_field('follow_social', 'option');
-					if ($socials) {
-						foreach ($socials as $social) {
-							?>
-							<a target="_blank" href="<?php echo $social['link']; ?>"><img
-									alt="<?= $social['icon']['alt']; ?>" src="<?= $social['icon']['url']; ?>" /></a>
-						<?php }
-					} ?>
+                    $socials = get_field('follow_social', 'option');
+                    if ($socials) {
+                        foreach ($socials as $social) {
+                            ?>
+                            <a target="_blank" href="<?php echo $social['link']; ?>"><img alt="<?= $social['icon']['alt']; ?>"
+                                    src="<?= $social['icon']['url']; ?>" /></a>
+                        <?php }
+                    } ?>
                 </div>
                 <article class="sg-custom">
-                    <?php if($advertiser_disclosure):?>
-						<div class="box-e mr-bottom-20">
-							<?php the_field('adcontent', 'option'); ?>
-						</div>
-					<?php endif;?>
+                    <?php if ($advertiser_disclosure): ?>
+                        <div class="box-e mr-bottom-20">
+                            <?php the_field('adcontent', 'option'); ?>
+                        </div>
+                    <?php endif; ?>
                     <?php
-                        if ($checktime == false) {
-                            $enable_fat_checked = get_field('enable_fat_checked', $postid);
-                            $advertiser_disclosure = get_field('enable_tooltip1', $postid);
-                            $enable_fcgroup = get_field('enable_fcgroup', $postid);
-                            if ($enable_fcgroup) {
-                                if ($enable_fcgroup == '1') { ?>
-                                        <div class="fact-check ">
-                                            <div class="fact-label at">
-                                                <p class="has-large-font-size"><?php echo __("Author's opinion", 'hc_theme'); ?></p>
-                                                <span class="fact-close"></span>
-                                                <?php the_field('fccontent', 'option'); ?>
-                                            </div>
-                                        </div>
-                                <?php } elseif ($enable_fcgroup == '2') { ?>
-                                        <div class="fact-check">
-                                            <div class="fact-label eb">
-                                                <p class="has-large-font-size"><?php echo __("Evidence Based", 'hc_theme'); ?></p>
-                                                <span class="fact-close"></span>
-                                                <?php the_field('evidence_based', 'option'); ?>
-                                            </div>
-                                        </div>
-                                <?php }
-                            }
+                    if ($checktime == false) {
+                        $enable_fat_checked = get_field('enable_fat_checked', $postid);
+                        $advertiser_disclosure = get_field('enable_tooltip1', $postid);
+                        $enable_fcgroup = get_field('enable_fcgroup', $postid);
+                        if ($enable_fcgroup) {
+                            if ($enable_fcgroup == '1') { ?>
+                                <div class="fact-check ">
+                                    <div class="fact-label at">
+                                        <p class="has-large-font-size"><?php echo __("Author's opinion", 'hc_theme'); ?></p>
+                                        <span class="fact-close"></span>
+                                        <?php the_field('fccontent', 'option'); ?>
+                                    </div>
+                                </div>
+                            <?php } elseif ($enable_fcgroup == '2') { ?>
+                                <div class="fact-check">
+                                    <div class="fact-label eb">
+                                        <p class="has-large-font-size"><?php echo __("Evidence Based", 'hc_theme'); ?></p>
+                                        <span class="fact-close"></span>
+                                        <?php the_field('evidence_based', 'option'); ?>
+                                    </div>
+                                </div>
+                            <?php }
                         }
+                    }
                     ?>
                     <?php $coupon_list = get_field('coupon_list', $postid);
                     if ($coupon_list) {
@@ -182,19 +209,15 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 
                                                         for ($i = 0; $i < strlen($content); $i++) {
                                                             $char = $content[$i];
-                                                            // Kiểm tra nếu là ký tự số
                                                             if (is_numeric($char)) {
                                                                 $number .= $char;
                                                             } else {
                                                                 $specialChar .= $char;
                                                             }
                                                         }
-
-                                                        // Tạo hai thẻ span mới
                                                         $span1 = "<span class='number-coupon'>" . $number . "</span>";
                                                         $span2 = "<span>" . $specialChar . "</span>" . $remainingString;
 
-                                                        // In ra kết quả
                                                         echo $span1 . $span2;
                                                     } else {
                                                         echo get_field('coupon_text', $c1);
@@ -205,7 +228,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                                             <div class="action">
                                                 <a href="<?php echo get_field('coupon_link', $c1); ?>"
                                                     class="get-code text-uppercase" data-id="<?php echo $c1; ?>"
-                                                    target="_blank"><span><?php echo get_field('coupon_btn', $c1); ?></span></a>
+                                                    target="_blank"><p><?php echo get_field('coupon_btn', $c1); ?></p></a>
                                             </div>
                                             <div class="date has-small-font-size pri-color-2 <?php if ($date_type == 1 && $date_current > $date_ex)
                                                 echo 'has-expired'; ?>">
@@ -290,7 +313,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                                                         <div class="action">
                                                             <a href="<?php echo get_field('coupon_link', $c1); ?>"
                                                                 class="get-code text-uppercase" data-id="<?php echo $c1; ?>"
-                                                                target="_blank"><span><?php echo get_field('coupon_btn', $c1); ?></span></a>
+                                                                target="_blank"><p><?php echo get_field('coupon_btn', $c1); ?></p></a>
                                                         </div>
                                                         <div class="date <?php if ($date_type == 1 && $date_current > $date_ex)
                                                             echo 'has-expired'; ?>">
@@ -300,75 +323,78 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                                                             else
                                                                 echo "Doesn't expire"; ?>
                                                         </div>
-                                                </div>
-                                                <div class="info">
-                                                    <div class="relative-section">
-                                                        <p class="has-large-font-size"><?php echo get_the_title($cp); ?></p>
                                                     </div>
-                                                    <div class="des">
-                                                        <?php echo get_field('coupon_description', $cp); ?>
-                                                    </div>
-                                                    <div class="relative-section mail-ds">
-                                                        <a style="text-decoration: none"
-                                                            href="mailto:?subject=<?php echo get_permalink($postid); ?>"
-                                                            class="send-mail">Send to my email</a>
+                                                    <div class="info">
+                                                        <div class="relative-section">
+                                                            <p class="has-large-font-size"><?php echo get_the_title($cp); ?></p>
+                                                        </div>
+                                                        <div class="des">
+                                                            <?php echo get_field('coupon_description', $cp); ?>
+                                                        </div>
+                                                        <div class="relative-section mail-ds">
+                                                            <a style="text-decoration: none"
+                                                                href="mailto:?subject=<?php echo get_permalink($postid); ?>"
+                                                                class="send-mail has-small-font-size">Send to my email</a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                <?php }
+                                    <?php }
                                 } ?>
-                    </div>
-                <?php }
-                    } ?>
-            <div class="sg-editor">
-                <?php the_content(); ?>
-            </div>
-            <?php
-            if (get_field('enable_source', 'option') == true && $checktime == false) {
-                ?>
-                <div class="sg-resources box-grey pd-main on-pc">
-                    <h4>Resources</h4>
-                    <div class="intro">
-                        <?= get_field('source_intro', 'option'); ?>
-                    </div>
-                    <?php $source_content = get_field('source_content', $postid);
-                    if ($source_content)
-                        echo $source_content;
-                    ?>
-                </div>
-            <?php } ?>
-            <div class="author-about pd-main">
-                <h3>About the Author</h3>
-                <div class="author-write">
-                    <div class="author-link">
-                        <?php
-                        if ($avt) {
-                            ?>
-                            <a href="<?php echo $author_url; ?>"><img src="<?php echo $avt; ?>" alt=""></a>
-                        <?php } else { ?>
-                            <a href="<?php echo $author_url; ?>"><img
-                                    src="<?php echo get_field('avatar_default', 'option'); ?>" alt=""></a>
-                            <?php } ?>
-                            <p class="has-large-font-size"><a style="color: var(--pri-color-2) !important;"
-                                    href="<?php echo $author_url; ?>"><?php the_author(); ?>
-                                </a>
-                                <span class="has-small-font-size sec-color-3">
-                                    <?php echo get_field('position', 'user_' . $author_id);?></span>
-                            </p>
-                    </div>
-                    <?php if ($user_description) { ?>
-                        <div class="author-info">
-                                <p><?php echo wp_trim_words($user_description, 50, ''); ?><a
-                                        href="<?php echo $author_url; ?>"> See more</a></p>
                             </div>
+                        <?php }
+                    } ?>
+                    <div class="sg-editor">
+                        <?php the_content(); ?>
+                    </div>
+                    <?php
+                    if (get_field('enable_source', 'option') == true && $checktime == false) {
+                        ?>
+                        <div class="sg-resources box-grey pd-main on-pc">
+                            <h4>Resources</h4>
+                            <div class="intro">
+                                <?= get_field('source_intro', 'option'); ?>
+                            </div>
+                            <?php $source_content = get_field('source_content', $postid);
+                            if ($source_content)
+                                echo $source_content;
+                            ?>
+                        </div>
                     <?php } ?>
-                </div>
+                    <div class="author-about pd-main">
+                        <h3>About the Author</h3>
+                        <div class="author-write">
+                            <div class="author-link">
+                                <?php
+                                if ($avt) {
+                                    ?>
+                                    <a href="<?php echo $author_url; ?>"><img src="<?php echo $avt; ?>" alt=""></a>
+                                <?php } else { ?>
+                                    <a href="<?php echo $author_url; ?>"><img
+                                            src="<?php echo get_field('avatar_default', 'option'); ?>" alt=""></a>
+                                <?php } ?>
+                                <p class="has-large-font-size"><a style="color: var(--pri-color-2) !important;"
+                                        href="<?php echo $author_url; ?>"><?php the_author(); ?>
+                                    </a>
+                                    <?php if ($userPosition): ?>
+                                        <span>
+                                            <?= $userPosition; ?>
+                                        </span>
+                                    <?php endif; ?>>
+                                </p>
+                            </div>
+                            <?php if ($user_description) { ?>
+                                <div class="author-info">
+                                    <p><?php echo wp_trim_words($user_description, 50, ''); ?><a
+                                            href="<?php echo $author_url; ?>"> See more</a></p>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </article>
             </div>
-            </article>
         </div>
-    </div>
     </div>
 </main>
 <?php
@@ -430,7 +456,7 @@ if (isset($couponid) && $couponid != '') {
                 $ctitle = '<?php echo get_the_title($brandid); ?>';
                 $ptitle = '<?php echo get_the_title($postid); ?>';
                 $crstate = 'Worked';
-                if ($(this).hasClass('coupon-dontworked')) $crstate = 'Didn’t worked';
+                if ($(this).hasClass('coupon-dontworked')) $crstate = "Didn't worked";
                 $('#rateCouponTitle').attr('value', $ctitle).val($ctitle);
                 $('#rateCouponPost').attr('value', $ptitle).val($ptitle);
                 $('#rateCouponStatus').attr('value', $crstate).val($crstate);

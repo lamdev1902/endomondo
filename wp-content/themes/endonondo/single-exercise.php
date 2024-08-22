@@ -9,8 +9,6 @@ get_header();
 
 $post_type = $post->post_type;
 
-$user_description = get_field('story', 'user_' . $upid);
-
 ?>
 <main id="content">
     <?php
@@ -172,7 +170,8 @@ $user_description = get_field('story', 'user_' . $upid);
                                             ?>
                                             <div style="overflow: auto">
                                                 <figure class="wp-block-table">
-                                                    <figcaption class="wp-element-caption">Optimal Sets & Reps of <?=$exData[0]['name']?></figcaption>
+                                                    <figcaption class="wp-element-caption">Optimal Sets & Reps of <?= $exData[0]['name'] ?>
+                                                    </figcaption>
                                                     <table>
                                                         <thead>
                                                             <tr>
@@ -580,33 +579,60 @@ $user_description = get_field('story', 'user_' . $upid);
     $author_name = get_the_author_meta('nickname', $author_id);
     $author_url = get_author_posts_url($author_id);
 
+    $avt = '';
+
+    if (get_field('new_avata', 'user_' . $author_id)) {
+        $avt = get_field('new_avata', 'user_' . $author_id);
+    } elseif (get_field('avata', 'user_' . $author_id)) {
+        $avt = get_field('avata', 'user_' . $author_id);
+    }
+
+    $user_description = '';
+
+    if (get_field('new_story', 'user_' . $author_id)) {
+        $user_description = get_field('new_story', 'user_' . $author_id);
+    } elseif (get_field('story', 'user_' . $author_id)) {
+        $user_description = get_field('story', 'user_' . $author_id);
+    }
+
+    $userPosition = get_field('position', 'user_' . $author_id);
+
+    if (get_field('new_position', 'user_' . $author_id)) {
+        $userPosition = get_field('new_position', 'user_' . $author_id);
+    } elseif (get_field('position', 'user_' . $author_id)) {
+        $userPosition = get_field('position', 'user_' . $author_id);
+    }
     ?>
     <div class="single-main exc-author">
         <aside class="single-sidebar ">
             <div class="container">
-                <div class="exc-container bd-bot">
-                    <div class="muscle-title">
-                        <h2>ABOUT THE AUTHOR</h2>
-                    </div>
-                    <div class="sg-author">
-                        <div class="author-it">
+                <div class="author-about exc-container">
+                    <h3>About the Author</h3>
+                    <div class="author-write">
+                        <div class="author-link">
                             <?php
-                            $avata = get_field('avata', 'user_' . $author_id);
-                            $user_info = get_userdata($author_id);
-                            if ($avata) {
+                            if ($avt) {
                                 ?>
-                                <img src="<?php echo $avata; ?>" alt="">
+                                <a target="_blank" href="<?php echo $author_url; ?>"><img src="<?php echo $avt; ?>"
+                                        alt=""></a>
                             <?php } else { ?>
-                                <img src="<?php echo get_field('avatar_default', 'option'); ?>" alt="">
-                            <?php } ?>
-                            <div class='ag-author-info'>
-                                <h5><a href="<?php echo $author_url; ?>"><?= $author_name; ?></a></h5>
-                                <p class="color-grey"><?= get_field('position', 'user_' . $author_id) ?></p>
-                            </div>
+                                <a target="_blank" href="<?php echo $author_url; ?>"><img
+                                        src="<?php echo get_field('avatar_default', 'option'); ?>" alt="">
+                                <?php } ?>
+                                <p class="has-medium-font-size"><a target="_blank"
+                                        style="color: var(--pri-color-2) !important;"
+                                        href="<?php echo $author_url; ?>"><?php the_author(); ?>
+                                    </a>
+                                    <?php if ($userPosition): ?>
+                                        <span>
+                                            <?= $userPosition; ?>
+                                        </span>
+                                    <?php endif; ?>
+                                </p>
                         </div>
                         <?php if ($user_description) { ?>
                             <div class="author-info">
-                                <p><?php echo wp_trim_words($user_description, 50, ''); ?><a
+                                <p><?php echo wp_trim_words($user_description, 50, '') . '.. '; ?><a
                                         href="<?php echo $author_url; ?>"> See more</a></p>
                             </div>
                         <?php } ?>

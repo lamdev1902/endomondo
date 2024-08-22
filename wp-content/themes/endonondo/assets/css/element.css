@@ -113,6 +113,8 @@ figure.wp-block-table figcaption{
     color: var(--secondary-color-3);
     margin: 0;
     font-style: normal;
+    width: 100%;
+    text-align: center;
 }
 
 table thead tr {
@@ -240,10 +242,11 @@ table tbody tr:first-child td {
     margin-bottom: 42px;
 }
 
-.wp-block-columns.brand .brand-col{
-    background: var(--secondary-color-1);
+.wp-block-columns.brand .brand-col {
+    background: var(--secondary-color-5);
     position: relative;
     padding-bottom: 30px;
+    border-bottom: 1px solid var(--secondary-color-1);
 }
 
 .wp-block-columns.brand .brand-col figure

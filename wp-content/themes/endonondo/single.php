@@ -6,11 +6,37 @@ $upid = get_post_field('post_author', $postid);
 $author_name = get_the_author_meta('nickname', $author_id);
 $author_url = get_author_posts_url($author_id);
 $user_info = get_userdata($author_id);
-$avt = get_field('avata', 'user_' . $author_id);
+
+$avt = '';
+if (get_field('new_avata', 'user_' . $upid)) {
+	$avt = get_field('new_avata', 'user_' . $upid);
+} elseif (get_field('avata', 'user_' . $upid)) {
+	$avt = get_field('avata', 'user_' . $upid);
+}
+
+
+$user_description = '';
+    
+if(get_field('new_story', 'user_' . $upid)) {
+	$user_description = get_field('new_story', 'user_' . $upid);
+}elseif(get_field('story', 'user_' . $upid)) {
+	$user_description = get_field('story', 'user_' . $upid);
+}
+
+$userPosition = get_field('position', 'user_' . $upid);
+
+if(get_field('new_position', 'user_' . $upid)) {
+	$userPosition = get_field('new_position', 'user_' . $upid);
+}elseif(get_field('position', 'user_' . $upid)) {
+	$userPosition = get_field('position', 'user_' . $upid);
+}
+
 get_header();
 the_post();
 $post_type = $post->post_type;
-$user_description = get_field('story', 'user_' . $author_id);
+
+
+
 $checktime = '';
 
 $disableFeature = get_field('disable_featured_image', $postid);
@@ -177,22 +203,26 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 								<?php
 								if ($avt) {
 									?>
-									<a target="_blank" href="<?php echo $author_url; ?>"><img src="<?php echo $avt; ?>" alt=""></a>
+									<a target="_blank" href="<?php echo $author_url; ?>"><img src="<?php echo $avt; ?>"
+											alt=""></a>
 								<?php } else { ?>
 									<a target="_blank" href="<?php echo $author_url; ?>"><img
 											src="<?php echo get_field('avatar_default', 'option'); ?>" alt="">
 									<?php } ?>
-									<p class="has-medium-font-size"><a target="_blank" style="color: var(--pri-color-2) !important;"
+									<p class="has-medium-font-size"><a target="_blank"
+											style="color: var(--pri-color-2) !important;"
 											href="<?php echo $author_url; ?>"><?php the_author(); ?>
 										</a>
-										<span>
-											<?php echo get_field('position', 'user_' . $author_id);
-											; ?></span>
+										<?php if($userPosition): ?>
+											<span>
+												<?= $userPosition; ?>
+											</span>
+										<?php endif; ?>
 									</p>
 							</div>
 							<?php if ($user_description) { ?>
 								<div class="author-info">
-									<p><?php echo wp_trim_words($user_description, 50, '').'.. '; ?><a
+									<p><?php echo wp_trim_words($user_description, 50, '') . '.. '; ?><a
 											href="<?php echo $author_url; ?>"> See more</a></p>
 								</div>
 							<?php } ?>
