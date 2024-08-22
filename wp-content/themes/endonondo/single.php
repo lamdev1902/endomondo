@@ -56,7 +56,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 									<?php the_modified_date('F d, Y'); ?></time>
 								<span class="has-small-font-size">- Writen by: </span>
 								<span class="has-small-font-size" itemprop="author" itemscope
-									itemtype="https://schema.org/Person"><a class="pri-color-2"
+									itemtype="https://schema.org/Person"><a class="pri-color-2" target="_blank"
 										href="<?php echo $author_url; ?>"
 										title="<?php echo __('View all posts by', 'hc_theme'); ?> <?php the_author(); ?>"
 										rel="author" itemprop="url"><span class="ncustom has-small-font-size"
@@ -71,7 +71,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 											if (!$anamer || $anamer == '')
 												$anamer = $mr['display_name'];
 											?>
-											<a class="pri-color-2" style="text-decoration: underline"
+											<a target="_blank" class="pri-color-2" style="text-decoration: underline"
 												href="<?php echo get_author_posts_url($mr['ID']); ?>"><?php if ($m > 0)
 													   echo ' ,'; ?><?php echo $anamer; ?></a>
 										<?php } ?>
@@ -177,12 +177,12 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 								<?php
 								if ($avt) {
 									?>
-									<a href="<?php echo $author_url; ?>"><img src="<?php echo $avt; ?>" alt=""></a>
+									<a target="_blank" href="<?php echo $author_url; ?>"><img src="<?php echo $avt; ?>" alt=""></a>
 								<?php } else { ?>
-									<a href="<?php echo $author_url; ?>"><img
+									<a target="_blank" href="<?php echo $author_url; ?>"><img
 											src="<?php echo get_field('avatar_default', 'option'); ?>" alt="">
 									<?php } ?>
-									<p class="has-medium-font-size"><a style="color: var(--pri-color-2) !important;"
+									<p class="has-medium-font-size"><a target="_blank" style="color: var(--pri-color-2) !important;"
 											href="<?php echo $author_url; ?>"><?php the_author(); ?>
 										</a>
 										<span>
@@ -192,7 +192,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 							</div>
 							<?php if ($user_description) { ?>
 								<div class="author-info">
-									<p><?php echo wp_trim_words($user_description, 50, ''); ?><a
+									<p><?php echo wp_trim_words($user_description, 50, '').'.. '; ?><a
 											href="<?php echo $author_url; ?>"> See more</a></p>
 								</div>
 							<?php } ?>

@@ -146,7 +146,7 @@ $check = false;
 				$array_merge = array();
 				$args = array(
 					'post_type' => array('exercise', 'post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
-					'posts_per_page' => 3,
+					'posts_per_page' => 9,
 					'author' => $userid
 				);
 				$the_query = new WP_Query($args);
@@ -157,7 +157,7 @@ $check = false;
 					endwhile;
 					wp_reset_query();
 				}
-				$num_left = 3 - count($array_merge);
+				$num_left = 9 - count($array_merge);
 				if ($num_left > 0) {
 					$args = array(
 						'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),

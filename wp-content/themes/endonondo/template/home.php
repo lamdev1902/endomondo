@@ -246,7 +246,7 @@ the_post();
 			<?php echo get_field('video_source', $pageid); ?>
 		</section>	
 	</section>-->
-	<section class="soon bg-section">
+	<!-- <section class="soon bg-section">
 		<div class="container">
 			<div class="soon-content pd-main flex">
 				<div class="soon-img">
@@ -273,7 +273,7 @@ the_post();
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<section class="home-choise bg-white color-black pd-main">
 		<div class="container">
 			<h2 class="">Recommended Posts</h2>

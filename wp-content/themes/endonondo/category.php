@@ -126,11 +126,11 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 														<p class="has-medium-font-size text-special clamp-2 ellipsis pri-color-2"><a
 																class="pri-color-2" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 														</p>
-														<p class="has-small-font-size author"><a class="sec-color-4"
+														<p class="has-small-font-size author"><a target="_blank" class="sec-color-4"
 																href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a>
 														</p>
 														<?php if ($i != 0): ?>
-															<a href="<?php the_permalink(); ?>" class="news-link">
+															<a href="<?php the_permalink(); ?>" class="news-link author position-absolute">
 																<img src="<?php echo get_template_directory_uri(); ?>/assets/images/right.svg"
 																	alt="">
 															</a>
@@ -188,7 +188,7 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 														<?php endif; ?>
 														<p class="has-medium-font-size text-special clamp-2"><a class="pri-color-2"
 																href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></p>
-														<p class="has-small-font-size"><a class="sec-color-3"
+														<p class="has-small-font-size"><a target="_blank" class="sec-color-3"
 																href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a>
 														</p>
 													</div>
@@ -315,7 +315,7 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 											<?php endif; ?>
 											<p class="has-medium-font-size text-special clamp-2"><a class="pri-color-2"
 													href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></p>
-											<p class="has-small-font-size"><a class="sec-color-3"
+											<p class="has-small-font-size"><a target="_blank" class="sec-color-3"
 													href="<?php echo $post_author_url; ?>">By <?php echo $post_display_name; ?></a>
 											</p>
 										</div>

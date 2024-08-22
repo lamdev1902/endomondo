@@ -340,11 +340,30 @@ ol {
 .grid-feature .featured,
 .grid-item .featured {
     margin-bottom: var(--mr-main);
+}
+
+.grid-item .featured {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+}
+
+.grid-item .featured img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.grid-feature .featured {
     aspect-ratio: var(--ratio);
 }
 
 .grid-item .info {
     text-align: center;
+}
+
+.grid-item .info p:first-of-type {
+    margin-bottom: 8px;
 }
 
 .grid-item .info p:last-of-type {

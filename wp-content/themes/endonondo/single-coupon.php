@@ -53,7 +53,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 									?>
 									<?php the_modified_date('F d, Y'); ?></time>
                                 <span class="has-small-font-size">- Writen by: </span>
-                                    <span class="has-small-font-size" itemprop="author" itemscope itemtype="https://schema.org/Person"><a class="pri-color-2" href="<?php echo $author_url; ?>"
+                                    <span class="has-small-font-size" itemprop="author" itemscope itemtype="https://schema.org/Person"><a class="pri-color-2" target="_blank" href="<?php echo $author_url; ?>"
                                         title="<?php echo __('View all posts by', 'hc_theme'); ?> <?php the_author(); ?>" rel="author"
                                         itemprop="url"><span class="ncustom has-small-font-size" itemprop="name"><?php echo $aname; ?></span></a></span>
                                         <?php
@@ -66,7 +66,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                                     if (!$anamer || $anamer == '')
                                     $anamer = $mr['display_name'];
                                     ?>
-                                    <a class="pri-color-2" style="text-decoration: underline" href="<?php echo get_author_posts_url($mr['ID']); ?>"><?php if ($m > 0)
+                                    <a class="pri-color-2" style="text-decoration: underline" target="_blank" href="<?php echo get_author_posts_url($mr['ID']); ?>"><?php if ($m > 0)
                                         echo ' ,'; ?><?php echo $anamer; ?></a>
                                 <?php } ?>
                                 </span>

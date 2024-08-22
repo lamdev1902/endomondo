@@ -50,7 +50,7 @@ $post_type = $post->post_type;
 						<?php endif; ?>
 						<p class="has-medium-font-size mr-bottom-20 text-special clamp-1"><a class="pri-color-2"
 								href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-						<p class="has-small-font-size"><a class="sec-color-3" href="<?php echo $post_author_url; ?>">By
+						<p class="has-small-font-size"><a class="sec-color-3" target="_blank" href="<?php echo $post_author_url; ?>">By
 								<?php echo $post_display_name; ?></a></p>
 						<?php
 						$yoast_meta = get_post_meta($post->ID, '_yoast_wpseo_metadesc', true);

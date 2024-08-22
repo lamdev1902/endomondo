@@ -140,6 +140,7 @@
     .box-grey,
     .ft-snippet {
         padding: 20px 24px;
+        background-image: url(../images/snippet-bg-mb.svg);
     }
 
     .box-grey > div,
@@ -149,6 +150,8 @@
 
     .box-grey::after,
     .ft-snippet::after {
+        height: 20px;
+        width: 131px;
         bottom: 15px;
     }
 

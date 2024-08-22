@@ -343,7 +343,7 @@ main {
     content: url(../images/search.svg);
     position: absolute;
     left: 15px;
-    top: -25px;
+    top: -22px;
 }
 
 #header .ed-btn {
@@ -637,9 +637,21 @@ main {
     padding: 16px 0;
 }
 
+#footer .ft-bottom > .list-flex {
+    align-items: center;
+}
+
+#footer .ft-bottom p {
+    margin-bottom: 0;
+}
+
 #footer .ft-bottom .menu {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 0;
+}
+
+#footer .ft-bottom .menu > li {
     margin-bottom: 0;
 }
 
@@ -684,7 +696,7 @@ main {
 }
 
 #footer .disclaimer p {
-    color: var(--primary-color-3);
+    font-style: normal;
 }
 
 .social a img {
@@ -864,6 +876,11 @@ main {
     gap: 16px;
 }
 
+
+.author-box .tag span:hover {
+    background-color: var(--primary-color-3);
+    border: 1px solid var(--primary-color-2);
+}
 .author-box .info > p {
     margin-bottom: 0;
 }
@@ -1109,7 +1126,7 @@ main {
 }
 
 .popup .popup-bg .popup-box .info .box .klaviyo-form {
-    margin-bottom: 40px;
+    margin-bottom: var(--mr-main);
 }
 
 .popup .popup-bg .social {
@@ -3614,7 +3631,7 @@ figcaption {
 
 .soon {
     background-image: url(../images/home/soon-bg.svg);
-    background-size: auto 100%;
+    background-size: cover;
     background-position: top 1px center;
 }
 

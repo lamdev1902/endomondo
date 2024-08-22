@@ -3,9 +3,13 @@
 .box-grey,
 .ft-snippet {
     padding: 32px 20px 58px;
-    background-color: var(--secondary-color-1);
+    background-image: url(../images/snippet-bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: right;
+    background-position-y: bottom;
     position: relative;
-    margin-bottom: var(--mr-main)
+    margin-bottom: var(--mr-main);
 }
 
 .box-grey ul
@@ -16,11 +20,15 @@
 .box-grey::after,
 .ft-snippet::after {
     position: absolute;
-    content: url(../images/ft-snippet-logo.svg);
+    content: "";
     width: 185px;
     height: 29px;
     bottom: 25px;
     right: 25px;
+    background-image: url(../images/ft-snippet-logo.svg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* Block Quote */

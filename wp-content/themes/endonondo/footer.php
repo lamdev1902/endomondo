@@ -10,20 +10,20 @@
 					if ($social) {
 						foreach ($social as $social) {
 							?>
-							<a target="_blank" href="<?php echo $social['link']; ?>"><img
-								src="<?= $social['icon']['url']; ?>" alt="<?= $social['icon']['alt']; ?>" /></a>
+							<a target="_blank" href="<?php echo $social['link']; ?>"><img src="<?= $social['icon']['url']; ?>"
+									alt="<?= $social['icon']['alt']; ?>" /></a>
 						<?php }
 					} ?>
 				</div>
 				<div class="ft-form">
 					<div class="title mr-bottom-20">
 						<p class="has-large-font-size">
-							<?= get_field('news_title', 'option')?>
+							<?= get_field('news_title', 'option') ?>
 						</p>
 					</div>
 					<div class="description mr-bottom-20">
 						<p class="has-small-font-size">
-							<?= get_field('news_des', 'option')?>
+							<?= get_field('news_des', 'option') ?>
 						</p>
 					</div>
 					<div class="klaviyo-form-TcfuNL mr-bottom-20"></div>
@@ -38,7 +38,7 @@
 				);
 				?>
 				<div class="disclaimer">
-					<?php the_field('disclaimer', 'option'); ?>
+					<p class="has-small-font-size pri-color-3"><?php the_field('disclaimer', 'option'); ?></p>
 				</div>
 			</nav>
 		</div>
@@ -46,15 +46,19 @@
 	<div class="ft-bottom">
 		<div class="container list-flex flex-two">
 			<div class="item-flex">
-				<?php echo get_field('footer_bottom', 'option') ?>
+				<?php
+				$copyright = get_field('footer_bottom', 'option');
+				$yearc = date('Y');
+				$text= str_replace("%year%", $yearc, $copyright);?>
+				<p class="has-small-font-size pri-color-3"><?=$text;?></p>
 			</div>
 			<div class="item-flex">
 				<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'menu_footer',
-						)
-					);
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu_footer',
+					)
+				);
 				?>
 			</div>
 		</div>
@@ -156,7 +160,7 @@ while ($the_query->have_posts()):
 	$the_query->the_post();
 	?>
 	<div class="ads-script"><?php echo get_field('emcode', $post->ID, false, false); ?></div>
-<?php
+	<?php
 endwhile;
 wp_reset_query();
 ?>
