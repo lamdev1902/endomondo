@@ -95,7 +95,7 @@ the_post();
 				</div>
 			</div>
 			<div class="container">
-				<h2 class="ed-title">All post</h2>
+				<h2 >All post</h2>
 				<div class="news-list grid grid-feature">
 					<?php
 					$args = array(

@@ -835,11 +835,6 @@ main {
     color: var(--primary-color-1);
 }
 
-.ed-title {
-    font-size: 40px;
-    line-height: 48px;
-    margin-bottom: 40px;
-}
 
 .tag {
     margin-bottom: var(--mr-main);
@@ -1253,11 +1248,6 @@ main {
         font-size: 15px;
         line-height: 26px;
         padding: 5px 15px;
-    }
-
-    .ed-title {
-        font-size: 28px;
-        line-height: 34px;
     }
 
     .social a {
@@ -2543,12 +2533,6 @@ figcaption {
     padding-bottom: 80px;
 }
 
-.sg-other .ed-title {
-    font-size: 36px;
-    line-height: 44px;
-}
-
-
 .sg-other .news-list .news-it:nth-child(4) {
     display: none;
 }
@@ -2759,22 +2743,12 @@ figcaption {
     .sg-other {
         padding-bottom: 16px;
     }
-
-    .sg-other .ed-title {
-        font-size: 20px;
-        line-height: 1.2;
-        margin-bottom: 24px;
-    }
 }
 
 .about-main {
     padding: 40px 0;
 }
 
-.about-main .ed-title {
-    font-size: 36px;
-    line-height: 44px;
-}
 
 .about-main .about-custom {
     padding-bottom: 40px;
@@ -2871,11 +2845,6 @@ figcaption {
         padding-bottom: 0;
     }
 
-    .about-main .ed-title {
-        font-size: 28px;
-        line-height: 34px;
-    }
-
     .about-main .about-custom table,
     .about-main .about-custom tbody {
         display: block;
@@ -2941,11 +2910,6 @@ figcaption {
     max-width: 848px;
 }
 
-.page-main .ed-title {
-    font-size: 36px;
-    line-height: 44px;
-}
-
 .page-main .page-custom h3 {
     margin-bottom: 16px;
     margin-top: 40px;
@@ -2962,11 +2926,6 @@ figcaption {
 @media (max-width: 767px) {
     .page-main {
         padding: 40px 0;
-    }
-
-    .page-main .ed-title {
-        font-size: 28px;
-        line-height: 34px;
     }
 }
 
@@ -3038,11 +2997,6 @@ figcaption {
     margin: 0 0 16px;
 }
 
-.blog-main .blog-all .ed-title {
-    font-size: 32px;
-    line-height: 39px;
-}
-
 .blog-main .blog-all .pagination {
     margin-top: -16px;
 }
@@ -3095,21 +3049,12 @@ figcaption {
         border-bottom: 1px solid #D4D5D4;
     }
 
-    .blog-main .blog-all .ed-title {
-        font-size: 24px;
-        line-height: 32px;
-        margin-bottom: 24px;
-    }
 }
 
 .contact-main {
     padding: 40px 0 120px;
 }
 
-.contact-main .ed-title {
-    font-size: 36px;
-    line-height: 43px;
-}
 
 .contact-main .contact-box .contact-left p {
     color: var(--secondary-color-4);
@@ -3510,9 +3455,6 @@ figcaption {
     margin: 40px 0 24px;
 }
 
-.search-main .author-all .ed-title {
-    margin-bottom: 40px;
-}
 
 .search-main .author-all .people-list {
     margin: 0 -20px;
@@ -3562,12 +3504,6 @@ figcaption {
 
     .search-main .search-form h1 {
         font-size: 28px;
-    }
-
-    .search-main .author-all .ed-title {
-        margin-bottom: 24px;
-        font-size: 24px;
-        line-height: 32px;
     }
 
     .search-main .author-all .people-list {
