@@ -166,6 +166,13 @@ p {
     line-height: 20px;
 }
 
+.has-ssmall-font-size {
+    font-size: var(--font-12) !important;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0px;
+}
+
 /* Point */
 
 ul,
@@ -453,6 +460,12 @@ ol {
         font-size: var(--font-12) !important;
         font-weight: 300;
         line-height: 18px;
+    }
+
+    .has-ssmall-font-size {
+        font-size: 11px !important;
+        line-height: 17px;
+        letter-spacing: 0px;
     }
 
     /* Point */

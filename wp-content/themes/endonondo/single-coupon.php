@@ -13,6 +13,7 @@ $display_name = get_the_author_meta('nickname', $upid);
 $author_url = get_author_posts_url($upid);
 $post_type = $post->post_type;
 
+$checktime = false;
 $avt = '';
 if (get_field('new_avata', 'user_' . $upid)) {
     $avt = get_field('new_avata', 'user_' . $upid);
@@ -30,10 +31,10 @@ if (get_field('new_story', 'user_' . $upid)) {
 
 $userPosition = get_field('position', 'user_' . $upid);
 
-if(get_field('new_position', 'user_' . $upid)) {
-	$userPosition = get_field('new_position', 'user_' . $upid);
-}elseif(get_field('position', 'user_' . $upid)) {
-	$userPosition = get_field('position', 'user_' . $upid);
+if (get_field('new_position', 'user_' . $upid)) {
+    $userPosition = get_field('new_position', 'user_' . $upid);
+} elseif (get_field('position', 'user_' . $upid)) {
+    $userPosition = get_field('position', 'user_' . $upid);
 }
 
 $advertiser_disclosure = get_field('enable_tooltip1', $postid);
@@ -180,7 +181,6 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                     <?php $coupon_list = get_field('coupon_list', $postid);
                     if ($coupon_list) {
                         $c1 = $coupon_list[0];
-                        $couponid = $c1;
                         $ctype = wp_get_post_terms($c1, 'coupon_type');
                         $date_type = get_field('date_type', $c1);
                         $date_ex = get_field('coupon_date', $c1);
@@ -227,9 +227,15 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                                                 </div>
                                             </div>
                                             <div class="action">
-                                                <a href="<?php echo get_field('coupon_link', $c1); ?>"
-                                                    class="get-code text-uppercase" data-id="<?php echo $c1; ?>"
-                                                    target="_blank"><p><?php echo get_field('coupon_btn', $c1); ?></p></a>
+                                                <div class="action-item">
+                                                    <a href="<?php echo get_field('coupon_link', $c1); ?>"
+                                                        class="get-code text-uppercase" data-id="<?php echo $c1; ?>">
+                                                        <p><?php echo get_field('coupon_btn', $c1); ?></p>
+                                                    </a>
+                                                </div>
+                                                <div class="code">
+                                                    <p><?php echo get_field('coupon_code', $c1); ?></p>
+                                                </div>
                                             </div>
                                             <div class="date has-small-font-size pri-color-2 <?php if ($date_type == 1 && $date_current > $date_ex)
                                                 echo 'has-expired'; ?>">
@@ -291,7 +297,6 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
 
                                                                     for ($i = 0; $i < strlen($content); $i++) {
                                                                         $char = $content[$i];
-                                                                        // Kiểm tra nếu là ký tự số
                                                                         if (is_numeric($char)) {
                                                                             $number .= $char;
                                                                         } else {
@@ -299,22 +304,27 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                                                                         }
                                                                     }
 
-                                                                    // Tạo hai thẻ span mới
                                                                     $span1 = "<span class='number-coupon'>" . $number . "</span>";
                                                                     $span2 = "<span>" . $specialChar . "</span>" . $remainingString;
 
-                                                                    // In ra kết quả
                                                                     echo $span1 . $span2;
                                                                 } else {
-                                                                    echo get_field('coupon_text', $c1);
+                                                                    echo get_field('coupon_text', $cp);
                                                                 }
                                                                 ?>
                                                             </div>
                                                         </div>
                                                         <div class="action">
-                                                            <a href="<?php echo get_field('coupon_link', $c1); ?>"
-                                                                class="get-code text-uppercase" data-id="<?php echo $c1; ?>"
-                                                                target="_blank"><p><?php echo get_field('coupon_btn', $c1); ?></p></a>
+                                                            <div class="action-item">
+                                                                <a href="<?php echo get_field('coupon_link', $cp); ?>"
+                                                                    class="get-code text-uppercase" target="_blank">
+                                                                    <p><?php echo get_field('coupon_btn', $cp); ?></p>
+                                                                </a>
+                                                            </div>
+                                                            <div class="code">
+                                                                <p><?php echo get_field('coupon_code', $cp); ?></p>
+                                                            </div>
+
                                                         </div>
                                                         <div class="date <?php if ($date_type == 1 && $date_current > $date_ex)
                                                             echo 'has-expired'; ?>">
@@ -414,7 +424,7 @@ if (isset($couponid) && $couponid != '') {
                     <div class="show-code-top">
                         <div class="coupon-top">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-coupon.svg"
-									alt="coupon-logo">
+                                alt="coupon-logo">
                             <p>Exp:
                                 <?php if ($date_type2 == 1)
                                     echo get_field('coupon_date', $brandid);
@@ -447,7 +457,26 @@ if (isset($couponid) && $couponid != '') {
     </div>
 <?php }
 get_footer();
-
+if (isset($couponid) && $couponid != '') {
+    ?>
+    <script>
+        jQuery(function ($) {
+            $('#couponModal').modal('show');
+            $('.coupon-rate').on('click', function () {
+                $(this).parents('li').find('span').html('Thank you for responding.');
+                $ctitle = '<?php echo get_the_title($brandid); ?>';
+                $ptitle = '<?php echo get_the_title($postid); ?>';
+                $crstate = 'Worked';
+                if ($(this).hasClass('coupon-dontworked')) $crstate = "Didn't worked";
+                $('#rateCouponTitle').attr('value', $ctitle).val($ctitle);
+                $('#rateCouponPost').attr('value', $ptitle).val($ptitle);
+                $('#rateCouponStatus').attr('value', $crstate).val($crstate);
+                $('#crateSubmit').click();
+                return false;
+            });
+        });
+    </script>
+<?php }
 $enable_schma = get_field('enable_schma', $postid);
 if ($enable_schma == true && get_field('rating_enable', $postid) == true) {
     $schema_type = get_field('schema_type', $postid);
@@ -494,19 +523,8 @@ if ($enable_schma == true && get_field('rating_enable', $postid) == true) {
 <script>
     jQuery(function ($) {
         $('.get-code').on('click', function () {
-            $('#couponModal').modal('show');
-            $('.coupon-rate').on('click', function () {
-                $(this).parents('li').find('span').html('Thank you for responding.');
-                $ctitle = '<?php echo get_the_title($brandid); ?>';
-                $ptitle = '<?php echo get_the_title($postid); ?>';
-                $crstate = 'Worked';
-                if ($(this).hasClass('coupon-dontworked')) $crstate = "Didn't worked";
-                $('#rateCouponTitle').attr('value', $ctitle).val($ctitle);
-                $('#rateCouponPost').attr('value', $ptitle).val($ptitle);
-                $('#rateCouponStatus').attr('value', $crstate).val($crstate);
-                $('#crateSubmit').click();
-                return false;
-            });
+            var id = $(this).attr('data-id');
+            if (id) window.open('<?php echo get_permalink($postid); ?>?couponid=' + id, '_blank');
         });
         $('.filter-nav a').on('click', function () {
             $('.filter-nav a').removeClass('active');

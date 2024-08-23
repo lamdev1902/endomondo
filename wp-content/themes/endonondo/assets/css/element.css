@@ -167,6 +167,7 @@ table tbody tr:first-child td {
 .box-e p {
     margin-bottom: 0;
     font-size: var(--font-14) !important;
+    line-height: 20px;
 }
 
 /* Summary */

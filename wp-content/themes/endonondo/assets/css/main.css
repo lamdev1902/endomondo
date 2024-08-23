@@ -1846,6 +1846,7 @@ figcaption {
     text-align: center;
     font-style: italic;
     font-size: 12px;
+    line-height: 17px;
 }
 
 
@@ -3804,13 +3805,37 @@ figcaption {
 
 .coupon-item-detail .coupon-top .flex .hightlight .action {
     width: 83%;
-    text-align: center;
-    background-image: url(../images/bgrcode.svg);
-    background-repeat: no-repeat !important;
-    background-size: 100% 100%;
     height: 41px;
     display: flex;
+    background: var(--secondary-color-3);
+    position: relative;
+}
+
+.coupon-item-detail .coupon-top .flex .hightlight .action .action-item {
+    width: 85%;
+    z-index: 1;
+    height: 100%;
+    display: flex;
     align-items: center;
+    background-image: url(../images/bgrcode.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: right;
+    background-position-y: center;
+    justify-content: center;
+}
+
+.coupon-item-detail .coupon-top .flex .hightlight .action .code {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-20px, -50%);
+}
+
+.coupon-item-detail .coupon-top .flex .hightlight .action .code p {
+    margin-bottom: 0;
+    color: var(--primary-color-3);
+    text-transform: uppercase;
 }
 
 .coupon-item-detail .coupon-top .flex a.get-code {
@@ -3820,7 +3845,6 @@ figcaption {
 .coupon-item-detail .coupon-top .flex .get-code p {
     color: var(--primary-color-3);
     margin-bottom: 0;
-    padding-left: 15px;
 }
 
 .coupon-item-detail .coupon-top .flex .hightlight .action .date {
@@ -3922,8 +3946,9 @@ figcaption {
     padding: 8px 24px;
     height: 40px;
     background: #fff;
-    font-weight: 500;
-    color: rgba(0, 0, 0, 0.3);
+    font-weight: 400;
+    color: var(--primary-color-2);
+    font-size: 16px;
 }
 
 #couponModal .show-code-top p b {

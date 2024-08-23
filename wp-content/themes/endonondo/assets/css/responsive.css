@@ -225,6 +225,10 @@
         right: 0;
     }
 
+    .coupon-item-detail .coupon-top .flex .hightlight .action .action-item {
+        width: 87%;
+    }
+
 
     /* Home Latest */
 
@@ -428,6 +432,10 @@
     .page-template-search > table {
         top: 280px !important;
     }
+
+    .coupon-item-detail .coupon-top .flex .hightlight .action .action-item {
+        width: 83%;
+    }
     
 }
 
@@ -527,6 +535,20 @@
 
     .error-main .error-box .featured {
         width: 100%;
+    }
+
+    .box-e p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    figcaption {
+        font-size: 11px;
+        line-height: 17px;
+    }
+
+    #couponModal .show-code-top .coupon-copy .coupon-code {
+        font-size: 15px;
     }
 }
 
