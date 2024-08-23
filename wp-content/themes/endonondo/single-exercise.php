@@ -624,9 +624,9 @@ $post_type = $post->post_type;
                                         href="<?php echo $author_url; ?>"><?php the_author(); ?>
                                     </a>
                                     <?php if ($userPosition): ?>
-                                        <p>
+                                        <span>
                                             <?= $userPosition; ?>
-                                        </p>
+                                        </sp>
                                     <?php endif; ?>
                                 </p>
                         </div>
