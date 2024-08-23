@@ -8,6 +8,7 @@ get_header();
     top: 290px !important;
   }
   
+  
   .gsc-control-cse {
     font-family: verdana, arial, sans-serif
   }
@@ -74,23 +75,30 @@ get_header();
   .gs-webResult.gs-result a.gs-title:link b,
   .gs-imageResult a.gs-title:link,
   .gs-imageResult a.gs-title:link b {
-    color: #FF5757;
-    font-size: 21px;
+    color: #000000;
+    font-size: 22px;
+    line-height: 28px;
   }
 
   .gs-webResult.gs-result a.gs-title:visited,
   .gs-webResult.gs-result a.gs-title:visited b,
   .gs-imageResult a.gs-title:visited,
   .gs-imageResult a.gs-title:visited b {
-    color: #FF5757
+    color: #000000
   }
 
   .gs-webResult.gs-result a.gs-title:hover,
   .gs-webResult.gs-result a.gs-title:hover b,
   .gs-imageResult a.gs-title:hover,
   .gs-imageResult a.gs-title:hover b {
-    color: #FF5757
+    color: #000000
   }
+
+  .gsc-webResult .gsc-url-top {
+    padding: 6px 4px;
+  }
+
+
 
   .gs-webResult.gs-result a.gs-title:active,
   .gs-webResult.gs-result a.gs-title:active b,
@@ -98,6 +106,7 @@ get_header();
   .gs-imageResult a.gs-title:active b {
     color: #FF5757
   }
+  
 
   .gsc-cursor-page {
     color: #FF5757
@@ -109,15 +118,21 @@ get_header();
 
   .gs-webResult:not(.gs-no-results-result):not(.gs-error-result) .gs-snippet,
   .gs-fileFormatType {
-    color: #808184
+    color: #404040;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
   }
 
   .gs-webResult div.gs-visibleUrl {
-    color: #BCBFC5
+    color: #9F9F9F;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
   }
 
   .gs-webResult div.gs-visibleUrl-short {
-    color: #BCBFC5
+    color: #9F9F9F
   }
 
   .gsc-cursor-box {
@@ -234,15 +249,18 @@ get_header();
     margin: 0;
   }
   
+  .gsc-search-box table {
+    width: 100% !important;
+  }
   button.gsc-search-button {
     position: absolute;
-    top: 0px;
+    top: -2%;
     right: 11px;
     bottom: 4px;
     width: 60px;
     border-radius: 0;
     line-height: 6px;
-    height: 100%;
+    height: 40px;
     color: #ffffff;
     background-color: #000000 !important;
     background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/search.svg') !important;
@@ -294,7 +312,7 @@ get_header();
   </div>
   <div class="container">
     <h1 class="text-center">Search</h1>
-    <script async src="https://cse.google.com/cse.js?cx=c4b8c5d4c40984112"></script>
+    <script async src="https://cse.google.com/cse.js?cx=139e6095822144e09"></script>
     <div class="gcse-search"></div>
   </div>
 </main>

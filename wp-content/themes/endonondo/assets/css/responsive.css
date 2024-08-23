@@ -143,8 +143,8 @@
         background-image: url(../images/snippet-bg-mb.svg);
     }
 
-    .box-grey > div,
-    .ft-snippet > div {
+    .box-grey>div,
+    .ft-snippet>div {
         margin-bottom: 30px;
     }
 
@@ -333,7 +333,7 @@
         margin-bottom: 0;
     }
 
-    .page-template-search > table {
+    .page-template-search>table {
         top: 265px !important;
     }
 }
@@ -429,14 +429,14 @@
         padding-top: 71.2%;
     }
 
-    .page-template-search > table {
+    .page-template-search>table {
         top: 280px !important;
     }
 
     .coupon-item-detail .coupon-top .flex .hightlight .action .action-item {
         width: 83%;
     }
-    
+
 }
 
 @media (max-width: 834px) {
@@ -448,7 +448,8 @@
 
     /* Table */
 
-    .wp-block-table td, .wp-block-table th {
+    .wp-block-table td,
+    .wp-block-table th {
         padding: 12px 16px;
     }
 
@@ -549,6 +550,32 @@
 
     #couponModal .show-code-top .coupon-copy .coupon-code {
         font-size: 15px;
+    }
+
+
+    .gs-webResult.gs-result a.gs-title:link,
+    .gs-webResult.gs-result a.gs-title:link b,
+    .gs-imageResult a.gs-title:link,
+    .gs-imageResult a.gs-title:link b {
+        font-size: var(--font-20);
+        line-height: 26px;
+    }
+
+    .gs-webResult div.gs-visibleUrl {
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 300;
+    }
+
+    .gs-webResult:not(.gs-no-results-result):not(.gs-error-result) .gs-snippet,
+    .gs-fileFormatType {
+        font-size: 15px;
+        line-height: 23px;
+    }
+
+    .search-page button.gsc-search-button {
+        top: 13%;
+        right: 4px;
     }
 }
 
@@ -692,12 +719,12 @@
         font-size: var(--font-18) !important;
         line-height: 24px;
     }
-    
+
     .author-main .author-custom .author-it ul li h4 {
         font-size: var(--font-15) !important;
         line-height: 23px;
     }
-    
+
     .author-main .author-custom .author-it ul li p {
         font-size: var(--font-12) !important;
         font-weight: 300;

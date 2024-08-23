@@ -415,7 +415,7 @@ ol {
     }
 }
 
-@media(max-width: 1024px) {
+@media(max-width: 834px) {
     h1 {
         font-size: var(--font-26) !important;
         line-height: 32px;
