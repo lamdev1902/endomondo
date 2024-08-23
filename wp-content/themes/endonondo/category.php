@@ -92,7 +92,9 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 										$i = 0;
 										$notIn = array();
 										while ($the_query->have_posts()):
-											array_push($notIn, $post->ID);
+											if(!empty($post->ID)){
+												array_push($notIn, $post->ID);
+											}
 											$the_query->the_post();
 											$post_author_id = get_post_field('post_author', $post->ID);
 											$post_display_name = get_the_author_meta('nickname', $post_author_id);
@@ -219,7 +221,9 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 							$i = 0;
 							$notIn = array();
 							while ($the_query->have_posts()):
-								array_push($notIn, $post->ID);
+								if(!empty($post->ID)){
+									array_push($notIn, $post->ID);
+								}
 								$the_query->the_post();
 								$post_author_id = get_post_field('post_author', $post->ID);
 								$post_display_name = get_the_author_meta('nickname', $post_author_id);
