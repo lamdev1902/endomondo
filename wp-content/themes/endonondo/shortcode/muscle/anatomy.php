@@ -43,8 +43,8 @@ function anatomy_short_code($atts)
                                     <div class="muscle-img">
                                         <img src="<?= $primaryData[0]['image'] ?>" alt="">
                                     </div>
-                                    <p class="has-large-font-size"><?= $primaryData[0]['name'] ?></p>
-                                    <p class="muslce-ds"><?= $primaryData[0]['description'] ?></p>
+                                    <p class="has-medium-font-size"><?= $primaryData[0]['name'] ?></p>
+                                    <p class="has-small-font-size muslce-ds"><?= $primaryData[0]['description'] ?></p>
                                 </div>
                             </div>
                         <?php endif; ?>

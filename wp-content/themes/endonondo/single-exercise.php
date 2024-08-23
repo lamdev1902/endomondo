@@ -297,8 +297,8 @@ $post_type = $post->post_type;
                                         <div class="muscle-img">
                                             <img src="<?= $primaryData['image'] ?>" alt="">
                                         </div>
-                                        <p class="has-large-font-size"><?= $primaryData['name'] ?></p>
-                                        <p><?= $primaryData['description'] ?></p>
+                                        <p class="has-medium-font-size"><?= $primaryData['name'] ?></p>
+                                        <p class="has-small-font-size"><?= $primaryData['description'] ?></p>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
@@ -351,8 +351,8 @@ $post_type = $post->post_type;
                                     <div class="muscle-img">
                                         <img src="<?= $secondaryData['image'] ?>" alt="">
                                     </div>
-                                    <p class="has-large-font-size"><?= $secondaryData['name'] ?></p>
-                                    <p><?= $secondaryData['description'] ?></p>
+                                    <p class="has-medium-font-size"><?= $secondaryData['name'] ?></p>
+                                    <p class="has-small-font-size"><?= $secondaryData['description'] ?></p>
                                 </div>
                             <?php endforeach; ?>
                         </div>
@@ -422,7 +422,7 @@ $post_type = $post->post_type;
                                     <div class="muscle-img">
                                         <img src="<?= $equipmentData['image'] ?>" alt="">
                                     </div>
-                                    <p class="has-large-font-size"><?= $equipmentData['name'] ?></p>
+                                    <p class="has-medium-font-size"><?= $equipmentData['name'] ?></p>
                                 </div>
                             <?php endforeach; ?>
                         </div>
@@ -483,7 +483,7 @@ $post_type = $post->post_type;
                                                 <p class="has-large-font-size"><?= $variationsData['name'] ?></p>
                                             </a>
                                         <?php else: ?>
-                                            <p class="has-large-font-size"><?= $variationsData['name'] ?>
+                                            <p class="has-medium-font-size"><?= $variationsData['name'] ?>
                                             <?php endif; ?>
                                     </div>
                                     <?php
@@ -536,7 +536,7 @@ $post_type = $post->post_type;
                                                 <p class="has-large-font-size"><?= $alternativeData['name'] ?></p>
                                             </a>
                                         <?php else: ?>
-                                            <p class="has-large-font-size"><?= $alternativeData['name'] ?>
+                                            <p class="has-medium-font-size"><?= $alternativeData['name'] ?>
                                             <?php endif; ?>
                                     </div>
                                     <?php
