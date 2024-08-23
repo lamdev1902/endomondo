@@ -71,8 +71,8 @@ function theme_mcs_scripts() {
 	wp_enqueue_style( 'style-swiper', get_template_directory_uri() . '/assets/js/swiper/swiper-bundle.min.css' );
 	wp_enqueue_style( 'style-base', get_template_directory_uri() . '/assets/css/base.css','','1.2.4' );
 	wp_enqueue_style( 'style-custom', get_template_directory_uri() . '/assets/css/custom.css','','1.2.8' );
-	wp_enqueue_style( 'style-element', get_template_directory_uri() . '/assets/css/element.css','','1.3.3' );
-	wp_enqueue_style( 'style-main', get_template_directory_uri() . '/assets/css/main.css','','1.4.1' );
+	wp_enqueue_style( 'style-element', get_template_directory_uri() . '/assets/css/element.css','','1.3.4' );
+	wp_enqueue_style( 'style-main', get_template_directory_uri() . '/assets/css/main.css','','1.4.2' );
 	wp_enqueue_style( 'style-responsive', get_template_directory_uri() . '/assets/css/responsive.css','','1.3.3' );
 
 }

@@ -114,7 +114,7 @@ figure.wp-block-table figcaption{
     margin: 0;
     font-style: normal;
     width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
 table thead tr {
