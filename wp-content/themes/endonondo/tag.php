@@ -47,10 +47,10 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 					$i = 0;
 					$notIn = array();
 					while ($the_query->have_posts()):
+						$the_query->the_post();
 						if(!empty($post->ID)){
 							array_push($notIn, $post->ID);
 						}
-						$the_query->the_post();
 						$post_author_id = get_post_field('post_author', $post->ID);
 						$post_display_name = get_the_author_meta('nickname', $post_author_id);
 						$post_author_url = get_author_posts_url($post_author_id);
@@ -105,18 +105,20 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 			</div>
 			<div class="container">
 				<h2>All post</h2>
-				<div class="news-list grid grid-feature">
+				<div class="news-list tag-list grid grid-feature">
 					<?php
-					$args = array(
+					$args2 = array(
 						'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
 						'posts_per_page' => 9,
 						'tag__in' => array($tag_id),
 						'post__not_in' => $notIn
 					);
-					$the_query = null;
-					$the_query = new WP_Query($args);
-					while ($the_query->have_posts()):
-						$the_query->the_post();
+					$the_query2 = new WP_Query($args2);
+					while ($the_query2->have_posts()):
+						$the_query2->the_post();
+						if(!empty($post->ID)){
+							array_push($notIn, $post->ID);
+						}
 						$post_author_id = get_post_field('post_author', $post->ID);
 						$post_display_name = get_the_author_meta('nickname', $post_author_id);
 						$post_author_url = get_author_posts_url($post_author_id);
@@ -154,26 +156,18 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 						</div>
 						<?php
 					endwhile;
-					wp_reset_query();
+					wp_localize_script('infinite-scroll-tag', 'infinite_scroll_tag_params', array(
+						'ajaxurl' => admin_url('admin-ajax.php'),
+						'query_vars' => array(
+							'tag__in' => array($tag_id),
+							'post__not_in' => $notIn
+						),
+						'current_page' => max(1, get_query_var('paged')),
+						'max_page' => $the_query->max_num_pages
+					));
 					?>
 				</div>
 			</div>
-			<?php
-			$big = 999999999;
-			$mcs_paginate_links = paginate_links(array(
-				'base' => @add_query_arg('paged','%#%'),
-				'format' => '?paged=%#%',
-				'current' => max(1, get_query_var('paged')),
-				'total' => $the_query->max_num_pages,
-				'prev_text' => __('<i class="fal fa-angle-left"></i>', 'yup'),
-				'next_text' => __('<i class="fal fa-angle-right"></i>', 'yup')
-			));
-			if ($mcs_paginate_links):
-				?>
-				<div class="pagination">
-					<?php echo $mcs_paginate_links ?>
-				</div>
-			<?php endif; ?>
 		</section>
 
 	</div>

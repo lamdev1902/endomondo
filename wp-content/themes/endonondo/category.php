@@ -92,10 +92,10 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 										$i = 0;
 										$notIn = array();
 										while ($the_query->have_posts()):
+											$the_query->the_post();
 											if(!empty($post->ID)){
 												array_push($notIn, $post->ID);
 											}
-											$the_query->the_post();
 											$post_author_id = get_post_field('post_author', $post->ID);
 											$post_display_name = get_the_author_meta('nickname', $post_author_id);
 											$post_author_url = get_author_posts_url($post_author_id);
@@ -161,6 +161,9 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 										$the_query = new WP_Query($args);
 										while ($the_query->have_posts()):
 											$the_query->the_post();
+											if(!empty($post->ID)){
+												array_push($notIn, $post->ID);
+											}
 											$post_author_id = get_post_field('post_author', $post->ID);
 											$post_display_name = get_the_author_meta('nickname', $post_author_id);
 											$post_author_url = get_author_posts_url($post_author_id);
@@ -198,7 +201,15 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 											</div>
 											<?php
 										endwhile;
-										wp_reset_query();
+										wp_localize_script('infinite-scroll', 'infinite_scroll_params', array(
+											'ajaxurl' => admin_url('admin-ajax.php'),
+											'query_vars' => array(
+												'cat' => $term_id,
+												'post__not_in' => $notIn
+											),
+											'current_page' => max(1, get_query_var('paged')),
+											'max_page' => $the_query->max_num_pages
+										));
 										?>
 									</div>
 								</div>
@@ -221,10 +232,10 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 							$i = 0;
 							$notIn = array();
 							while ($the_query->have_posts()):
+								$the_query->the_post();
 								if(!empty($post->ID)){
 									array_push($notIn, $post->ID);
 								}
-								$the_query->the_post();
 								$post_author_id = get_post_field('post_author', $post->ID);
 								$post_display_name = get_the_author_meta('nickname', $post_author_id);
 								$post_author_url = get_author_posts_url($post_author_id);
@@ -278,18 +289,20 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 						</div>
 					</div>
 					<div class="container">
-						<div class="news-list grid grid-feature">
+						<div class="news-list cate-list grid grid-feature">
 							<?php
-							$args = array(
+							$args2 = array(
 								'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
 								'posts_per_page' => 6,
 								'cat' => $term_id,
 								'post__not_in' => $notIn
 							);
-							$the_query = null;
-							$the_query = new WP_Query($args);
-							while ($the_query->have_posts()):
-								$the_query->the_post();
+							$the_query2 = new WP_Query($args2);
+							while ($the_query2->have_posts()):
+								$the_query2->the_post();
+								if(!empty($post->ID)){
+									array_push($notIn, $post->ID);
+								}
 								$post_author_id = get_post_field('post_author', $post->ID);
 								$post_display_name = get_the_author_meta('nickname', $post_author_id);
 								$post_author_url = get_author_posts_url($post_author_id);
@@ -328,6 +341,15 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 								<?php
 							endwhile;
 							wp_reset_query();
+							wp_localize_script('infinite-scroll', 'infinite_scroll_params', array(
+								'ajaxurl' => admin_url('admin-ajax.php'),
+								'query_vars' => array(
+									'cat' => $term_id,
+									'post__not_in' => $notIn
+								),
+								'current_page' => max(1, get_query_var('paged')),
+								'max_page' => $the_query->max_num_pages
+							));
 							?>
 						</div>
 					</div>
@@ -500,4 +522,5 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 		</div> -->
 	<?php } ?>
 </main>
+
 <?php get_footer(); ?>
