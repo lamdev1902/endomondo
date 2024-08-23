@@ -1313,7 +1313,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
 /* Exercise Style */
 
 .exc-hero-section {
-    padding: 30px 0 40px;
     position: relative;
 }
 
@@ -1342,7 +1341,7 @@ section.exc-hero-section:before {
 }
 
 .exc-hero-section .exc-video {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .exc-hero-section .exc-title h1 {
@@ -1366,10 +1365,6 @@ section.exc-hero-section:before {
 
 .exc-container li {
     margin-bottom: 8px;
-}
-
-.bd-bot {
-    padding: 20px 0;
 }
 
 .exc-content .title-content {
