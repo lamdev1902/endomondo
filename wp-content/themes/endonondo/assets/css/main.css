@@ -840,7 +840,7 @@ main {
     margin-bottom: var(--mr-main);
 }
 
-.tag span {
+.tag > span {
     padding: 6px 16px;
     color: var(--primary-color-2);
     border: 1px solid var(--primary-color-2);
@@ -849,15 +849,15 @@ main {
     width: fit-content
 }
 
-.tag span a {
+.tag > span a {
     color: var(--primary-color-2);
 }
 
-.tag span:hover {
+.tag > span:hover {
     background-color: var(--primary-color-2);
 }
 
-.tag span:hover a {
+.tag > span:hover a {
     color: var(--primary-color-3);
 }
 
