@@ -4074,13 +4074,16 @@ figcaption {
 
 /* Search */
 
+.search-page {
+    min-height: 1000px;
+}
 
 .search-page .gsc-control-cse {
     padding: 0;
 }
 
 .main-search {
-    min-height: 1000px;
+    min-height: 500px;
     display: flex;
     align-items: center;
 }
