@@ -1488,7 +1488,7 @@ main {
 }
 
 .home-feature .feature-collections {
-    width: calc(100% - 82px);
+    width: calc(100% - 42px);
     padding: 80px 0 80px 80px;
 }
 
@@ -4074,9 +4074,13 @@ figcaption {
 
 /* Search */
 
-.search-page {
-    min-height: 1000px;
-}
+
 .search-page .gsc-control-cse {
     padding: 0;
+}
+
+.main-search {
+    min-height: 1000px;
+    display: flex;
+    align-items: center;
 }

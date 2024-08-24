@@ -4,11 +4,9 @@ get_header();
 ?>
 <style>
 
-  .page-template-search > table {
-    top: 290px !important;
-  }
-  
-  
+form.gsc-search-box {
+  margin: 30px 0 ;
+}
   .gsc-control-cse {
     font-family: verdana, arial, sans-serif
   }
@@ -106,7 +104,7 @@ get_header();
   .gs-imageResult a.gs-title:active b {
     color: #FF5757
   }
-  
+
 
   .gsc-cursor-page {
     color: #FF5757
@@ -248,25 +246,24 @@ get_header();
     position: relative;
     margin: 0;
   }
-  
+
   .gsc-search-box table {
     width: 100% !important;
+    border: none;
   }
+
   button.gsc-search-button {
-    position: absolute;
-    top: -2%;
-    right: 11px;
-    bottom: 4px;
-    width: 60px;
+    position: relative;
+    top: 0;
+    right: 61px;
     border-radius: 0;
-    line-height: 6px;
     height: 40px;
-    color: #ffffff;
+    width: 60px;
     background-color: #000000 !important;
-    background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/search.svg') !important;
+    background-image: url(https://wordpress-1308981-4772530.cloudwaysapps.com/wp-content/themes/endonondo/assets/images/search.svg) !important;
     background-repeat: no-repeat;
     background-position: center center;
-    border: 1px solid transparent !important;
+    border: none !important;
     cursor: pointer;
     -webkit-appearance: button;
   }
@@ -277,9 +274,8 @@ get_header();
 
   form.gsc-search-box input {
     padding-right: 90px !important;
-    border-radius: 4px;
     border: 1px solid #000000 !important;
-    height: 40px !important;
+    height: 41px !important;
     padding: 0 15px !important;
     background: #FFFFFF !important;
   }
@@ -297,23 +293,21 @@ get_header();
   }
 </style>
 <main id="content" class="cate-content search-page">
-  <div class="link-page">
+  <div class="page-top-white">
     <div class="container">
-      <div class="single-top">
-        <div class="list-flex flex-center flex-middle">
-          <?php
-          if (function_exists('yoast_breadcrumb')) {
-            yoast_breadcrumb('<div id="breadcrumbs" class="breacrump">', '</div>');
-          }
-          ?>
-        </div>
-      </div>
+      <?php
+      if (function_exists('yoast_breadcrumb')) {
+        yoast_breadcrumb('<div id="breadcrumbs" class="breacrump">', '</div>');
+      }
+      ?>
     </div>
   </div>
-  <div class="container">
-    <h1 class="text-center">Search</h1>
-    <script async src="https://cse.google.com/cse.js?cx=139e6095822144e09"></script>
-    <div class="gcse-search"></div>
+  <div class="main-search">
+    <div class="container">
+      <h1 class="text-center">Search</h1>
+      <script async src="https://cse.google.com/cse.js?cx=139e6095822144e09"></script>
+      <div class="gcse-search"></div>
+    </div>
   </div>
 </main>
 <?php get_footer(); ?>

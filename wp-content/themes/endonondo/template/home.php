@@ -280,7 +280,7 @@ the_post();
 			<div class="news-list grid grid-feature">
 				<?php
 				$args = array(
-					'posts_per_page' => 8,
+					'posts_per_page' => 12,
 					'offset' => 17,
 					'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide', 'exercise'),
 				);

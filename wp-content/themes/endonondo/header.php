@@ -24,10 +24,20 @@
 	<link rel="canonical" href="<?= the_permalink() ?>" />
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="<?php the_field('favicon', 'option'); ?>" />
-	<link rel="icon" href="<?php echo get_field('favicon_size_32', 'option'); ?>" sizes="32x32" />
-	<link rel="icon" href="<?php echo get_field('favicon_size_192', 'option'); ?>" sizes="192x192" />
-	<link rel="apple-touch-icon" href="<?php echo get_field('favicon_size_180', 'option'); ?>" />
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo get_field('favicon', 'option'); ?>" />
+	<link rel="icon" href="<?= (get_field('favicon_16', 'option')) ? get_field('favicon_16', 'option') : "#"; ?>"
+		sizes="16x16" />
+	<link rel="icon" href="<?= (get_field('favicon_32', 'option')) ? get_field('favicon_32', 'option') : "#"; ?>"
+		sizes="32x32" />
+	<link rel="icon" href="<?= (get_field('favicon_96', 'option')) ? get_field('favicon_96', 'option') : "#"; ?>"
+		sizes="96x96" />
+	<link rel="apple-touch-icon"
+		href="<?= (get_field('favicon_180', 'option')) ? get_field('favicon_180', 'option') : "#"; ?>"
+		sizes="180x180" />
+	<link rel="icon" href="<?= (get_field('favicon_256', 'option')) ? get_field('favicon_256', 'option') : "#"; ?>"
+		sizes="256x256" />
+	<meta name="msapplication-TileImage" content="<?php echo get_field('favicon_512', 'option'); ?>" />
+	
 	<script src="https://www.youtube.com/iframe_api"></script>
 	<script type="text/javascript"
 		src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-3.5.0.min.js"></script>
@@ -170,7 +180,8 @@
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-popup.png"
 									alt="">
 								<h4>For Your Health & Wellness</h4>
-								<p class="has-small-font-size">Stay update with the latest health information and news</p>
+								<p class="has-small-font-size">Stay update with the latest health information and news
+								</p>
 								<div class="klaviyo-form-UPY2r8"></div>
 								<div class="social">
 									<p class="has-small-font-size">Follow us: </p>
@@ -180,7 +191,8 @@
 										foreach ($socials as $social) {
 											?>
 											<a target="_blank" href="<?php echo $social['link']; ?>"><img
-													src="<?= $social['icon']['url']; ?>" alt="<?= $social['icon']['alt']; ?>" /></a>
+													src="<?= $social['icon']['url']; ?>"
+													alt="<?= $social['icon']['alt']; ?>" /></a>
 										<?php }
 									} ?>
 								</div>

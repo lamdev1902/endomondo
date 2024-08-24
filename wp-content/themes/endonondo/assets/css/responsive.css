@@ -332,10 +332,6 @@
         padding: 32px 0 0 0;
         margin-bottom: 0;
     }
-
-    .page-template-search>table {
-        top: 265px !important;
-    }
 }
 
 @media (min-width: 481px) and (max-width: 834px) {
@@ -427,10 +423,6 @@
 
     .home-lastest.cate-section .lastest-it:first-child .featured {
         padding-top: 71.2%;
-    }
-
-    .page-template-search>table {
-        top: 280px !important;
     }
 
     .coupon-item-detail .coupon-top .flex .hightlight .action .action-item {
@@ -557,25 +549,20 @@
     .gs-webResult.gs-result a.gs-title:link b,
     .gs-imageResult a.gs-title:link,
     .gs-imageResult a.gs-title:link b {
-        font-size: var(--font-20);
-        line-height: 26px;
+        font-size: var(--font-20) !important;
+        line-height: 26px !important;
     }
 
     .gs-webResult div.gs-visibleUrl {
-        font-size: 12px;
-        line-height: 18px;
-        font-weight: 300;
+        font-size: 12px !important;
+        line-height: 18px !important;
+        font-weight: 300 !important;
     }
 
     .gs-webResult:not(.gs-no-results-result):not(.gs-error-result) .gs-snippet,
     .gs-fileFormatType {
-        font-size: 15px;
-        line-height: 23px;
-    }
-
-    .search-page button.gsc-search-button {
-        top: 13%;
-        right: 4px;
+        font-size: 15px !important;
+        line-height: 23px !important;
     }
 }
 
