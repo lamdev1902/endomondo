@@ -154,7 +154,7 @@ form.gsc-search-box {
   }
 
   .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
-    background: #EF7A34;
+    background: #000000;
     color: #fff;
   }
 
@@ -207,11 +207,11 @@ form.gsc-search-box {
   }
 
   .gcsc-find-more-on-google {
-    color: #FF5757
+    color: black
   }
 
   .gcsc-find-more-on-google-magnifier {
-    fill: #FF5757
+    fill: black
   }
 
   .gsc-modal-background-image-visible {
@@ -290,6 +290,10 @@ form.gsc-search-box {
 
   table.gsc-search-box td.gsc-input {
     padding: 0
+  }
+
+  .gcsc-more-maybe-branding-root {
+    display: none;
   }
 </style>
 <main id="content" class="cate-content search-page">
