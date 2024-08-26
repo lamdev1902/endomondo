@@ -242,6 +242,7 @@ ol {
 .single-main ol,
 .exc-container ol {
     list-style: decimal;
+    padding-left: 20px;
 }
 
 /* special text */

@@ -392,7 +392,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                                         <span>
                                             <?= $userPosition; ?>
                                         </span>
-                                    <?php endif; ?>>
+                                    <?php endif; ?>
                                 </p>
                             </div>
                             <?php if ($user_description) { ?>
