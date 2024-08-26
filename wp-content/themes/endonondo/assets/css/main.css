@@ -952,21 +952,22 @@ main {
 }
 
 .breacrump {
-    color: #9F9F9F;
-    font-size: 15px;
-    line-height: 26px;
+    color: var(--secondary-color-3);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
 }
 
 .breacrump a {
-    color: #9F9F9F;
+    color: var(--secondary-color-3);
 }
 
 .breacrump a:hover {
     color: var(--primary-color-1);
 }
 
-.breacrump span {
-    color: #101010;
+.breacrump > span span:last-child {
+    color: var(--primary-color-2);
 }
 
 .color-grey {
@@ -1000,7 +1001,7 @@ main {
 
 .page-top .breacrump a,
 .page-top .breacrump span.line {
-    color: #9F9F9F;
+    color: var(--secondary-color-3);
 }
 
 .page-top .breacrump a:hover {
@@ -1747,7 +1748,7 @@ main {
 }
 
 .single-main .sg-resources {
-    background: var(--secondary-color-1);
+    background: var(--secondary-color-5);
     padding: 24px;
     margin-top: 40px;
 }
@@ -1954,9 +1955,14 @@ figcaption {
     padding-left: 45px;
 }
 
-.sg-right .social.on-pc {
+.sg-right .social,
+.exc-hero-section .social {
     display: flex;
     align-items: center;
+}
+
+.exc-hero-section .social {
+    justify-content: center;
 }
 
 
@@ -2227,11 +2233,13 @@ figcaption {
     -webkit-box-flex: 1.1;
     -ms-flex-positive: 1.1;
     flex-grow: 1;
-    background-image: url(../images/snippet-bg-mb.svg);
-    background-position: center;
-    background-size: cover;
+    background-image: url(../images/snippet-bg.svg);
+    background-size: auto;
     background-repeat: no-repeat;
     padding: 20px;
+    height: 100%;
+    background-color: var(--secondary-color-5);
+    background-position: left 85% bottom 0;
 }
 
 .single-main .sg-right .sg-custom .sg-product-it .wp-block-column:nth-child(2) p {
@@ -2729,15 +2737,15 @@ figcaption {
 
     .single-top .breacrump,
     .single-top #breadcrumbs {
-        font-size: 15px;
-        line-height: 16px;
+        font-size: 12px;
+        line-height: 18px;
     }
 
     .single-top .breacrump a,
     .single-top .breacrump span,
     .single-top #breadcrumbs a,
     .single-top #breadcrumbs span {
-        color: #9F9F9F;
+        color: var(--secondary-color-3);
     }
 
 

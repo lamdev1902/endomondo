@@ -126,7 +126,7 @@ $post_type = $post->post_type;
                     <div class="exc-title">
                         <h1><?= $exData[0]['name'] ?></h1>
                     </div>
-                    <div class="social">
+                    <div class="social mr-bottom-20">
                         <p class="has-small-font-size pri-color-2" style="margin-bottom: 0">Follow us: </p>
                         <?php
                         $socials = get_field('follow_social', 'option');

@@ -723,4 +723,10 @@
     button.gsc-search-button {
         right: 0;
     }
+
+    .single-top .breacrump,
+    .single-top #breadcrumbs {
+        font-size: 12px;
+        line-height: 18px;
+    }
 }

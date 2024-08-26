@@ -134,7 +134,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                     <?php }
                 }
                 ?>
-                <div class="social on-pc mr-bottom-20">
+                <div class="social mr-bottom-20">
                     <p class="has-small-font-size pri-color-2" style="margin-bottom: 0">Follow us: </p>
                     <?php
                     $socials = get_field('follow_social', 'option');
