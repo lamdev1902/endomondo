@@ -18,9 +18,9 @@
             <?php echo do_shortcode('[contact-form-7 id="9b83ddb" title="Customer review"]'); ?>
         </div>
         <div class="mailsent">
-            <h4><?php echo __('Thank you for your feedback','hc_theme'); ?></h4>
-            <p><?php echo __('Keep in touch to see our improvement','hc_theme'); ?></p>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/success-icon.png" alt="">
+            <p class="has-large-font-size sec-color-4"><?php echo __('Thank you for your feedback','hc_theme'); ?></p>
+            <p class="sec-color-4"><?php echo __('Keep in touch to see our improvement','hc_theme'); ?></p>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/success-icon.svg" alt="">
         </div>
     </div>
 </div>

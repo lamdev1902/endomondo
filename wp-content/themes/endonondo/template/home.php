@@ -22,7 +22,7 @@ the_post();
 						$post_author_url = get_author_posts_url($post_author_id);
 						?>
 						<div class="info">
-							<p class="has-x-large-font-size text-special clamp-2 mr-bottom-20"><a class="pri-color-3"
+							<p class="has-x-large-font-size text-special clamp-2 mr-bottom-20 pri-color-3"><a class="pri-color-3"
 									href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 							<p class="sec-color-2"><?php echo wp_trim_words(get_the_excerpt($post->ID), 28); ?></p>
 						</div>

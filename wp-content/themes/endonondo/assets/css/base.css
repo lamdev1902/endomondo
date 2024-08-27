@@ -362,10 +362,6 @@ ol {
     left: 0;
 }
 
-.grid-feature .featured {
-    aspect-ratio: var(--ratio);
-}
-
 .grid-item .info {
     text-align: center;
 }
@@ -429,7 +425,7 @@ ol {
 
     h3 {
         font-size: var(--font-20) !important;
-        font-weight: 26px;
+        line-height: 26px;
     }
 
     h4 {

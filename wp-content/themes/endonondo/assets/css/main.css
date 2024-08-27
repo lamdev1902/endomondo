@@ -727,7 +727,8 @@ main {
     }
 
     #footer .ft-top .ft-info .ft-logo {
-        height: 28px;
+        height: 24px;
+        width: 188px;
     }
 
     #footer .ft-top .ft-info .ft-form {
@@ -2010,7 +2011,8 @@ figcaption {
     margin: 30px 0 10px;
 }
 
-.single-main .sg-right .sg-custom h2.list-start {
+.single-main .sg-right .sg-custom h2.list-start,
+.exercise-list-start {
     counter-reset: section;
 }
 
@@ -2054,7 +2056,8 @@ figcaption {
     display: inline-block;
 }
 
-.single-main .sg-right .sg-custom h2.list-start~h3 {
+.single-main .sg-right .sg-custom h2.list-start~h3,
+.exercise-list-start > h3 {
     position: relative;
 }
 
@@ -2062,7 +2065,8 @@ figcaption {
     position: relative;
 }
 
-.single-main .sg-right .sg-custom h2.list-start~h3:before {
+.single-main .sg-right .sg-custom h2.list-start~h3:before,
+.exercise-list-start > h3:before {
     counter-increment: section;
     content: counter(section) ". ";
     line-height: 32px;
@@ -4100,7 +4104,7 @@ figcaption {
     -webkit-transform: rotate(-90deg);
     color: #000;
     position: fixed;
-    right: -70px;
+    right: -80px;
     bottom: 40%;
     padding: 6px 6px 6px 30px;
     font-weight: 500;
@@ -4156,17 +4160,17 @@ figcaption {
     padding: 8px 16px;
     border: 1px solid var(--secondary-color-1);
     border-radius: 4px;
-    font-family: 'Open Sans';
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 15px;
     line-height: 20px;
-    color: #888C91;
+    color: var(--secondary-color-3);
     margin-bottom: 20px;
     background-color: var(--secondary-color-1);
 }
 
 .form-customer-feedback .customer-feedback textarea.form-group {
-    margin-bottom: 24px;
+    margin-bottom: 40px;
 }
 
 .form-customer-feedback form br {
@@ -4342,9 +4346,13 @@ figcaption {
 }
 
 .form-customer-feedback .form-submit {
-    padding: 20px 0;
-    min-width: 186px;
+    color: white;
+    padding: 10px 24px;
+    min-width: 102px;
+    background-color: black;
     border: none;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .form-customer-feedback .close-btn {
@@ -4389,8 +4397,8 @@ figcaption {
 .form-customer-feedback .mailsent img {
     display: block;
     margin: 0 auto;
-    width: 80px;
-    height: 80px;
+    width: 54px;
+    height: 54px;
 }
 
 .form-customer-feedback .wpcf7-spinner::before {

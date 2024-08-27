@@ -30,26 +30,24 @@ function anatomy_short_code($atts)
     ob_start();
     ?>
     <section class="exc-primary">
-        <div class="container">
-            <div class="exc-container bd-bot">
-                <div class="muscle-list primary-muscle">
-                    <?php foreach ($arrMuscle as $nameMuscle): ?>
-                        <?php
-                        $primaryData = anatomy_data($nameMuscle);
-                        if (!empty($primaryData)):
-                            ?>
-                            <div class="mucle">
-                                <div class="muscle-item">
-                                    <div class="muscle-img">
-                                        <img src="<?= $primaryData[0]['image'] ?>" alt="">
-                                    </div>
-                                    <p class="has-medium-font-size"><?= $primaryData[0]['name'] ?></p>
-                                    <p class="has-small-font-size muslce-ds"><?= $primaryData[0]['description'] ?></p>
+        <div class="exc-container bd-bot">
+            <div class="muscle-list primary-muscle">
+                <?php foreach ($arrMuscle as $nameMuscle): ?>
+                    <?php
+                    $primaryData = anatomy_data($nameMuscle);
+                    if (!empty($primaryData)):
+                        ?>
+                        <div class="mucle">
+                            <div class="muscle-item">
+                                <div class="muscle-img">
+                                    <img src="<?= $primaryData[0]['image'] ?>" alt="">
                                 </div>
+                                <p class="has-medium-font-size"><?= $primaryData[0]['name'] ?></p>
+                                <p class="has-small-font-size muslce-ds"><?= $primaryData[0]['description'] ?></p>
                             </div>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>

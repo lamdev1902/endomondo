@@ -160,7 +160,7 @@ $post_type = $post->post_type;
                     <?php foreach ($contents as $content): ?>
                         <?php if ($content['content_type'] != 4 && $content['content_type'] != 5 && $content['content_type'] != 6): ?>
                             <?php if (!empty($content['content'])): ?>
-                                <div class="content-item bd-bot">
+                                <div class="content-item bd-bot exercise-list-start">
                                     <h2 class="title-content"><?= $content['content_title']; ?></h2>
                                     <?= $content['content'] ?>
                                     <?php
@@ -309,7 +309,7 @@ $post_type = $post->post_type;
             <?php if (!empty($contentPrimary)): ?>
                 <div class="container">
                     <div class="exc-container">
-                        <div class="muscle-text bd-bot">
+                        <div class="muscle-text bd-bot exercise-list-start">
                             <?= $contentPrimary ?>
                         </div>
                     </div>
@@ -362,7 +362,7 @@ $post_type = $post->post_type;
             <?php if (!empty($contentSecondary)): ?>
                 <div class="container">
                     <div class="exc-container">
-                        <div class="muscle-text bd-bot">
+                        <div class="muscle-text bd-bot exercise-list-start">
                             <?= $contentSecondary ?>
                         </div>
                     </div>
@@ -432,7 +432,7 @@ $post_type = $post->post_type;
             <?php if (!empty($contentEquipment)): ?>
                 <div class="container">
                     <div class="exc-container">
-                        <div class="muscle-text bd-bot">
+                        <div class="muscle-text bd-bot exercise-list-start">
                             <?= $contentEquipment ?>
                         </div>
                     </div>
@@ -480,7 +480,7 @@ $post_type = $post->post_type;
                                         </div>
                                         <?php if ($variationsData['slug']): ?>
                                             <a href="<?= home_url('/exercise/' . $variationsData['slug']); ?>">
-                                                <p class="has-large-font-size"><?= $variationsData['name'] ?></p>
+                                                <p class="has-medium-font-size"><?= $variationsData['name'] ?></p>
                                             </a>
                                         <?php else: ?>
                                             <p class="has-medium-font-size"><?= $variationsData['name'] ?>
@@ -533,7 +533,7 @@ $post_type = $post->post_type;
                                         </div>
                                         <?php if ($alternativeData['slug']): ?>
                                             <a href="<?= home_url('/exercise/' . $alternativeData['slug']); ?>">
-                                                <p class="has-large-font-size"><?= $alternativeData['name'] ?></p>
+                                                <p class="has-medium-font-size"><?= $alternativeData['name'] ?></p>
                                             </a>
                                         <?php else: ?>
                                             <p class="has-medium-font-size"><?= $alternativeData['name'] ?>
