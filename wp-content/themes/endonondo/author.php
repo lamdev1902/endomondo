@@ -13,15 +13,17 @@ if ($disible_ap == true)
 $check = false;
 ?>
 <main id="content">
-	<div class="page-top-white mb-top-black">
+	<section class="single-top">
 		<div class="container">
-			<div class="breacrump">
-				<a href="<?php echo home_url(); ?>">Home</a>
-				<span class="line"> » </span>
-				<span class="current"><?php echo $author_display_name; ?></span>
+			<div class="list-flex flex-center flex-middle">
+				<?php
+				if (function_exists('yoast_breadcrumb')) {
+					yoast_breadcrumb('<div id="breadcrumbs" class="breacrump">', '</div>');
+				}
+				?>
 			</div>
 		</div>
-	</div>
+	</section>
 	<div class="author-main">
 		<div class="bg-author"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-author-3.png"
 				alt="">
@@ -59,16 +61,15 @@ $check = false;
 								}
 
 								if ($social) {
-									if($type) {
+									if ($type) {
 										foreach ($social as $social_item) {
-											$url = get_template_directory_uri().'/assets/images/usericon/'.$social_item['icon'].'.svg';
-											
-										?>
+											$url = get_template_directory_uri() . '/assets/images/usericon/' . $social_item['icon'] . '.svg';
+
+											?>
 											<a target="_blank" href="<?php echo $social_item['link']; ?>"><img
-													src="<?php echo $url; ?>"
-													alt="<?php echo $social_item['icon']?>" /></a>
+													src="<?php echo $url; ?>" alt="<?php echo $social_item['icon'] ?>" /></a>
 										<?php }
-									}else {
+									} else {
 										foreach ($social as $social_item) {
 											?>
 											<a target="_blank" href="<?php echo $social_item['link']; ?>"><img
@@ -90,7 +91,8 @@ $check = false;
 							if (get_field('new_skills', 'user_' . $userid)) {
 								$skills = get_field('new_skills', 'user_' . $userid);
 							} elseif (get_field('skills', 'user_' . $userid)) {
-								$skills = get_field('skills', 'user_' . $userid);;
+								$skills = get_field('skills', 'user_' . $userid);
+								;
 							}
 
 							if ($skills) {
@@ -100,7 +102,9 @@ $check = false;
 								<?php }
 							} ?>
 						</div>
-						<p class="pri-color-2"><?= get_field('new_story', 'user_' . $userid) ?? get_field('story', 'user_' . $userid) ?></p>
+						<p class="pri-color-2">
+							<?= get_field('new_story', 'user_' . $userid) ?? get_field('story', 'user_' . $userid) ?>
+						</p>
 					</div>
 				</div>
 				<div class="author-content">
