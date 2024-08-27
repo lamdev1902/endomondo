@@ -1465,7 +1465,7 @@ section.exc-hero-section:before {
 }
 
 .exc-container .slick-prev:before {
-    content: url(../images/exercise-prev.svg);
+    content: url(../images/exercise-prev2.svg);
     line-height: 0px;
     opacity: 1;
 }
@@ -1478,7 +1478,7 @@ section.exc-hero-section:before {
 }
 
 .exc-container .slick-next:before {
-    content: url(../images/exercise-next.svg);
+    content: url(../images/exercise-next2.svg);
     line-height: 0px;
     opacity: 1;
 }
