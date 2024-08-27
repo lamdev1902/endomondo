@@ -14,7 +14,7 @@
                 ?>" type="hidden">
         </div>
         <div class="form-feedback">
-            <p><?php echo __('Give us feedback in details','hc_theme'); ?></p>
+            <p class="sec-color-4"><?php echo __('Give us feedback in details','hc_theme'); ?></p>
             <?php echo do_shortcode('[contact-form-7 id="9b83ddb" title="Customer review"]'); ?>
         </div>
         <div class="mailsent">
