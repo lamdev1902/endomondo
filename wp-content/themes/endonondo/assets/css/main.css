@@ -4098,7 +4098,6 @@ figcaption {
 .form-customer-feedback .customer-ftoggle {
     display: inline-block;
     background: var(--chart-20);
-    box-shadow: 2px 2px 24px rgba(0, 0, 0, 0.15);
     border-radius: 5px 5px 0px 0px;
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
@@ -4126,7 +4125,7 @@ figcaption {
 }
 
 .form-customer-feedback .customer-ftoggle.ani-right {
-    right: -70px;
+    right: -80px;
 }
 
 .form-customer-feedback .customer-ftoggle.ani-left {
@@ -4164,7 +4163,7 @@ figcaption {
     font-weight: 400;
     font-size: 15px;
     line-height: 20px;
-    color: var(--secondary-color-3);
+    color: var(--secondary-color-3) !important;
     margin-bottom: 20px;
     background-color: var(--secondary-color-1);
 }
