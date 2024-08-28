@@ -440,13 +440,13 @@
     .wp-block-table table tbody td,
     .no-title .wp-block-table table tbody td {
         display: inline-block;
-        width: 188px !important;
+        width: 188px;
     }
 
     table thead th:first-child,
     table tbody td:first-child
     {
-        width: 188px !important;
+        width: 188px;
     }
 }
 

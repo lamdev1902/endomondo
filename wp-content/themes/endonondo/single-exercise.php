@@ -170,8 +170,6 @@ $post_type = $post->post_type;
                                             ?>
                                             <div style="overflow: auto">
                                                 <figure class="wp-block-table">
-                                                    <figcaption class="wp-element-caption">Optimal Sets & Reps of <?= $exData[0]['name'] ?>
-                                                    </figcaption>
                                                     <table>
                                                         <thead>
                                                             <tr>
@@ -196,6 +194,8 @@ $post_type = $post->post_type;
                                                             <?php endforeach; ?>
                                                         </tbody>
                                                     </table>
+                                                    <figcaption class="wp-element-caption">Optimal Sets & Reps of <?= $exData[0]['name'] ?>
+                                                    </figcaption>
                                                 </figure>
                                             </div>
                                         <?php endif; endif; ?>
