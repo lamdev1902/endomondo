@@ -302,3 +302,22 @@ table tbody tr:first-child td {
     color: var(--primary-color-3);
     background-color: var(--primary-color-2);
 }
+
+/* Ol */
+
+ol {
+    counter-reset: section;
+}
+
+ol li {
+    position: relative;
+}
+
+ol li::before {
+    position: absolute;
+    counter-increment: section;
+    content: counter(section) ". ";
+    color: var(--primary-color-1);
+    left: -16px;
+    top: 0;
+}

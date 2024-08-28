@@ -1,6 +1,20 @@
 <?php
 include(TEMPLATEPATH . '/shortcode/chart/chart-shortcode.php');
 include(TEMPLATEPATH . '/shortcode/muscle/anatomy.php');
+include(TEMPLATEPATH.'/shortcode/calorie/calorie-shortcode.php');
+include(TEMPLATEPATH.'/shortcode/calorie/bmi-shortcode.php');
+// include(TEMPLATEPATH.'/shortcode/calorie/chinese-gender-shortcode.php');
+include(TEMPLATEPATH.'/shortcode/calorie/body-fat-shortcode.php');
+// include(TEMPLATEPATH.'/shortcode/calorie/ideal-weight-shortcode.php');
+include(TEMPLATEPATH.'/shortcode/calorie/lean-body-mass-shortcode.php');
+// include(TEMPLATEPATH.'/shortcode/calorie/healthy-weight-shortcode.php');
+// include(TEMPLATEPATH.'/shortcode/calorie/age-shortcode.php');
+// include(TEMPLATEPATH.'/shortcode/calorie/tdee-shortcode.php');
+// include(TEMPLATEPATH.'/shortcode/calorie/army-body-fat-shortcode.php');
+// include(TEMPLATEPATH.'/shortcode/calorie/absi-shortcode.php');
+// include(TEMPLATEPATH.'/shortcode/calorie/adjusted-body-weight-shortcode.php');
+// include(TEMPLATEPATH.'/shortcode/calorie/body-adiposity-index-shortcode.php');
+include(TEMPLATEPATH.'/shortcode/calorie/bmr-shortcode.php');
 
 function enqueue_infinite_scroll_script()
 {
@@ -164,11 +178,11 @@ function theme_mcs_scripts()
 	wp_enqueue_style('style-slick', get_template_directory_uri() . '/assets/js/slick/slick.css');
 	wp_enqueue_style('style-slick-theme', get_template_directory_uri() . '/assets/js/slick/slick-theme.css');
 	wp_enqueue_style('style-swiper', get_template_directory_uri() . '/assets/js/swiper/swiper-bundle.min.css');
-	wp_enqueue_style('style-main', get_template_directory_uri() . '/assets/css/main.css', '', '1.5.3');
+	wp_enqueue_style('style-main', get_template_directory_uri() . '/assets/css/main.css', '', '1.5.4');
 	wp_enqueue_style('style-custom', get_template_directory_uri() . '/assets/css/custom.css', '', '1.3.0');
-	wp_enqueue_style('style-base', get_template_directory_uri() . '/assets/css/base.css', '', '1.3.0');
-	wp_enqueue_style('style-element', get_template_directory_uri() . '/assets/css/element.css', '', '1.3.9');
-	wp_enqueue_style('style-responsive', get_template_directory_uri() . '/assets/css/responsive.css', '', '1.4.3');
+	wp_enqueue_style('style-base', get_template_directory_uri() . '/assets/css/base.css', '', '1.3.1');
+	wp_enqueue_style('style-element', get_template_directory_uri() . '/assets/css/element.css', '', '1.4.0');
+	wp_enqueue_style('style-responsive', get_template_directory_uri() . '/assets/css/responsive.css', '', '1.4.4');
 	wp_enqueue_style( 'style-awesome', get_template_directory_uri() . '/assets/fonts/css/fontawesome.css');
 	wp_enqueue_style( 'style-solid', get_template_directory_uri() . '/assets/fonts/css/solid.css');
 	wp_enqueue_style( 'style-regular', get_template_directory_uri() . '/assets/fonts/css/regular.css');

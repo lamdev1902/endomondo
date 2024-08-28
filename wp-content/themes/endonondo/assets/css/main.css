@@ -1788,15 +1788,11 @@ main {
     font-style: italic;
     font-size: 14px;
     line-height: 22px;
-
 }
 
-.single-main .sg-resources ul li::marker,
-.single-main .sg-resources ol li::marker {
+.single-main .sg-resources ul li::before,
+.single-main .sg-resources ol li::before {
     color: var(--primary-color-2);
-    font-style: italic;
-    font-size: 14px;
-    line-height: 22px;
 }
 
 .single-main .sg-resources ul li:last-child,
@@ -1852,10 +1848,6 @@ figcaption {
     line-height: 17px;
 }
 
-
-.single-main .sg-resources ol li {
-    list-style: decimal;
-}
 
 .single-main .sg-resources ol li a {
     color: #101010;

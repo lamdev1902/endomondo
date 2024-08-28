@@ -268,14 +268,8 @@ $post_type = $post->post_type;
 
                 $resultPrimary = $wpdb->get_col($preparePri);
 
-                if (count($resultPrimary) != count($muscle_ids)) {
+                if (!array_intersect($resultPrimary, $muscle_ids)) {
                     unset($samePrimary[$key]);
-                } else {
-                    $diffPri = array_diff($resultPrimary, $muscle_ids);
-
-                    if ($diffPri) {
-                        unset($samePrimary[$key]);
-                    }
                 }
             }
         }
@@ -455,7 +449,7 @@ $post_type = $post->post_type;
             $idsVar = implode(',', $variations);
 
             $variationsDatas = $wpdb->get_results(
-                "SELECT * FROM {$wpdb->prefix}exercise WHERE id IN ({$idsVar}) AND active = 1",
+                "SELECT * FROM {$wpdb->prefix}exercise WHERE id IN ({$idsVar}) AND active = 1 LIMIT 10",
                 ARRAY_A
             );
         }
@@ -507,7 +501,7 @@ $post_type = $post->post_type;
             $idsVar = implode(',', $alternative);
 
             $alternativeDatas = $wpdb->get_results(
-                "SELECT * FROM {$wpdb->prefix}exercise WHERE id IN ({$idsVar}) AND active = 1",
+                "SELECT * FROM {$wpdb->prefix}exercise WHERE id IN ({$idsVar}) AND active = 1 LIMIT 10",
                 ARRAY_A
             );
         }
@@ -556,7 +550,7 @@ $post_type = $post->post_type;
                 <?php
                 if (get_field('enable_source', 'option') == true) {
                     ?>
-                    <div class="sg-resources mr-bottom-20 pd-main on-pc">
+                    <div class="sg-resources mr-bottom-20 pd-main">
                         <h3>Resources</h3>
                         <div class="intro">
                             <?= get_field('source_intro', 'option'); ?>

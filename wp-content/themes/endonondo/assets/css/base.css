@@ -238,11 +238,6 @@ ol {
     background: none;
 }
 
-.single-main ol,
-.exc-container ol {
-    list-style: decimal;
-}
-
 /* special text */
 
 .special-text {
