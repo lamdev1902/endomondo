@@ -166,9 +166,9 @@ function theme_mcs_scripts()
 	wp_enqueue_style('style-swiper', get_template_directory_uri() . '/assets/js/swiper/swiper-bundle.min.css');
 	wp_enqueue_style('style-main', get_template_directory_uri() . '/assets/css/main.css', '', '1.5.3');
 	wp_enqueue_style('style-custom', get_template_directory_uri() . '/assets/css/custom.css', '', '1.3.0');
-	wp_enqueue_style('style-base', get_template_directory_uri() . '/assets/css/base.css', '', '1.2.9');
-	wp_enqueue_style('style-element', get_template_directory_uri() . '/assets/css/element.css', '', '1.3.7');
-	wp_enqueue_style('style-responsive', get_template_directory_uri() . '/assets/css/responsive.css', '', '1.3.8');
+	wp_enqueue_style('style-base', get_template_directory_uri() . '/assets/css/base.css', '', '1.3.0');
+	wp_enqueue_style('style-element', get_template_directory_uri() . '/assets/css/element.css', '', '1.3.8');
+	wp_enqueue_style('style-responsive', get_template_directory_uri() . '/assets/css/responsive.css', '', '1.3.9');
 	wp_enqueue_style( 'style-awesome', get_template_directory_uri() . '/assets/fonts/css/fontawesome.css');
 	wp_enqueue_style( 'style-solid', get_template_directory_uri() . '/assets/fonts/css/solid.css');
 	wp_enqueue_style( 'style-regular', get_template_directory_uri() . '/assets/fonts/css/regular.css');

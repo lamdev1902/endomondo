@@ -67,6 +67,9 @@ blockquote {
 table {
     table-layout: fixed;
     border: 1px solid var(--secondary-color-1);
+    display: block;
+    overflow-x: scroll;
+    white-space: nowrap;
 }
 
 /* Default Table */
@@ -85,6 +88,8 @@ table {
     padding: 16px;
     border: none;
     text-align: center;
+    display:inline-block;
+    width: 188px;
 }
 
 .wp-block-table tr:nth-child(odd) {
@@ -100,13 +105,16 @@ table {
 /* End Default Table */
 
 figure.wp-block-table {
-    position: relative;
-    padding-top: 25px;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: hidden;
+}
+
+figure.wp-block-table p {
+    margin-bottom: 0;
 }
 
 figure.wp-block-table figcaption{
-    position: absolute;
-    top: 0;
     color: var(--secondary-color-3);
     margin: 0;
     font-style: normal;

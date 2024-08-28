@@ -446,16 +446,20 @@
     }
 
     .wp-block-table table thead th,
+    .wp-block-table table tbody td,
     .no-title .wp-block-table table tbody td {
-        width: 155px !important;
+        display: inline-block;
+        width: 155px;
     }
 
-    .medicine-table table thead th:first-child,
-    .medicine-table table tbody td:first-child {
+    table thead th:first-child,
+    table tbody td:first-child
+    {
         position: sticky;
         left: 0;
         z-index: 1;
         background-color: var(--primary-color-3);
+        width: 188px;
     }
 
     .no-scroll table thead th:first-child,
@@ -463,8 +467,9 @@
         position: unset;
     }
 
-    .medicine-table table thead th:first-child::after,
-    .medicine-table table tbody td:first-child::after {
+    table thead th:first-child::after,
+    table tbody td:first-child::after
+    {
         content: "";
         position: absolute;
         width: 1px;
@@ -474,8 +479,9 @@
         background-color: var(--secondary-color-1);
     }
 
-    .medicine-table table thead th:first-child::before,
-    .medicine-table table tbody td:first-child::before {
+    table thead th:first-child::before,
+    table tbody td:first-child::before
+    {
         content: "";
         position: absolute;
         width: 1px;
@@ -485,7 +491,7 @@
         background-color: var(--secondary-color-1);
     }
 
-    .medicine-table table tbody tr:nth-child(odd) td:first-child {
+    table tbody tr:nth-child(odd) td:first-child {
         background-color: #f8f8f8;
     }
 
@@ -659,13 +665,6 @@
 
     #footer .ft-bottom .menu {
         justify-content: space-between;
-    }
-
-    /* Table */
-
-    .medicine-table figure figcaption {
-        font-size: var(--font-14) !important;
-        line-height: 26px;
     }
 
     /* Brand */
