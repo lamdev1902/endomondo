@@ -1,5 +1,10 @@
 @media (max-width: 480px) {
 
+    .single-main ol,
+    .exc-container ol {
+        margin-left: 5px;
+    }
+
     .container {
         padding: 0 20px;
     }
@@ -444,8 +449,7 @@
     }
 
     table thead th:first-child,
-    table tbody td:first-child
-    {
+    table tbody td:first-child {
         width: 188px;
     }
 }
@@ -465,8 +469,7 @@
     }
 
     table thead th:first-child,
-    table tbody td:first-child
-    {
+    table tbody td:first-child {
         position: sticky;
         left: 0;
         z-index: 1;
@@ -479,8 +482,7 @@
     }
 
     table thead th:first-child::after,
-    table tbody td:first-child::after
-    {
+    table tbody td:first-child::after {
         content: "";
         position: absolute;
         width: 1px;
@@ -491,8 +493,7 @@
     }
 
     table thead th:first-child::before,
-    table tbody td:first-child::before
-    {
+    table tbody td:first-child::before {
         content: "";
         position: absolute;
         width: 1px;

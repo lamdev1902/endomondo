@@ -221,33 +221,32 @@ jQuery(function ($) {
 		}
 
 
-		if ($(window).width() >= 767) { 
-			$('figure table').each(function () {
-				var $table = $(this);
-				var $ths1 = $table.find('th:nth-child(1)');
-				var $ths2 = $table.find('th:nth-child(2)');
-				var maxHeight = $ths2.innerHeight();
-				var currentHeight = $ths1.innerHeight()
-	
-				if (maxHeight > currentHeight) {
-					$ths1.height(maxHeight - currentHeight);
-				}
-	
+		$('figure table').each(function () {
+			var $table = $(this);
+			var $ths1 = $table.find('th:nth-child(1)');
+			var $ths2 = $table.find('th:nth-child(2)');
+			var maxHeight = $ths2.innerHeight();
+			var currentHeight = $ths1.innerHeight()
+
+			if (maxHeight > currentHeight) {
+				$ths1.height(maxHeight - currentHeight);
+			}
+
+			if ($(window).width() >= 767) {
 				var $headers = $table.find('thead th');
 				var $cells = $table.find('tbody td');
-	
+
 				var numberOfColumns = $headers.length;
-	
+
 				if (numberOfColumns <= 3) {
 					var tableWidth = $table.width();
 					var columnWidth = tableWidth / numberOfColumns;
-	
+
 					$headers.css('width', columnWidth + 'px');
 					$cells.css('width', columnWidth + 'px');
 				}
-			});
-		}
-		
+			}
+		});
 	});
 
 	$(window).scroll(function () {
