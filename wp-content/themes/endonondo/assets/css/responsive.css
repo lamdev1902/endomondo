@@ -333,30 +333,8 @@
         margin-bottom: 0;
     }
 
-    table {
-        display: block;
-        overflow-x: scroll;
-        white-space: nowrap;
-    }
-
-    .wp-block-table table thead th,
-    .wp-block-table table tbody td,
-    .no-title .wp-block-table table tbody td {
-        display: inline-block;
-        width: 155px;
-    }
-
-    table thead th:first-child,
-    table tbody td:first-child
-    {
-        width: 188px;
-    }
-
-    .wp-block-table td, .wp-block-table th {
-        display:inline-block;
-        width: 188px;
-    }
 }
+
 
 @media (min-width: 481px) and (max-width: 834px) {
     .container {
@@ -396,10 +374,6 @@
     }
 
     /* End Product */
-
-    table {
-        width: 720px !important;
-    }
 
     /* End Table */
 
@@ -455,6 +429,27 @@
 
 }
 
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+
+    .wp-block-table table thead th,
+    .wp-block-table table tbody td,
+    .no-title .wp-block-table table tbody td {
+        display: inline-block;
+        width: 188px !important;
+    }
+
+    table thead th:first-child,
+    table tbody td:first-child
+    {
+        width: 188px !important;
+    }
+}
+
 @media (max-width: 834px) {
 
     /* Header */
@@ -469,12 +464,6 @@
         padding: 12px 16px;
     }
 
-    .wp-block-table table thead th,
-    .wp-block-table table tbody td,
-    .no-title .wp-block-table table tbody td {
-        width: 155px;
-    }
-
     table thead th:first-child,
     table tbody td:first-child
     {
@@ -482,7 +471,6 @@
         left: 0;
         z-index: 1;
         background-color: var(--primary-color-3);
-        width: 188px;
     }
 
     .no-scroll table thead th:first-child,
