@@ -729,4 +729,20 @@
         font-size: 12px;
         line-height: 18px;
     }
+
+
+    .single-main .sg-resources ul li,
+    .single-main .sg-resources ol li {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .single-main .sg-resources ol li::before {
+        content: "";
+    }
+
+    .single-main .sg-resources ol li::marker {
+        font-size: 12px;
+        line-height: 18px;
+    }
 }

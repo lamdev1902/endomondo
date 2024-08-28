@@ -1779,12 +1779,27 @@ main {
 
 .single-main .sg-resources ul,
 .single-main .sg-resources ol {
-    padding-left: 20px;
+    padding-left: 16px;
 }
 
 
 .single-main .sg-resources ul li,
 .single-main .sg-resources ol li {
+    font-style: italic;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.single-main .sg-resources ol li::before {
+    content: "";
+}
+
+.single-main .sg-resources ol {
+    list-style: decimal;
+}
+
+.single-main .sg-resources ol li::marker {
+    color: var(--primary-color-2);
     font-style: italic;
     font-size: 14px;
     line-height: 22px;
