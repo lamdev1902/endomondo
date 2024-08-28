@@ -67,9 +67,6 @@ blockquote {
 table {
     table-layout: fixed;
     border: 1px solid var(--secondary-color-1);
-    display: block;
-    overflow-x: scroll;
-    white-space: nowrap;
 }
 
 /* Default Table */
@@ -88,8 +85,6 @@ table {
     padding: 16px;
     border: none;
     text-align: center;
-    display:inline-block;
-    width: 188px;
 }
 
 .wp-block-table tr:nth-child(odd) {
@@ -120,6 +115,7 @@ figure.wp-block-table figcaption{
     font-style: normal;
     width: 100%;
     text-align: left;
+    margin-bottom: 8px;
 }
 
 table thead tr {

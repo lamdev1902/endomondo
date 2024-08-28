@@ -332,6 +332,30 @@
         padding: 32px 0 0 0;
         margin-bottom: 0;
     }
+
+    table {
+        display: block;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+
+    .wp-block-table table thead th,
+    .wp-block-table table tbody td,
+    .no-title .wp-block-table table tbody td {
+        display: inline-block;
+        width: 155px;
+    }
+
+    table thead th:first-child,
+    table tbody td:first-child
+    {
+        width: 188px;
+    }
+
+    .wp-block-table td, .wp-block-table th {
+        display:inline-block;
+        width: 188px;
+    }
 }
 
 @media (min-width: 481px) and (max-width: 834px) {
@@ -448,7 +472,6 @@
     .wp-block-table table thead th,
     .wp-block-table table tbody td,
     .no-title .wp-block-table table tbody td {
-        display: inline-block;
         width: 155px;
     }
 
