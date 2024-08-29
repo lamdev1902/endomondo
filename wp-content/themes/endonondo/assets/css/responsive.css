@@ -442,6 +442,10 @@
         white-space: nowrap;
     }
 
+    table::-webkit-scrollbar {
+        z-index: 10;
+    }
+
     .wp-block-table table thead th,
     .wp-block-table table tbody td,
     .no-title .wp-block-table table tbody td {
