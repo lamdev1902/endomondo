@@ -440,10 +440,8 @@
         display: block;
         overflow-x: scroll;
         white-space: nowrap;
-    }
-
-    table::-webkit-scrollbar {
-        z-index: 10;
+        position:relative; 
+        z-index:2;
     }
 
     .wp-block-table table thead th,
