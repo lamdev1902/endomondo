@@ -442,6 +442,13 @@
         white-space: nowrap;
         position: relative;
         z-index: 3;
+        scrollbar-color: var(--secondary-color-3);
+        scrollbar-width: thin;
+    }
+
+    table::-webkit-scrollbar {
+        position:relative; 
+        z-index:2;
     }
 
     .wp-block-table table thead th,

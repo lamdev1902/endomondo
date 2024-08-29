@@ -137,10 +137,10 @@ table tbody tr:first-child td {
 
 }
 
-/* table thead th,
+table thead th,
 table tbody td {
     white-space: pre-line;
-} */
+}
 
 .medicine-table table tr:nth-child(odd) {
     background-color: #f8f8f8;
