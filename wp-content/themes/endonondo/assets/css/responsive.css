@@ -1,5 +1,11 @@
 @media (max-width: 480px) {
 
+    .single-main ol,
+    .exc-container ol {
+        margin-left: 5px;
+        text-indent: -2px;
+    }
+
     .container {
         padding: 0 20px;
     }

@@ -201,6 +201,12 @@ ol {
     list-style: none;
 }
 
+
+.single-main ol,
+.exc-container ol {
+    list-style: decimal;
+}
+
 .single-main ul,
 .single-main ol,
 .author-content ul {
