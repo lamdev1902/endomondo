@@ -13,8 +13,7 @@
     background-color: var(--secondary-color-5);
 }
 
-.box-grey ul
-.ft-snippet ul {
+.box-grey ul .ft-snippet ul {
     margin-bottom: var(--mr-main)
 }
 
@@ -27,7 +26,7 @@
     bottom: 25px;
     right: 25px;
     background-image: url(../images/ft-snippet-logo.svg);
-    background-size: cover; 
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -75,13 +74,14 @@ table {
     border: none;
 }
 
-.wp-block-table thead th{
+.wp-block-table thead th {
     color: var(--primary-color-1);
     font-weight: 500;
     font-size: 16px;
 }
 
-.wp-block-table td, .wp-block-table th {
+.wp-block-table td,
+.wp-block-table th {
     padding: 16px;
     border: none;
     text-align: center;
@@ -109,7 +109,7 @@ figure.wp-block-table p {
     margin-bottom: 0;
 }
 
-figure.wp-block-table figcaption{
+figure.wp-block-table figcaption {
     color: var(--secondary-color-3);
     margin: 0;
     font-style: normal;
@@ -134,8 +134,13 @@ table thead tr {
 
 table tbody tr:first-child td {
     color: var(--primary-color-2) !important;
+
 }
 
+/* table thead th,
+table tbody td {
+    white-space: pre-line;
+} */
 
 .medicine-table table tr:nth-child(odd) {
     background-color: #f8f8f8;
@@ -189,19 +194,19 @@ table tbody tr:first-child td {
     margin-bottom: 20px;
 }
 
-.full-bg-table table tbody{
+.full-bg-table table tbody {
     border: none !important;
 }
 
 .full-bg-table table tr td {
-     text-align: left !important;
-     color: var(--primary-color-2) !important;
+    text-align: left !important;
+    color: var(--primary-color-2) !important;
 }
 
 
 /* Special box */
 
-.box-two.special-box > .wp-block-column {
+.box-two.special-box>.wp-block-column {
     text-align: center;
     padding: 48px 40px;
     background-image: url(../images/bg-special-box.svg);
@@ -209,25 +214,25 @@ table tbody tr:first-child td {
     background-size: 100%;
 }
 
-.box-two.special-box > .wp-block-column figure {
+.box-two.special-box>.wp-block-column figure {
     margin: 1em 0;
 }
 
-.box-two.special-box > .wp-block-column img {
+.box-two.special-box>.wp-block-column img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
 }
 
-.box-two.special-box > .wp-block-column p {
+.box-two.special-box>.wp-block-column p {
     color: var(--primary-color-3);
 }
 
-.box-two.special-box > .wp-block-column p > strong {
+.box-two.special-box>.wp-block-column p>strong {
     font-size: var(--font-18);
 }
 
-.box-two.special-box > .wp-block-column p.has-small-font-size a{
+.box-two.special-box>.wp-block-column p.has-small-font-size a {
     color: #81838C;
     font-weight: 400;
 }
@@ -251,8 +256,7 @@ table tbody tr:first-child td {
     border-bottom: 1px solid var(--secondary-color-1);
 }
 
-.wp-block-columns.brand .brand-col figure
-{
+.wp-block-columns.brand .brand-col figure {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -270,25 +274,25 @@ table tbody tr:first-child td {
     background: var(--primary-color-3);
 }
 
-.wp-block-columns.brand .brand-col > .wp-block-columns {
+.wp-block-columns.brand .brand-col>.wp-block-columns {
     margin-bottom: 0;
 }
 
-.wp-block-columns.brand .brand-col .wp-block-columns > .brand-title p {
+.wp-block-columns.brand .brand-col .wp-block-columns>.brand-title p {
     text-align: center;
 }
 
-.wp-block-columns.brand .brand-col figure > img {
+.wp-block-columns.brand .brand-col figure>img {
     width: 300px;
     height: 300px;
     object-fit: contain;
 }
 
-.wp-block-columns.brand .brand-col > p {
+.wp-block-columns.brand .brand-col>p {
     font-weight: 500;
 }
 
-.wp-block-columns.brand .brand-col > p {
+.wp-block-columns.brand .brand-col>p {
     font-weight: 500;
     position: absolute;
     bottom: -12px;
@@ -297,8 +301,46 @@ table tbody tr:first-child td {
     margin: 0;
 }
 
-.wp-block-columns.brand .brand-col > p a {
+.wp-block-columns.brand .brand-col>p a {
     padding: 12px 24px;
     color: var(--primary-color-3);
     background-color: var(--primary-color-2);
+}
+
+
+/* Calorie Form */
+
+.calories-form form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10%;
+    row-gap: 24px;
+}
+
+.calories-form form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10%;
+    row-gap: 24px;
+}
+
+.calories-form form .two-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 8px;
+}
+
+.calories-form form .form-input {
+    position: relative;
+}
+
+.calories-form form .form-input input[type="text"]{
+    width: 100%;
+}
+
+.calories-form form .form-input span{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(-50%, 0);
 }
