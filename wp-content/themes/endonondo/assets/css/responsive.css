@@ -440,8 +440,6 @@
         display: block;
         overflow-x: scroll;
         white-space: nowrap;
-        position:relative; 
-        z-index:2;
     }
 
     .wp-block-table table thead th,
