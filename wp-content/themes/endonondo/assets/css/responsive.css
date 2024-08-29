@@ -440,6 +440,8 @@
         display: block;
         overflow-x: scroll;
         white-space: nowrap;
+        position: relative;
+        z-index: 3;
     }
 
     .wp-block-table table thead th,
@@ -447,6 +449,14 @@
     .no-title .wp-block-table table tbody td {
         display: inline-block;
         width: 188px;
+    }
+
+    .wp-block-table table thead th,
+    .wp-block-table table tbody td {
+        display: inline-block;
+        width: 188px;
+        position: sticky;
+        z-index: 1;
     }
 
     table thead th:first-child,
@@ -474,7 +484,7 @@
         position: sticky;
         left: 0;
         background-color: var(--primary-color-3);
-        z-index: 1;
+        z-index: 2;
     }
 
     .no-scroll table thead th:first-child,
