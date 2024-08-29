@@ -3878,8 +3878,12 @@ figcaption {
 }
 
 .coupon-item-detail .coupon-top .flex .info .relative-section>p {
-    color: #0D152E;
-    padding-bottom: 14px;
+    color: var(--primary-color-2);
+    margin-bottom: 6px;
+}
+
+.coupon-item-detail .coupon-top .flex .info .des ul {
+    margin-bottom: 6px;
 }
 
 .coupon-item-detail .relative-section .send-mail {

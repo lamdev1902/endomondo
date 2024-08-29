@@ -182,16 +182,17 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                     if ($coupon_list) {
                         $c1 = $coupon_list[0];
                         $ctype = wp_get_post_terms($c1, 'coupon_type');
-                        $date_type = get_field('date_type', $c1);
+                        $date_type = get_field('data_type', $c1);
                         $date_ex = get_field('coupon_date', $c1);
                         if ($date_ex) {
+                            $date_change = DateTime::createFromFormat('d/m/Y', $date_ex);
                             $date_current = strtotime(date('Y-m-d'));
-                            $date_ex = strtotime($date_ex);
+                            $date_ex = $date_change->getTimestamp();
                         }
                         ?>
                         <div class="line-content"></div>
                         <div class="hot-deal">
-                            <h2>Exclusive for Blurt's Community</h2>
+                            <h2>Hot deals today</h2>
                             <div class="coupon-item-detail all coupon">
                                 <div class="coupon-top hot-deal">
                                     <div class="flex">
@@ -241,7 +242,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                                                 echo 'has-expired'; ?>">
                                                 Expired:
                                                 <?php if ($date_type == 1)
-                                                    echo get_field('coupon_date', $c1);
+                                                    echo $date_change->format('F d, Y');
                                                 else
                                                     echo "Doesn't expire"; ?>
                                             </div>
@@ -270,12 +271,12 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                                 <?php foreach ($coupon_list as $c => $cp) {
                                     if ($c > 0) {
                                         $ctype = wp_get_post_terms($cp, 'coupon_type');
-                                        $date_type = get_field('date_type', $cp);
+                                        $date_type = get_field('data_type', $cp);
                                         $date_ex = get_field('coupon_date', $cp);
                                         if ($date_ex) {
-                                            $date_change = new DateTime($date_ex);
+                                            $date_change = DateTime::createFromFormat('d/m/Y', $date_ex);
                                             $date_current = strtotime(date('Y-m-d'));
-                                            $date_ex = strtotime($date_ex);
+                                            $date_ex = $date_change->getTimestamp();
                                         }
                                         $ct = $cp;
                                         ?>
@@ -326,11 +327,11 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                                                             </div>
 
                                                         </div>
-                                                        <div class="date <?php if ($date_type == 1 && $date_current > $date_ex)
+                                                        <div class="date has-small-font-size <?php if ($date_type == 1 && $date_current > $date_ex)
                                                             echo 'has-expired'; ?>">
                                                             Expired:
                                                             <?php if ($date_ex)
-                                                                echo $date_change->format('d F, Y');
+                                                                echo $date_change->format('F d, Y');
                                                             else
                                                                 echo "Doesn't expire"; ?>
                                                         </div>
