@@ -306,7 +306,7 @@ table tbody tr:first-child td {
 /* Ol */
 
 ol {
-    counter-reset: section;
+    counter-reset: ol-section;
 }
 
 ol li {
@@ -315,8 +315,8 @@ ol li {
 
 ol li::before {
     position: absolute;
-    counter-increment: section;
-    content: counter(section) ". ";
+    counter-increment: ol-section;
+    content: counter(ol-section) ". ";
     color: var(--primary-color-1);
     left: -16px;
     top: 0;
