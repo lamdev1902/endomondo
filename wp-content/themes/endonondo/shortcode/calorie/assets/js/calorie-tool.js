@@ -57,7 +57,7 @@ function calorie_tool_json() {
 	  	},
 	  	submitHandler: function(form) {
 	  		$.ajax({
-				url:'http://endomondo.local/',
+				url:'https://www.dev.ehproject.org//',
 				type: 'GET', 
 				cache: false,
 				dataType: "json",

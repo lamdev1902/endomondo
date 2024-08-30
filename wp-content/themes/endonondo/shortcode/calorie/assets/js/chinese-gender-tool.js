@@ -99,7 +99,7 @@ jQuery(function($) {
 				}
 			});
 			$.ajax({
-			  url: 'http://endomondo.local/',
+			  url: 'https://www.dev.ehproject.org//',
 			  type: 'GET', 
 			  cache: false,
 			  dataType: "json",
