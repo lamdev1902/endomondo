@@ -310,11 +310,18 @@ table tbody td {
 
 /* Calorie Form */
 
+.calories-form {
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--primary-color-2);
+    margin-bottom: var(--mr-main);
+}
+
 .calories-form form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 10%;
     row-gap: 24px;
+    
 }
 
 .calories-form form {
@@ -326,21 +333,172 @@ table tbody td {
 
 .calories-form form .two-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 8px;
 }
 
 .calories-form form .form-input {
     position: relative;
+    margin-top: 9px;
 }
 
-.calories-form form .form-input input[type="text"]{
+.calories-form form .form-radio-list {
+    position: relative;
+}
+
+.calories-form form .input-body {
+    position:absolute;
+    bottom: 0;
+}
+.calories-form form .input-body > input{
+    width: auto;
+    padding: 8px;
+}
+
+.calories-form form .form-radio {
+    margin-top: 14px;
+}
+
+.calories-form form input[type="text"],
+.calories-form form select {
     width: 100%;
+    padding: 16px 12px;
+    border: 1px solid var(--primary-color-2);
 }
 
-.calories-form form .form-input span{
+.calories-form form .form-input p {
     position: absolute;
     top: 50%;
-    right: 10px;
-    transform: translate(-50%, 0);
+    right: 12px;
+    transform: translate(0, -50%);
+    color: var(--secondary-color-4);
+    margin-bottom: 0;
 }
+
+.calories-form form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: 10px;
+}
+
+.calories-form form .calories-submit {
+    width: 100%;
+    padding: 15px 24px;
+    color: var(--primary-color-3);
+    background-color: var(--primary-color-2);
+    margin: 16px 0;
+    border: none;
+    cursor: pointer;
+}
+
+.calories-form form .form-col .has-ssmall-font-size {
+    margin-bottom: 0;
+}
+
+.calories-result {
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 58px;
+    position: relative;
+}
+
+.calories-result::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-right: 1px dashed var(--primary-color-2);
+    top: 0;
+    left: 50%;
+}
+
+
+.calories-col:last-child p,
+.calories-col:first-child p:last-child{
+    margin-bottom: 0;
+}
+
+.fillResult .calories-col ul {
+    padding-left: 0;
+}
+
+.fillResult .calories-col ul b {
+    margin-right: 5px;
+}
+
+.fillResult .calories-col ul li::before {
+    width: 0;
+    height: 0;
+}
+.fillResult .calories-col ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fillResult .calories-col .has-ssmall-font-size {
+    color: var(--secondary-color-4);
+}
+
+/* Tool Post */
+
+.lhide {
+    display: none;
+}
+
+section.exc-hero-section.tool small {
+    display: block;
+}
+
+section.exc-hero-section.tool p b {
+    color: var(--primary-color-1);
+}
+
+section.exc-hero-section.tool {
+    padding: 40px 0;
+}
+
+section.exc-hero-section.tool:before {
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+}
+
+section.exc-hero-section.tool .exc-container {
+    text-align: unset;
+    position: relative;
+    z-index: 2;
+}
+
+section.exc-hero-section.tool .exc-container .tool-top > h1,
+section.exc-hero-section.tool .exc-container .tool-top > p {
+    margin-bottom: 0;
+}
+
+.br-section {
+    width: 100%;
+    border-bottom: 1px dashed var(--primary-color-2);
+}
+
+section.exc-hero-section.tool .exc-container .tool-top {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.choose-list ul {
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.choose-list ul li {
+    margin-bottom: 0;
+}
+
+.choose-list ul li p {
+    margin-bottom: 0;
+}
+

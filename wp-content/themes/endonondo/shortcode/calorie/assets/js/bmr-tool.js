@@ -88,7 +88,7 @@ function calorie_tool_json() {
 				}
 			});
 	  		$.ajax({
-				url:'https://www.ehproject.org/',
+				url:'http://endomondo.local/',
 				type: 'GET', 
 				cache: false,
 				dataType: "json",

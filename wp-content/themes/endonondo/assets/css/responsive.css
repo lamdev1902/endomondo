@@ -343,6 +343,46 @@
         margin-bottom: 0;
     }
 
+    /* Tool */
+
+    .calories-form form {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 20px;
+    }
+
+    .calories-result {
+        grid-template-columns: repeat(1,1fr);
+        row-gap: 40px;
+    }
+
+    .calories-result::after {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px dashed var(--primary-color-2);
+        top: calc(39% - 20px);
+        left: 0;
+    }
+
+    /* Tool Post */
+
+    section.exc-hero-section.tool .exc-container .tool-top {
+        text-align: left;
+    }
+
+    section.exc-hero-section.tool .exc-container .tool-top .social {
+        justify-content: start;
+    }
+
+    .choose-list ul {
+        align-items: start;
+        justify-content: start;
+        flex-direction: column;
+    }
+
+    section.exc-hero-section.tool .exc-container .tool-top .social a:first-child {
+        margin-left: 0;
+    }
 }
 
 

@@ -1126,11 +1126,6 @@ main {
     cursor: pointer;
 }
 
-.popup .popup-bg .popup-box .info .box h2,
-.popup .popup-bg .popup-box .info .box > p {
-    margin-bottom: 16px;
-}
-
 .popup .popup-bg .popup-box .info .box .feature {
     margin-bottom: 40px;
     padding: 14px 0;

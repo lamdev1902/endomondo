@@ -30,7 +30,7 @@ jQuery(function($) {
 		    }
 	  	},
 		  submitHandler: function(form) {
-		  $('#spinner').show();
+		 $('#spinner').show();
 			var formData = $('#absiCalculate').serializeArray();
 			var jsonData = {};
 
@@ -53,7 +53,7 @@ jQuery(function($) {
 				}
 			});
 			$.ajax({
-			  url:'https://www.ehproject.org/',
+			 url:'https://www.endomondo.com/',
 			  type: 'GET', 
 			  cache: false,
 			  dataType: "json",

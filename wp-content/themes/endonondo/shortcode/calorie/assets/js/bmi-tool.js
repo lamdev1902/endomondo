@@ -71,7 +71,7 @@ jQuery(function($) {
 				}
 			});
 			$.ajax({
-			 url:'https://www.ehproject.org/',
+			 url:'http://endomondo.local/',
 			  type: 'GET', 
 			  cache: false,
 			  dataType: "json",

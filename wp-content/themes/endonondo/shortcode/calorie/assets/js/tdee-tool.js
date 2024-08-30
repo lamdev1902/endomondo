@@ -44,7 +44,7 @@ jQuery(function($) {
 				}
 			});
 			$.ajax({
-			  url:'https://www.ehproject.org/',
+			 url:'https://www.endomondo.com/',
 			  type: 'GET', 
 			  cache: false,
 			  dataType: "json",
