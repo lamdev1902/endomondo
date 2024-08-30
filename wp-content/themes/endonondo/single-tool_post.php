@@ -7,7 +7,7 @@ get_header();
 the_post();
 ?>
 <main id="content" class="calories-content">
-	<article>
+	<article class="single-main">
 		<section class="single-top">
 			<div class="container">
 				<div class="list-flex flex-center flex-middle">
@@ -81,6 +81,74 @@ the_post();
 					<?php } ?>
 				</div>
 			</div>
+		</section>
+		<?php
+		$author_id = get_post_field('post_author', $postid);
+
+		$author_name = get_the_author_meta('nickname', $author_id);
+		$author_url = get_author_posts_url($author_id);
+
+		$avt = '';
+
+		if (get_field('new_avata', 'user_' . $author_id)) {
+			$avt = get_field('new_avata', 'user_' . $author_id);
+		} elseif (get_field('avata', 'user_' . $author_id)) {
+			$avt = get_field('avata', 'user_' . $author_id);
+		}
+
+		$user_description = '';
+
+		if (get_field('new_story', 'user_' . $author_id)) {
+			$user_description = get_field('new_story', 'user_' . $author_id);
+		} elseif (get_field('story', 'user_' . $author_id)) {
+			$user_description = get_field('story', 'user_' . $author_id);
+		}
+
+		$userPosition = get_field('position', 'user_' . $author_id);
+
+		if (get_field('new_position', 'user_' . $author_id)) {
+			$userPosition = get_field('new_position', 'user_' . $author_id);
+		} elseif (get_field('position', 'user_' . $author_id)) {
+			$userPosition = get_field('position', 'user_' . $author_id);
+		}
+		?>
+		<section class="single-main exc-author">
+			<aside class="single-sidebar ">
+				<div class="container">
+					<div class="author-about exc-container">
+						<h3>About the Author</h3>
+						<div class="author-write">
+							<div class="author-link">
+								<?php
+								if ($avt) {
+									?>
+									<a target="_blank" href="<?php echo $author_url; ?>"><img src="<?php echo $avt; ?>"
+											alt=""></a>
+								<?php } else { ?>
+									<a target="_blank" href="<?php echo $author_url; ?>"><img
+											src="<?php echo get_field('avatar_default', 'option'); ?>" alt="">
+									<?php } ?>
+									<p class="has-medium-font-size"><a target="_blank"
+											style="color: var(--pri-color-2) !important;"
+											href="<?php echo $author_url; ?>"><?php the_author(); ?>
+										</a>
+										<?php if ($userPosition): ?>
+											<span>
+												<?= $userPosition; ?>
+												</sp>
+											<?php endif; ?>
+									</p>
+							</div>
+							<?php if ($user_description) { ?>
+								<div class="author-info">
+									<p><?php echo wp_trim_words($user_description, 50, '') . '.. '; ?><a
+											href="<?php echo $author_url; ?>"> See more</a></p>
+								</div>
+							<?php } ?>
+						</div>
+					</div>
+				</div>
+			</aside>
 		</section>
 	</article>
 </main>
