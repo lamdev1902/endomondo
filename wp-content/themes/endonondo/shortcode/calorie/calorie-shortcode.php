@@ -183,7 +183,7 @@ function create_shortcode_tool_calorie($args, $content)
 	<?php
 	$rt = ob_get_clean();
 	wp_enqueue_style('calorie-css', get_template_directory_uri() . '/shortcode/calorie/assets/css/calorie-tool.css', '', '1.0.0');
-	wp_enqueue_script('calorie-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/calorie-tool.js', '', '1.0.2');
+	wp_enqueue_script('calorie-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/calorie-tool.js', '', '1.0.3');
 	wp_enqueue_script('validate-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/jquery.validate.min.js', '', '1.0.0');
 	return $rt;
 }

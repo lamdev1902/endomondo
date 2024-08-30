@@ -57,7 +57,7 @@ function calorie_tool_json() {
 	  	},
 	  	submitHandler: function(form) {
 	  		$.ajax({
-				url:'https://www.dev.ehproject.org//',
+				url:'https://www.dev.ehproject.org/',
 				type: 'GET', 
 				cache: false,
 				dataType: "json",

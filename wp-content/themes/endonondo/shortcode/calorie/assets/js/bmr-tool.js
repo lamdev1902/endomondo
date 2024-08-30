@@ -88,7 +88,7 @@ function calorie_tool_json() {
 				}
 			});
 	  		$.ajax({
-				url:'https://www.dev.ehproject.org//',
+				url:'https://www.dev.ehproject.org/',
 				type: 'GET', 
 				cache: false,
 				dataType: "json",
