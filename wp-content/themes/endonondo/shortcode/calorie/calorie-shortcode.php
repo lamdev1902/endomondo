@@ -269,28 +269,34 @@ function get_calorie_tool()
 				<div class="medical-table">
 					<figure class="wp-block-table">
 						<table>
-							<tr>
-								<td>Activity level</td>
-								<?php if ($mild_weight) { ?>
-									<td>Mild weight loss</td><?php } ?>
-								<?php if ($weight_loss) { ?>
-									<td>Weight loss</td><?php } ?>
-								<?php if ($extreme_loss) { ?>
-									<td>Extreme weight loss</td><?php } ?>
-							</tr>
-							<?php if ($mild_weight) {
-								foreach ($mild_weight as $m => $mw) {
-									?>
-									<tr>
-										<td><?php echo $mw->title; ?></td>
-										<td><?php echo number_format($mw->calorie); ?> Calories</td>
-										<?php if ($weight_loss) { ?>
-											<td><?php echo number_format($weight_loss[$m]->calorie); ?> 							<?php echo $unit_label; ?></td><?php } ?>
-										<?php if ($extreme_loss) { ?>
-											<td><?php echo number_format($extreme_loss[$m]->calorie); ?> 							<?php echo $unit_label; ?></td><?php } ?>
-									</tr>
-								<?php }
-							} ?>
+							<thead>
+								<tr>
+									<th>Activity level</th>
+									<?php if ($mild_weight) { ?>
+										<th>Mild weight loss</th><?php } ?>
+									<?php if ($weight_loss) { ?>
+										<th>Weight loss</th><?php } ?>
+									<?php if ($extreme_loss) { ?>
+										<th>Extreme weight loss</th><?php } ?>
+								</tr>
+							</thead>
+							<?php if ($mild_weight) { ?>
+								<tbody>
+									<?php foreach ($mild_weight as $m => $mw) {
+										?>
+										<tr>
+											<td><?php echo $mw->title; ?></td>
+											<td><?php echo number_format($mw->calorie); ?> Calories</td>
+											<?php if ($weight_loss) { ?>
+												<td><?php echo number_format($weight_loss[$m]->calorie); ?> 							<?php echo $unit_label; ?></td>
+											<?php } ?>
+											<?php if ($extreme_loss) { ?>
+												<td><?php echo number_format($extreme_loss[$m]->calorie); ?> 							<?php echo $unit_label; ?></td>
+											<?php } ?>
+										</tr>
+									<?php } ?>
+								</tbody>
+							<?php } ?>
 						</table>
 					</figure>
 				</div>
@@ -304,28 +310,34 @@ function get_calorie_tool()
 				<div class="medical-table">
 					<figure class="wp-block-table">
 						<table>
-							<tr>
-								<td>Activity level</td>
-								<?php if ($mild_weight) { ?>
-									<td>Mild weight loss</td><?php } ?>
-								<?php if ($weight_loss) { ?>
-									<td>Weight loss</td><?php } ?>
-								<?php if ($extreme_loss) { ?>
-									<td>Extreme weight loss</td><?php } ?>
-							</tr>
-							<?php if ($mild_weight) {
-								foreach ($mild_weight as $m => $mw) {
-									?>
-									<tr>
-										<td><?php echo $mw->title; ?></td>
-										<td><?php echo number_format($mw->calorie); ?> 						<?php echo $unit_label; ?></td>
-										<?php if ($weight_loss) { ?>
-											<td><?php echo number_format($weight_loss[$m]->calorie); ?> 							<?php echo $unit_label; ?></td><?php } ?>
-										<?php if ($extreme_loss) { ?>
-											<td><?php echo number_format($extreme_loss[$m]->calorie); ?> 							<?php echo $unit_label; ?></td><?php } ?>
-									</tr>
-								<?php }
-							} ?>
+							<thead>
+								<tr>
+									<th>Activity level</th>
+									<?php if ($mild_weight) { ?>
+										<th>Mild weight loss</th><?php } ?>
+									<?php if ($weight_loss) { ?>
+										<th>Weight loss</th><?php } ?>
+									<?php if ($extreme_loss) { ?>
+										<th>Extreme weight loss</th><?php } ?>
+								</tr>
+							</thead>
+							<?php if ($mild_weight): ?>
+								<tbody>
+									<?php foreach ($mild_weight as $m => $mw) {
+										?>
+										<tr>
+											<td><?php echo $mw->title; ?></td>
+											<td><?php echo number_format($mw->calorie); ?> 						<?php echo $unit_label; ?></td>
+											<?php if ($weight_loss) { ?>
+												<td><?php echo number_format($weight_loss[$m]->calorie); ?> 							<?php echo $unit_label; ?></td>
+											<?php } ?>
+											<?php if ($extreme_loss) { ?>
+												<td><?php echo number_format($extreme_loss[$m]->calorie); ?> 							<?php echo $unit_label; ?></td>
+											<?php } ?>
+										</tr>
+									<?php } ?>
+								</tbody>
+							<?php endif; ?>
 						</table>
 					</figure>
 				</div>
@@ -338,22 +350,26 @@ function get_calorie_tool()
 		<div class="medical-table">
 			<figure class="wp-block-table">
 				<table>
-					<tr>
-						<td>Activity level</td>
-						<td>Mild weight loss</td>
-					</tr>
-					<tr>
-						<td>Daily exercise, or intense exercise 3-4 times per week</td>
-						<td>0.4 lb</td>
-					</tr>
-					<tr>
-						<td>Intense exercise 6-7 times per week</td>
-						<td>1.3 lb</td>
-					</tr>
-					<tr>
-						<td>Very intense exercise daily, or a highly physical job</td>
-						<td>2.2 lb</td>
-					</tr>
+					<thead>
+						<tr>
+							<th>Activity level</th>
+							<th>Mild weight loss</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Daily exercise, or intense exercise 3-4 times per week</td>
+							<td>0.4 lb</td>
+						</tr>
+						<tr>
+							<td>Intense exercise 6-7 times per week</td>
+							<td>1.3 lb</td>
+						</tr>
+						<tr>
+							<td>Very intense exercise daily, or a highly physical job</td>
+							<td>2.2 lb</td>
+						</tr>
+					</tbody>
 				</table>
 			</figure>
 		</div>
