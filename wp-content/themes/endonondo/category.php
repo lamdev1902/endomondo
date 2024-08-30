@@ -24,10 +24,9 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 			<div class="container">
 				<div class="category-link-box">
 					<div class="category-link list-flex">
-						<p class="has-small-font-size"><a href="<?php echo get_page_link(186); ?>">All products</a></p>
 						<?php
 						$args = array(
-							'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
+							'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide','coupon','exercise'),
 							'taxonomy' => 'category',
 							'hide_empty' => 0,
 							'parent' => 0,
@@ -84,7 +83,7 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 									<div class="lastest-list">
 										<?php
 										$args = array(
-											'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
+											'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide','coupon','exercise'),
 											'posts_per_page' => 6,
 											'cat' => $term_children_id
 										);
@@ -152,7 +151,7 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 									<div class="news-list grid grid-feature">
 										<?php
 										$args = array(
-											'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
+											'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide','coupon','exercise'),
 											'posts_per_page' => 6,
 											'cat' => $term_id,
 											'post__not_in' => $notIn
@@ -224,7 +223,7 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 						<div class="lastest-list">
 							<?php
 							$args = array(
-								'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
+								'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide','coupon','exercise'),
 								'posts_per_page' => 6,
 								'cat' => $term_id,
 							);
@@ -292,7 +291,7 @@ $term_parent_custom = get_term_by('id', $term_parent, 'category');
 						<div class="news-list cate-list grid grid-feature">
 							<?php
 							$args2 = array(
-								'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide'),
+								'post_type' => array('post', 'informational_posts', 'round_up', 'single_reviews', 'step_guide','coupon','exercise'),
 								'posts_per_page' => 6,
 								'cat' => $term_id,
 								'post__not_in' => $notIn

@@ -1126,10 +1126,21 @@ main {
     cursor: pointer;
 }
 
-.popup .popup-bg .popup-box .info .box>img {
-    height: 20px;
-    margin: 10px 0 40px;
+.popup .popup-bg .popup-box .info .box h2,
+.popup .popup-bg .popup-box .info .box > p {
+    margin-bottom: 16px;
 }
+
+.popup .popup-bg .popup-box .info .box .feature {
+    margin-bottom: 40px;
+    padding: 14px 0;
+}
+
+.popup .popup-bg .popup-box .info .box .feature img {
+    height: 20px;
+    width: 156px;
+}
+
 
 .popup .popup-bg .popup-box .info .box .klaviyo-form {
     margin-bottom: var(--mr-main);
@@ -1148,7 +1159,8 @@ main {
 }
 
 .popup .popup-bg .popup-box .info .box p.has-small-font-size {
-    color: var(--secondary-color-4)
+    color: var(--secondary-color-4);
+    line-height: 22px;
 }
 
 .popup .popup-bg .popup-box .info .box p a {
@@ -1325,7 +1337,7 @@ main {
 
     .popup .popup-bg .popup-box .info {
         width: 100%;
-        padding: 24px 15px;
+        padding: 20px 16px;
     }
 
     .popup .popup-bg .popup-box .info .close {
@@ -3810,19 +3822,23 @@ figcaption {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin: 30px 0;
     align-items: center;
+    justify-content: center;
+    row-gap: 16px;
 }
 
 .coupon-item-detail .coupon-top .flex .hightlight .inner .coupon-special span {
     float: left;
     width: 35%;
+    text-align: left;
 }
 
 .coupon-item-detail .coupon-top .flex .hightlight .inner .coupon-special span.number-coupon {
-    font-size: 50px;
-    margin-top: -13px;
+    font-size: 48px;
+    margin-top: -8px;
     width: auto;
+    margin-right: 2px;
+    line-height: 54px;
 }
 
 .coupon-item-detail .coupon-top .flex .hightlight .action {

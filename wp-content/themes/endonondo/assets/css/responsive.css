@@ -189,6 +189,10 @@
         padding: 24px;
     }
 
+    .popup .popup-bg .popup-box .info .box .feature {
+        margin-bottom: 20px;
+    }
+
     #couponModal .coupon-top img {
         height: 41px;
         width: 131px;
@@ -433,6 +437,11 @@
         width: 83%;
     }
 
+
+    .popup .popup-bg .popup-box .info .box .feature {
+        margin-bottom: 24px;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -597,6 +606,13 @@
     .gs-fileFormatType {
         font-size: 15px !important;
         line-height: 23px !important;
+    }
+
+
+    .muscle-item p:nth-of-type(2) {
+        font-size: var(--font-12) !important;
+        font-weight: 400 !important;
+        line-height: 18px !important;
     }
 }
 

@@ -37,7 +37,7 @@
 	<link rel="icon" href="<?= (get_field('favicon_256', 'option')) ? get_field('favicon_256', 'option') : "#"; ?>"
 		sizes="256x256" />
 	<meta name="msapplication-TileImage" content="<?php echo get_field('favicon_512', 'option'); ?>" />
-	
+
 	<script src="https://www.youtube.com/iframe_api"></script>
 	<script type="text/javascript"
 		src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-3.5.0.min.js"></script>
@@ -177,11 +177,10 @@
 							<img class="close" src="<?php echo get_template_directory_uri(); ?>/assets/images/close.svg"
 								alt="">
 							<div class="box">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-popup.png"
-									alt="">
-								<h4>For Your Health & Wellness</h4>
-								<p class="has-small-font-size">Stay update with the latest health information and news
-								</p>
+								<div class="feature">
+									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-popup.svg"
+										alt="">
+								</div>
 								<div class="klaviyo-form-UPY2r8"></div>
 								<div class="social">
 									<p class="has-small-font-size">Follow us: </p>

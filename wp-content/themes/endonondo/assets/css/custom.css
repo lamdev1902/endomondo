@@ -407,10 +407,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
         margin-left: 0;
     }
 
-    .popup .popup-bg .popup-box .info .box h2 {
-        margin-top: 10px;
-    }
-
     .author-main .author-top {
         margin-bottom: 0;
     }
@@ -434,21 +430,22 @@ div[data-testid="form-row"]:nth-child(4) label:before {
 }
 
 
-.vimeo-custom > div,
-.youtube-custom > div{
+.vimeo-custom>div,
+.youtube-custom>div {
     position: relative;
     width: 100%;
     height: 0;
     padding: 56.25% 0 0 0;
 }
 
-.vimeo-custom  iframe,
-.youtube-custom  iframe{
+.vimeo-custom iframe,
+.youtube-custom iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100% !important;
     height: 100% !important;
+    border: 1px solid #efefef;
 }
 
 .single-main .single-sidebar .sg-author .author-it p i {
@@ -1288,10 +1285,6 @@ div[data-testid="form-row"]:nth-child(4) label:before {
         margin-left: 0;
     }
 
-    .popup .popup-bg .popup-box .info .box h2 {
-        margin-top: 10px;
-    }
-
     .author-main .author-top {
         margin-bottom: 0;
     }
@@ -1311,6 +1304,7 @@ div[data-testid="form-row"]:nth-child(4) label:before {
 }
 
 /* Exercise Style */
+
 
 .exc-hero-section {
     position: relative;
@@ -1392,6 +1386,12 @@ section.exc-hero-section:before {
 
 .muscle-item {
     text-align: center;
+}
+
+.muscle-item p:nth-of-type(2) {
+    font-size: var(--font-14) !important;
+    font-weight: 400 !important;
+    line-height: 20px !important;
 }
 
 .muscle-item p.muscle-name {

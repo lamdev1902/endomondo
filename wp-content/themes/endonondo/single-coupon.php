@@ -218,9 +218,9 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                                                             }
                                                         }
                                                         $span1 = "<span class='number-coupon'>" . $number . "</span>";
-                                                        $span2 = "<span>" . $specialChar . "</span>" . $remainingString;
-
-                                                        echo $span1 . $span2;
+                                                        $span2 = "<span>" . $specialChar . "</span>";
+                                                        $span3 = "<span>" . $remainingString . "</span>";
+                                                        echo $span1 . $span2 . $span3;
                                                     } else {
                                                         echo get_field('coupon_text', $c1);
                                                     }
@@ -306,9 +306,9 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                                                                     }
 
                                                                     $span1 = "<span class='number-coupon'>" . $number . "</span>";
-                                                                    $span2 = "<span>" . $specialChar . "</span>" . $remainingString;
-
-                                                                    echo $span1 . $span2;
+                                                                    $span2 = "<span>" . $specialChar . "</span>";
+                                                                    $span3 = "<span>" . $remainingString . "</span>";
+                                                                    echo $span1 . $span2 . $span3;
                                                                 } else {
                                                                     echo get_field('coupon_text', $cp);
                                                                 }
@@ -318,7 +318,7 @@ $enable_fcgroup = get_field('enable_fcgroup', $postid);
                                                         <div class="action">
                                                             <div class="action-item">
                                                                 <a href="<?php echo get_field('coupon_link', $cp); ?>"
-                                                                    class="get-code text-uppercase" target="_blank">
+                                                                    class="get-code text-uppercase" data-id="<?php echo $cp; ?>">
                                                                     <p><?php echo get_field('coupon_btn', $cp); ?></p>
                                                                 </a>
                                                             </div>

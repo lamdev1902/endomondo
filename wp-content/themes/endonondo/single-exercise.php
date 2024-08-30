@@ -292,7 +292,7 @@ $post_type = $post->post_type;
                                             <img src="<?= $primaryData['image'] ?>" alt="">
                                         </div>
                                         <p class="has-medium-font-size"><?= $primaryData['name'] ?></p>
-                                        <p class="has-small-font-size"><?= $primaryData['description'] ?></p>
+                                        <?= $primaryData['description'] ?>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
@@ -346,7 +346,7 @@ $post_type = $post->post_type;
                                         <img src="<?= $secondaryData['image'] ?>" alt="">
                                     </div>
                                     <p class="has-medium-font-size"><?= $secondaryData['name'] ?></p>
-                                    <p class="has-small-font-size"><?= $secondaryData['description'] ?></p>
+                                    <?= $secondaryData['description'] ?>
                                 </div>
                             <?php endforeach; ?>
                         </div>
@@ -416,7 +416,7 @@ $post_type = $post->post_type;
                                     <div class="muscle-img">
                                         <img src="<?= $equipmentData['image'] ?>" alt="">
                                     </div>
-                                    <p class="has-medium-font-size"><?= $equipmentData['name'] ?></p>
+                                    <?= $equipmentData['name'] ?>
                                 </div>
                             <?php endforeach; ?>
                         </div>
