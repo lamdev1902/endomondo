@@ -27,7 +27,7 @@ function create_shortcode_tool_bmi($args, $content)
 {
     ob_start();
     ?>
-    <div id="calories-box">
+    <div class="calories-box">
         <div id="spinner"></div>
         <div class="calories-form">
             <div class="content-top">
@@ -96,7 +96,7 @@ function create_shortcode_tool_bmi($args, $content)
     </div>
     <?php
     $rt = ob_get_clean();
-    wp_enqueue_script('bmi-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/bmi-tool.js', '', '1.0.0');
+    wp_enqueue_script('bmi-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/bmi-tool.js', '', '1.0.2');
     wp_enqueue_script('validate-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/jquery.validate.min.js', '', '1.0.0');
     return $rt;
 }

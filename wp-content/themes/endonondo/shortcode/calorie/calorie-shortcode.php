@@ -181,9 +181,9 @@ function create_shortcode_tool_calorie($args, $content)
 					</div>
 				</form>
 			</div>
-			<div class="fillResult content-bottom">
+			<div class="fillResult content-bottom bdbottom">
 				<div class="empty-result">
-					<img src="<?= get_template_directory_uri() . '/shortcode/calorie/assets/images/empty-result.svg' ?>"
+					<img src="<?= get_template_directory_uri() . '/shortcode/calorie/assets/images/empty-result-2.svg' ?>"
 						alt="Empty Result">
 					<p class="mr-top-16">The number of calories a person uses each day depends on sex, age, weight, height
 						and
@@ -195,7 +195,7 @@ function create_shortcode_tool_calorie($args, $content)
 	<?php
 	$rt = ob_get_clean();
 	wp_enqueue_style('calorie-css', get_template_directory_uri() . '/shortcode/calorie/assets/css/calorie-tool.css', '', '1.0.0');
-	wp_enqueue_script('calorie-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/calorie-tool.js', '', '1.0.5');
+	wp_enqueue_script('calorie-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/calorie-tool.js', '', '1.0.6');
 	wp_enqueue_script('validate-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/jquery.validate.min.js', '', '1.0.0');
 	return $rt;
 }

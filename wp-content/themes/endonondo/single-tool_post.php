@@ -21,25 +21,24 @@ the_post();
 		</section>
 		<section class="exc-hero-section tool">
 			<div class="container">
-				<div class="exc-container">
-					<div class="tool-top">
-						<h1><?php the_title(); ?></h1>
-						<?php if ($pdes) { ?>
-							<p><?php echo $pdes; ?></p><?php } ?>
-						<div class="social follow mr-bottom-20">
-							<p class="has-small-font-size pri-color-2" style="margin-bottom: 0">Follow us: </p>
-							<?php
-							$socials = get_field('follow_social', 'option');
-							if ($socials) {
-								foreach ($socials as $social) {
-									?>
-									<a target="_blank" href="<?php echo $social['link']; ?>"><img
-											alt="<?= $social['icon']['alt']; ?>" src="<?= $social['icon']['url']; ?>" /></a>
-								<?php }
-							} ?>
-						</div>
-						<div class="br-section mr-bottom-20"></div>
-						<!-- <div class="choose-list mr-bottom-20">
+				<div class="tool-top text-center">
+					<h1><?php the_title(); ?></h1>
+					<?php if ($pdes) { ?>
+						<p><?php echo $pdes; ?></p><?php } ?>
+					<div class="social follow mr-bottom-20">
+						<p class="has-small-font-size pri-color-2" style="margin-bottom: 0">Follow us: </p>
+						<?php
+						$socials = get_field('follow_social', 'option');
+						if ($socials) {
+							foreach ($socials as $social) {
+								?>
+								<a target="_blank" href="<?php echo $social['link']; ?>"><img
+										alt="<?= $social['icon']['alt']; ?>" src="<?= $social['icon']['url']; ?>" /></a>
+							<?php }
+						} ?>
+					</div>
+					<div class="br-section mr-bottom-20"></div>
+					<!-- <div class="choose-list mr-bottom-20">
 							<ul class="flex">
 								<li>
 									<p class="has-meidum-font-size">Input Your Information</p>
@@ -52,7 +51,7 @@ the_post();
 								</li>
 							</ul>
 						</div> -->
-						<!-- <div class="social">
+					<!-- <div class="social">
 							<?php
 							$social = get_field('social', 'option');
 							if ($social) {
@@ -63,7 +62,8 @@ the_post();
 								<?php }
 							} ?>
 						</div> -->
-					</div>
+				</div>
+				<div class="exc-container">
 					<?php the_content(); ?>
 					<?php
 					if (get_field('enable_source', 'option') == true) {

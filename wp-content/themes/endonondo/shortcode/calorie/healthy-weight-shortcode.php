@@ -27,7 +27,7 @@ function create_shortcode_tool_healthy_weight($args, $content)
 {
 	ob_start();
 	?>
-	<div id="calories-box">
+	<div class="calories-box">
 		<div id="spinner"></div>
 		<div class="calories-form">
 			<div class="content-top">
@@ -62,7 +62,7 @@ function create_shortcode_tool_healthy_weight($args, $content)
 	<?php
 	$rt = ob_get_clean();
 	wp_enqueue_style('tool-css', get_template_directory_uri() . '/shortcode/calorie/assets/css/tool.css', '', '1.0.0');
-	wp_enqueue_script('healthy-weight-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/healthy-weight-tool.js', '', '1.1.8');
+	wp_enqueue_script('healthy-weight-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/healthy-weight-tool.js', '', '1.1.9');
 	wp_enqueue_script('validate-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/jquery.validate.min.js', '', '1.0.1');
 	return $rt;
 }

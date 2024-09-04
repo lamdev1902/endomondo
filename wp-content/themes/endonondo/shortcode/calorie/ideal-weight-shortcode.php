@@ -27,7 +27,7 @@ function create_shortcode_tool_ideal_weight($args, $content)
 {
     ob_start();
     ?>
-    <div id="calories-box">
+    <div class="calories-box">
         <div id="spinner"></div>
         <div class="calories-form">
             <div class="content-top">

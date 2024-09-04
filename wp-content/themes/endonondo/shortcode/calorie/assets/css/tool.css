@@ -109,8 +109,8 @@ body .box {
 }
 
 label img {
-	position: absolute;
-	right: -40px;
+	position: relative;
+	right: 7px;
 }
 
 .container .wrapper .content-top .radio-wrapper {

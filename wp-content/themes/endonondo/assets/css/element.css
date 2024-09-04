@@ -411,9 +411,6 @@ table tbody td {
     margin-bottom: 0;
 }
 
-.fillResult {
-    border-bottom: 1px dashed var(--primary-color-2);
-}
 .calories-result {
     grid-template-columns: repeat(2,1fr);
     column-gap: 58px;
@@ -437,6 +434,7 @@ table tbody td {
 
 .fillResult .calories-col ul {
     padding-left: 0;
+    margin-bottom: 0;
 }
 
 .fillResult .calories-col ul b {
@@ -486,11 +484,6 @@ section.exc-hero-section.tool .exc-container {
     text-align: unset;
     position: relative;
     z-index: 2;
-}
-
-section.exc-hero-section.tool .exc-container .tool-top > h1,
-section.exc-hero-section.tool .exc-container .tool-top > p {
-    margin-bottom: 0;
 }
 
 .br-section {

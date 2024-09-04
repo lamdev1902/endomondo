@@ -27,7 +27,7 @@ function create_shortcode_tool_lean_body_mass($args, $content)
 {
     ob_start();
     ?>
-    <div id="calories-box">
+    <div class="calories-box">
         <div id="spinner"></div>
         <div class="calories-form">
             <div class="content-top">
@@ -95,7 +95,7 @@ function create_shortcode_tool_lean_body_mass($args, $content)
                         <button id="btn" class="calories-submit btn-primary has-medium-font-size" type="submit">
                             Calculate
                         </button>
-                        <button type="btnClear" id="btnClear"
+                        <button type="button" id="btnClear"
                             class="calories-clear calories-submit has-medium-font-size">Clear</button>
                     </div>
                 </form>
@@ -107,7 +107,7 @@ function create_shortcode_tool_lean_body_mass($args, $content)
     <?php
     $rt = ob_get_clean();
     wp_enqueue_style('tool-css', get_template_directory_uri() . '/shortcode/calorie/assets/css/tool.css', '', '1.0.0');
-    wp_enqueue_script('lean-body-mass-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/lean-body-mass-tool.js', '', '1.0.0');
+    wp_enqueue_script('lean-body-mass-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/lean-body-mass-tool.js', '', '1.0.1');
     wp_enqueue_script('validate-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/jquery.validate.min.js', '', '1.0.0');
     return $rt;
 }
@@ -126,29 +126,27 @@ function get_lean_body_mass_tool()
         $result = $tool_result->lean_body_mass;
         ob_start();
         ?>
-        <div class="title">
-            <h2>Result</h2>
-        </div>
-        <div class="result">
-            <div class="flex-column lean-body-table">
-                <div class="goals">
-                    <table class="lean-body">
-                        <tbody>
+        <h2>Result</h2>
+        <div class="result-one">
+            <figure class="wp-block-table calories-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Formular</th>
+                            <th>Lean Body</th>
+                            <th>Body Fat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($result as $item): ?>
                             <tr>
-                                <td>Formular</td>
-                                <td>Lean Body</td>
-                                <td>Body Fat</td>
+                                <td><?= $item->title ?></td>
+                                <td><?= $item->score . " ( " . $item->percent . "% )" ?></td>
+                                <td><?= $item->body_fat ?></td>
                             </tr>
-                            <?php foreach ($result as $item): ?>
-                                <tr>
-                                    <td><?= $item->title ?></td>
-                                    <td><?= $item->score . " ( " . $item->percent . "% )" ?></td>
-                                    <td><?= $item->body_fat ?></td>
-                                </tr>
-                            <?php endforeach; ?>
-                    </table>
-                </div>
-            </div>
+                        <?php endforeach; ?>
+                </table>
+            </figure>
         </div>
         <?php
         $result_get = ob_get_clean();

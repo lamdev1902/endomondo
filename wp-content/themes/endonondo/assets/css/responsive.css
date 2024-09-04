@@ -1,5 +1,11 @@
 @media (max-width: 480px) {
 
+    section.exc-hero-section:before {
+        top: 30px !important;
+        background-size: cover !important;
+        height: 250px;
+    }
+
     .single-main ol,
     .exc-container ol {
         margin-left: 5px;
@@ -380,9 +386,6 @@
     
     .result .result-left .range svg {
         width: 277px;
-        position: relative;
-        left: 31px;
-        top: -7px;
     }
 
     .content-bottom .result .result-right > ul { 
@@ -399,8 +402,9 @@
         height: auto;
         border-right: none;
         border-bottom: 1px dashed var(--primary-color-2);
-        top: calc(39% - 20px);
+        top: 70%;
         left: 0;
+        transform: translate(0, -50%);
     }
 
     /* Tool Post */

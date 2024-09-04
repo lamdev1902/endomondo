@@ -27,7 +27,7 @@ function create_shortcode_tool_body_fat($args, $content)
 {
 	ob_start();
 	?>
-	<div id="calories-box" class>
+	<div class="calories-box" class>
 		<div id="spinner"></div>
 		<div class="calories-form">
 			<div class="content-top">
@@ -145,9 +145,9 @@ function create_shortcode_tool_body_fat($args, $content)
 					</div>
 				</form>
 			</div>
-			<div class="fillResult content-bottom">
+			<div class="fillResult content-bottom bdbottom">
 				<div class="empty-result">
-					<img src="<?= get_template_directory_uri() . '/shortcode/calorie/assets/images/empty-result.svg' ?>"
+					<img src="<?= get_template_directory_uri() . '/shortcode/calorie/assets/images/empty-result-2.svg' ?>"
 						alt="Empty Result">
 					<p class="mr-top-16">The number of calories a person uses each day depends on sex, age, weight, height
 						and activity level.</p>
@@ -157,7 +157,7 @@ function create_shortcode_tool_body_fat($args, $content)
 	</div>
 	<?php
 	$rt = ob_get_clean();
-	wp_enqueue_script('body-fat-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/body-fat-tool.js', '', '1.0.1');
+	wp_enqueue_script('body-fat-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/body-fat-tool.js', '', '1.0.2');
 	wp_enqueue_script('validate-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/jquery.validate.min.js', '', '1.0.0');
 	return $rt;
 }
@@ -229,28 +229,32 @@ function get_body_fat_tool()
 							<line x1="140" y1="140" x2="65" y2="140" stroke="#666" stroke-width="2"
 								marker-end="url(#arrowhead)">
 								<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 140 140"
-									to="140 140 140" dur="1s" fill="freeze" repeatCount="1"></animateTransform>
+									to="<?= $result_bfp->navy_method->percent * 3.7 ?> 140 140" dur="1s" fill="freeze"
+									repeatCount="1"></animateTransform>
 							</line>
 						</g>
 					</svg>
 				</div>
 			</div>
 			<div class="result-right">
-				<?php foreach ($result_bfp as $bfp): ?>
-					<?php
-					if (isset($bfp->percent)) {
-						$value = $bfp->percent . " %";
-					} else if (isset($bfp->pounds)) {
-						$value = $bfp->pounds . " lbs";
-					} else {
-						$value = $bfp->type;
-					}
-					?>
-					<?php $itemClass = ($item % 2 == 0) ? 'item-1' : 'item-2'; ?>
-					<div class="item <?= $itemClass ?>">
-						<p class="title"><?= $bfp->title ?></p>
-						<p class="value"><?= $value ?></p>
-					</div><?php $item++; endforeach; ?>
+				<ul>
+					<?php foreach ($result_bfp as $bfp): ?>
+						<?php
+						if (isset($bfp->percent)) {
+							$value = $bfp->percent . " %";
+						} else if (isset($bfp->pounds)) {
+							$value = $bfp->pounds . " lbs";
+						} else {
+							$value = $bfp->type;
+						}
+						?>
+						<?php $itemClass = ($item % 2 == 0) ? 'item-1' : 'item-2'; ?>
+						<li>
+							<p><?= $bfp->title ?></p>
+							<p class="has-medium-font-size pri-color-1"><?= $value ?></p>
+						</li>
+						<?php $item++; endforeach; ?>
+				</ul>
 			</div>
 		</div>
 		<?php

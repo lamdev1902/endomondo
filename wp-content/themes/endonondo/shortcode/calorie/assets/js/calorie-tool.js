@@ -57,9 +57,10 @@ function calorie_tool_json() {
 	  	},
 	  	submitHandler: function(form) {
             $('#spinner').show();
-
+			$('.calories-box').css('background', "rgb(250 250 250 / 1)");
+            $('.calories-box').css('opacity', "0.3");
 	  		$.ajax({
-				url:'https://www.endomondo.com//',
+				url:'https://www.endomondo.com/',
 				type: 'GET', 
 				cache: false,
 				dataType: "json",
@@ -78,6 +79,7 @@ function calorie_tool_json() {
 				success: function(data) {
 					$('.fillResult').html(data);
 					$('#spinner').hide();
+					$('.calories-box').removeAttr('style');
 					var off = $('.fillResult').offset().top;
 					$('html,body').animate({ scrollTop: off }, 600);
 				},

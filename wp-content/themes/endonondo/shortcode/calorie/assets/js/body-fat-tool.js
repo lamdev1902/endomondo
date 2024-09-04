@@ -58,7 +58,8 @@ jQuery(function($) {
 			var formData = $('#bodyFat').serializeArray();
 			var jsonData = {};
 			$('#spinner').show();
-
+			$('.calories-box').css('background', "rgb(250 250 250 / 1)");
+            $('.calories-box').css('opacity', "0.3");
 			$.each(formData, function(i, field) {
 				var parts = field.name.split('[');
 				var currentObj = jsonData;
@@ -78,7 +79,7 @@ jQuery(function($) {
 				}
 			});
 			$.ajax({
-			 url:'https://www.endomondo.com//',
+			 url:'https://www.endomondo.com/',
 			  type: 'GET', 
 			  cache: false,
 			  dataType: "json",
@@ -90,6 +91,7 @@ jQuery(function($) {
 				  $('.content-top').addClass('bdbottom');
 				  $('.content-bottom').html(data);
 				  $('#spinner').hide();
+				  $('.calories-box').removeAttr('style');
 			  }
 		  });
 		  return false;

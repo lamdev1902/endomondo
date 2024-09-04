@@ -31,121 +31,125 @@ function create_shortcode_tool_bmr($args, $content)
 		<div id="spinner"></div>
 		<div class="calories-form">
 			<h2>Input Your Information Below </h2>
-			<form action="" id="bmrCalculate">
-				<div class="form-col">
-					<label for="">Gender <img
-							src="<?= get_template_directory_uri() . '/shortcode/calorie/assets/images/calories-note.svg' ?>"
-							alt=""></label>
-					<div class="form-radio-list form-radio two-grid">
-						<div class="form-radio checked">
-							<label for="genderMale"><input type="radio" name="info[gender]" value="1" id="genderMale"
-									checked>
-								<span class="radio"></span>
-								Male
-							</label>
-						</div>
-						<div class="form-radio">
-							<label for="genderFemale">
-								<input type="radio" name="info[gender]" value="2" id="genderFemale">
-								<span class="radio"></span>
-								Female
-							</label>
-						</div>
-					</div>
-				</div>
-				<div class="form-col">
-					<label for="">Weight</label>
-					<div class="form-input">
-						<input class="input-it" type="text" name="info[weight]">
-						<p>pounds</p>
-					</div>
-				</div>
-				<div class="form-col">
-					<label class="age-label" for="">Age</label>
-					<div class="form-input">
-						<input class="input-it" type="text" name="info[age]">
-						<p>years</p>
-					</div>
-				</div>
-				<div class="form-col">
-					<label for="">Height</label>
-					<div class="form-input-list two-grid">
-						<div class="form-input">
-							<input class="input-it" type="text" name="info[height][feet]">
-							<p>ft</p>
-						</div>
-						<div class="form-input">
-							<input class="input-it" type="text" name="info[height][inches]">
-							<p>in</p>
-						</div>
-					</div>
-				</div>
-				<div class="form-col">
-					<h3>+ Setting</h3>
-					<label for="">Results unit:</label>
-					<div class="form-radio-list mb-17 two-grid">
-						<div class="form-radio checked">
-							<label for="unitCalo">
-								<input id="unitCalo" type="radio" name="unit" value="1" checked>
-								<span class="radio"></span>
-								Calories
-							</label>
-						</div>
-						<div class="form-radio">
-							<label for="unitKilo">
-								<input id="unitKilo" type="radio" name="unit" value="2">
-								<span class="radio"></span>
-								Kilojoules
-							</label>
-						</div>
-					</div>
-					<div class="form-radio-list form-radio form-radio-list-full">
-						<label class="form-radio" for="">BMR estimation formula: <img
-								src="<?= get_template_directory_uri() . '/shortcode/calorie/assets/images/calories-question.svg' ?>"
+			<div class="content-top">
+				<form action="" id="bmrCalculate">
+					<div class="form-col">
+						<label for="">Gender <img
+								src="<?= get_template_directory_uri() . '/shortcode/calorie/assets/images/calories-note.svg' ?>"
 								alt=""></label>
-						<div class="form-radio checked">
-							<label for="bmr1">
-								<input id="bmr1" type="radio" name="receip" value="1" checked>
-								<span class="radio"></span>
-								Mifflin St Joer
-							</label>
-						</div>
-						<div class="form-radio">
-							<label for="bmr2">
-								<input id="bmr2" type="radio" name="receip" value="2">
-								<span class="radio"></span>
-								Revised Harris Benedict
-							</label>
-						</div>
-						<div class="form-radio">
-							<label for="bmr3">
-								<input id="bmr3" type="radio" name="receip" value="3">
-								<span class="radio"></span>
-								Katch - McArdle
-							</label>
-						</div>
-						<div class="input-body" style="opacity: 0">
-							<label for="">Body Fat: </label>
-							<input class="input-it" type="text" placeholder=" %" name="info[body-fat]">
+						<div class="form-radio-list form-radio two-grid">
+							<div class="form-radio checked">
+								<label for="genderMale"><input type="radio" name="info[gender]" value="1" id="genderMale"
+										checked>
+									<span class="radio"></span>
+									Male
+								</label>
+							</div>
+							<div class="form-radio">
+								<label for="genderFemale">
+									<input type="radio" name="info[gender]" value="2" id="genderFemale">
+									<span class="radio"></span>
+									Female
+								</label>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="form-col action">
-					<button type="submit" class="calories-submit has-medium-font-size">Calculate</button>
-					<p class="has-ssmall-font-size sec-color-4 text-center mr-top-16">
-						The Healthcare.com Copyright 2021 © All Rights Reserved. As an associate partner with many brands
-						and manufacture. Bizreport.com earns from qualifying purchase. The content in this site is not
-						intended replacing professional advices, and only for general use.
-					</p>
-				</div>
-			</form>
+					<div class="form-col">
+						<label for="">Weight</label>
+						<div class="form-input">
+							<input class="input-it" type="text" name="info[weight]">
+							<p>pounds</p>
+						</div>
+					</div>
+					<div class="form-col">
+						<label class="age-label" for="">Age</label>
+						<div class="form-input">
+							<input class="input-it" type="text" name="info[age]">
+							<p>years</p>
+						</div>
+					</div>
+					<div class="form-col">
+						<label for="">Height</label>
+						<div class="form-input-list two-grid">
+							<div class="form-input">
+								<input class="input-it" type="text" name="info[height][feet]">
+								<p>ft</p>
+							</div>
+							<div class="form-input">
+								<input class="input-it" type="text" name="info[height][inches]">
+								<p>in</p>
+							</div>
+						</div>
+					</div>
+					<div class="form-col">
+						<h3>+ Setting</h3>
+						<label for="">Results unit:</label>
+						<div class="form-radio-list mb-17 two-grid">
+							<div class="form-radio checked">
+								<label for="unitCalo">
+									<input id="unitCalo" type="radio" name="unit" value="1" checked>
+									<span class="radio"></span>
+									Calories
+								</label>
+							</div>
+							<div class="form-radio">
+								<label for="unitKilo">
+									<input id="unitKilo" type="radio" name="unit" value="2">
+									<span class="radio"></span>
+									Kilojoules
+								</label>
+							</div>
+						</div>
+						<div class="form-radio-list form-radio form-radio-list-full">
+							<label class="form-radio" for="">BMR estimation formula: <img
+									src="<?= get_template_directory_uri() . '/shortcode/calorie/assets/images/calories-question.svg' ?>"
+									alt=""></label>
+							<div class="form-radio checked">
+								<label for="bmr1">
+									<input id="bmr1" type="radio" name="receip" value="1" checked>
+									<span class="radio"></span>
+									Mifflin St Joer
+								</label>
+							</div>
+							<div class="form-radio">
+								<label for="bmr2">
+									<input id="bmr2" type="radio" name="receip" value="2">
+									<span class="radio"></span>
+									Revised Harris Benedict
+								</label>
+							</div>
+							<div class="form-radio">
+								<label for="bmr3">
+									<input id="bmr3" type="radio" name="receip" value="3">
+									<span class="radio"></span>
+									Katch - McArdle
+								</label>
+							</div>
+							<div class="input-body" style="opacity: 0">
+								<label for="">Body Fat: </label>
+								<input class="input-it" type="text" placeholder=" %" name="info[body-fat]">
+							</div>
+						</div>
+					</div>
+					<div class="form-col action">
+						<button type="submit" class="calories-submit has-medium-font-size">Calculate</button>
+						<p class="has-ssmall-font-size sec-color-4 text-center mr-top-16">
+							The Healthcare.com Copyright 2021 © All Rights Reserved. As an associate partner with many
+							brands
+							and manufacture. Bizreport.com earns from qualifying purchase. The content in this site is not
+							intended replacing professional advices, and only for general use.
+						</p>
+					</div>
+				</form>
+			</div>
+			<div class="content-bottom fillResult">
+			</div>
 		</div>
-		<div class="fillResult"></div>
 	</div>
 	<?php
 	$rt = ob_get_clean();
 	wp_enqueue_style('bmr-css', get_template_directory_uri() . '/shortcode/calorie/assets/css/calorie-tool.css', '', '1.0.0');
-	wp_enqueue_script('bmr-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/bmr-tool.js', '', '1.0.0');
+	wp_enqueue_script('bmr-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/bmr-tool.js', '', '1.0.1');
 	wp_enqueue_script('validate-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/jquery.validate.min.js', '', '1.0.0');
 	return $rt;
 }
@@ -167,20 +171,24 @@ function get_bmr_tool()
 		if ($result->calorie):
 			?>
 			<h2>Result</h2>
-			<div class="result">
+			<div class="result-one">
 				<div class="main-result">
-					<p class="has-large-font-size">BMR: <span class style="color: #87AA14"><?= $result->calorie ?></span> <?= $unit ?></p>
-
+					<p class="has-large-font-size">BMR: <span class style="color: #87AA14"><?= $result->calorie ?></span>
+						<?= $unit ?></p>
+					<p>G. J. Hamwi Formula (1964)</p>
+					<p>Male: 48.0 kg + 2.7 kg per inch over 5 feet</p>
+					<p>Female: 45.5 kg + 2.2 kg per inch over 5 feet</p>
+					<p>Invented for medicinal dosage purposes.</p>
 				</div>
 				<figure class="wp-block-table calories-table">
 					<table>
 						<thead>
-						<tr>
-							<th></th>
-							<th>Calorie</th>
-						</tr>
+							<tr>
+								<th>Activity Level</th>
+								<th>Calorie</th>
+							</tr>
 						</thead>
-						<?php if ($result->activity) {?>
+						<?php if ($result->activity) { ?>
 							<tbody>
 								<?php foreach ($result->activity as $item) {
 									?>
