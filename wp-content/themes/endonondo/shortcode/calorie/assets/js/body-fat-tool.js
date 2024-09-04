@@ -10,12 +10,6 @@ jQuery(function($) {
 	});
 	$('#bodyFat').validate({
 		rules: {
-		    'info[age]':  {
-				required: true,
-				number: true,
-				min: 0,
-				max: 1
-		    },
 		    'info[weight]':  {
 				required: true,
 				number: true,
