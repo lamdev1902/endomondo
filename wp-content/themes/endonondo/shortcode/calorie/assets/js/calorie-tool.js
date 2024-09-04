@@ -56,8 +56,10 @@ function calorie_tool_json() {
 		    }
 	  	},
 	  	submitHandler: function(form) {
+            $('#spinner').show();
+
 	  		$.ajax({
-				url:'https://www.endomondo.com/',
+				url:'https://www.endomondo.com//',
 				type: 'GET', 
 				cache: false,
 				dataType: "json",
@@ -74,8 +76,8 @@ function calorie_tool_json() {
 					'get_calorie_tool':true 
 				},
 				success: function(data) {
-					console.log('json done');
 					$('.fillResult').html(data);
+					$('#spinner').hide();
 					var off = $('.fillResult').offset().top;
 					$('html,body').animate({ scrollTop: off }, 600);
 				},

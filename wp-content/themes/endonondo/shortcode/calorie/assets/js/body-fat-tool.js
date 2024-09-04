@@ -1,9 +1,11 @@
 jQuery(function($) {
 	$('input[name="info[gender]"]').change(function(){
 		if($(this).val() == 2) {
-			$('.hip').removeClass('inactive')
+			$('.hip').removeClass('inactive');
+			$('.action').addClass('special-col');
 		}else {
 			$('.hip').addClass('inactive')
+			$('.action').removeClass('special-col');
 		}
 	});
 	$('#bodyFat').validate({
@@ -11,8 +13,8 @@ jQuery(function($) {
 		    'info[age]':  {
 				required: true,
 				number: true,
-				min: 15,
-				max: 80
+				min: 0,
+				max: 1
 		    },
 		    'info[weight]':  {
 				required: true,
@@ -55,6 +57,7 @@ jQuery(function($) {
 		  submitHandler: function(form) {
 			var formData = $('#bodyFat').serializeArray();
 			var jsonData = {};
+			$('#spinner').show();
 
 			$.each(formData, function(i, field) {
 				var parts = field.name.split('[');
@@ -75,7 +78,7 @@ jQuery(function($) {
 				}
 			});
 			$.ajax({
-			 url:'https://www.endomondo.com/',
+			 url:'https://www.endomondo.com//',
 			  type: 'GET', 
 			  cache: false,
 			  dataType: "json",

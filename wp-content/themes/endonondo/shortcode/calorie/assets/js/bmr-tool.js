@@ -88,7 +88,7 @@ function calorie_tool_json() {
 				}
 			});
 	  		$.ajax({
-				url:'https://www.endomondo.com/',
+				url:'https://www.endomondo.com//',
 				type: 'GET', 
 				cache: false,
 				dataType: "json",

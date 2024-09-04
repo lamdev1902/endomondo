@@ -310,7 +310,7 @@ table tbody td {
 
 /* Calorie Form */
 
-.calories-form {
+.calories-form .content-top {
     padding-bottom: 20px;
     border-bottom: 1px dashed var(--primary-color-2);
     margin-bottom: var(--mr-main);
@@ -321,7 +321,6 @@ table tbody td {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 10%;
     row-gap: 24px;
-    
 }
 
 .calories-form form {
@@ -348,11 +347,14 @@ table tbody td {
 
 .calories-form form .input-body {
     position:absolute;
-    bottom: 0;
+    bottom: -5px;
+    right: 0;
 }
-.calories-form form .input-body > input{
-    width: auto;
-    padding: 8px;
+
+.calories-form form .form-col .input-body > input{
+    width: 72px;
+    text-align: center;
+    padding: 7px;
 }
 
 .calories-form form .form-radio {
@@ -385,20 +387,33 @@ table tbody td {
     background-position-y: 10px;
 }
 
+.special-col {
+    align-items: end;
+}
+
+.calories-form form .action {
+    margin-bottom: -12px;
+    padding-bottom: 12px;
+}
+
+
 .calories-form form .calories-submit {
     width: 100%;
-    padding: 15px 24px;
+    padding: 12px 24px;
     color: var(--primary-color-3);
     background-color: var(--primary-color-2);
-    margin: 16px 0;
-    border: none;
+    border: 1px solid var(--primary-color-2);
     cursor: pointer;
+    height: fit-content;
 }
 
 .calories-form form .form-col .has-ssmall-font-size {
     margin-bottom: 0;
 }
 
+.fillResult {
+    border-bottom: 1px dashed var(--primary-color-2);
+}
 .calories-result {
     grid-template-columns: repeat(2,1fr);
     column-gap: 58px;
@@ -502,3 +517,10 @@ section.exc-hero-section.tool .exc-container .tool-top {
     margin-bottom: 0;
 }
 
+
+.calories-form .action.odd {
+    grid-column: 2 / 3;
+    display: flex;
+    justify-content: space-around;
+    column-gap: 8px;
+}

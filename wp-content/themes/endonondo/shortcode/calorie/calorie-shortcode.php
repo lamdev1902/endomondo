@@ -59,131 +59,143 @@ function create_shortcode_tool_calorie($args, $content)
 	ob_start();
 	?>
 	<div class="calories-box">
+		<div id="spinner"></div>
 		<div class="calories-form">
-			<h2 class="mr-bottom-40">Input Your Information Below </h2>
-			<form action="" id="clorieToolForm">
-				<div class="form-col">
-					<label for="">Gender <img src="assets/images/calories-note.svg" alt=""></label>
-					<div class="form-radio-list form-radio gender-radio two-grid">
-						<div class="form-input checked">
-							<label for="genderMale">
-								<input type="radio" name="calorie_gender" value="1" id="genderMale" checked>
-								<span class="radio"></span>
-								Male
-							</label>
+			<div class="content-top">
+				<h2 class="mr-bottom-40">Input Your Information Below </h2>
+				<form action="" id="clorieToolForm">
+					<div class="form-col">
+						<label for="">Gender <img src="assets/images/calories-note.svg" alt=""></label>
+						<div class="form-radio-list form-radio gender-radio two-grid">
+							<div class="form-input checked">
+								<label for="genderMale">
+									<input type="radio" name="calorie_gender" value="1" id="genderMale" checked>
+									<span class="radio"></span>
+									Male
+								</label>
+							</div>
+							<div class="form-input">
+								<label for="genderFemale">
+									<input type="radio" name="calorie_gender" value="2" id="genderFemale">
+									<span class="radio"></span>
+									Female
+								</label>
+							</div>
 						</div>
+					</div>
+					<div class="form-col">
+						<label for="">Weight</label>
 						<div class="form-input">
-							<label for="genderFemale">
-								<input type="radio" name="calorie_gender" value="2" id="genderFemale">
-								<span class="radio"></span>
-								Female
-							</label>
+							<input class="input-it" type="text" name="calorie_weight">
+							<p class="">pounds</p>
 						</div>
 					</div>
-				</div>
-				<div class="form-col">
-					<label for="">Weight</label>
-					<div class="form-input">
-						<input class="input-it" type="text" name="calorie_weight">
-						<p class="">pounds</p>
-					</div>
-				</div>
-				<div class="form-col">
-					<label for="">Age</label>
-					<div class="form-input">
-						<input class="input-it" type="text" name="calorie_age">
-						<p>years</p>
-					</div>
-				</div>
-				<div class="form-col">
-					<label for="">Height</label>
-					<div class="form-input-list two-grid">
+					<div class="form-col">
+						<label for="">Age</label>
 						<div class="form-input">
-							<input class="input-it" type="text" name="calorie_height_ft">
-							<p>ft</p>
-						</div>
-						<div class="form-input">
-							<input class="input-it" type="text" name="calorie_height_in">
-							<p>in</p>
+							<input class="input-it" type="text" name="calorie_age">
+							<p>years</p>
 						</div>
 					</div>
+					<div class="form-col">
+						<label for="">Height</label>
+						<div class="form-input-list two-grid">
+							<div class="form-input">
+								<input class="input-it" type="text" name="calorie_height_ft">
+								<p>ft</p>
+							</div>
+							<div class="form-input">
+								<input class="input-it" type="text" name="calorie_height_in">
+								<p>in</p>
+							</div>
+						</div>
+					</div>
+					<div class="form-col">
+						<h3>Setting</h3>
+						<label for="">Results unit:</label>
+						<div class="form-radio-list two-grid">
+							<div class="form-radio checked">
+								<label for="unitCalo">
+									<input id="unitCalo" type="radio" name="calorie_unit" value="1" checked>
+									<span class="radio"></span>
+									Calories
+								</label>
+							</div>
+							<div class="form-radio">
+								<label for="unitKilo">
+									<input id="unitKilo" type="radio" name="calorie_unit" value="2">
+									<span class="radio"></span>
+									Kilojoules
+								</label>
+							</div>
+						</div>
+						<div class="form-radio-list form-radio">
+							<label for="">BMR estimation formula: <img src="assets/images/calories-note.svg" alt=""></label>
+							<div class="form-radio checked">
+								<label for="bmr1">
+									<input id="bmr1" type="radio" name="calorie_receip" value="1" checked>
+									<span class="radio"></span>
+									Mifflin St Joer
+								</label>
+							</div>
+							<div class="form-radio">
+								<label for="bmr2">
+									<input id="bmr2" type="radio" name="calorie_receip" value="2">
+									<span class="radio"></span>
+									Revised Harris Benedict
+								</label>
+							</div>
+							<div class="form-radio">
+								<label for="bmr3">
+									<input id="bmr3" type="radio" name="calorie_receip" value="3">
+									<span class="radio"></span>
+									Katch - McArdle
+								</label>
+							</div>
+							<div class="input-body" style="opacity: 0;">
+								<label for="">Body Fat: </label>
+								<input class="input-it" type="text" placeholder=" %" name="calorie_fat">
+							</div>
+						</div>
+					</div>
+					<div class="form-col">
+						<div class="calories-pc">
+							<label for="">Level of Activity</label>
+							<select class="select-ip form-input input-it" name="calorie_level">
+								<option value="1">Basal Metabolic Rate (BMR)</option>
+								<option value="2">Sedentary: little or no exercise</option>
+								<option value="3">Light: exercise 1-3 times/week</option>
+								<option value="4">Moderate: exercise 4-5 times/week</option>
+								<option value="5">Active: daily exercise or intense exercise 3-4 times/week</option>
+								<option value="6">Very active: intense exercise 6-7 times/week</option>
+								<option value="7">Extra active: very intense exercise daily, or physical job</option>
+							</select>
+						</div>
+						<input type="submit" value="Calculate" class="calories-submit has-medium-font-size mr-top-16">
+						<p class="has-ssmall-font-size sec-color-4 text-center mr-top-16">
+							The Healthcare.com Copyright 2021 © All Rights Reserved. As an associate partner with many
+							brands
+							and manufacture. Bizreport.com earns from qualifying purchase. The content in this site is not
+							intended replacing professional advices, and only for general use.
+						</p>
+					</div>
+				</form>
+			</div>
+			<div class="fillResult content-bottom">
+				<div class="empty-result">
+					<img src="<?= get_template_directory_uri() . '/shortcode/calorie/assets/images/empty-result.svg' ?>"
+						alt="Empty Result">
+					<p class="mr-top-16">The number of calories a person uses each day depends on sex, age, weight, height
+						and
+						activity level.</p>
 				</div>
-				<div class="form-col">
-					<h3>Setting</h3>
-					<label for="">Results unit:</label>
-					<div class="form-radio-list two-grid">
-						<div class="form-radio checked">
-							<label for="unitCalo">
-								<input id="unitCalo" type="radio" name="calorie_unit" value="1" checked>
-								<span class="radio"></span>
-								Calories
-							</label>
-						</div>
-						<div class="form-input">
-							<label for="unitKilo">
-								<input id="unitKilo" type="radio" name="calorie_unit" value="2">
-								<span class="radio"></span>
-								Kilojoules
-							</label>
-						</div>
-					</div>
-					<div class="form-radio-list form-radio">
-						<label for="">BMR estimation formula: <img src="assets/images/calories-note.svg" alt=""></label>
-						<div class="form-radio checked">
-							<label for="bmr1">
-								<input id="bmr1" type="radio" name="calorie_receip" value="1" checked>
-								<span class="radio"></span>
-								Mifflin St Joer
-							</label>
-						</div>
-						<div class="form-radio">
-							<label for="bmr2">
-								<input id="bmr2" type="radio" name="calorie_receip" value="2">
-								<span class="radio"></span>
-								Revised Harris Benedict
-							</label>
-						</div>
-						<div class="form-radio">
-							<label for="bmr3">
-								<input id="bmr3" type="radio" name="calorie_receip" value="3">
-								<span class="radio"></span>
-								Katch - McArdle
-							</label>
-						</div>
-						<div class="input-body" style="opacity: 0;">
-							<label for="">Body Fat: </label>
-							<input class="input-it" type="text" placeholder=" %" name="calorie_fat">
-						</div>
-					</div>
-				</div>
-				<div class="form-col">
-					<div class="calories-pc">
-						<label for="">Level of Activity</label>
-						<select class="select-ip form-input input-it" name="calorie_level">
-							<option value="1">Basal Metabolic Rate (BMR)</option>
-							<option value="2">Sedentary: little or no exercise</option>
-							<option value="3">Light: exercise 1-3 times/week</option>
-							<option value="4">Moderate: exercise 4-5 times/week</option>
-							<option value="5">Active: daily exercise or intense exercise 3-4 times/week</option>
-							<option value="6">Very active: intense exercise 6-7 times/week</option>
-							<option value="7">Extra active: very intense exercise daily, or physical job</option>
-						</select>
-					</div>
-					<input type="submit" value="Calculate" class="calories-submit has-medium-font-size">
-					<p class="has-ssmall-font-size sec-color-4 text-center">
-						The Healthcare.com Copyright 2021 © All Rights Reserved. As an associate partner with many brands
-						and manufacture. Bizreport.com earns from qualifying purchase. The content in this site is not
-						intended replacing professional advices, and only for general use.
-					</p>
-				</div>
-			</form>
+			</div>
 		</div>
-		<div class="fillResult"></div>
 	</div>
 	<?php
 	$rt = ob_get_clean();
 	wp_enqueue_style('calorie-css', get_template_directory_uri() . '/shortcode/calorie/assets/css/calorie-tool.css', '', '1.0.0');
-	wp_enqueue_script('calorie-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/calorie-tool.js', '', '1.0.4');
+	wp_enqueue_script('calorie-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/calorie-tool.js', '', '1.0.5');
 	wp_enqueue_script('validate-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/jquery.validate.min.js', '', '1.0.0');
 	return $rt;
 }
@@ -216,7 +228,7 @@ function get_calorie_tool()
 		$zigzag_schedule_2 = $tool_result->zigzag_schedule_2;
 		ob_start();
 		?>
-		<div class="calories-result grid">
+		<div class="calories-result grid mr-bottom-20">
 			<div class="calories-col">
 				<h2>Result</h2>
 				<p>The results show a number of daily calorie estimates that can be used as a guideline for how many calories to
@@ -265,7 +277,7 @@ function get_calorie_tool()
 				$weight_loss = $zigzag_schedule_1->weight_loss;
 				$extreme_loss = $zigzag_schedule_1->extreme_loss;
 				?>
-				<h4>Zigzag diet schedule 1</h4>
+				<h3>Zigzag diet schedule 1</h3>
 				<div class="medical-table">
 					<figure class="wp-block-table">
 						<table>
@@ -306,7 +318,7 @@ function get_calorie_tool()
 				$weight_loss = $zigzag_schedule_2->weight_loss;
 				$extreme_loss = $zigzag_schedule_2->extreme_loss;
 				?>
-				<h4>Zigzag diet schedule 2</h4>
+				<h3>Zigzag diet schedule 2</h3>
 				<div class="medical-table">
 					<figure class="wp-block-table">
 						<table>

@@ -39,7 +39,7 @@ the_post();
 							} ?>
 						</div>
 						<div class="br-section mr-bottom-20"></div>
-						<div class="choose-list mr-bottom-20">
+						<!-- <div class="choose-list mr-bottom-20">
 							<ul class="flex">
 								<li>
 									<p class="has-meidum-font-size">Input Your Information</p>
@@ -51,8 +51,8 @@ the_post();
 									<p class="has-meidum-font-size">Plan your diel meal</p>
 								</li>
 							</ul>
-						</div>
-						<div class="social">
+						</div> -->
+						<!-- <div class="social">
 							<?php
 							$social = get_field('social', 'option');
 							if ($social) {
@@ -62,7 +62,7 @@ the_post();
 											src="<?= $social['icon']['url']; ?>" alt="<?= $social['icon']['alt']; ?>" /></a>
 								<?php }
 							} ?>
-						</div>
+						</div> -->
 					</div>
 					<?php the_content(); ?>
 					<?php

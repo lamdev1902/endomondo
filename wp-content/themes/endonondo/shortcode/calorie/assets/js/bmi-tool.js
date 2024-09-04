@@ -48,8 +48,6 @@ jQuery(function($) {
 			var jsonData = {};
             $('.content-bottom').empty();
             $('.container').css('position', 'relative');
-            $('.wrapper').css('background', "rgb(250 250 250 / 1)");
-            $('.wrapper').css('opacity', "0.3");
             $('#spinner').show();
 
 			$.each(formData, function(i, field) {
@@ -71,7 +69,7 @@ jQuery(function($) {
 				}
 			});
 			$.ajax({
-			 url:'https://www.endomondo.com/',
+			 url:'https://www.endomondo.com//',
 			  type: 'GET', 
 			  cache: false,
 			  dataType: "json",
@@ -82,7 +80,7 @@ jQuery(function($) {
 			  success: function(data) {
 				  $('.content-top').addClass('bdbottom');
 				  $('.content-bottom').html(data);
-				  $('#spinner').hide();
+				  $('#spinner').hide();
 				  $('.container').removeAttr('style');
 				  $('.wrapper').removeAttr('style');
 			  }

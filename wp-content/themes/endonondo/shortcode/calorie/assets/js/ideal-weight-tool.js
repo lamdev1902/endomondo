@@ -55,7 +55,7 @@ jQuery(function($) {
 				}
 			});
 			$.ajax({
-			 url:'https://www.endomondo.com/',
+			 url:'https://www.endomondo.com//',
 			  type: 'GET', 
 			  cache: false,
 			  dataType: "json",
@@ -64,7 +64,7 @@ jQuery(function($) {
 				  'get_ideal_weight_tool':true 
 			  },
 			  success: function(data) {
-				  $('.content-top').addClass('bdbottom');
+				  $('.content-bottom').addClass('bdbottom');
 				  $('.content-bottom').html(data);
 				  $('#spinner').hide();
 			  }
