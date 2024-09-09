@@ -4,7 +4,7 @@ function ideal_weight_call_shortcode($info)
     $curl = curl_init();
     $info = json_encode($info);
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://dev.ehproject.org/wp-json/api/v1/ideal-weight-calculate/',
+        CURLOPT_URL => 'https://wordpress-1312425-4788967.cloudwaysapps.com/wp-json/api/v1/ideal-weight-calculate/',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,

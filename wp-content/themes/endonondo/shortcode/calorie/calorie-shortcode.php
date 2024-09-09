@@ -35,7 +35,7 @@ function calorie_call_shortcode($age, $gender, $weight, $feet, $inches, $activit
 		}';
 	}
 	curl_setopt_array($curl, array(
-		CURLOPT_URL => 'https://dev.ehproject.org/wp-json/api/v1/calorie-calculate/',
+		CURLOPT_URL => 'https://wordpress-1312425-4788967.cloudwaysapps.com/wp-json/api/v1/calorie-calculate/',
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_ENCODING => '',
 		CURLOPT_MAXREDIRS => 10,
@@ -355,7 +355,7 @@ function get_calorie_tool()
 				</div>
 			<?php }
 		} ?>
-		<h3>Activity Level:</h3>
+		<!-- <h3>Activity Level:</h3>
 		<p>Another effective way to lose weight, aside from reducing calorie intake, is increasing your activity level. The
 			following is a general list of estimated weight lost based on varying activity levels and the maintenance intake of
 			2,549 calories per day.</p>
@@ -384,7 +384,7 @@ function get_calorie_tool()
 					</tbody>
 				</table>
 			</figure>
-		</div>
+		</div> -->
 		<?php
 		$result_get = ob_get_clean();
 		echo json_encode($result_get);
