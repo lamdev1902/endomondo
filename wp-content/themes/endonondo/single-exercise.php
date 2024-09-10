@@ -416,7 +416,7 @@ $post_type = $post->post_type;
                                     <div class="muscle-img">
                                         <img src="<?= $equipmentData['image'] ?>" alt="">
                                     </div>
-                                    <?= $equipmentData['name'] ?>
+                                    <p class="has-medium-font-size"><?= $equipmentData['name'] ?></p>
                                 </div>
                             <?php endforeach; ?>
                         </div>
