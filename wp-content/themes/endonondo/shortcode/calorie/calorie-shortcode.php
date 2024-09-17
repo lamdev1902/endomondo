@@ -172,12 +172,6 @@ function create_shortcode_tool_calorie($args, $content)
 							</select>
 						</div>
 						<input type="submit" value="Calculate" class="calories-submit has-medium-font-size mr-top-16">
-						<p class="has-ssmall-font-size sec-color-4 text-center mr-top-16">
-							The Healthcare.com Copyright 2021 © All Rights Reserved. As an associate partner with many
-							brands
-							and manufacture. Bizreport.com earns from qualifying purchase. The content in this site is not
-							intended replacing professional advices, and only for general use.
-						</p>
 					</div>
 				</form>
 			</div>
