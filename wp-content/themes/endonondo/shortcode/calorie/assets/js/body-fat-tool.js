@@ -79,7 +79,7 @@ jQuery(function($) {
 				}
 			});
 			$.ajax({
-			 url:'http://endomondo.local/',
+			 url:'https://www.endomondo.com/',
 			  type: 'GET', 
 			  cache: false,
 			  dataType: "json",

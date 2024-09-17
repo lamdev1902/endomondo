@@ -147,7 +147,7 @@ function create_shortcode_tool_body_fat($args, $content)
 	</div>
 	<?php
 	$rt = ob_get_clean();
-	wp_enqueue_script('body-fat-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/body-fat-tool.js', '', '1.0.4');
+	wp_enqueue_script('body-fat-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/body-fat-tool.js', '', '1.0.5');
 	wp_enqueue_script('validate-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/jquery.validate.min.js', '', '1.0.0');
 	return $rt;
 }

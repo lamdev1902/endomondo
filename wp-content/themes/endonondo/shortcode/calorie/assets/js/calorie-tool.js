@@ -61,7 +61,7 @@ function calorie_tool_json() {
 			$('.calories-box').css('background', "rgb(250 250 250 / 1)");
             $('.calories-box').css('opacity', "0.3");
 	  		$.ajax({
-				url:'http://endomondo.local/',
+				url:'https://www.endomondo.com/',
 				type: 'GET', 
 				cache: false,
 				dataType: "json",
