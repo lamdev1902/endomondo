@@ -4,6 +4,6 @@
 .calories-form .input-it.error {
     border-color: #ff0000;
 }
-.calories-custom .result-gain.lhide {
+.fillResult .calories-col ul li.lhide {
     display: none;
 }

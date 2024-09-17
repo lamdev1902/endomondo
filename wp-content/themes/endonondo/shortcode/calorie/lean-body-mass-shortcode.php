@@ -142,7 +142,7 @@ function get_lean_body_mass_tool()
                             <tr>
                                 <td><?= $item->title ?></td>
                                 <td><?= $item->score . " ( " . $item->percent . "% )" ?></td>
-                                <td><?= $item->body_fat ?></td>
+                                <td><?= $item->body_fat." %"?></td>
                             </tr>
                         <?php endforeach; ?>
                 </table>

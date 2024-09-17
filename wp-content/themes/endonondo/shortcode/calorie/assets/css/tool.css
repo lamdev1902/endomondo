@@ -491,7 +491,7 @@ label.error {
     position: absolute;
     width: 100%;
     left: 2px;
-    bottom: -30px;
+    bottom: -20px;
 }
 @media (min-width: 768px) {
     .container .wrapper .wrapper-header {
@@ -866,3 +866,5 @@ div.ui-datepicker {
 .lunar-title {
 	font-weight:500 !important;
 }
+
+

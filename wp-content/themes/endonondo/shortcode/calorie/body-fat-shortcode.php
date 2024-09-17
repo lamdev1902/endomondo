@@ -53,24 +53,14 @@ function create_shortcode_tool_body_fat($args, $content)
 						</div>
 					</div>
 					<div class="form-col">
-						<label for="">Age 14 or younger</label>
-						<div class="form-radio-list form-radio gender-radio two-grid">
-							<div class="form-input checked">
-								<label for="age1">
-									<input type="radio" name="info[age]" value="1" id="age1" checked>
-									<span class="radio"></span>
-									Yes
-								</label>
-							</div>
-							<div class="form-input">
-								<label for="age2">
-									<input type="radio" name="info[age]" value="2" id="age2">
-									<span class="radio"></span>
-									No
-								</label>
-							</div>
-						</div>
-					</div>
+                        <div class="form-col">
+                            <label for="">Age</label>
+                            <div class="form-input">
+                                <input class="input-it" type="text" name="info[age]">
+                                <p>years</p>
+                            </div>
+                        </div>
+                    </div>
 					<div class="form-col">
 						<label for="">Weight</label>
 						<div class="form-input">
@@ -157,7 +147,7 @@ function create_shortcode_tool_body_fat($args, $content)
 	</div>
 	<?php
 	$rt = ob_get_clean();
-	wp_enqueue_script('body-fat-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/body-fat-tool.js', '', '1.0.3');
+	wp_enqueue_script('body-fat-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/body-fat-tool.js', '', '1.0.4');
 	wp_enqueue_script('validate-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/jquery.validate.min.js', '', '1.0.0');
 	return $rt;
 }

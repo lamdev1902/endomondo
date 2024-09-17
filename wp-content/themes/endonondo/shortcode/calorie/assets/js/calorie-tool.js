@@ -13,6 +13,7 @@ function calorie_tool_json() {
 		 $(this).text( ($(this).text() == 'Show info for weight gain' ? 'Hide info for weight gain' : 'Show info for weight gain') );
 		 return false;
 	});
+	
 	$('#clorieToolForm').validate({
 		rules: {
 		    calorie_age:  {
@@ -60,7 +61,7 @@ function calorie_tool_json() {
 			$('.calories-box').css('background', "rgb(250 250 250 / 1)");
             $('.calories-box').css('opacity', "0.3");
 	  		$.ajax({
-				url:'https://www.endomondo.com/',
+				url:'http://endomondo.local/',
 				type: 'GET', 
 				cache: false,
 				dataType: "json",

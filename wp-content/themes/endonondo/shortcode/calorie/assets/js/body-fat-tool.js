@@ -10,6 +10,12 @@ jQuery(function($) {
 	});
 	$('#bodyFat').validate({
 		rules: {
+			'info[age]':  {
+				required: true,
+				number: true,
+				min: 15,
+				max: 80
+		    },
 		    'info[weight]':  {
 				required: true,
 				number: true,
@@ -73,7 +79,7 @@ jQuery(function($) {
 				}
 			});
 			$.ajax({
-			 url:'https://www.endomondo.com/',
+			 url:'http://endomondo.local/',
 			  type: 'GET', 
 			  cache: false,
 			  dataType: "json",

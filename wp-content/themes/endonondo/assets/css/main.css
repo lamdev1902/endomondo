@@ -1931,6 +1931,10 @@ figcaption {
     border-bottom: 1px solid #D4D5D4;
 }
 
+.single-main .single-sidebar .sg-lastest-list .sg-lastest-it p {
+    margin-bottom: 8px;
+}
+
 .single-main .single-sidebar .sg-lastest-list .sg-lastest-it h3 {
     font-size: 15px;
     line-height: 26px;
@@ -1947,7 +1951,7 @@ figcaption {
 }
 
 .single-main .single-sidebar .sg-lastest-list .sg-lastest-it .news-link {
-    top: 50%;
+    top: 75%;
     right: 0;
     width: 18px;
     transform: translateY(-50%);
@@ -2029,7 +2033,7 @@ figcaption {
     margin: 30px 0 10px;
 }
 
-.single-main .sg-right .sg-custom h2.list-start,
+.single-main h2.list-start,
 .exercise-list-start,
 .exc-section-content h2.list-start {
     counter-reset: section;
@@ -2075,17 +2079,17 @@ figcaption {
     display: inline-block;
 }
 
-.single-main .sg-right .sg-custom h2.list-start~h3,
+.single-main h2.list-start~h3,
 .exercise-list-start > h3,
 .exc-section-content .h2.list-start~h3 {
     position: relative;
 }
 
-.single-main .sg-right .sg-custom h2.list-step-start~h3 {
+.single-main h2.list-step-start~h3 {
     position: relative;
 }
 
-.single-main .sg-right .sg-custom h2.list-start~h3:before,
+.single-main h2.list-start~h3:before,
 .exercise-list-start > h3:before,
 .exc-section-content h2.list-start~h3:before {
     counter-increment: section;
@@ -2094,13 +2098,13 @@ figcaption {
     color: var(--primary-color-1);
 }
 
-.single-main .sg-right .sg-custom h2.list-step-start,
+.single-main  h2.list-step-start,
 .exc-section-content h2.list-step-start {
     counter-reset: section;
 }
 
 
-.single-main .sg-right .sg-custom h2.list-step-start~h3:before,
+.single-main  h2.list-step-start~h3:before,
 .exc-section-content h2.list-step-start~h3:before {
     counter-increment: section;
     content: "Step " counter(section) ". ";
@@ -2109,7 +2113,7 @@ figcaption {
     counter-increment: section;
 }
 
-.single-main .sg-right .sg-custom h2.list-end~h3,
+.single-main  h2.list-end~h3,
 .exc-section-content h2.list-end~h3 {
     padding: 0 !important;
     border: none !important;
@@ -2117,7 +2121,7 @@ figcaption {
     color: #101010 !important;
 }
 
-.single-main .sg-right .sg-custom h2.list-end~h3:before,
+.single-main  h2.list-end~h3:before,
 .exc-section-content h2.list-end~h3:before {
     display: none !important;
 }

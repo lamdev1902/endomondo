@@ -195,7 +195,7 @@ function create_shortcode_tool_calorie($args, $content)
 	<?php
 	$rt = ob_get_clean();
 	wp_enqueue_style('calorie-css', get_template_directory_uri() . '/shortcode/calorie/assets/css/calorie-tool.css', '', '1.0.0');
-	wp_enqueue_script('calorie-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/calorie-tool.js', '', '1.0.6');
+	wp_enqueue_script('calorie-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/calorie-tool.js', '', '1.0.7');
 	wp_enqueue_script('validate-js', get_template_directory_uri() . '/shortcode/calorie/assets/js/jquery.validate.min.js', '', '1.0.0');
 	return $rt;
 }
@@ -226,6 +226,9 @@ function get_calorie_tool()
 		$result_cal = $tool_result->calorie;
 		$zigzag_schedule_1 = $tool_result->zigzag_schedule_1;
 		$zigzag_schedule_2 = $tool_result->zigzag_schedule_2;
+		$activeLevel = $tool_result->active;
+		$perLoss = 100;
+		$main = 0;
 		ob_start();
 		?>
 		<div class="calories-result grid mr-bottom-20">
@@ -233,18 +236,25 @@ function get_calorie_tool()
 				<h2>Result</h2>
 				<p>The results show a number of daily calorie estimates that can be used as a guideline for how many calories to
 					consume each day to maintain, lose, or gain weight at a chosen rate.</p>
-				<?php if ($result_cal->gain) { ?>
-					<p><a href="#" class="show-wgain">Show info for weight gain</a></p><?php } ?>
 			</div>
 			<div class="calories-col">
 				<ul>
 					<?php if ($result_cal->loss) {
 						foreach ($result_cal->loss as $rc) {
+							if (count($result_cal->loss) > 1) {
+								if ($rc->name != "Maintain Weight") {
+									$perLoss = ($rc->calorie / $main) * 100;
+								} else {
+									$main = $rc->calorie;
+								}
+							}else {
+								$main = $result_cal->loss[0]->calorie;
+							}
 							?>
 							<li>
 								<p><?php echo $rc->name; ?> <small class="has-ssmall-font-size"><?php echo $rc->description; ?></small>
 								</p>
-								<p><b><?php echo number_format($rc->calorie); ?></b><span>100%</span><small
+								<p><b><?php echo number_format($rc->calorie); ?></b><span><?= number_format($perLoss) . '%' ?></span><small
 										class="has-ssmall-font-size"><?php echo $unit_label; ?>/day</small>
 								</p>
 							</li>
@@ -252,17 +262,24 @@ function get_calorie_tool()
 					}
 					if ($result_cal->gain) {
 						foreach ($result_cal->gain as $rc) {
+							if ($rc->name != "Maintain Weight") {
+								$perLoss = ($rc->calorie / $main) * 100;
+							} else {
+								$main = $rc->calorie;
+							}
 							?>
 							<li class="result-gain lhide">
 								<p><?php echo $rc->name; ?> <small class="has-ssmall-font-size"><?php echo $rc->description; ?></small>
 								</p>
-								<p><b><?php echo number_format($rc->calorie); ?></b><span>100%</span><small
+								<p><b><?php echo number_format($rc->calorie); ?></b><span><?= number_format($perLoss) . '%' ?></span><small
 										class="has-ssmall-font-size"><?php echo $unit_label; ?>/day</small>
 								</p>
 							</li>
 						<?php }
 					} ?>
 				</ul>
+				<?php if ($result_cal->gain) { ?>
+					<p><a href="#" class="show-wgain">Show info for weight gain</a></p><?php } ?>
 			</div>
 		</div>
 		<?php if ($zigzag_schedule_1 || $zigzag_schedule_2) { ?>
@@ -355,36 +372,32 @@ function get_calorie_tool()
 				</div>
 			<?php }
 		} ?>
-		<!-- <h3>Activity Level:</h3>
-		<p>Another effective way to lose weight, aside from reducing calorie intake, is increasing your activity level. The
-			following is a general list of estimated weight lost based on varying activity levels and the maintenance intake of
-			2,549 calories per day.</p>
-		<div class="medical-table">
-			<figure class="wp-block-table">
-				<table>
-					<thead>
-						<tr>
-							<th>Activity level</th>
-							<th>Mild weight loss</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Daily exercise, or intense exercise 3-4 times per week</td>
-							<td>0.4 lb</td>
-						</tr>
-						<tr>
-							<td>Intense exercise 6-7 times per week</td>
-							<td>1.3 lb</td>
-						</tr>
-						<tr>
-							<td>Very intense exercise daily, or a highly physical job</td>
-							<td>2.2 lb</td>
-						</tr>
-					</tbody>
-				</table>
-			</figure>
-		</div> -->
+		<?php if (!empty($activeLevel)): ?>
+			<h3>Activity Level:</h3>
+			<p>Another effective way to lose weight, aside from reducing calorie intake, is increasing your activity level. The
+				following is a general list of estimated weight lost based on varying activity levels and the maintenance intake of
+				<?= $main ?> calories per day.</p>
+			<div class="medical-table">
+				<figure class="wp-block-table">
+					<table>
+						<thead>
+							<tr>
+								<th>Activity level</th>
+								<th>Mild weight loss</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ($activeLevel as $key => $item): ?>
+								<tr>
+									<td><?=$item->name?></td>
+									<td><?=$item->per . ' lb'?></td>
+								</tr>
+							<?php endforeach; ?>
+						</tbody>
+					</table>
+				</figure>
+			</div>
+		<?php endif; ?>
 		<?php
 		$result_get = ob_get_clean();
 		echo json_encode($result_get);
