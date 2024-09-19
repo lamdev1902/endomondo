@@ -1385,6 +1385,11 @@ section.exc-hero-section:before {
     margin-bottom: 20px;
 }
 
+.exc-variations .muscle-title,
+.exc-alternatives .muscle-title {
+    margin-bottom: 5px;
+}
+
 .muscle-item {
     text-align: center;
 }
