@@ -25,6 +25,9 @@ function body_fat_call_shortcode($info)
 }
 function create_shortcode_tool_body_fat($args, $content)
 {
+	$postid = get_the_ID();
+
+	$des = get_field('tool_des', $postid);
 	ob_start();
 	?>
 	<div class="calories-box" class>
@@ -53,14 +56,14 @@ function create_shortcode_tool_body_fat($args, $content)
 						</div>
 					</div>
 					<div class="form-col">
-                        <div class="form-col">
-                            <label for="">Age</label>
-                            <div class="form-input">
-                                <input class="input-it" type="text" name="info[age]">
-                                <p>years</p>
-                            </div>
-                        </div>
-                    </div>
+						<div class="form-col">
+							<label for="">Age</label>
+							<div class="form-input">
+								<input class="input-it" type="text" name="info[age]">
+								<p>years</p>
+							</div>
+						</div>
+					</div>
 					<div class="form-col">
 						<label for="">Weight</label>
 						<div class="form-input">
@@ -135,13 +138,14 @@ function create_shortcode_tool_body_fat($args, $content)
 					</div>
 				</form>
 			</div>
-			<div class="fillResult content-bottom bdbottom">
-				<div class="empty-result">
-					<img src="<?= get_template_directory_uri() . '/shortcode/calorie/assets/images/empty-result-2.svg' ?>"
-						alt="Empty Result">
-					<p class="mr-top-16">The number of calories a person uses each day depends on sex, age, weight, height
-						and activity level.</p>
-				</div>
+			<div class="fillResult content-bottom <?= $des ? 'bdbottom' : ''?> ">
+				<?php if ($des): ?>
+					<div class="empty-result">
+						<img src="<?= get_template_directory_uri() . '/shortcode/calorie/assets/images/empty-result-2.svg' ?>"
+							alt="Empty Result">
+						<p class="mr-top-16"><?=$des?></p>
+					</div>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>

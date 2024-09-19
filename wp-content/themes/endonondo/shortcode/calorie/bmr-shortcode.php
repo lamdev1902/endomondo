@@ -133,12 +133,6 @@ function create_shortcode_tool_bmr($args, $content)
 					</div>
 					<div class="form-col action">
 						<button type="submit" class="calories-submit has-medium-font-size">Calculate</button>
-						<p class="has-ssmall-font-size sec-color-4 text-center mr-top-16">
-							The Healthcare.com Copyright 2021 © All Rights Reserved. As an associate partner with many
-							brands
-							and manufacture. Bizreport.com earns from qualifying purchase. The content in this site is not
-							intended replacing professional advices, and only for general use.
-						</p>
 					</div>
 				</form>
 			</div>
@@ -175,10 +169,7 @@ function get_bmr_tool()
 				<div class="main-result">
 					<p class="has-large-font-size">BMR: <span class style="color: #87AA14"><?= $result->calorie ?></span>
 						<?= $unit ?></p>
-					<p>G. J. Hamwi Formula (1964)</p>
-					<p>Male: 48.0 kg + 2.7 kg per inch over 5 feet</p>
-					<p>Female: 45.5 kg + 2.2 kg per inch over 5 feet</p>
-					<p>Invented for medicinal dosage purposes.</p>
+					<p>Daily calorie needs based on activity level.</p>
 				</div>
 				<figure class="wp-block-table calories-table">
 					<table>

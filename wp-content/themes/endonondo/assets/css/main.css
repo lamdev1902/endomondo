@@ -4141,7 +4141,7 @@ figcaption {
     color: #000;
     position: fixed;
     right: -80px;
-    bottom: 40%;
+    bottom: 10%;
     padding: 6px 6px 6px 30px;
     font-weight: 500;
     font-size: 16px;
@@ -4521,4 +4521,8 @@ figcaption {
 .grecaptcha-badge {
     opacity: 0 !important;
     visibility: hidden !important;
+}
+
+.instagram-media {
+    margin: 0 auto 20px !important
 }

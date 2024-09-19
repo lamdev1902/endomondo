@@ -56,6 +56,9 @@ function calorie_call_shortcode($age, $gender, $weight, $feet, $inches, $activit
 }
 function create_shortcode_tool_calorie($args, $content)
 {
+	$postid = get_the_ID();
+	$des = get_field('tool_des', $postid);
+
 	ob_start();
 	?>
 	<div class="calories-box">
@@ -175,14 +178,14 @@ function create_shortcode_tool_calorie($args, $content)
 					</div>
 				</form>
 			</div>
-			<div class="fillResult content-bottom bdbottom">
-				<div class="empty-result">
-					<img src="<?= get_template_directory_uri() . '/shortcode/calorie/assets/images/empty-result-2.svg' ?>"
-						alt="Empty Result">
-					<p class="mr-top-16">The number of calories a person uses each day depends on sex, age, weight, height
-						and
-						activity level.</p>
-				</div>
+			<div class="fillResult content-bottom <?= $des ? 'bdbottom' : ''?> ">
+				<?php if ($des): ?>
+					<div class="empty-result">
+						<img src="<?= get_template_directory_uri() . '/shortcode/calorie/assets/images/empty-result-2.svg' ?>"
+							alt="Empty Result">
+						<p class="mr-top-16"><?=$des?></p>
+					</div>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
@@ -377,7 +380,7 @@ function get_calorie_tool()
 						<thead>
 							<tr>
 								<th>Activity level</th>
-								<th>Mild weight loss</th>
+								<th>Weight loss per week</th>
 							</tr>
 						</thead>
 						<tbody>
