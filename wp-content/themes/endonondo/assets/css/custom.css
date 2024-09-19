@@ -1368,7 +1368,7 @@ section.exc-hero-section:before {
 .muscle-title h2,
 .exc-section-content.single-main h2 {
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 5px;
 }
 
 .exc-section-content.single-main h2 {
@@ -1382,7 +1382,7 @@ section.exc-hero-section:before {
 
 .exc-variations .muscle-title h2,
 .exc-alternatives .muscle-title h2 {
-    text-align: left;
+    margin-bottom: 20px;
 }
 
 .muscle-item {
@@ -1405,7 +1405,8 @@ section.exc-hero-section:before {
 }
 
 .muscle-item .muscle-img {
-    margin-bottom: 24px;
+    margin-bottom: 9px;
+    padding: 15px;
 }
 
 .muscle-item .muscle-img img {
@@ -1559,6 +1560,12 @@ table.exc-optimal-table {
     z-index: 1;
 }
 
+
+.muscle-list {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--secondary-color-1);
+}
+
 .exc-primary .slick-prev,
 .exc-secondary .slick-prev,
 .exc-equipment .slick-prev,
@@ -1569,7 +1576,7 @@ table.exc-optimal-table {
 
 .exc-primary .slick-next,
 .exc-secondary .slick-next,
-.exc-equipment .slick-nextt,
+.exc-equipment .slick-next,
 .exc-alternatives .slick-next,
 .exc-variations .slick-next {
     right: 4px;

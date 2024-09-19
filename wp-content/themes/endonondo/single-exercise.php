@@ -412,12 +412,14 @@ $post_type = $post->post_type;
                         </div>
                         <div class="muscle-list equipment-list">
                             <?php foreach ($equipmentDatas as $equipmentData): ?>
-                                <div class="equipment-item muscle-item">
-                                    <div class="muscle-img">
-                                        <img src="<?= $equipmentData['image'] ?>" alt="">
+                                <?php if (!empty($equipmentData['image'])): ?>
+                                    <div class="equipment-item muscle-item">
+                                        <div class="muscle-img">
+                                            <img src="<?= $equipmentData['image'] ?>" alt="">
+                                        </div>
+                                        <p class="has-medium-font-size"><?= $equipmentData['name'] ?></p>
                                     </div>
-                                    <p class="has-medium-font-size"><?= $equipmentData['name'] ?></p>
-                                </div>
+                                <?php endif; ?>
                             <?php endforeach; ?>
                         </div>
                     </div>
@@ -617,8 +619,8 @@ $post_type = $post->post_type;
                                     <?php if ($userPosition): ?>
                                         <span>
                                             <?= $userPosition; ?>
-                                        </sp>
-                                    <?php endif; ?>
+                                            </sp>
+                                        <?php endif; ?>
                                 </p>
                         </div>
                         <?php if ($user_description) { ?>
