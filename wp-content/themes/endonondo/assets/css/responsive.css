@@ -438,6 +438,10 @@
         flex-direction: column;
     }
 
+    .first__coming--content {
+        background-position-y: 105px;
+    }
+
     .first__coming--img .store {
         width: 114px;
     }
@@ -777,6 +781,10 @@
     }
 
     /* Enfit */
+
+    .first__coming--content {
+        background-position-y: 55px;
+    }
 
     .first__coming--img .first-img {
         max-width: 510px;

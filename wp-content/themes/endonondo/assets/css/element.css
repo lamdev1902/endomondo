@@ -539,11 +539,15 @@ section.exc-hero-section.tool .exc-container .tool-top {
     padding-bottom: 0 !important;
 }
 
-.first__coming--img {
+.first__coming--content {
     background-image: url(../images/enfit/first-coming-bg.svg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y: 70%;
+    background-position-y: 35px;
+    background-position-x: center;
+}
+
+.first__coming--img {
     text-align: center;
     position: relative;
 }
