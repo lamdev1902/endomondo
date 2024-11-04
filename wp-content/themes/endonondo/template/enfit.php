@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Coming Soon */
+/* Template Name: Enfit */
 $pageid = get_the_ID();
 get_header();
 the_post();
