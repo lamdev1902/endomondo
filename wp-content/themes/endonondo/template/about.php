@@ -59,7 +59,7 @@ the_post();
 												<p class="has-medium-font-size"><a target="_blank" class="pri-color-2"
 														href="<?php echo $post_author_url; ?>"><?php echo $team_it['display_name']; ?></a>
 												</p>
-												<p class="sec-color-3"><?php echo get_field('position', 'user_' . $userid); ?></p>
+												<p class="sec-color-3"><?= get_field('new_position', 'user_' . $userid) ?? get_field('position', 'user_' . $userid) ?></p>
 												<!-- <div class="social">
 									<?php $social = get_field('social', 'user_' . $userid);
 									if ($social) {
