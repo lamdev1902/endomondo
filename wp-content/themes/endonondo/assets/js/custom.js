@@ -209,6 +209,16 @@ jQuery(function ($) {
 			}
 		]
 	});
+
+	$('#rightSlick').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        arrows: false,
+        dots: true
+    });
+	
 	$(document).ready(function () {
 		var iframe = $('.exc-hero-section iframe');
 

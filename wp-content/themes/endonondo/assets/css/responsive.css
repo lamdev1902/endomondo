@@ -376,24 +376,24 @@
 
 
     .result .result-left .description-range {
-        width: 100% ;
+        width: 100%;
     }
 
-    .result .result-left .range > img {
-        left: 0 ;
+    .result .result-left .range>img {
+        left: 0;
     }
 
-    
+
     .result .result-left .range svg {
         width: 277px;
     }
 
-    .content-bottom .result .result-right > ul { 
+    .content-bottom .result .result-right>ul {
         margin-bottom: 0;
     }
 
     .calories-result {
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
         row-gap: 40px;
     }
 
@@ -425,6 +425,84 @@
 
     section.exc-hero-section.tool .exc-container .tool-top .social a:first-child {
         margin-left: 0;
+    }
+
+
+    /* Enfit */
+
+    .coming section {
+        padding: 10px 0;
+    }
+
+    .coming .flex {
+        flex-direction: column;
+    }
+
+    .first__coming--img .store {
+        width: 114px;
+    }
+
+    .first-img .chart {
+        top: 25%;
+        left: -4%;
+        width: 30%;
+    }
+
+    .second__coming--left,
+    .second__coming--right {
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    .second__coming--left .content {
+        text-align: left;
+    }
+
+    .second__coming--item.grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #rightSlick {
+        width: 100%;
+    }
+
+    .third__coming--bottom.flex .it {
+        width: 100%;
+    }
+
+    .third__coming--bottom .it:nth-child(2),
+    .third__coming--bottom .it:last-child {
+        margin-top: 0;
+    }
+
+    .third__coming--bottom img {
+        width: 100%;
+    }
+
+    .four__coming--left  {
+        width: 100%;
+        margin-bottom: -4px;
+    }
+
+    .four__coming--right {
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .four__coming--right .content {
+        position: relative;
+        top: 75%;
+        transform: translateY(0%);
+    }
+
+    .fifth__coming--bottom img {
+        max-width: 1200px;
+        width: fit-content;
+    }
+
+    .coming .tag-coming.flex {
+        flex-direction: row;
     }
 }
 
@@ -539,8 +617,8 @@
     }
 
     table::-webkit-scrollbar {
-        position:relative; 
-        z-index:2;
+        position: relative;
+        z-index: 2;
     }
 
     .wp-block-table table thead th,
@@ -696,6 +774,79 @@
         font-size: var(--font-12) !important;
         font-weight: 400 !important;
         line-height: 18px !important;
+    }
+
+    /* Enfit */
+
+    .first__coming--img .first-img {
+        max-width: 510px;
+    }
+
+    .first__coming--img .store {
+        width: 114px;
+    }
+
+    .first-img .chart {
+        top: 25%;
+        left: -11%;
+        width: 38%;
+    }
+
+    .first-img .training {
+        top: -8%;
+        right: 0.5%;
+        width: 40%;
+    }
+
+    .first-img .workout {
+        top: 55%;
+        right: -4%;
+        width: 50%;
+    }
+
+    .second__coming .flex {
+        flex-direction: column;
+    }
+
+
+    .second__coming--left {
+        width: 100%;
+    }
+
+    .second__coming .tag-coming {
+        margin: 0 auto 20px;
+    }
+
+    .second__coming--left .content {
+        text-align: center;
+    }
+
+    #rightSlick {
+        width: 100%;
+        max-height: none;
+        height: auto;
+    }
+
+    .second__coming--item.grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .third__coming--bottom.flex {
+        flex-wrap: wrap;
+    }
+
+    .third__coming--bottom.flex .it {
+        width: calc(50% - 17px);
+        flex: auto;
+    }
+
+    .third__coming--bottom.flex .it img {
+        width: 100%;
+    }
+
+    .third__coming--bottom .it:nth-child(2),
+    .third__coming--bottom .it:last-child {
+        margin-top: 0;
     }
 }
 
