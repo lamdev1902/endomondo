@@ -37,7 +37,7 @@ function create_shortcode_tool_rm($args, $content)
 						<label for="">Weight Lifted</label>
 						<div class="form-input rep">
 							<input class="input-it" type="text" name="info[weight]">
-							<select name="info[unit]">
+							<select name="unit">
 								<option value="1">Kilogram</option>
 								<option value="2">Pound</option>
 							</select>
