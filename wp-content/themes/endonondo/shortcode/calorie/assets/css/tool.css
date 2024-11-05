@@ -867,4 +867,22 @@ div.ui-datepicker {
 	font-weight:500 !important;
 }
 
+.calories-form form .form-input.rep {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
+.calories-form form .form-input.rep > p{
+    right: 80px;
+}
+
+.calories-form form .form-input.rep span{
+    display: block;
+    width: 20%;
+}
+
+.calories-form form .form-input.rep > select {
+    width: 40%;
+}
