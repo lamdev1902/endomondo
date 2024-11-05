@@ -15,6 +15,7 @@ include(TEMPLATEPATH.'/shortcode/calorie/lean-body-mass-shortcode.php');
 // include(TEMPLATEPATH.'/shortcode/calorie/adjusted-body-weight-shortcode.php');
 // include(TEMPLATEPATH.'/shortcode/calorie/body-adiposity-index-shortcode.php');
 include(TEMPLATEPATH.'/shortcode/calorie/bmr-shortcode.php');
+include(TEMPLATEPATH . '/shortcode/calorie/repmax-shortcode.php');
 
 function enqueue_infinite_scroll_script()
 {
